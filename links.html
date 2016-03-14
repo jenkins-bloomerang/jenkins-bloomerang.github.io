@@ -9,12 +9,14 @@
 		}
 		.table {
 			display: table;
-			width: 650px;
 		}
 		.table-heading {
 			display: table-row;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-top: 5px;
+			padding-bottom: 5px;
 			font-weight: bold;
-			font-size: larger;
 		}
 		.table-heading-cell {
 			display: table-cell;
@@ -26,7 +28,6 @@
 		}
 		.row {
 			display: table-row;
-			cursor: pointer;
 		}
 		.cell {
 			display: table-cell;
@@ -42,18 +43,20 @@
 <body>
 <div class="table">
 <div class="table-heading">
-	<div class="table-heading-cell">Env</div>
-	<div class="table-heading-cell">Database</div>
-	<div class="table-heading-cell">Widget ID</div>
-	<div class="table-heading-cell">Description</div>
-	<div class="table-heading-cell">Link</div>
+	<div class="table-heading-cell" style="width: 15%">Env</div>
+	<div class="table-heading-cell" style="width: 20%;">Database</div>
+	<div class="table-heading-cell" style="width: 15%;">Widget ID</div>
+	<div class="table-heading-cell" style="width: 30%;">Desc</div>
+	<div class="table-heading-cell" style="width: 20%;">Link</div>
 </div>
+</div>
+<div class="table">
 <div class="row">
-	<div class="cell" style="width: 50px;">QA</div>
-	<div class="cell" style="width: 100px;">automation</div>
-	<div class="cell" style="width: 75px;">53249</div>
-	<div class="cell">Stripe Standard</div>
-	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/53249.html" target="_blank">Open Form</a></div>
+	<div class="cell" style="width: 15%;">QA</div>
+	<div class="cell" style="width: 20%;">automation</div>
+	<div class="cell" style="width: 15%;">53249</div>
+	<div class="cell" style="width: 30%;">Stripe Standard</div>
+	<div class="cell" style="width: 20%;"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/53249.html" target="_blank">Open Form</a></div>
 </div>
 <div class="row">
 	<div class="cell">QA</div>
@@ -73,11 +76,11 @@
 <hr />
 <div class="table">
 <div class="row">
-	<div class="cell" style="width: 50px;">QA</div>
-	<div class="cell" style="width: 100px;">jenkins1</div>
-	<div class="cell" style="width: 75px;">56320</div>
-	<div class="cell">Stripe Standard</div>
-	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation1/donation/56320.html" target="_blank">Open Form</a></div>
+		<div class="cell" style="width: 15%;">QA</div>
+	<div class="cell" style="width: 20%;">jenkins1</div>
+	<div class="cell" style="width: 15%;">56320</div>
+	<div class="cell" style="width: 30%;">Stripe Standard</div>
+	<div class="cell" style="width: 20%;"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation1/donation/56320.html" target="_blank">Open Form</a></div>
 </div>
 <div class="row">
 	<div class="cell">QA</div>
