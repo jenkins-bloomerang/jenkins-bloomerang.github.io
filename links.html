@@ -1,4 +1,4 @@
-<html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,11 +7,68 @@
 			font-family: "Century Gothic", Arial, Sans-Serif;
 			font-size: 10pt;
 		}
+		.table {
+			display: table;
+		}
+		.table-heading {
+			display: table-row;
+			font-weight: bold;
+			font-size: larger;
+		}
+		.table-heading-cell {
+			display: table-cell;
+			text-align: center;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		.row {
+			display: table-row;
+			cursor: pointer;
+		}
+		.cell {
+			display: table-cell;
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border: solid;
+			border-width: thin;
+		}
 	</style>
 </head>
 <body>
 <h1>QA</h1>
-<h2>Automation</h2>
-<a href="starwars/automation/donation/53249.html" target="_blank">Online Donation - Stripe Standard</a>
+<div class="table">
+<div class="table-heading">
+	<div class="table-heading-cell">Environment</div>
+	<div class="table-heading-cell">Database</div>
+	<div class="table-heading-cell">Widget ID</div>
+	<div class="table-heading-cell">Description</div>
+	<div class="table-heading-cell">Link</div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">automation</div>
+	<div class="cell">53249</div>
+	<div class="cell">Stripe Standard</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/53249.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">automation</div>
+	<div class="cell">53248</div>
+	<div class="cell">Stripe Custom Email</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/53248.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">automation</div>
+	<div class="cell">60416</div>
+	<div class="cell">BluePay Standard</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/60416.html" target="_blank">Open Form</a></div>
+</div>
+</div>
 </body>
 </html>
