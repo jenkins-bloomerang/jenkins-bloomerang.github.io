@@ -7,10 +7,17 @@
 			font-family: "Century Gothic", Arial, Sans-Serif;
 			font-size: 10pt;
 		}
+		hr {
+			margin-left: 0;
+			width: 100%;
+			max-width: 700px;
+		}
 		.table {
 			display: table;
 			table-layout: fixed;
 			width: 100%;
+			max-width: 700px;
+			min-width: 360px;
 		}
 		.table-heading {
 			display: table-row;
@@ -40,25 +47,40 @@
 			border: solid;
 			border-width: thin;
 		}
+		.env {
+			width: 15%;
+		}
+		.database {
+			width: 25%;
+		}
+		.widgetid {
+			width: 15%;
+		}
+		.description {
+			width: 25%;
+		}
+		.link {
+			width: 20%;
+		}
 	</style>
 </head>
 <body>
 <div class="table">
 <div class="table-heading">
-	<div class="table-heading-cell" style="width: 15%">Env</div>
-	<div class="table-heading-cell" style="width: 25%;">Database</div>
-	<div class="table-heading-cell" style="width: 15%;">Widget ID</div>
-	<div class="table-heading-cell" style="width: 25%;">Desc</div>
-	<div class="table-heading-cell" style="width: 20%;">Link</div>
+	<div class="table-heading-cell env">Env</div>
+	<div class="table-heading-cell database">Database</div>
+	<div class="table-heading-cell widgetid">Widget ID</div>
+	<div class="table-heading-cell description">Desc</div>
+	<div class="table-heading-cell link">Link</div>
 </div>
 </div>
 <div class="table">
 <div class="row">
-	<div class="cell" style="width: 15%;">QA</div>
-	<div class="cell" style="width: 25%;">automation</div>
-	<div class="cell" style="width: 15%;">53249</div>
-	<div class="cell" style="width: 25%;">Stripe Standard</div>
-	<div class="cell" style="width: 20%;"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/53249.html" target="_blank">Open Form</a></div>
+	<div class="cell env">QA</div>
+	<div class="cell database">automation</div>
+	<div class="cell widgetid">53249</div>
+	<div class="cell description">Stripe Standard</div>
+	<div class="cell link"><a href="https://jenkins-bloomerang.github.io/starwars/automation/donation/53249.html" target="_blank">Open Form</a></div>
 </div>
 <div class="row">
 	<div class="cell">QA</div>
@@ -78,11 +100,11 @@
 <hr />
 <div class="table">
 <div class="row">
-	<div class="cell" style="width: 15%;">QA</div>
-	<div class="cell" style="width: 25%;">jenkins1</div>
-	<div class="cell" style="width: 15%;">56320</div>
-	<div class="cell" style="width: 25%;">Stripe Standard</div>
-	<div class="cell" style="width: 20%;"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation1/donation/56320.html" target="_blank">Open Form</a></div>
+	<div class="cell env">QA</div>
+	<div class="cell database">jenkins1</div>
+	<div class="cell widgetid">56320</div>
+	<div class="cell description">Stripe Standard</div>
+	<div class="cell link"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation1/donation/56320.html" target="_blank">Open Form</a></div>
 </div>
 <div class="row">
 	<div class="cell">QA</div>
@@ -97,6 +119,102 @@
 	<div class="cell">64512</div>
 	<div class="cell">BluePay Standard</div>
 	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation1/donation/64512.html" target="_blank">Open Form</a></div>
+</div>
+</div>
+<hr />
+<div class="table">
+<div class="row">
+	<div class="cell env">QA</div>
+	<div class="cell database">jenkins2</div>
+	<div class="cell widgetid">56320</div>
+	<div class="cell description">Stripe Standard</div>
+	<div class="cell link"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation2/donation/56320.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">jenkins2</div>
+	<div class="cell">56321</div>
+	<div class="cell">Stripe Custom Email</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation2/donation/56321.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">jenkins2</div>
+	<div class="cell">64512</div>
+	<div class="cell">BluePay Standard</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation2/donation/64512.html" target="_blank">Open Form</a></div>
+</div>
+</div>
+<hr />
+<div class="table">
+<div class="row">
+	<div class="cell env">QA</div>
+	<div class="cell database">jenkins3</div>
+	<div class="cell widgetid">56320</div>
+	<div class="cell description">Stripe Standard</div>
+	<div class="cell link"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation3/donation/56320.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">jenkins3</div>
+	<div class="cell">56321</div>
+	<div class="cell">Stripe Custom Email</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation3/donation/56321.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">jenkins3</div>
+	<div class="cell">64512</div>
+	<div class="cell">BluePay Standard</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation3/donation/64512.html" target="_blank">Open Form</a></div>
+</div>
+</div>
+<hr />
+<div class="table">
+<div class="row">
+	<div class="cell env">QA</div>
+	<div class="cell database">jenkins4</div>
+	<div class="cell widgetid">56320</div>
+	<div class="cell description">Stripe Standard</div>
+	<div class="cell link"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation4/donation/56320.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">jenkins1</div>
+	<div class="cell">56321</div>
+	<div class="cell">Stripe Custom Email</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation4/donation/56321.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">QA</div>
+	<div class="cell">jenkins1</div>
+	<div class="cell">64512</div>
+	<div class="cell">BluePay Standard</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/jenkinsautomation4/donation/64512.html" target="_blank">Open Form</a></div>
+</div>
+</div>
+<hr />
+<div class="table">
+<div class="row">
+	<div class="cell env">Prod</div>
+	<div class="cell database">prod1</div>
+	<div class="cell widgetid">58368</div>
+	<div class="cell description">Stripe Standard</div>
+	<div class="cell link"><a href="https://jenkins-bloomerang.github.io/starwars/prodautomation1/donation/58368.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">Prod</div>
+	<div class="cell">prod1</div>
+	<div class="cell">58369</div>
+	<div class="cell">Stripe Custom Email</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/prodautomation1/donation/58369.html" target="_blank">Open Form</a></div>
+</div>
+<div class="row">
+	<div class="cell">Prod</div>
+	<div class="cell">prod1</div>
+	<div class="cell">71680</div>
+	<div class="cell">BluePay Standard</div>
+	<div class="cell"><a href="https://jenkins-bloomerang.github.io/starwars/prodautomation1/donation/71680.html" target="_blank">Open Form</a></div>
 </div>
 </div>
 </body>
