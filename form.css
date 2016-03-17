@@ -13,7 +13,7 @@ select {
 a.checkbox {
 	padding: 2px 7px 2px 7px !important;
 }
-input[type=text], input[type=email], input[type=date], select, textarea, a.checkbox {
+input:not([type=radio]):not([type=checkbox]), select, textarea, a.checkbox {
 	-webkit-border-radius: 3px;
     	-moz-border-radius: 3px;
     	-ms-border-radius: 3px;
