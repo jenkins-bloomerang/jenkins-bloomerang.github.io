@@ -34,7 +34,7 @@ input:not([type=radio]):not([type=checkbox]), select, textarea, a.checkbox {
     	color: #000000;
     	font: 13px "Century Gothic", Arial, sans-serif;
 }
-input:focus, select:focus {
+input:focusnot([type=radio]):not([type=checkbox]), select:focus {
     	-webkit-box-shadow: 0 0 2px #ED1C24 inset;
     	-moz-box-shadow: 0 0 2px #ed1c24 inset;
     	-ms-box-shadow: 0 0 2px #ed1c24 inset;
