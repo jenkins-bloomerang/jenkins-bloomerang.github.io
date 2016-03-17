@@ -20,8 +20,8 @@ input, select, a.checkbox {
     	transition: all 0.5s ease;
     	background: #EAE7E7;
     	border: 1px solid #C8C8C8;
-    	color: #777;
-    	font: 13px Helvetica, Arial, sans-serif;
+    	color: #000000;
+    	font: 13px "Century Gothic", Arial, sans-serif;
     	padding: 15px 10px 15px 40px;
 }
 
