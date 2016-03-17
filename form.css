@@ -2,9 +2,16 @@ body {
 	font-family: "Century Gothic", Arial, Sans-Serif;
 	font-size: 10pt;
 }
+input {
+	padding: 7px !important;
+}
 select {
 	width: 275px;
 	height: 35px;
+	padding: 7px !important;
+}
+a.checkbox {
+	padding: 4px !important;
 }
 input, select, a.checkbox {
 	-webkit-border-radius: 3px;
@@ -26,9 +33,7 @@ input, select, a.checkbox {
     	border: 1px solid #C8C8C8;
     	color: #000000;
     	font: 13px "Century Gothic", Arial, sans-serif;
-    	padding: 7px !important;
 }
-
 input:focus, select:focus {
     	-webkit-box-shadow: 0 0 2px #ED1C24 inset;
     	-moz-box-shadow: 0 0 2px #ed1c24 inset;
@@ -39,13 +44,11 @@ input:focus, select:focus {
     	border: 1px solid #ED1C24;
     	outline: none;
 }
-
 .checkboxes {
 	border-radius: 5px;
 	padding: 2px;
 	border: 2px solid #DCDBDB !important;
 }
-
 .checkbox {
 	box-sizing: content-box !important;
 }
