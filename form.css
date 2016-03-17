@@ -11,7 +11,7 @@ select {
 	padding: 7px !important;
 }
 a.checkbox {
-	padding: 4px !important;
+	padding: 2px 7px 2px 7px !important;
 }
 input, select, a.checkbox {
 	-webkit-border-radius: 3px;
