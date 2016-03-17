@@ -41,3 +41,7 @@ input:focus, select:focus {
 	padding: 2px;
 	border: 2px solid #DCDBDB !important;
 }
+
+.checkbox {
+	box-sizing: content-box !important;
+}
