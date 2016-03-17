@@ -22,12 +22,10 @@ input, select, a.checkbox {
     border: 1px solid #C8C8C8;
     color: #777;
     font: 13px Helvetica, Arial, sans-serif;
-    margin: 0 0 10px;
     padding: 15px 10px 15px 40px;
-    width: 270px;
 }
 
-input:focus, select:focus, a.checkbox:focus {
+input:focus, select:focus {
     -webkit-box-shadow: 0 0 2px #ED1C24 inset;
     -moz-box-shadow: 0 0 2px #ed1c24 inset;
     -ms-box-shadow: 0 0 2px #ed1c24 inset;
