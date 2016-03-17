@@ -36,7 +36,7 @@ input:focus, select:focus {
     	outline: none;
 }
 
-div.checkboxes {
+.checkboxes {
 	border-radius: 5px;
 	padding: 2px;
 	border: 2px solid #DCDBDB;
