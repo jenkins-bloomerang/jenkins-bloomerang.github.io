@@ -22,7 +22,7 @@ input, select, a.checkbox {
     	border: 1px solid #C8C8C8;
     	color: #000000;
     	font: 13px "Century Gothic", Arial, sans-serif;
-    	padding: 15px 10px 15px 40px;
+    	padding: 7px !important;
 }
 
 input:focus, select:focus {
