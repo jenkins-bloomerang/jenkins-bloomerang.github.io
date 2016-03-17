@@ -2,7 +2,7 @@ body {
 	font-family: "Century Gothic", Arial, Sans-Serif;
 	font-size: 10pt;
 }
-input select {
+input, select {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -27,7 +27,7 @@ input select {
     width: 270px;
 }
 
-input:focus select:focus {
+input:focus, select:focus {
     -webkit-box-shadow: 0 0 2px #ED1C24 inset;
     -moz-box-shadow: 0 0 2px #ed1c24 inset;
     -ms-box-shadow: 0 0 2px #ed1c24 inset;
