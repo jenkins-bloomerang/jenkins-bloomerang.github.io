@@ -2,6 +2,10 @@ body {
 	font-family: "Century Gothic", Arial, Sans-Serif;
 	font-size: 10pt;
 }
+select {
+	width: 275px;
+	height: 35px;
+}
 input, select, a.checkbox {
 	-webkit-border-radius: 3px;
     	-moz-border-radius: 3px;
