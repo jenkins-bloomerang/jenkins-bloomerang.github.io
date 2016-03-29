@@ -59,3 +59,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     background: #FFFFFF;
     background: linear-gradient(to bottom right, #FFFFFF, #A0CE4E);
 }
+.gradientblue {
+    background: #FFFFFF;
+    background: linear-gradient(to bottom right, #FFFFFF, ##52A3D8);	
+}
