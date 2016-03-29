@@ -55,6 +55,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
 .textblock {
     text-align: justify;
 }
+
 .gradientgreen {
     background: #FFFFFF;
     background: linear-gradient(to bottom right, #FFFFFF, #A0CE4E);
