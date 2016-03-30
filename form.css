@@ -65,7 +65,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     background: linear-gradient(to bottom right, #FFFFFF, #52A3D8);	
 }
 
-input.btn-submit, a.customlink:link, a.customlink:visited {
+a.customlink:link, a.customlink:visited, #express-submit {
     color: black;
     padding: 10px 5px;
     text-align: center; 
@@ -76,7 +76,7 @@ input.btn-submit, a.customlink:link, a.customlink:visited {
     border-radius: 25px;
 }
 
-input.btn-submit:hover, a.customlink:hover, a.customlink:active {
+a.customlink:hover, a.customlink:active, #express-submit:hover {
     background: #07FAEC;
     background: linear-gradient(to bottom right, #000000, #07FAEC);
     color: white;
