@@ -65,7 +65,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     background: linear-gradient(to bottom right, #FFFFFF, #52A3D8);	
 }
 
-a.customlink:link, a.customlink:visited, #express-submit {
+a.customlink:link, a.customlink:visited, #express-submit, .btn-submit-email {
     color: black;
     padding: 10px 5px;
     text-align: center; 
@@ -76,7 +76,7 @@ a.customlink:link, a.customlink:visited, #express-submit {
     border-radius: 25px;
 }
 
-a.customlink:hover, a.customlink:active, #express-submit:hover {
+a.customlink:hover, a.customlink:active, #express-submit:hover, .btn-submit-email:hover {
     background: #07FAEC;
     background: linear-gradient(to bottom right, #000000, #07FAEC);
     color: white;
