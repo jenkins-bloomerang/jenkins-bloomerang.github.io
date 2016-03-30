@@ -1,0 +1,66 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", Arial, Sans-Serif;
+	font-size: 10pt;
+}
+input {
+	padding: 7px !important;
+}
+select {
+	width: 275px;
+	height: 35px;
+	padding: 7px !important;
+}
+a.checkbox {
+	padding: 2px 7px 2px 7px !important;
+}
+input:not([type=radio]):not([type=checkbox]), select, textarea, a.checkbox {
+	-webkit-border-radius: 3px;
+    	-moz-border-radius: 3px;
+    	-ms-border-radius: 3px;
+    	-o-border-radius: 3px;
+    	border-radius: 3px;
+    	-webkit-box-shadow: 0 1px 0 #FFF, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    	-moz-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    	-ms-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    	-o-box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    	box-shadow: 0 1px 0 #FFF, 0 -2px 5px rgba(0, 0, 0, 0.08) inset;
+    	-webkit-transition: all 0.5s ease;
+    	-moz-transition: all 0.5s ease;
+    	-ms-transition: all 0.5s ease;
+    	-o-transition: all 0.5s ease;
+    	transition: all 0.5s ease;
+    	background: #EAE7E7;
+    	border: 1px solid #C8C8C8;
+    	color: #000000;
+    	font: 13px "Century Gothic", Arial, sans-serif;
+}
+input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus {
+    	-webkit-box-shadow: 0 0 2px #ED1C24 inset;
+    	-moz-box-shadow: 0 0 2px #ed1c24 inset;
+    	-ms-box-shadow: 0 0 2px #ed1c24 inset;
+    	-o-box-shadow: 0 0 2px #ed1c24 inset;
+    	box-shadow: 0 0 2px #ED1C24 inset;
+    	background-color: #FFF;
+    	border: 1px solid #ED1C24;
+    	outline: none;
+}
+.checkboxes {
+	border-radius: 5px;
+	padding: 2px;
+	border: 2px solid #DCDBDB !important;
+}
+.checkbox {
+	box-sizing: content-box !important;
+}
+.textblock {
+    text-align: justify;
+}
+
+.gradientgreen {
+    background: #FFFFFF;
+    background: linear-gradient(to bottom right, #FFFFFF, #A0CE4E);
+}
+.gradientblue {
+    background: #FFFFFF;
+    background: linear-gradient(to bottom right, #FFFFFF, ##52A3D8);	
+}
