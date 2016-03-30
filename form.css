@@ -65,21 +65,21 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     background: linear-gradient(to bottom right, #FFFFFF, #52A3D8);	
 }
 
-a.customlink:link, a.customlink:visited, #express-submit, .btn-submit-email {
-    color: black;
-    padding: 10px 5px;
-    text-align: center; 
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    display: inline-block;
-    border-radius: 25px;
+a.customlink:link, a.customlink:visited, input.btn-submit-donation, input.btn-submit-email {
+    color: black !important;
+    padding: 10px 5px !important;
+    text-align: center !important; 
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 1.1em !important;
+    display: inline-block !important;
+    border-radius: 25px !important;
 }
 
-a.customlink:hover, a.customlink:active, #express-submit:hover, .btn-submit-email:hover {
-    background: #07FAEC;
-    background: linear-gradient(to bottom right, #000000, #07FAEC);
-    color: white;
+a.customlink:hover, a.customlink:active, input.btn-submit-donation:hover, input.btn-submit-email:hover {
+    background: #07FAEC !important;
+    background: linear-gradient(to bottom right, #000000, #07FAEC) !important;
+    color: white !important;
 }
 
 .roundedblock {
