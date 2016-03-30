@@ -57,6 +57,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
 }
 .textblock {
     text-align: justify;
+    max-width: 700px;
 }
 
 .gradientblue {
