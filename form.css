@@ -32,7 +32,7 @@ input:not([type=radio]):not([type=checkbox]), select, textarea, a.checkbox {
     	-o-transition: all 0.5s ease;
     	transition: all 0.5s ease;
     	background: #EAE7E7;
-    	background: linear-gradient(to bottom right, #FFFFFF, #A0CE4E);
+    	background: linear-gradient(to bottom right, #FFFFFF, #07FAEC);
     	border: 1px solid #C8C8C8;
     	color: #000000;
     	font: 13px "Century Gothic", Arial, sans-serif;
