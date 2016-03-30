@@ -55,7 +55,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
 .checkbox {
 	box-sizing: content-box !important;
 }
-.justify {
+.textblock {
     text-align: justify;
 }
 
