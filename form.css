@@ -81,3 +81,25 @@ a.customlink:hover, a.customlink:active {
     background: linear-gradient(to bottom right, #000000, #07FAEC);
     color: white;
 }
+
+.roundedblock {
+	max-width: 1000px;
+	text-align: center;
+	margin: 10 10 10 0;
+	padding: 10px;
+	border-radius: 15px;
+	border: 5px;
+	border-color: #89CA2B;
+	border-style: outset;
+	float: left;
+}
+.gradtobottomright {
+	color: black;
+	background: #FFFFFF;
+	background: linear-gradient(to bottom right, white, darkcyan);
+}
+.gradtotopleft {
+	color: black;
+	background: #FFFFFF;
+	background: linear-gradient(to top left, white, darkcyan);
+}
