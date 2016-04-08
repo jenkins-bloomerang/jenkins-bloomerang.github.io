@@ -65,7 +65,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     background: linear-gradient(to bottom right, #FFFFFF, #52A3D8);	
 }
 
-a.customlink:link, a.customlink:visited, input.btn-submit-donation, input.btn-submit-email {
+a.customlink:link, a.customlink:visited, input.btn-submit {
     color: black !important;
     padding: 10px 5px !important;
     text-align: center !important; 
@@ -77,7 +77,7 @@ a.customlink:link, a.customlink:visited, input.btn-submit-donation, input.btn-su
     width: 200px;
 }
 
-a.customlink:hover, a.customlink:active, input.btn-submit-donation:hover, input.btn-submit-email:hover {
+a.customlink:hover, a.customlink:active, input.btn-submit:hover {
     background: #07FAEC !important;
     background: linear-gradient(to bottom right, #000000, #07FAEC) !important;
     color: white !important;
