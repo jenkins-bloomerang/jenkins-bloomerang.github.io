@@ -1,8 +1,8 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", Arial, Sans-Serif;
 	font-size: 10pt;
-	background: #FFFFFF; /* Old browsers */
-	background: linear-gradient(135deg, #B6F17F 0%,#9DDD35 38%,#7ABC10 65%,#81B81C 100%);
+	background: #FFFFFF;
+    background: linear-gradient(135deg, #b6f17f 0%,#9ddd35 38%,#7abc10 65%,#81b81c 100%);
 }
 input {
 	padding: 7px !important;
@@ -65,7 +65,7 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     background: linear-gradient(to bottom right, #FFFFFF, #52A3D8);	
 }
 
-a.customlink:link, a.customlink:visited, input.btn-submit {
+a.customlink:link, a.customlink:visited, input.btn-submit-donation, input.btn-submit-email {
     color: black !important;
     padding: 10px 5px !important;
     text-align: center !important; 
@@ -77,7 +77,7 @@ a.customlink:link, a.customlink:visited, input.btn-submit {
     width: 200px;
 }
 
-a.customlink:hover, a.customlink:active, input.btn-submit:hover {
+a.customlink:hover, a.customlink:active, input.btn-submit-donation:hover, input.btn-submit-email:hover {
     background: #07FAEC !important;
     background: linear-gradient(to bottom right, #000000, #07FAEC) !important;
     color: white !important;
@@ -86,10 +86,10 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 .roundedblock {
 	max-width: 1000px;
 	text-align: left;
-	margin: 10 5 10 0;
-	padding: 10px;
+	margin: auto auto 5 auto;
+	padding: 5px;
 	border-radius: 15px;
-	border: 5px;
+	border: 3px;
 	border-color: #89CA2B;
 	border-style: outset;
 	float: left;
@@ -114,6 +114,6 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 }
 .internalblock {
     float: left;
-    margin: 15 15 15 15;
-    min-width: 250px;
+    margin: 5 5 5 5;
+    min-width: 300px;
 }
