@@ -1,7 +1,7 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, "Century Gothic", Arial, Sans-Serif;
 	font-size: 10pt;
-	background: #FFFFFF /* Old browsers */
+	background: #FFFFFF; /* Old browsers */
 	background: linear-gradient(135deg, #B6F17F 0%,#9DDD35 38%,#7ABC10 65%,#81B81C 100%);
 }
 input {
