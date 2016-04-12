@@ -86,7 +86,7 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 .roundedblock {
 	max-width: 1000px;
 	text-align: left;
-	margin: auto auto 5 auto;
+	margin: auto 3 5 auto;
 	padding: 8px;
 	border-radius: 15px;
 	border: 3px;
