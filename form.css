@@ -117,3 +117,8 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
     margin: 5 5 5 5;
     min-width: 300px;
 }
+.internalheading {
+	text-align: center !important;
+	text-decoration: underline !important;
+	font-weight: bold !important;
+}
