@@ -122,3 +122,18 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 	text-decoration: underline !important;
 	font-weight: bold !important;
 }
+.table {
+	display: table;
+}
+.table.forminfo {
+	max-width: 300px;
+}
+.row {
+	display: table-row;
+}
+.cell {
+	display: table-cell;
+	font-size: 1.2em;
+	font-style: italic;
+	padding: 0 10 1 0;
+}
