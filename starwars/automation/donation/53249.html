@@ -9,18 +9,38 @@
 </head>
 <body>
 	<h1 id="heading1">Online Donation Test</h1>
-	<div>
-		<div class="table forminfo">
-			<div class="row"><div class="cell">Environment:</div><div class="cell" id="environmentName" data-shortName="starwars"><strong>QA (Starwars)</strong></div></div>
-			<div class="row"><div class="cell">Database:</div><div class="cell" id="databaseName"><strong>automation</strong></div></div>
-			<div class="row"><div class="cell">WidgetID:</div><div class="cell" id="widgetId"><strong>53249</strong></div></div>
-			<div class="row"><div class="cell">Processor:</div><div class="cell"><strong>Stripe</strong></div></div>
-			<div class="row"><div class="cell">Self Hosted:</div><div class="cell"><strong>No</strong></div></div>
-		</div>	
+	<div class="clickable">
+		<label for="showHideCheckBox">Show/Hide Form Information</label>
+		<input type="checkbox" id="showHideCheckBox" />
+		<div class="table appear">
+			<div class="row">
+				<div class="cell">Environment:</div>
+				<div class="cell bold" id="environmentName" data-shortName="starwars">QA (Starwars)</div>
+			</div>
+			<div class="row">
+				<div class="cell">Database:</div>
+				<div class="cell bold" id="databaseName">automation</div>
+			</div>	
+			<div class="row">
+				<div class="cell">Widget ID:</div>
+				<div class="cell bold" id="widgetId">53249</div>
+			</div>	
+			<div class="row">
+				<div class="cell">Processor:</div>
+				<div class="cell bold">Stripe</div>
+			</div>
+			<div class="row">
+				<div class="cell">Email Response:</div>
+				<div class="cell bold">Standard</div>
+			</div>
+			<div class="row">
+				<div class="cell">Self Hosted</div>
+				<div class="cell bold">No</div>
+			</div>
+		</div>
 	</div>
 	<br>
-	<div style="clear: both;"></div>
-	<div class="roundedblock gradtobottomright">
+	<div class="roundedblock gradtobottomright left" style="margin-bottom: 100px;">
 		<div style="display: table; margin-bottom: 15px;">
 					<div style="display: table-row;">
 						<span style="display: table-cell; display: inline-block;" class="fa-stack fa-2x">
@@ -32,5 +52,6 @@
 		</div>	
 		<script src="https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/automation/.widget-js/53249.js" type="text/javascript"></script>
 	</div>
+	
 </body>
 </html>
