@@ -123,8 +123,6 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 	border-radius: 15px;
 	display: inline-table;
 	margin-bottom: 20px;
-	flex-direction: row;
-	flex-wrap: wrap;
 }
 .table-info .row {
 	display: table-row;
