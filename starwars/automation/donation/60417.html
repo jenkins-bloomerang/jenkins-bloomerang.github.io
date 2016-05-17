@@ -9,20 +9,45 @@
 </head>
 <body>
 	<h1 id="heading1">Online Donation Test</h1>
-	<h2>Old Custom Form - Stripe</h2>
-	<span class="roundedblock gradtotopleft">Environment: <span id="environmentName" data-shortName="starwars"><strong>QA (Starwars)</strong></span></span>
-	<span class="roundedblock gradtotopleft">Database: <span id="databaseName"><strong>automation</strong></span></span>
-	<span class="roundedblock gradtotopleft">WidgetID: <span id="widgetId"><strong>60417</strong></span></span>
-	<div style="clear: both;"></div>
-	<div class="roundedblock gradtobottomright">
-		<div style="display: table; margin-bottom: 15px;">
-					<div style="display: table-row;">
-						<span style="display: table-cell; display: inline-block;" class="fa-stack fa-2x">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-money fa-stack-1x fa-inverse"></i>
-						</span>
-						<h2 style="display: table-cell;">Donate Now!</h2>
-					</div>
+	<div class="table-info">
+		<div class="row">
+			<div class="cell">Environment:</div>
+			<div class="cell bold" id="environmentName" data-shortName="starwars">QA (Starwars)</div>
+		</div>
+		<div class="row">
+			<div class="cell">Database:</div>
+			<div class="cell bold" id="databaseName">automation</div>
+		</div>	
+		<div class="row">
+			<div class="cell">Widget ID:</div>
+			<div class="cell bold" id="widgetId">60417</div>
+		</div>	
+		<div class="row">
+			<div class="cell">Processor:</div>
+			<div class="cell bold">Stripe</div>
+		</div>
+		<div class="row">
+			<div class="cell">Email Response:</div>
+			<div class="cell bold">Standard</div>
+		</div>
+		<div class="row">
+			<div class="cell">Self Hosted:</div>
+			<div class="cell bold">No</div>
+		</div>
+		<div class="row">
+			<div class="cell">Legacy Custom:</div>
+			<div class="cell bold">Yes</div>
+		</div>
+	</div>
+	<div class="roundedblock gradtobottomright left">
+		<div class="block-header">
+			<div class="row">
+				<span class="cell fa-stack fa-2x">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-money fa-stack-1x fa-inverse"></i>
+				</span>
+				<h2 class="cell">Donate Now!</h2>
+			</div>
 		</div>	
 		<script type="text/javascript" id="bloomerangForm60417"></script>
 			<pre><script type="text/javascript">
@@ -366,7 +391,7 @@
 																'  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
 																	'   ' + 
 																	'</div>';( function($) {if (Bloomerang.useDonationId('60417')) { 
-												Bloomerang.useProcessor('16384', 'Stripe', 'pk_test_iwafnWHGN5QOaPLVP3lN6QZX', false, '');
+												Bloomerang.useProcessor('16384', 'Stripe', 'pk_test_iwafnWHGN5QOaPLVP3lN6QZX', false, '', true);
 											} else {
 												html60417 = '<p style="color: red">???Widget.Error.Multiple???</p>';
 											}if (jQuery('#bloomerangForm60417').length) {
@@ -655,6 +680,6 @@
 
 							startBloomerangLoad();
 			</script></pre>
-	</div>
+	</div>    
 </body>
 </html>

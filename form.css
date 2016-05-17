@@ -59,12 +59,10 @@ input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus
     text-align: justify;
     max-width: 750px;
 }
-
 .gradientblue {
     background: #FFFFFF;
     background: linear-gradient(to bottom right, #FFFFFF, #52A3D8);	
 }
-
 a.customlink:link, a.customlink:visited, input.btn-submit {
     color: black !important;
     padding: 10px 5px !important;
@@ -76,13 +74,11 @@ a.customlink:link, a.customlink:visited, input.btn-submit {
     border-radius: 25px !important;
     width: 200px;
 }
-
 a.customlink:hover, a.customlink:active, input.btn-submit:hover {
     background: #07FAEC !important;
     background: linear-gradient(to bottom right, #000000, #07FAEC) !important;
     color: white !important;
 }
-
 .roundedblock {
 	max-width: 1000px;
 	text-align: left;
@@ -120,15 +116,33 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 	text-decoration: underline !important;
 	font-weight: bold !important;
 }
-.table {
-	display: table;
+.table-info {
+	background: #333;
+    color: #fff;
+    padding: 10px;
+	border-radius: 15px;
+	display: inline-table;
+	margin-bottom: 20px;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
-.row {
+.table-info .row {
 	display: table-row;
 }
-.cell {
-	display: table-cell;	
-	padding: 0 5 5 0;
+.table-info .row > .cell {
+	display: table-cell;
+	padding: 0 5 1 5;
+}
+.block-header {
+	display: table;
+	margin-bottom: 15px;
+}
+.block-header > .row {
+	display: table-row;
+}
+.block-header > .row > .cell {
+	display: table-cell;
+	display: inline-block;
 }
 .bold {
 	font-weight: bold;
@@ -136,30 +150,11 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 .left {
 	float: left;
 }
-.right {
-	float: right;
-}
-.clearboth {
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
 	clear: both;
-}
-
-.clickable label {
-    cursor: pointer;
-    border-bottom: 1px solid #000;
-}
-
-.clickable .appear { 
-    display: none;
-    font-family: Arial, sans-serif;
-    background: #333;
-    color: #fff;
-    padding: 10px;
-	border-radius: 15px;
-}
-
-.clickable input {
-    display: none;
-}
-.clickable input:checked ~ .appear {
-    display: block;
+	height: 0;
 }
