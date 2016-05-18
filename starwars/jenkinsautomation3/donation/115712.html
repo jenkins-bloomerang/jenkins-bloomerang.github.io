@@ -1,0 +1,1076 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="/form.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+	<h1 id="heading1">Online Donation Test</h1>
+	<div class="table-info">
+		<div class="row">
+			<div class="cell">Environment:</div>
+			<div class="cell bold" id="environmentName" data-shortName="starwars">QA (Starwars)</div>
+		</div>
+		<div class="row">
+			<div class="cell">Database:</div>
+			<div class="cell bold" id="databaseName">jenkinsautomation3</div>
+		</div>	
+		<div class="row">
+			<div class="cell">Widget ID:</div>
+			<div class="cell bold" id="widgetId">115712</div>
+		</div>	
+		<div class="row">
+			<div class="cell">Processor:</div>
+			<div class="cell bold">BluePay</div>
+		</div>
+		<div class="row">
+			<div class="cell">Email Response:</div>
+			<div class="cell bold">Standard</div>
+		</div>
+		<div class="row">
+			<div class="cell">Self Hosted:</div>
+			<div class="cell bold">Yes</div>
+		</div>
+	</div>
+	<div class="roundedblock gradtobottomright left">
+		<div class="block-header">
+			<div class="row">
+				<span class="cell fa-stack fa-2x">
+					<i class="fa fa-circle fa-stack-2x"></i>
+					<i class="fa fa-money fa-stack-1x fa-inverse"></i>
+				</span>
+				<h2 class="cell">Donate Now!</h2>
+			</div>
+		</div>
+		<script type="text/javascript" id="bloomerangForm115712"></script>
+			<pre><script type="text/javascript">
+				var insertForm = function() {
+					var html115712 = '<style text=\'text/css\'>' + 
+			'.donation-form label{color: #404040;' + 
+			'                display: block;}' + 
+			'' + 
+			'.donation-form label.error{color:#900;' + 
+			'                display: inline-block; ' + 
+			'                padding: 0 10px;}' + 
+			'' + 
+			'.donation-form section{padding: 5px;}' + 
+			'' + 
+			'.donation-form .field{padding: 4px 0;}' + 
+			'' + 
+			'.donation-form .field .required-star{color: #aa0000; ' + 
+			'                display: inline-block; ' + 
+			'                margin-left: 5px;}' + 
+			'' + 
+			'.donation-form .field .checkboxes{max-width:275px;' + 
+			'                border: 1px solid #A9A9A9;' + 
+			'                -webkit-transition: all .3s ease-out;' + 
+			'                -moz-transition: all .3s ease-out;' + 
+			'                transition: all .3s ease-out;}' + 
+			'' + 
+			'.donation-form .field .checkbox{display:block;' + 
+			'                position:relative;' + 
+			'                -moz-box-sizing:border-box;' + 
+			'                box-sizing:border-box;' + 
+			'                height:30px;' + 
+			'                line-height:26px;' + 
+			'                padding:2px 28px 2px 8px;' + 
+			'                border-bottom:1px solid rgba(0,0,0,0.1);' + 
+			'                color:#404040;  ' + 
+			'                overflow:hidden;' + 
+			'                text-decoration:none; }' + 
+			'' + 
+			'.donation-form .field .checkbox input{opacity:0.01;' + 
+			'                position:absolute;' + 
+			'                left:-50px;  ' + 
+			'                z-index:-5;}' + 
+			'' + 
+			'.donation-form .field .checkbox:last-child{border-bottom:none;}' + 
+			'' + 
+			'.donation-form .field .checkbox.selected{background: rgb(50, 142, 253);' + 
+			'                color:#fff; }' + 
+			'' + 
+			'.donation-form .field .checkbox.selected:before{color:#fff;' + 
+			'                text-shadow:1px 2px 1px rgba(0,0,0,0.25);' + 
+			'                line-height:30px;' + 
+			'                position:absolute;' + 
+			'                right:10px; }' + 
+			'' + 
+			'.donation-form .field input,' + 
+			'                     .donation-form .field select,' + 
+			'                     .donation-form .field textarea{padding: 4px; ' + 
+			'                max-width: 275px;' + 
+			'                width: 96%}' + 
+			'' + 
+			'.donation-form .field select{box-sizing: content-box;}' + 
+			'' + 
+			'.donation-form .section.recurring{padding-left: 30px}' + 
+			'' + 
+			'.donation-form .field.radio label,' + 
+			'                     .donation-form .field.checkbox label{display: inline-block;' + 
+			'                padding-left: 9px;' + 
+			'                text-indent: -15px;}' + 
+			'' + 
+			'.donation-form .field.radio input,' + 
+			'                     .donation-form .field.checkbox input{width: 25px;' + 
+			'                height: 13px;' + 
+			'                padding: 0;' + 
+			'                margin:0;' + 
+			'                vertical-align: bottom;' + 
+			'                position: relative;' + 
+			'                top: -4px;' + 
+			'                *overflow: hidden;}' + 
+			'' + 
+			'.donation-form #cardExpirationMonth,' + 
+			'                     .donation-form #cardExpirationYear{width: 85px;}' + 
+			'' + 
+			'.donation-form #security-code{width: 55px;}' + 
+			'' + 
+			'.donation-form .field .sidenote{color: #999;' + 
+			'                font-size: 10px; }' + 
+			'' + 
+			'.donation-form .field.other-option,' + 
+			'                     .donation-form .field.other-amount,' + 
+			'                     .donation-form .field.cardExpirationMonth,' + 
+			'                     .donation-form .field.cardExpirationYear{display: inline-block;}' + 
+			'' + 
+			'.donation-form .field.other-amount{padding-left: 6px;}' + 
+			'' + 
+			'.donation-form .field.cardExpirationMonth{padding-right: 20px;}' + 
+			'' + 
+			'.donation-form #other-amount{width: 65px;}' + 
+			'' + 
+			'.donation-form #frequency{width: 85px;}' + 
+			'' + 
+			'.donation-form #start-date{width: 150px;}' + 
+			'' + 
+			'.donation-form .errors{border: 1px solid #900;' + 
+			'                color: #900;  ' + 
+			'                padding: 10px;}' + 
+			'' + 
+			'.donation-form .radio label.error{display: inline-block;' + 
+			'                padding-right: 86%;  ' + 
+			'                float: right;}' + 
+			'' + 
+			'.donation-form .hidden{display: none;}' + 
+			'' + 
+			'.btn-group .btn-submit-donation{padding: 4px 10px;}' + 
+			'' + 
+			'iframe#spreedly-iframe[style=\'visibility: hidden;\']{display: none;}' + 
+			'' + 
+			'</style>' + 
+			'' + 
+			'<div id="donation-form-container">' + 
+			'  <form id="express-form" class="donation-form" method="post" action="javascript:bloomerangSubmit()" onsubmit="bloomerangSubmit()">' + 
+			'    <div class="errors hidden"></div>' + 
+			'    <div class="section donation">' + 
+			'      <h3>Donation</h3>' + 
+			'      <div class="field radio 118784 required">' + 
+			'<label for="118784"><input id="118784" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input>$10.00 - Level One</label>' + 
+			'</div>' + 
+			'<div class="field radio 118785 required">' + 
+			'<label for="118785"><input id="118785" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input>$25.00 - Level Two</label>' + 
+			'</div>' + 
+			'<div class="field radio 118786 required">' + 
+			'<label for="118786"><input id="118786" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input>$50.00 - Level Three</label>' + 
+			'</div>' + 
+			'<div class="field radio 118787 required">' + 
+			'<label for="118787"><input id="118787" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input>$100.00 - Level Four</label>' + 
+			'</div>' + 
+			'<div class="field radio other-option required">' + 
+			'<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input>Other</label>' + 
+			'</div>' + 
+			'<div class="field number other-amount">' + 
+			'<input id="other-amount" name="other-amount" class="currency minimum1" type="number" step="any" placeholder="$0.00"></input>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    <div class="section recurring">' + 
+			'      <div class="field checkbox recurring">' + 
+			'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input>Show my support by making this a recurring donation</label>' + 
+			'</div>' + 
+			'<div class="field  frequency required hidden">' + 
+			'<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
+			'<select id="frequency" name="frequency" class="required"><option value=""></option>' + 
+			'<option value="Daily">Daily</option>' + 
+			'<option value="Weekly">Weekly</option>' + 
+			'<option value="Monthly" selected>Monthly</option>' + 
+			'<option value="Quarterly">Quarterly</option>' + 
+			'<option value="Yearly">Yearly</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field date start-date required hidden">' + 
+			'<label for="start-date">Start Date<span class="required-star">*</span></label>' + 
+			'<input id="start-date" name="start-date" class="validDate required" type="date" placeholder="mm/dd/yyyy"></input>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    ' + 
+			'    <div class="section contact">' + 
+			'      <h3>Contact Information</h3>' + 
+			'      <div class="field text first-name required">' + 
+			'<label for="first-name">First Name<span class="required-star">*</span></label>' + 
+			'<input id="first-name" name="first-name" class="required" type="text"></input>' + 
+			'</div>' + 
+			'<div class="field text last-name required">' + 
+			'<label for="last-name">Last Name<span class="required-star">*</span></label>' + 
+			'<input id="last-name" name="last-name" class="required" type="text"></input>' + 
+			'</div>' + 
+			'<div class="field email email-address required">' + 
+			'<label for="email-address">Email<span class="required-star">*</span></label>' + 
+			'<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    <div class="section billing-address">' + 
+			'      <h3>Billing Address</h3>' + 
+			'      <div class="field  street-address required">' + 
+			'<label for="street-address">Address<span class="required-star">*</span></label>' + 
+			'<textarea id="street-address" name="street-address" class="required"></textarea>' + 
+			'</div>' + 
+			'<div class="field text city required">' + 
+			'<label for="city">City<span class="required-star">*</span></label>' + 
+			'<input id="city" name="city" class="required" type="text"></input>' + 
+			'</div>' + 
+			'<div class="field  state required">' + 
+			'<label for="state">State<span class="required-star">*</span></label>' + 
+			'<select id="state" name="state" class="required"><option value=""></option>' + 
+			'<option value="AL">Alabama</option>' + 
+			'<option value="AK">Alaska</option>' + 
+			'<option value="AS">American Samoa</option>' + 
+			'<option value="AZ">Arizona</option>' + 
+			'<option value="AR">Arkansas</option>' + 
+			'<option value="AE">Armed Forces Africa, Canada, Europe, Middle East</option>' + 
+			'<option value="AA">Armed Forces Americas (except Canada)</option>' + 
+			'<option value="AP">Armed Forces Pacific</option>' + 
+			'<option value="CA">California</option>' + 
+			'<option value="CO">Colorado</option>' + 
+			'<option value="CT">Connecticut</option>' + 
+			'<option value="DE">Delaware</option>' + 
+			'<option value="DC">District of Columbia</option>' + 
+			'<option value="FL">Florida</option>' + 
+			'<option value="GA">Georgia</option>' + 
+			'<option value="GU">Guam</option>' + 
+			'<option value="HI">Hawaii</option>' + 
+			'<option value="ID">Idaho</option>' + 
+			'<option value="IL">Illinois</option>' + 
+			'<option value="IN">Indiana</option>' + 
+			'<option value="IA">Iowa</option>' + 
+			'<option value="KS">Kansas</option>' + 
+			'<option value="KY">Kentucky</option>' + 
+			'<option value="LA">Louisiana</option>' + 
+			'<option value="ME">Maine</option>' + 
+			'<option value="MD">Maryland</option>' + 
+			'<option value="MA">Massachusetts</option>' + 
+			'<option value="MI">Michigan</option>' + 
+			'<option value="MN">Minnesota</option>' + 
+			'<option value="MS">Mississippi</option>' + 
+			'<option value="MO">Missouri</option>' + 
+			'<option value="MT">Montana</option>' + 
+			'<option value="NE">Nebraska</option>' + 
+			'<option value="NV">Nevada</option>' + 
+			'<option value="NH">New Hampshire</option>' + 
+			'<option value="NJ">New Jersey</option>' + 
+			'<option value="NM">New Mexico</option>' + 
+			'<option value="NY">New York</option>' + 
+			'<option value="NC">North Carolina</option>' + 
+			'<option value="ND">North Dakota</option>' + 
+			'<option value="OH">Ohio</option>' + 
+			'<option value="OK">Oklahoma</option>' + 
+			'<option value="OR">Oregon</option>' + 
+			'<option value="PA">Pennsylvania</option>' + 
+			'<option value="PR">Puerto Rico</option>' + 
+			'<option value="RI">Rhode Island</option>' + 
+			'<option value="SC">South Carolina</option>' + 
+			'<option value="SD">South Dakota</option>' + 
+			'<option value="TN">Tennessee</option>' + 
+			'<option value="TX">Texas</option>' + 
+			'<option value="VI">US Virgin Islands</option>' + 
+			'<option value="UT">Utah</option>' + 
+			'<option value="VT">Vermont</option>' + 
+			'<option value="VA">Virginia</option>' + 
+			'<option value="WA">Washington</option>' + 
+			'<option value="WV">West Virginia</option>' + 
+			'<option value="WI">Wisconsin</option>' + 
+			'<option value="WY">Wyoming</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field number postal-code required">' + 
+			'<label for="postal-code">Postal Code<span class="required-star">*</span></label>' + 
+			'<input id="postal-code" name="postal-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
+			'</div>' + 
+			'<div class="field tel phone-number">' + 
+			'<label for="phone-number">Phone</label>' + 
+			'<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    <div class="section payment">' + 
+			'      <h3>Payment Information</h3>' + 
+			'      <div class="field radio Savings required">' + 
+			'<label for="Savings"><input id="Savings" name="payment-type" class="required" type="radio" maxlength="255"></input>Savings</label>' + 
+			'</div>' + 
+			'<div class="field radio Checking required">' + 
+			'<label for="Checking"><input id="Checking" name="payment-type" class="required" type="radio" maxlength="255"></input>Checking</label>' + 
+			'</div>' + 
+			'<div class="field radio CreditCard required">' + 
+			'<label for="CreditCard"><input id="CreditCard" name="payment-type" class="required" type="radio" maxlength="255"></input>Credit Card</label>' + 
+			'</div>' + 
+			'<div class="field tel routingNumber required hidden">' + 
+			'<label for="routingNumber">Routing Number<span class="required-star">*</span></label>' + 
+			'<input id="routingNumber" name="routing-number" class="required" type="tel" maxlength="255"></input>' + 
+			'</div>' + 
+			'<div class="field tel accountNumber required hidden">' + 
+			'<label for="accountNumber">Account Number<span class="required-star">*</span></label>' + 
+			'<input id="accountNumber" name="account-number" class="required" type="tel" maxlength="255"></input>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    <div class="section custom-fields">' + 
+			'      <h3>Additional Information</h3>' + 
+			'      <div class="field text CustomAccountField_128000">' + 
+			'<label for="CustomAccountField_128000">Auto Constituent Text Freeform</label>' + 
+			'<input id="CustomAccountField_128000" name="CustomAccountField_128000" type="text" maxlength="255"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128001">' + 
+			'<label for="CustomAccountField_128001">Auto Constituent Text Pick One</label>' + 
+			'<select id="CustomAccountField_128001" name="CustomAccountField_128001"><option value=""></option>' + 
+			'<option value="115752">One</option>' + 
+			'<option value="115753">Two</option>' + 
+			'<option value="115754">Three</option>' + 
+			'<option value="115755">Four</option>' + 
+			'<option value="115756">Five</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128002">' + 
+			'<label for="CustomAccountField_128002">Auto Constituent Text Pick Multiple</label>' + 
+			'<div id="CustomAccountField_128002" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115758" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115758" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">First</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115759" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115759" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Second</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115760" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115760" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Third</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115761" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115761" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Fourth</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115762" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115762" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Fifth</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field date CustomAccountField_128004">' + 
+			'<label for="CustomAccountField_128004">Auto Constituent Date Freeform</label>' + 
+			'<input id="CustomAccountField_128004" name="CustomAccountField_128004" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
+			'</div>' + 
+			'<div class="field date CustomAccountField_128005">' + 
+			'<label for="CustomAccountField_128005">Auto Constituent Date Pick One</label>' + 
+			'<select id="CustomAccountField_128005" name="CustomAccountField_128005"><option value=""></option>' + 
+			'<option value="115764">1/1/2011</option>' + 
+			'<option value="115765">2/1/2012</option>' + 
+			'<option value="115766">3/1/2013</option>' + 
+			'<option value="115767">4/1/2014</option>' + 
+			'<option value="115768">5/1/2015</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field date CustomAccountField_128006">' + 
+			'<label for="CustomAccountField_128006">Auto Constituent Date Pick Multiple</label>' + 
+			'<div id="CustomAccountField_128006" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115770" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115770" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">7/25/2011</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115771" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115771" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">8/25/2012</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115772" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115772" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">9/25/2013</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115773" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115773" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">10/25/2014</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115774" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115774" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">11/25/2015</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128007">' + 
+			'<label for="CustomAccountField_128007">Auto Constituent Year Freeform</label>' + 
+			'<input id="CustomAccountField_128007" name="CustomAccountField_128007" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128008">' + 
+			'<label for="CustomAccountField_128008">Auto Constituent Year Pick One</label>' + 
+			'<select id="CustomAccountField_128008" name="CustomAccountField_128008"><option value=""></option>' + 
+			'<option value="115776">2005</option>' + 
+			'<option value="115777">2006</option>' + 
+			'<option value="115778">2007</option>' + 
+			'<option value="115779">2008</option>' + 
+			'<option value="115780">2009</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128009">' + 
+			'<label for="CustomAccountField_128009">Auto Constituent Year Pick Multiple</label>' + 
+			'<div id="CustomAccountField_128009" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115782" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115782" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2011</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115783" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115783" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2012</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115784" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115784" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2013</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115785" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115785" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2014</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115786" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115786" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2015</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128010">' + 
+			'<label for="CustomAccountField_128010">Auto Constituent Number Freeform</label>' + 
+			'<input id="CustomAccountField_128010" name="CustomAccountField_128010" class="number" type="text" maxlength="255"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128011">' + 
+			'<label for="CustomAccountField_128011">Auto Constituent Number Pick One</label>' + 
+			'<select id="CustomAccountField_128011" name="CustomAccountField_128011"><option value=""></option>' + 
+			'<option value="115788">3.14</option>' + 
+			'<option value="115789">75.45</option>' + 
+			'<option value="115790">150</option>' + 
+			'<option value="115791">3789</option>' + 
+			'<option value="115792">138999</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128012">' + 
+			'<label for="CustomAccountField_128012">Auto Constituent Number Pick Multiple</label>' + 
+			'<div id="CustomAccountField_128012" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115794" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115794" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">55.768</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115795" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115795" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">678</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115796" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115796" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">8233.5</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115797" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115797" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">14500</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115798" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115798" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">8723300</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128013">' + 
+			'<label for="CustomAccountField_128013">Auto Constituent Currency Freeform</label>' + 
+			'<input id="CustomAccountField_128013" name="CustomAccountField_128013" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128014">' + 
+			'<label for="CustomAccountField_128014">Auto Constituent Currency Pick One</label>' + 
+			'<select id="CustomAccountField_128014" name="CustomAccountField_128014"><option value=""></option>' + 
+			'<option value="115800">$10.50</option>' + 
+			'<option value="115801">$25.00</option>' + 
+			'<option value="115802">$50.00</option>' + 
+			'<option value="115803">$100.00</option>' + 
+			'<option value="115804">$10,000.00</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomAccountField_128015">' + 
+			'<label for="CustomAccountField_128015">Auto Constituent Currency Pick Multiple</label>' + 
+			'<div id="CustomAccountField_128015" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115806" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115806" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$25.33</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115807" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115807" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$550.00</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115808" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115808" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$1,250.00</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115809" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115809" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$5,000.35</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="115810" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="115810" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$250,000.00</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124930">' + 
+			'<label for="CustomTransactionField_124930">Auto Transaction Text Freeform</label>' + 
+			'<input id="CustomTransactionField_124930" name="CustomTransactionField_124930" type="text" maxlength="255"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124931">' + 
+			'<label for="CustomTransactionField_124931">Auto Transaction Text Pick One</label>' + 
+			'<select id="CustomTransactionField_124931" name="CustomTransactionField_124931"><option value=""></option>' + 
+			'<option value="125957">One</option>' + 
+			'<option value="125958">Two</option>' + 
+			'<option value="125959">Three</option>' + 
+			'<option value="125960">Four</option>' + 
+			'<option value="125961">Five</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124932">' + 
+			'<label for="CustomTransactionField_124932">Auto Transaction Text Pick Multiple</label>' + 
+			'<div id="CustomTransactionField_124932" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125963" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125963" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">First</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125964" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125964" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Second</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125965" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125965" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Third</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125966" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125966" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Fourth</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125967" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125967" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">Fifth</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field date CustomTransactionField_124934">' + 
+			'<label for="CustomTransactionField_124934">Auto Transaction Date Freeform</label>' + 
+			'<input id="CustomTransactionField_124934" name="CustomTransactionField_124934" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
+			'</div>' + 
+			'<div class="field date CustomTransactionField_124935">' + 
+			'<label for="CustomTransactionField_124935">Auto Transaction Date Pick One</label>' + 
+			'<select id="CustomTransactionField_124935" name="CustomTransactionField_124935"><option value=""></option>' + 
+			'<option value="125969">1/1/2011</option>' + 
+			'<option value="125970">2/1/2012</option>' + 
+			'<option value="125971">3/1/2013</option>' + 
+			'<option value="125972">4/1/2014</option>' + 
+			'<option value="125973">5/1/2015</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field date CustomTransactionField_124936">' + 
+			'<label for="CustomTransactionField_124936">Auto Transaction Date Pick Multiple</label>' + 
+			'<div id="CustomTransactionField_124936" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125975" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125975" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">7/25/2011</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125976" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125976" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">8/25/2012</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125977" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125977" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">9/25/2013</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125978" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125978" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">10/25/2014</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125979" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125979" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">11/25/2015</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124937">' + 
+			'<label for="CustomTransactionField_124937">Auto Transaction Year Freeform</label>' + 
+			'<input id="CustomTransactionField_124937" name="CustomTransactionField_124937" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124938">' + 
+			'<label for="CustomTransactionField_124938">Auto Transaction Year Pick One</label>' + 
+			'<select id="CustomTransactionField_124938" name="CustomTransactionField_124938"><option value=""></option>' + 
+			'<option value="125981">2005</option>' + 
+			'<option value="125982">2006</option>' + 
+			'<option value="125983">2007</option>' + 
+			'<option value="125984">2008</option>' + 
+			'<option value="125985">2009</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124939">' + 
+			'<label for="CustomTransactionField_124939">Auto Transaction Year Pick Multiple</label>' + 
+			'<div id="CustomTransactionField_124939" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125987" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125987" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2011</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125988" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125988" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2012</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125989" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125989" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2013</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125990" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125990" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2014</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="125991" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125991" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">2015</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124940">' + 
+			'<label for="CustomTransactionField_124940">Auto Transaction Number Freeform</label>' + 
+			'<input id="CustomTransactionField_124940" name="CustomTransactionField_124940" class="number" type="text" maxlength="255"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124941">' + 
+			'<label for="CustomTransactionField_124941">Auto Transaction Number Pick One</label>' + 
+			'<select id="CustomTransactionField_124941" name="CustomTransactionField_124941"><option value=""></option>' + 
+			'<option value="125993">3.14</option>' + 
+			'<option value="125994">75.45</option>' + 
+			'<option value="125995">150</option>' + 
+			'<option value="125996">3789</option>' + 
+			'<option value="125997">138999</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124942">' + 
+			'<label for="CustomTransactionField_124942">Auto Transaction Number Pick Multiple</label>' + 
+			'<div id="CustomTransactionField_124942" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125999" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="125999" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">55.768</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126000" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126000" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">678</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126001" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126001" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">8233.5</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126002" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126002" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">14500</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126003" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126003" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">8723300</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124943">' + 
+			'<label for="CustomTransactionField_124943">Auto Transaction Currency Freeform</label>' + 
+			'<input id="CustomTransactionField_124943" name="CustomTransactionField_124943" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124944">' + 
+			'<label for="CustomTransactionField_124944">Auto Transaction Currency Pick One</label>' + 
+			'<select id="CustomTransactionField_124944" name="CustomTransactionField_124944"><option value=""></option>' + 
+			'<option value="126005">$10.50</option>' + 
+			'<option value="126006">$25.00</option>' + 
+			'<option value="126007">$50.00</option>' + 
+			'<option value="126008">$100.00</option>' + 
+			'<option value="126009">$10,000.00</option>' + 
+			'</select>' + 
+			'</div>' + 
+			'<div class="field text CustomTransactionField_124945">' + 
+			'<label for="CustomTransactionField_124945">Auto Transaction Currency Pick Multiple</label>' + 
+			'<div id="CustomTransactionField_124945" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="126011" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126011" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$25.33</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126012" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126012" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$550.00</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126013" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126013" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$1,250.00</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126014" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126014" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$5,000.35</span>' + 
+			'                              </a>' + 
+			'<a href="javascript:void(0)" class="checkbox" data-id="126015" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+			'                                <input type="checkbox" value="126015" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+			'                                <span class="text">$250,000.00</span>' + 
+			'                              </a>' + 
+			'</div>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    <div class="section comment">' + 
+			'      <div class="field text comment">' + 
+			'<label for="comment">Comments</label>' + 
+			'<textarea id="comment" name="comment" type="text" value="Comments"></textarea>' + 
+			'</div>' + 
+			'' + 
+			'</div>' + 
+			'    ' + 
+			'    <div class="btn-group">' + 
+			'      <input class="btn btn-submit btn-submit-donation" type="submit" value="Donate" id="express-submit" disabled="true" />' + 
+			'    </div>' + 
+			'  </form>' + 
+			'</div>' + 
+			'<div id="donation-processing-container" style="display: none">' + 
+			'  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
+			'</div>' + 
+			'' + 
+			'' +  '';var successHtml115712 = '<div class=\'donation-success\'>' +
+																'  <h2>Thank You for Your Donation!</h2>' +
+																'  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
+																	'\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"standard\" data-show-faces=\"true\" data-action=\"like\" data-share=\"true\" \u003e\u003c/div\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to @bloomerangTech. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e\u003cscript\u003e(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.5\";fjs.parentNode.insertBefore(js, fjs);}(document, \"script\", \"facebook-jssdk\"));\u003c/script\u003e ' + 
+																	'</div>';( function($) {if (Bloomerang.useDonationId('115712')) { 
+												Bloomerang.useProcessor('50176', 'BluePay', '100145748093', true, '246507934E038F2B2B7539D144AA526B', true);
+											} else {
+												html115712 = '<p style="color: red">???Widget.Error.Multiple???</p>';
+											}if (jQuery('#bloomerangForm115712').length) {
+									jQuery('#bloomerangForm115712').after(html115712);
+									if (!Bloomerang.SpreedlyScriptLoaded) {
+														var spreedlyScript = document.createElement('script');
+														jQuery(spreedlyScript).attr('src','https://core.spreedly.com/iframe/express-1.min.js')
+															.attr('id','express-script')
+															.attr('data-environment-key','FFOcP2r6aOM47DVLVXu8SUSLd9U')
+															.attr('data-company-name','Jenkins Automation 3');
+														jQuery('#express-form')[0].appendChild(spreedlyScript);
+													}
+													Bloomerang.SpreedlyScriptLoaded = true;
+								};
+								if (Bloomerang.paymentFormLoaded) {
+														return false;
+													}
+													Bloomerang.paymentFormLoaded = true;
+								
+								Bloomerang.useKey('pub_b2d22d45-71ca-11e5-a01d-06ca2bdab791');
+
+					// Register proper callbacks for various stages/outcomes of submission
+					Bloomerang.Widget.Donation.OnSubmit = function (args) {
+						jQuery(".btn-submit-donation").val("Donating...").prop("disabled", true).addClass("disabled");
+						var val = function (selector) { return jQuery(selector).val(); };
+						Bloomerang.Account
+								.individual()
+								.firstName(val(".donation-form #first-name"))
+								.middleName(val(".donation-form #middle-name"))
+								.lastName(val(".donation-form #last-name"))
+								.homeAddress(val(".donation-form #street-address"), val(".donation-form #city"), val(".donation-form #state"), val(".donation-form #postal-code"))
+								.homeEmail(val(".donation-form #email-address"))
+								.homePhone(val(".donation-form #phone-number"))
+								.applyDonationCustomFields();
+
+						var amount = val(".donation-form .section.donation input[name='donation-level']:checked") || val(".donation-form #donation-amount");
+
+						if (jQuery(".donation-form #recurring").prop("checked")) {
+							Bloomerang.RecurringDonation
+									.amount(amount)
+									.fundId(val(".donation-form #fund"))
+									.note(val(".donation-form #comment"))
+									.frequency(val(".donation-form #frequency") || "Monthly")
+									.startDate(val(".donation-form #start-date"))
+									.applyDonationCustomFields();
+						} else {
+							Bloomerang.Donation
+									.amount(amount)
+									.fundId(val(".donation-form #fund"))
+									.note(val(".donation-form #comment"))
+									.applyDonationCustomFields();
+						}
+
+						if (jQuery("#express-form #Checking").is(":checked") ||
+							jQuery("#express-form #Savings").is(":checked")) {
+						Bloomerang.Eft
+							.accountNumber(val(".donation-form #accountNumber"))
+							.routingNumber(val(".donation-form #routingNumber"))
+							.type(jQuery("#express-form .section.payment input[type='radio']:checked").attr("id"));
+						}
+								
+					};
+					Bloomerang.ValidateDonationFormCaptcha = function() {
+						if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.Donation.WidgetId).length) {
+							var captchaResponse = grecaptcha.getResponse(jQuery(".donation-form").data("captcha-id"));
+							if (captchaResponse) {
+								jQuery(".noCaptchaResponseError").hide();
+								Bloomerang.captchaResponse(captchaResponse);
+								return true;
+							} else {
+								jQuery(".noCaptchaResponseError").show();
+								return false;
+							}
+						} else return true;
+					};
+					Bloomerang.scrollToElement = function(element) {
+						var distance = 100;
+						var offset = element.offset().top;
+						var offsetTop = offset > distance ? offset - distance : offset;
+							jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+					};
+					Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
+						jQuery("#donation-processing-container").hide();
+						var formContainer = jQuery("#donation-form-container");
+						formContainer.show();
+						formContainer.html(successHtml115712);
+						Bloomerang.scrollToElement(formContainer);
+					};
+					Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
+						jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled").val("Donate");
+						jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
+						jQuery("#donation-processing-container").hide();
+						jQuery("#donation-form-container").show();
+						Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
+						Bloomerang.cancelFinancialSubmission(jQuery("#express-form"));
+					};
+					
+					Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
+					
+						// Clear any fields from a previous failed submission
+						obj.clearCustomFields();
+					
+						// Apply all <input> (not multiselect), <select> and <textarea> fields
+						jQuery(".donation-form .section.custom-fields :input:not(a > input, select)[id*=" + type + "]").each(function() {
+							if (jQuery(this).val().hasValue()) {
+								obj.customFreeformField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
+							}
+						});
+						
+						// Apply all <select> fields
+						jQuery(".donation-form .section.custom-fields select[id*=" + type + "]").each(function() {
+							if (jQuery(this).val().hasValue()) {
+								obj.customPickField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
+							}
+						});
+							
+						// Apply all multiselect fields
+						jQuery(".donation-form .section.custom-fields .checkboxes[id*=" + type + "]").each(function() {
+							obj.customPickField(jQuery(this).attr("id").toUntypedValue(),
+							jQuery.map(jQuery(this).children(".checkbox.selected"), function(v) { return jQuery(v).attr("data-id"); }));
+						});
+					};
+					
+					String.prototype.hasValue = function() {
+						return (this && jQuery.trim(this)); //IE8 doesn't have a native trim function
+					};
+					
+					Bloomerang.Account.applyDonationCustomFields = function () {
+						Bloomerang.Util.applyDonationCustomFields(this, "Account");
+						return this;
+					};
+					
+					Bloomerang.Donation.applyDonationCustomFields = function () {
+						Bloomerang.Util.applyDonationCustomFields(this, "Transaction");
+						return this;
+					};
+					
+					Bloomerang.RecurringDonation.applyDonationCustomFields = function () {
+						Bloomerang.Util.applyDonationCustomFields(this, "Transaction");
+						return this;
+					};
+					
+					String.prototype.toUntypedValue = function() {
+						return this.substring(this.indexOf('_') + 1);
+					};
+					
+					Date.prototype.toDateInputValue = function() {
+						var local = new Date(this);
+						local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+						return (local.getMonth() + 1) + // Add one to the month because it starts at 0
+								"/" + local.getDate() + "/" + local.getFullYear();
+					};
+					
+					jQuery(document).ready(function() {
+						jQuery(".donation-form .field.start-date input").val(new Date().toDateInputValue());
+					});
+					
+					// Hide recurring donation options if recurring donation box is unchecked
+					jQuery(".donation-form .field.recurring").change(function() { 
+						jQuery(".donation-form .field.recurring").siblings().each(function() { 
+							jQuery(this).toggleClass('hidden'); 
+						}); 
+					})
+					
+					// The other-amount field is only equired when the "Other" donation-level is selected
+					jQuery(".donation-form .section.donation input[name='donation-level']").change(function () { 
+						if (jQuery(this).attr('id') == "other-option") { 
+							jQuery(".donation-form #other-amount").addClass("required"); 
+						} else { 
+							jQuery(".donation-form #other-amount").removeClass("required"); 
+						} 
+					});
+					
+					// Changing the value of other-amount should change the value of other-option
+					jQuery(".donation-form #other-amount").change(function () { 
+						jQuery(".donation-form #other-option").val(jQuery(this).val()); 
+					});
+					
+					// Clicking into the other-amount field should select the other-option
+					jQuery(".donation-form #other-amount").click(function() { jQuery(".donation-form #other-option").prop('checked',true); });
+
+					jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+						var digits = phone_number.replace(/\D/g, "");
+						return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
+					}, "Please specify a valid phone number");
+					
+					jQuery.validator.addMethod("zipcodeUS", function (value, element) {
+						return this.optional(element) || /\d{5}-\d{4}$|^\d{5}$/.test(value)
+					}, "The specified US ZIP Code is invalid");
+
+					jQuery.validator.addMethod("currency", function (value, element, options) {
+						return !value ||
+							value
+							.replace("$", "")
+							.replace(".", "")
+							.split(",").join("")
+							.match(/^\d+$/g);
+					}, "Not a valid currency");
+
+					jQuery.validator.classRuleSettings.currency = { currency: true };
+
+					jQuery.validator.addMethod("number", function (value, element, options) {
+						return !value ||
+							value
+							.replace(".", "")
+							.split(",").join("")
+							.match(/^\d+$/g);
+					}, "Not a valid number");
+
+					jQuery.validator.classRuleSettings.number = { number: true };
+					
+					jQuery.validator.addMethod("validYear", function (value, element, options) {
+						try {
+							return (!value || value.match(/^[1-9]\d\d\d$/)) ? true : false;
+						}
+						catch (e) {
+							return false;
+						}
+					}, function () { return "Must be a 4 digit year"; });
+
+					jQuery.validator.classRuleSettings.validYear = { validYear: true };
+					
+					// Validate that the donation amount is at least $1
+					jQuery.validator.methods.min = function( value, element, param ) {
+					if (typeof (accounting) === "undefined") { // rip out $ and ,
+						value = ((value + "") || "").replace(/[\$,]/g, "");
+					}
+					else { // Use accounting.parse, to handle $ and ,
+						value = accounting.parse(value);
+					}
+					return this.optional( element ) || value >= param;
+					};
+					jQuery.validator.classRuleSettings.minimum1 = { min: 1 };
+					jQuery.validator.messages.min = 'Please enter a value of at least {0}.'
+
+					bloomerangSubmit = function () {
+					var form = jQuery("#express-form");
+
+					if (!Bloomerang.ValidateDonationFormCaptcha()) {
+						return false;
+					}
+					
+					if (!form.valid()) {
+						return false;
+					}
+					
+					if (jQuery("#payment_method_token").length || (jQuery("#express-form #CreditCard").length > 0 && !jQuery("#express-form #CreditCard").prop("checked"))) {
+						if (!Bloomerang.continueFinancialSubmission(form)) { return false; }
+					
+						Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+						Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+						Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+						
+						Bloomerang.CreditCard.spreedlyToken(jQuery("#payment_method_token").val());
+						
+						var processingMessage = jQuery("#donation-processing-container");
+						processingMessage.show();
+						jQuery("#donation-form-container").hide();
+						Bloomerang.scrollToElement(processingMessage);
+						
+						var tmp = jQuery(".donation-form #recurring").prop("checked")
+							? Bloomerang.Api.recurringDonate()
+							: Bloomerang.Api.donate();
+					}
+					else {
+						var val = function (selector) { return jQuery(selector).val(); };
+						var amount = val(".donation-form .section.donation input[name='donation-level']:checked") || val(".donation-form #donation-amount");
+						var selectedDonationLevel = jQuery(".donation-form .section.donation input[name='donation-level']:checked").parent().text();
+						selectedDonationLevel = (selectedDonationLevel.indexOf("-") == -1 ? "" : selectedDonationLevel.substr(selectedDonationLevel.indexOf("-") + 2) );
+						jQuery("#express-script").attr("data-amount", accounting.formatMoney(amount))
+						.attr("data-full-name", val(".donation-form #first-name") + " " + val(".donation-form #last-name"))
+						.attr("data-email", val(".donation-form #email-address"))
+						.attr("data-phone_number", val(".donation-form #phone-number"))
+						.attr("data-address1", val(".donation-form #street-address"))
+						.attr("data-city", val(".donation-form #city"))
+						.attr("data-state", val(".donation-form #state"))
+						.attr("data-zip", val(".donation-form #postal-code"))
+						.attr('data-sidebar-bottom-description', selectedDonationLevel);
+						continueToExpress = true;
+					}
+					};
+					
+					jQuery("#express-form #CreditCard").prop("checked", true);
+					jQuery("#express-form .section.payment input[type='radio']").click(function() {
+					if (jQuery(this).attr("id") == "CreditCard") {
+						jQuery("#express-form .accountNumber, \
+								#express-form .routingNumber, \
+								#express-form .sample-check").hide();
+					}                        
+					else {                   
+						jQuery("#express-form .accountNumber, \
+								#express-form .routingNumber, \
+								#express-form .sample-check").show();
+						if (jQuery("#express-form .sample-check").length == 0) {                    
+						var checkImage = new Image();
+						checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
+						jQuery(checkImage).addClass("sample-check");
+						jQuery("#express-form .accountNumber").after(checkImage);
+						}
+					}
+				});
+					
+			})(jQuery);
+				};
+				
+							var startBloomerangLoad = function() {
+								if (window.bloomerangLoadStarted == undefined) {
+									window.bloomerangLoadStarted = true;
+									var script = document.createElement('script');
+									script.type = 'text/javascript';
+									script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+									document.getElementsByTagName('head')[0].appendChild(script);
+									waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm(); })});
+								}
+								else {
+									waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm(); })});
+								}
+							};
+
+							var waitForBloomerangLoad = function(callback) {
+								if (typeof(Bloomerang) === 'undefined' || !Bloomerang._isReady) {
+									setTimeout(function () { waitForBloomerangLoad(callback) }, 500);
+								}
+								else {
+									if (true) {
+										callback();
+									} else {
+										window.bloomerangLoadStarted = undefined;
+										Bloomerang = undefined; // The version of Blomerang.js is not what we want. So blow it away and reload.
+										startBloomerangLoad();
+									}
+								}
+							};
+
+							startBloomerangLoad();
+			</script></pre>
+	</div>
+</body>
+</html>
