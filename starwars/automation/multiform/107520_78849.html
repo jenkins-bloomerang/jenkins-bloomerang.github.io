@@ -66,7 +66,7 @@
         </div>
         <script type="text/javascript" id="bloomerangForm107520"></script>
             <pre><script type="text/javascript">
-                var insertForm = function() {
+                var insertForm107520 = function() {
                     var html107520 = '<style text=\'text/css\'>' + 
             '.donation-form label{color: #404040;' + 
             '                display: block;}' + 
@@ -241,6 +241,10 @@
             '<label for="email-address">Email<span class="required-star">*</span></label>' + 
             '<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
             '</div>' + 
+            '<div class="field tel phone-number">' + 
+            '<label for="phone-number">Phone</label>' + 
+            '<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
+            '</div>' + 
             '' + 
             '</div>' + 
             '    <div class="section billing-address">' + 
@@ -319,10 +323,6 @@
             '<div class="field number postal-code required">' + 
             '<label for="postal-code">Postal Code<span class="required-star">*</span></label>' + 
             '<input id="postal-code" name="postal-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
-            '</div>' + 
-            '<div class="field tel phone-number">' + 
-            '<label for="phone-number">Phone</label>' + 
-            '<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
             '</div>' + 
             '' + 
             '</div>' + 
@@ -738,10 +738,11 @@
                                                                     '</div>';( function($) {if (!Bloomerang.useDonationId('107520')) { 
                                                 html107520 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
                                             }if (jQuery('#bloomerangForm107520').length) {
-                                                if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html107520 = '<p style="color: red">​Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade ​your browser or download the latest version of' + 
-                        ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
-                    }
+                                    
+                                if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
+                                    html107520 = '<p style="color: red">​Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade ​your browser or download the latest version of' + 
+                                    ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
+                                }
                                     jQuery('#bloomerangForm107520').after(html107520);
                                     if (!Bloomerang.SpreedlyScriptLoaded) {
                                                         var spreedlyScript = document.createElement('script');
@@ -809,7 +810,7 @@
                                 
                     };
                     Bloomerang.ValidateDonationFormCaptcha = function() {
-                        if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.Donation.WidgetId).length) {
+                        if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).length) {
                             var captchaResponse = grecaptcha.getResponse(jQuery(".donation-form").data("captcha-id"));
                             if (captchaResponse) {
                                 jQuery(".noCaptchaResponseError").hide();
@@ -1058,10 +1059,10 @@
                                     script.type = 'text/javascript';
                                     script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
                                     document.getElementsByTagName('head')[0].appendChild(script);
-                                    waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm(); })});
+                                    waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm107520(); })});
                                 }
                                 else {
-                                    waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm(); })});
+                                    waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm107520(); })});
                                 }
                             };
 
