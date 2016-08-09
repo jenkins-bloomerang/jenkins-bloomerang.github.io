@@ -66,8 +66,8 @@
         </div>
         <script type="text/javascript" id="bloomerangForm90114"></script>
             <pre><script type="text/javascript">
-            var insertForm = function() {
-                var html90114 = '<style text=\'text/css\'>' + 
+                var insertForm90114 = function() {
+                    var html90114 = '<style text=\'text/css\'>' + 
             '.registration-form label{color: #404040;' + 
             '                display: block;}' + 
             '' + 
@@ -122,6 +122,8 @@
             '                     .registration-form .field textarea{padding: 4px; ' + 
             '                max-width: 275px;' + 
             '                width: 96%}' + 
+            '' + 
+            '.registration-form .field textarea.international{height: 120px;}' + 
             '' + 
             '.registration-form .field select{box-sizing: content-box;}' + 
             '' + 
@@ -192,19 +194,19 @@
             '    <div class="errors hidden"></div>' + 
             '    <div class="section registrationType">' + 
             '      <h3>Event Registration Stripe Self Hosted Registration</h3>' + 
-            '      <div class="field radio 92168 required">' + 
+            '      <div class="field radio 92168 required" >' + 
             '<label for="92168"><input id="92168" name="registration-type" class="required" type="radio" value="100.000000" maxlength="255" data-short-name="Single Ticket" data-ticket-quantity="1" data-registration-type-value="93194" data-non-deductible-amount="30.000000"></input>$100.00 - Single Ticket: Single ticket plus meal</label>' + 
             '</div>' + 
-            '<div class="field radio 92169 required">' + 
+            '<div class="field radio 92169 required" >' + 
             '<label for="92169"><input id="92169" name="registration-type" class="required" type="radio" value="200.000000" maxlength="255" data-short-name="Tickets for Two" data-ticket-quantity="2" data-registration-type-value="93195" data-non-deductible-amount="60.000000"></input>$200.00 - Tickets for Two: Two tickets plus meals</label>' + 
             '</div>' + 
-            '<div class="field radio 92170 required">' + 
+            '<div class="field radio 92170 required" >' + 
             '<label for="92170"><input id="92170" name="registration-type" class="required" type="radio" value="1000.000000" maxlength="255" data-short-name="Standard Table" data-ticket-quantity="6" data-registration-type-value="93196" data-non-deductible-amount="180.000000"></input>$1,000.00 - Standard Table: Six tickets with meals plus private table</label>' + 
             '</div>' + 
-            '<div class="field radio 92171 required">' + 
+            '<div class="field radio 92171 required" >' + 
             '<label for="92171"><input id="92171" name="registration-type" class="required" type="radio" value="1500.000000" maxlength="255" data-short-name="VIP Table" data-ticket-quantity="6" data-registration-type-value="93197" data-non-deductible-amount="180.000000"></input>$1,500.00 - VIP Table: Six tickets with meals, private table and VIP treatment</label>' + 
             '</div>' + 
-            '<div class="field radio cannot-attend required">' + 
+            '<div class="field radio cannot-attend required" >' + 
             '<label for="cannot-attend"><input id="cannot-attend" name="registration-type" class="required" type="radio" maxlength="255" data-short-name="Donation" data-registration-type-value="93198"></input>Sorry, I can\'t attend, but I would like to show my support by making a donation</label>' + 
             '</div>' + 
             '' + 
@@ -250,31 +252,288 @@
             '</div>' + 
             '    <div class="section contact">' + 
             '      <h3>Contact Information</h3>' + 
-            '      <div class="field text first-name required">' + 
+            '      <div class="field text first-name required" >' + 
             '<label for="first-name">First Name<span class="required-star">*</span></label>' + 
             '<input id="first-name" name="first-name" class="required" type="text"></input>' + 
             '</div>' + 
-            '<div class="field text last-name required">' + 
+            '<div class="field text last-name required" >' + 
             '<label for="last-name">Last Name<span class="required-star">*</span></label>' + 
             '<input id="last-name" name="last-name" class="required" type="text"></input>' + 
             '</div>' + 
-            '<div class="field email email-address required">' + 
+            '<div class="field email email-address required" >' + 
             '<label for="email-address">Email<span class="required-star">*</span></label>' + 
             '<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
+            '</div>' + 
+            '<div class="field tel phone-number" >' + 
+            '<label for="phone-number">Phone</label>' + 
+            '<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
             '</div>' + 
             '' + 
             '</div>' + 
             '    <div class="section billing-address">' + 
             '      <h3>Billing Address</h3>' + 
-            '      <div class="field  street-address required">' + 
+            '      <div class="field  country required" >' + 
+            '<label for="country">Country<span class="required-star">*</span></label>' + 
+            '<select id="country" name="country" class="required"><option value=""></option>' + 
+            '<option value="AF">Afghanistan</option>' + 
+            '<option value="AX">Aland Islands</option>' + 
+            '<option value="AL">Albania</option>' + 
+            '<option value="DZ">Algeria</option>' + 
+            '<option value="AS">American Samoa</option>' + 
+            '<option value="AD">Andorra</option>' + 
+            '<option value="AO">Angola</option>' + 
+            '<option value="AI">Anguilla</option>' + 
+            '<option value="AQ">Antarctica</option>' + 
+            '<option value="AG">Antigua and Barbuda</option>' + 
+            '<option value="AR">Argentina</option>' + 
+            '<option value="AM">Armenia</option>' + 
+            '<option value="AW">Aruba</option>' + 
+            '<option value="AU">Australia</option>' + 
+            '<option value="AT">Austria</option>' + 
+            '<option value="AZ">Azerbaijan</option>' + 
+            '<option value="BS">Bahamas</option>' + 
+            '<option value="BH">Bahrain</option>' + 
+            '<option value="BD">Bangladesh</option>' + 
+            '<option value="BB">Barbados</option>' + 
+            '<option value="BY">Belarus</option>' + 
+            '<option value="BE">Belgium</option>' + 
+            '<option value="BZ">Belize</option>' + 
+            '<option value="BJ">Benin</option>' + 
+            '<option value="BM">Bermuda</option>' + 
+            '<option value="BT">Bhutan</option>' + 
+            '<option value="BO">Bolivia</option>' + 
+            '<option value="BA">Bosnia and Herzegovina</option>' + 
+            '<option value="BW">Botswana</option>' + 
+            '<option value="BV">Bouvet Island</option>' + 
+            '<option value="BR">Brazil</option>' + 
+            '<option value="IO">British Indian Ocean Territory</option>' + 
+            '<option value="BN">Brunei Darussalam</option>' + 
+            '<option value="BG">Bulgaria</option>' + 
+            '<option value="BF">Burkina Faso</option>' + 
+            '<option value="BI">Burundi</option>' + 
+            '<option value="KH">Cambodia</option>' + 
+            '<option value="CM">Cameroon</option>' + 
+            '<option value="CA">Canada</option>' + 
+            '<option value="CV">Cape Verde</option>' + 
+            '<option value="KY">Cayman Islands</option>' + 
+            '<option value="CF">Central African Republic</option>' + 
+            '<option value="TD">Chad</option>' + 
+            '<option value="CL">Chile</option>' + 
+            '<option value="CN">China</option>' + 
+            '<option value="CX">Christmas Island</option>' + 
+            '<option value="CC">Cocos (Keeling) Islands</option>' + 
+            '<option value="CO">Colombia</option>' + 
+            '<option value="KM">Comoros</option>' + 
+            '<option value="CG">Congo</option>' + 
+            '<option value="CD">Democratic Republic of the Congo</option>' + 
+            '<option value="CK">Cook Islands</option>' + 
+            '<option value="CR">Costa Rica</option>' + 
+            '<option value="CI">Cote d\'Ivoire</option>' + 
+            '<option value="HR">Croatia</option>' + 
+            '<option value="CU">Cuba</option>' + 
+            '<option value="CW">Curacao</option>' + 
+            '<option value="CY">Cyprus</option>' + 
+            '<option value="CZ">Czech Republic</option>' + 
+            '<option value="DK">Denmark</option>' + 
+            '<option value="DJ">Djibouti</option>' + 
+            '<option value="DM">Dominica</option>' + 
+            '<option value="DO">Dominican Republic</option>' + 
+            '<option value="EC">Ecuador</option>' + 
+            '<option value="EG">Egypt</option>' + 
+            '<option value="SV">El Salvador</option>' + 
+            '<option value="GQ">Equatorial Guinea</option>' + 
+            '<option value="ER">Eritrea</option>' + 
+            '<option value="EE">Estonia</option>' + 
+            '<option value="ET">Ethiopia</option>' + 
+            '<option value="FK">Falkland Islands (Malvinas)</option>' + 
+            '<option value="FO">Faroe Islands</option>' + 
+            '<option value="FJ">Fiji</option>' + 
+            '<option value="FI">Finland</option>' + 
+            '<option value="FR">France</option>' + 
+            '<option value="GF">French Guiana</option>' + 
+            '<option value="PF">French Polynesia</option>' + 
+            '<option value="TF">French Southern Territories</option>' + 
+            '<option value="GA">Gabon</option>' + 
+            '<option value="GM">Gambia</option>' + 
+            '<option value="GE">Georgia</option>' + 
+            '<option value="DE">Germany</option>' + 
+            '<option value="GH">Ghana</option>' + 
+            '<option value="GI">Gibraltar</option>' + 
+            '<option value="GR">Greece</option>' + 
+            '<option value="GL">Greenland</option>' + 
+            '<option value="GD">Grenada</option>' + 
+            '<option value="GP">Guadeloupe</option>' + 
+            '<option value="GU">Guam</option>' + 
+            '<option value="GT">Guatemala</option>' + 
+            '<option value="GG">Guernsey</option>' + 
+            '<option value="GN">Guinea</option>' + 
+            '<option value="GW">Guinea-Bissau</option>' + 
+            '<option value="GY">Guyana</option>' + 
+            '<option value="HT">Haiti</option>' + 
+            '<option value="HM">Heard Island</option>' + 
+            '<option value="HN">Honduras</option>' + 
+            '<option value="HK">Hong Kong</option>' + 
+            '<option value="HU">Hungary</option>' + 
+            '<option value="IS">Iceland</option>' + 
+            '<option value="IN">India</option>' + 
+            '<option value="ID">Indonesia</option>' + 
+            '<option value="IR">Islamic Republic of Iran</option>' + 
+            '<option value="IQ">Iraq</option>' + 
+            '<option value="IE">Ireland</option>' + 
+            '<option value="IM">Isle of Man</option>' + 
+            '<option value="IL">Israel</option>' + 
+            '<option value="IT">Italy</option>' + 
+            '<option value="JM">Jamaica</option>' + 
+            '<option value="JP">Japan</option>' + 
+            '<option value="JE">Jersey</option>' + 
+            '<option value="JO">Jordan</option>' + 
+            '<option value="KZ">Kazakhstan</option>' + 
+            '<option value="KE">Kenya</option>' + 
+            '<option value="KI">Kiribati</option>' + 
+            '<option value="KP">Democratic People\'s Republic of Korea</option>' + 
+            '<option value="KR">Republic of Korea</option>' + 
+            '<option value="KW">Kuwait</option>' + 
+            '<option value="KG">Kyrgyzstan</option>' + 
+            '<option value="LA">Lao People\'s Democratic Republic</option>' + 
+            '<option value="LV">Latvia</option>' + 
+            '<option value="LB">Lebanon</option>' + 
+            '<option value="LS">Lesotho</option>' + 
+            '<option value="LR">Liberia</option>' + 
+            '<option value="LY">Libya</option>' + 
+            '<option value="LI">Liechtenstein</option>' + 
+            '<option value="LT">Lithuania</option>' + 
+            '<option value="LU">Luxembourg</option>' + 
+            '<option value="MO">Macao</option>' + 
+            '<option value="MK">Macedonia</option>' + 
+            '<option value="MG">Madagascar</option>' + 
+            '<option value="MW">Malawi</option>' + 
+            '<option value="MY">Malaysia</option>' + 
+            '<option value="MV">Maldives</option>' + 
+            '<option value="ML">Mali</option>' + 
+            '<option value="MT">Malta</option>' + 
+            '<option value="MH">Marshall Islands</option>' + 
+            '<option value="MQ">Martinique</option>' + 
+            '<option value="MR">Mauritania</option>' + 
+            '<option value="MU">Mauritius</option>' + 
+            '<option value="YT">Mayotte</option>' + 
+            '<option value="MX">Mexico</option>' + 
+            '<option value="FM">Federated States of Micronesia</option>' + 
+            '<option value="MD">Republic of Moldova</option>' + 
+            '<option value="MC">Monaco</option>' + 
+            '<option value="MN">Mongolia</option>' + 
+            '<option value="ME">Montenegro</option>' + 
+            '<option value="MS">Montserrat</option>' + 
+            '<option value="MA">Morocco</option>' + 
+            '<option value="MZ">Mozambique</option>' + 
+            '<option value="MM">Myanmar</option>' + 
+            '<option value="NA">Namibia</option>' + 
+            '<option value="NR">Nauru</option>' + 
+            '<option value="NP">Nepal</option>' + 
+            '<option value="NL">Netherlands</option>' + 
+            '<option value="NC">New Caledonia</option>' + 
+            '<option value="NZ">New Zealand</option>' + 
+            '<option value="NI">Nicaragua</option>' + 
+            '<option value="NE">Niger</option>' + 
+            '<option value="NG">Nigeria</option>' + 
+            '<option value="NU">Niue</option>' + 
+            '<option value="NF">Norfolk Island</option>' + 
+            '<option value="MP">Northern Mariana Islands</option>' + 
+            '<option value="NO">Norway</option>' + 
+            '<option value="OM">Oman</option>' + 
+            '<option value="PK">Pakistan</option>' + 
+            '<option value="PW">Palau</option>' + 
+            '<option value="PS">State of Palestine</option>' + 
+            '<option value="PA">Panama</option>' + 
+            '<option value="PG">Papua New Guinea</option>' + 
+            '<option value="PY">Paraguay</option>' + 
+            '<option value="PE">Peru</option>' + 
+            '<option value="PH">Philippines</option>' + 
+            '<option value="PN">Pitcairn</option>' + 
+            '<option value="PL">Poland</option>' + 
+            '<option value="PT">Portugal</option>' + 
+            '<option value="PR">Puerto Rico</option>' + 
+            '<option value="QA">Qatar</option>' + 
+            '<option value="RE">Reunion</option>' + 
+            '<option value="RO">Romania</option>' + 
+            '<option value="RU">Russian Federation</option>' + 
+            '<option value="RW">Rwanda</option>' + 
+            '<option value="BL">Saint Barthelemy</option>' + 
+            '<option value="SH">Ascension and Tristan da Cunha Saint Helena</option>' + 
+            '<option value="KN">Saint Kitts and Nevis</option>' + 
+            '<option value="LC">Saint Lucia</option>' + 
+            '<option value="MF">Saint Martin (French part)</option>' + 
+            '<option value="PM">Saint Pierre and Miquelon</option>' + 
+            '<option value="VC">Saint Vincent and the Grenadines</option>' + 
+            '<option value="WS">Samoa</option>' + 
+            '<option value="SM">San Marino</option>' + 
+            '<option value="ST">Sao Tome and Principe</option>' + 
+            '<option value="SA">Saudi Arabia</option>' + 
+            '<option value="SN">Senegal</option>' + 
+            '<option value="RS">Serbia</option>' + 
+            '<option value="SC">Seychelles</option>' + 
+            '<option value="SL">Sierra Leone</option>' + 
+            '<option value="SG">Singapore</option>' + 
+            '<option value="SX">Sint Maarten (Dutch part)</option>' + 
+            '<option value="SK">Slovakia</option>' + 
+            '<option value="SI">Slovenia</option>' + 
+            '<option value="SB">Solomon Islands</option>' + 
+            '<option value="SO">Somalia</option>' + 
+            '<option value="ZA">South Africa</option>' + 
+            '<option value="GS">South Georgia</option>' + 
+            '<option value="SS">South Sudan</option>' + 
+            '<option value="ES">Spain</option>' + 
+            '<option value="LK">Sri Lanka</option>' + 
+            '<option value="SD">Sudan</option>' + 
+            '<option value="SR">Suriname</option>' + 
+            '<option value="SJ">Svalbard and Jan Mayen</option>' + 
+            '<option value="SZ">Swaziland</option>' + 
+            '<option value="SE">Sweden</option>' + 
+            '<option value="CH">Switzerland</option>' + 
+            '<option value="SY">Syrian Arab Republic</option>' + 
+            '<option value="TW">Province of China Taiwan</option>' + 
+            '<option value="TJ">Tajikistan</option>' + 
+            '<option value="TZ">United Republic of Tanzania</option>' + 
+            '<option value="TH">Thailand</option>' + 
+            '<option value="TL">Timor-Leste</option>' + 
+            '<option value="TG">Togo</option>' + 
+            '<option value="TK">Tokelau</option>' + 
+            '<option value="TO">Tonga</option>' + 
+            '<option value="TT">Trinidad and Tobago</option>' + 
+            '<option value="TN">Tunisia</option>' + 
+            '<option value="TR">Turkey</option>' + 
+            '<option value="TM">Turkmenistan</option>' + 
+            '<option value="TC">Turks and Caicos Islands</option>' + 
+            '<option value="TV">Tuvalu</option>' + 
+            '<option value="UG">Uganda</option>' + 
+            '<option value="UA">Ukraine</option>' + 
+            '<option value="AE">United Arab Emirates</option>' + 
+            '<option value="GB">United Kingdom</option>' + 
+            '<option value="US" selected>United States</option>' + 
+            '<option value="UM">United States Minor Outlying Islands</option>' + 
+            '<option value="UY">Uruguay</option>' + 
+            '<option value="UZ">Uzbekistan</option>' + 
+            '<option value="VU">Vanuatu</option>' + 
+            '<option value="VA">Vatican City</option>' + 
+            '<option value="VE">Venezuela</option>' + 
+            '<option value="VN">Viet Nam</option>' + 
+            '<option value="VG">British Virgin Islands</option>' + 
+            '<option value="VI">U.S. Virgin Islands</option>' + 
+            '<option value="WF">Wallis and Futuna</option>' + 
+            '<option value="EH">Western Sahara</option>' + 
+            '<option value="YE">Yemen</option>' + 
+            '<option value="ZM">Zambia</option>' + 
+            '<option value="ZW">Zimbabwe</option>' + 
+            '</select>' + 
+            '</div>' + 
+            '<div class="field  street-address required" >' + 
             '<label for="street-address">Address<span class="required-star">*</span></label>' + 
             '<textarea id="street-address" name="street-address" class="required"></textarea>' + 
             '</div>' + 
-            '<div class="field text city required">' + 
+            '<div class="field text city required" >' + 
             '<label for="city">City<span class="required-star">*</span></label>' + 
             '<input id="city" name="city" class="required" type="text"></input>' + 
             '</div>' + 
-            '<div class="field  state required">' + 
+            '<div class="field  state required" >' + 
             '<label for="state">State<span class="required-star">*</span></label>' + 
             '<select id="state" name="state" class="required"><option value=""></option>' + 
             '<option value="AL">Alabama</option>' + 
@@ -337,24 +596,42 @@
             '<option value="WY">Wyoming</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field number postal-code required">' + 
-            '<label for="postal-code">Postal Code<span class="required-star">*</span></label>' + 
-            '<input id="postal-code" name="postal-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
+            '<div class="field  province required" style="display: none">' + 
+            '<label for="province">Province<span class="required-star">*</span></label>' + 
+            '<select id="province" name="province" class="required"><option value=""></option>' + 
+            '<option value="AB">Alberta</option>' + 
+            '<option value="BC">British Columbia</option>' + 
+            '<option value="MB">Manitoba</option>' + 
+            '<option value="NB">New Brunswick</option>' + 
+            '<option value="NL">Newfoundland and Labrador</option>' + 
+            '<option value="NT">Northwest Territories</option>' + 
+            '<option value="NS">Nova Scotia</option>' + 
+            '<option value="NU">Nunavat Territory</option>' + 
+            '<option value="ON">Ontario</option>' + 
+            '<option value="PE">Prince Edward Island</option>' + 
+            '<option value="QC">Quebec</option>' + 
+            '<option value="SK">Saskatchewan</option>' + 
+            '<option value="YT">Yukon Territory</option>' + 
+            '</select>' + 
             '</div>' + 
-            '<div class="field tel phone-number">' + 
-            '<label for="phone-number">Phone</label>' + 
-            '<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
+            '<div class="field number zip-code required" >' + 
+            '<label for="zip-code">ZIP Code<span class="required-star">*</span></label>' + 
+            '<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
+            '</div>' + 
+            '<div class="field text postal-code required" style="display: none">' + 
+            '<label for="postal-code">Postal Code<span class="required-star">*</span></label>' + 
+            '<input id="postal-code" name="postal-code" class="required" type="text"></input>' + 
             '</div>' + 
             '' + 
             '</div>' + 
             '    ' + 
             '    <div class="section custom-fields">' + 
             '      <h3>Additional Information</h3>' + 
-            '      <div class="field text CustomAccountField_128000">' + 
+            '      <div class="field text CustomAccountField_128000" >' + 
             '<label for="CustomAccountField_128000">Auto Constituent Text Freeform</label>' + 
             '<input id="CustomAccountField_128000" name="CustomAccountField_128000" type="text" maxlength="255"></input>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128001">' + 
+            '<div class="field text CustomAccountField_128001" >' + 
             '<label for="CustomAccountField_128001">Auto Constituent Text Pick One</label>' + 
             '<select id="CustomAccountField_128001" name="CustomAccountField_128001"><option value=""></option>' + 
             '<option value="115752">One</option>' + 
@@ -364,7 +641,7 @@
             '<option value="115756">Five</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128002">' + 
+            '<div class="field text CustomAccountField_128002" >' + 
             '<label for="CustomAccountField_128002">Auto Constituent Text Pick Multiple</label>' + 
             '<div id="CustomAccountField_128002" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115758" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="115758" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -388,11 +665,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field date CustomAccountField_128004">' + 
+            '<div class="field date CustomAccountField_128004" >' + 
             '<label for="CustomAccountField_128004">Auto Constituent Date Freeform</label>' + 
             '<input id="CustomAccountField_128004" name="CustomAccountField_128004" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
-            '<div class="field date CustomAccountField_128005">' + 
+            '<div class="field date CustomAccountField_128005" >' + 
             '<label for="CustomAccountField_128005">Auto Constituent Date Pick One</label>' + 
             '<select id="CustomAccountField_128005" name="CustomAccountField_128005"><option value=""></option>' + 
             '<option value="115764">1/1/2011</option>' + 
@@ -402,7 +679,7 @@
             '<option value="115768">5/1/2015</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field date CustomAccountField_128006">' + 
+            '<div class="field date CustomAccountField_128006" >' + 
             '<label for="CustomAccountField_128006">Auto Constituent Date Pick Multiple</label>' + 
             '<div id="CustomAccountField_128006" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115770" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="115770" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -426,11 +703,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128007">' + 
+            '<div class="field text CustomAccountField_128007" >' + 
             '<label for="CustomAccountField_128007">Auto Constituent Year Freeform</label>' + 
             '<input id="CustomAccountField_128007" name="CustomAccountField_128007" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128008">' + 
+            '<div class="field text CustomAccountField_128008" >' + 
             '<label for="CustomAccountField_128008">Auto Constituent Year Pick One</label>' + 
             '<select id="CustomAccountField_128008" name="CustomAccountField_128008"><option value=""></option>' + 
             '<option value="115776">2005</option>' + 
@@ -440,7 +717,7 @@
             '<option value="115780">2009</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128009">' + 
+            '<div class="field text CustomAccountField_128009" >' + 
             '<label for="CustomAccountField_128009">Auto Constituent Year Pick Multiple</label>' + 
             '<div id="CustomAccountField_128009" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115782" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="115782" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -464,11 +741,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128010">' + 
+            '<div class="field text CustomAccountField_128010" >' + 
             '<label for="CustomAccountField_128010">Auto Constituent Number Freeform</label>' + 
             '<input id="CustomAccountField_128010" name="CustomAccountField_128010" class="number" type="text" maxlength="255"></input>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128011">' + 
+            '<div class="field text CustomAccountField_128011" >' + 
             '<label for="CustomAccountField_128011">Auto Constituent Number Pick One</label>' + 
             '<select id="CustomAccountField_128011" name="CustomAccountField_128011"><option value=""></option>' + 
             '<option value="115788">3.14</option>' + 
@@ -478,7 +755,7 @@
             '<option value="115792">138999</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128012">' + 
+            '<div class="field text CustomAccountField_128012" >' + 
             '<label for="CustomAccountField_128012">Auto Constituent Number Pick Multiple</label>' + 
             '<div id="CustomAccountField_128012" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115794" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="115794" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -502,11 +779,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128013">' + 
+            '<div class="field text CustomAccountField_128013" >' + 
             '<label for="CustomAccountField_128013">Auto Constituent Currency Freeform</label>' + 
             '<input id="CustomAccountField_128013" name="CustomAccountField_128013" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128014">' + 
+            '<div class="field text CustomAccountField_128014" >' + 
             '<label for="CustomAccountField_128014">Auto Constituent Currency Pick One</label>' + 
             '<select id="CustomAccountField_128014" name="CustomAccountField_128014"><option value=""></option>' + 
             '<option value="115800">$10.50</option>' + 
@@ -516,7 +793,7 @@
             '<option value="115804">$10,000.00</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomAccountField_128015">' + 
+            '<div class="field text CustomAccountField_128015" >' + 
             '<label for="CustomAccountField_128015">Auto Constituent Currency Pick Multiple</label>' + 
             '<div id="CustomAccountField_128015" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="115806" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="115806" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -540,11 +817,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124930">' + 
+            '<div class="field text CustomTransactionField_124930" >' + 
             '<label for="CustomTransactionField_124930">Auto Transaction Text Freeform</label>' + 
             '<input id="CustomTransactionField_124930" name="CustomTransactionField_124930" type="text" maxlength="255"></input>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124931">' + 
+            '<div class="field text CustomTransactionField_124931" >' + 
             '<label for="CustomTransactionField_124931">Auto Transaction Text Pick One</label>' + 
             '<select id="CustomTransactionField_124931" name="CustomTransactionField_124931"><option value=""></option>' + 
             '<option value="125957">One</option>' + 
@@ -554,7 +831,7 @@
             '<option value="125961">Five</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124932">' + 
+            '<div class="field text CustomTransactionField_124932" >' + 
             '<label for="CustomTransactionField_124932">Auto Transaction Text Pick Multiple</label>' + 
             '<div id="CustomTransactionField_124932" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125963" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="125963" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -578,11 +855,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field date CustomTransactionField_124934">' + 
+            '<div class="field date CustomTransactionField_124934" >' + 
             '<label for="CustomTransactionField_124934">Auto Transaction Date Freeform</label>' + 
             '<input id="CustomTransactionField_124934" name="CustomTransactionField_124934" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
-            '<div class="field date CustomTransactionField_124935">' + 
+            '<div class="field date CustomTransactionField_124935" >' + 
             '<label for="CustomTransactionField_124935">Auto Transaction Date Pick One</label>' + 
             '<select id="CustomTransactionField_124935" name="CustomTransactionField_124935"><option value=""></option>' + 
             '<option value="125969">1/1/2011</option>' + 
@@ -592,7 +869,7 @@
             '<option value="125973">5/1/2015</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field date CustomTransactionField_124936">' + 
+            '<div class="field date CustomTransactionField_124936" >' + 
             '<label for="CustomTransactionField_124936">Auto Transaction Date Pick Multiple</label>' + 
             '<div id="CustomTransactionField_124936" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125975" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="125975" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -616,11 +893,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124937">' + 
+            '<div class="field text CustomTransactionField_124937" >' + 
             '<label for="CustomTransactionField_124937">Auto Transaction Year Freeform</label>' + 
             '<input id="CustomTransactionField_124937" name="CustomTransactionField_124937" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124938">' + 
+            '<div class="field text CustomTransactionField_124938" >' + 
             '<label for="CustomTransactionField_124938">Auto Transaction Year Pick One</label>' + 
             '<select id="CustomTransactionField_124938" name="CustomTransactionField_124938"><option value=""></option>' + 
             '<option value="125981">2005</option>' + 
@@ -630,7 +907,7 @@
             '<option value="125985">2009</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124939">' + 
+            '<div class="field text CustomTransactionField_124939" >' + 
             '<label for="CustomTransactionField_124939">Auto Transaction Year Pick Multiple</label>' + 
             '<div id="CustomTransactionField_124939" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125987" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="125987" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -654,11 +931,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124940">' + 
+            '<div class="field text CustomTransactionField_124940" >' + 
             '<label for="CustomTransactionField_124940">Auto Transaction Number Freeform</label>' + 
             '<input id="CustomTransactionField_124940" name="CustomTransactionField_124940" class="number" type="text" maxlength="255"></input>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124941">' + 
+            '<div class="field text CustomTransactionField_124941" >' + 
             '<label for="CustomTransactionField_124941">Auto Transaction Number Pick One</label>' + 
             '<select id="CustomTransactionField_124941" name="CustomTransactionField_124941"><option value=""></option>' + 
             '<option value="125993">3.14</option>' + 
@@ -668,7 +945,7 @@
             '<option value="125997">138999</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124942">' + 
+            '<div class="field text CustomTransactionField_124942" >' + 
             '<label for="CustomTransactionField_124942">Auto Transaction Number Pick Multiple</label>' + 
             '<div id="CustomTransactionField_124942" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="125999" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="125999" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -692,11 +969,11 @@
             '                              </a>' + 
             '</div>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124943">' + 
+            '<div class="field text CustomTransactionField_124943" >' + 
             '<label for="CustomTransactionField_124943">Auto Transaction Currency Freeform</label>' + 
             '<input id="CustomTransactionField_124943" name="CustomTransactionField_124943" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124944">' + 
+            '<div class="field text CustomTransactionField_124944" >' + 
             '<label for="CustomTransactionField_124944">Auto Transaction Currency Pick One</label>' + 
             '<select id="CustomTransactionField_124944" name="CustomTransactionField_124944"><option value=""></option>' + 
             '<option value="126005">$10.50</option>' + 
@@ -706,7 +983,7 @@
             '<option value="126009">$10,000.00</option>' + 
             '</select>' + 
             '</div>' + 
-            '<div class="field text CustomTransactionField_124945">' + 
+            '<div class="field text CustomTransactionField_124945" >' + 
             '<label for="CustomTransactionField_124945">Auto Transaction Currency Pick Multiple</label>' + 
             '<div id="CustomTransactionField_124945" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="126011" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
             '                                <input type="checkbox" value="126011" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
@@ -733,7 +1010,7 @@
             '' + 
             '</div>' + 
             '    <div class="section comment">' + 
-            '      <div class="field text comment">' + 
+            '      <div class="field text comment" >' + 
             '<label for="comment">Comments</label>' + 
             '<textarea id="comment" name="comment" type="text" value="Comments"></textarea>' + 
             '</div>' + 
@@ -752,51 +1029,56 @@
             '' +  '';var successHtml90114 = '<div class=\'donation-success\'>' +
                                                                 '  <h2>Thank You for Your Registration!</h2>' +
                                                                 '  <p>Your registration for our event has been successfully processed. We look forward to seeing you there!</p>' + 
-                                                                '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"standard\" data-show-faces=\"true\" data-action=\"like\" data-share=\"true\" \u003e\u003c/div\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just registered for an event supporting @bloomerangTech. Come join me!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e\u003cscript\u003e(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.5\";fjs.parentNode.insertBefore(js, fjs);}(document, \"script\", \"facebook-jssdk\"));\u003c/script\u003e \u003cdiv class=\"additional-tickets\" style=\"margin-top: 10px;\"\u003e\u003cbutton type=\"button\" onclick=\"javascript:location.reload()\"\u003ePurchase Additional Tickets\u003c/button\u003e\u003c/div\u003e' + 
-                                                                '</div>';( function($) {if (!Bloomerang.useDonationId('90114')) { 
-                                            html90114 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
-                                        }if (jQuery('#bloomerangForm90114').length) {
-                                                 if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html90114 = '<p style="color: red">​Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade ​your browser or download the latest version of' + 
-                        ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
-                    }
-                                jQuery('#bloomerangForm90114').after(html90114);
+                                                                    '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"standard\" data-show-faces=\"true\" data-action=\"like\" data-share=\"true\" \u003e\u003c/div\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just registered for an event supporting @bloomerangTech. Come join me!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e\u003cscript\u003e(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.5\";fjs.parentNode.insertBefore(js, fjs);}(document, \"script\", \"facebook-jssdk\"));\u003c/script\u003e \u003cdiv class=\"additional-tickets\" style=\"margin-top: 10px;\"\u003e\u003cbutton type=\"button\" onclick=\"javascript:location.reload()\"\u003ePurchase Additional Tickets\u003c/button\u003e\u003c/div\u003e' + 
+                                                                    '</div>';( function($) {if (!Bloomerang.useDonationId('90114')) { 
+                                                html90114 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
+                                            }if (jQuery('#bloomerangForm90114').length) {
+                                    
+                                if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
+                                    html90114 = '<p style="color: red">​Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade ​your browser or download the latest version of' + 
+                                    ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
+                                }
+                                    jQuery('#bloomerangForm90114').after(html90114);
                                     if (!Bloomerang.SpreedlyScriptLoaded) {
-                                                    var spreedlyScript = document.createElement('script');
-                                                    jQuery(spreedlyScript).attr('src','https://core.spreedly.com/iframe/express-1.min.js')
-                                                        .attr('id','express-script')
-                                                        .attr('data-environment-key','FFOcP2r6aOM47DVLVXu8SUSLd9U')
-                                                        .attr('data-company-name','Jenkins Automation 1');
-                                                    jQuery('#express-form')[0].appendChild(spreedlyScript);
-                                                }
-                                                Bloomerang.SpreedlyScriptLoaded = true;
-                            };
-                            if (Bloomerang.paymentFormLoaded) {
-                                                    return false;
-                                                }
-                                                Bloomerang.paymentFormLoaded = true;
-                            
-                            Bloomerang.useKey('pub_5c58b274-71c7-11e5-a01d-06ca2bdab791');
+                                                        var spreedlyScript = document.createElement('script');
+                                                        jQuery(spreedlyScript).attr('src','https://core.spreedly.com/iframe/express-1.min.js')
+                                                            .attr('id','express-script')
+                                                            .attr('data-environment-key','FFOcP2r6aOM47DVLVXu8SUSLd9U')
+                                                            .attr('data-company-name','Jenkins Automation 1');
+                                                        jQuery('#express-form')[0].appendChild(spreedlyScript);
+                                                    }
+                                                    Bloomerang.SpreedlyScriptLoaded = true;
+                                };
+                                if (Bloomerang.paymentFormLoaded) {
+                                                        return false;
+                                                    }
+                                                    Bloomerang.paymentFormLoaded = true;
+                                
+                                Bloomerang.useKey('pub_5c58b274-71c7-11e5-a01d-06ca2bdab791');
 
-                // Register proper callbacks for various stages/outcomes of submission
-                Bloomerang.Widget.Donation.OnSubmit = function (args) {
-                    jQuery(".btn-submit-registration").val("Processing Registration...").prop("disabled", true).addClass("disabled");
-                    var val = function (selector) { return jQuery(selector).val(); };
-                    Bloomerang.Account
+                    // Register proper callbacks for various stages/outcomes of submission
+                    Bloomerang.Widget.Donation.OnSubmit = function (args) {
+                        jQuery(".btn-submit-registration").val("Processing Registration...").prop("disabled", true).addClass("disabled");
+                        var val = function (selector) { return jQuery(selector).val(); };
+                        Bloomerang.Account
                                 .individual()
                                 .firstName(val(".registration-form #first-name"))
                                 .middleName(val(".registration-form #middle-name"))
                                 .lastName(val(".registration-form #last-name"))
-                                .homeAddress(val(".registration-form #street-address"), val(".registration-form #city"), val(".registration-form #state"), val(".registration-form #postal-code"))
+                                .homeAddress(val(".registration-form #street-address"),
+                                            val(".registration-form #city"),
+                                            val(".registration-form #state") || val(".registration-form #province"),
+                                            val(".registration-form #zip-code") || val(".registration-form #postal-code"),
+                                            val(".registration-form #country"))
                                 .homeEmail(val(".registration-form #email-address"))
                                 .homePhone(val(".registration-form #phone-number"))
                                 .applyEventRegistrationCustomFields();
 
-                    var amount = accounting.unformat(jQuery("#totalPrice").text());
-                    var nonDeductibleAmount = jQuery("#totalPrice").data("non-deductible") || 0;
-                    var ticketQuantity = jQuery("#totalTicketQty").text();
+                        var amount = accounting.unformat(jQuery("#totalPrice").text());
+                        var nonDeductibleAmount = jQuery("#totalPrice").data("non-deductible") || 0;
+                        var ticketQuantity = jQuery("#totalTicketQty").text();
                 
-                    Bloomerang.Donation
+                        Bloomerang.Donation
                                 .amount(amount)
                                 .nonDeductible(nonDeductibleAmount)
                                 .note(val(".registration-form #comment"))
@@ -804,101 +1086,101 @@
                                 .customPickField(jQuery("table.registration-summary").data("registration-type-field-id"), 
                                                 jQuery(".registration-form .section.registrationType input[name='registration-type']:checked").data("registration-type-value"))
                                 .customFreeformField(jQuery("table.registration-summary").data("ticket-quantity-field-id"), ticketQuantity);
-                    
-                    if (jQuery("#express-form #Checking").is(":checked") ||
-                        jQuery("#express-form #Savings").is(":checked")) {
-                        Bloomerang.Eft
-                        .accountNumber(val(".registration-form #accountNumber"))
-                        .routingNumber(val(".registration-form #routingNumber"))
-                        .type(jQuery("#express-form .section.payment input[type='radio']:checked").attr("id"));
-                    }
-                };
-                Bloomerang.ValidateEventRegistrationFormCaptcha = function() {
-                    if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.Donation.WidgetId).length) {
-                        var captchaResponse = grecaptcha.getResponse(jQuery(".registration-form").data("captcha-id"));
-                        if (captchaResponse) {
-                            jQuery(".noCaptchaResponseError").hide();
-                            Bloomerang.captchaResponse(captchaResponse);
-                            return true;
-                        } else {
-                            jQuery(".noCaptchaResponseError").show();
-                            return false;
-                        }
-                    } else return true;
-                };
-                Bloomerang.scrollToElement = function(element) {
-                    var distance = 100;
-                    var offset = element.offset().top;
-                    var offsetTop = offset > distance ? offset - distance : offset;
-                    jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
-                };
-                Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
-                    jQuery("#registration-processing-container").hide();
-                    var formContainer = jQuery("#registration-form-container");
-                    formContainer.show();
-                    formContainer.html(successHtml90114);
-                    Bloomerang.scrollToElement(formContainer);
-                };
-                Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
-                    jQuery(".btn-submit-registration").prop("disabled", false).removeClass("disabled").val("Register");
-                    jQuery("#registration-form-container .errors").removeClass("hidden").html(response.Message);
-                    jQuery("#registration-processing-container").hide();
-                    jQuery("#registration-form-container").show();
-                    Bloomerang.scrollToElement(jQuery("#registration-form-container .errors"));
-                    Bloomerang.cancelFinancialSubmission(jQuery("#express-form"));
-                };
-                
-                Bloomerang.Util.applyEventRegistrationCustomFields = function (obj, type) {
-                    // Clear any fields from a previous failed submission
-                    obj.clearCustomFields();
-                
-                    // Apply all <input> (not multiselect), <select> and <textarea> fields
-                    jQuery(".registration-form .section.custom-fields :input:not(a > input, select)[id*=" + type + "]").each(function() {
-                        if (jQuery(this).val().hasValue()) {
-                            obj.customFreeformField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
-                        }
-                    });
-                    
-                    // Apply all <select> fields
-                    jQuery(".registration-form .section.custom-fields select[id*=" + type + "]").each(function() {
-                        if (jQuery(this).val().hasValue()) {
-                            obj.customPickField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
-                        }
-                    });
                         
-                    // Apply all multiselect fields
-                    jQuery(".registration-form .section.custom-fields .checkboxes[id*=" + type + "]").each(function() {
-                        obj.customPickField(jQuery(this).attr("id").toUntypedValue(),
-                        jQuery.map(jQuery(this).children(".checkbox.selected"), function(v) { return jQuery(v).attr("data-id"); }));
-                    });
-                };
-                
-                String.prototype.hasValue = function() {
-                    return (this && jQuery.trim(this)); //IE8 doesn't have a native trim function
-                };
-                
-                Bloomerang.Account.applyEventRegistrationCustomFields = function () {
-                    Bloomerang.Util.applyEventRegistrationCustomFields(this, "Account");
-                    return this;
-                };
-                
-                Bloomerang.Donation.applyEventRegistrationCustomFields = function () {
-                    Bloomerang.Util.applyEventRegistrationCustomFields(this, "Transaction");
-                    return this;
-                };
-                
-                String.prototype.toUntypedValue = function() {
-                    return this.substring(this.indexOf('_') + 1);
-                };
-                
-                Date.prototype.toDateInputValue = function() {
-                    var local = new Date(this);
-                    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-                    return (local.getMonth() + 1) + // Add one to the month because it starts at 0
-                            "/" + local.getDate() + "/" + local.getFullYear();
-                };
-                
-                jQuery(".registration-form .section.registrationType input[name='registration-type']").change(function () { 
+                        if (jQuery("#express-form #Checking").is(":checked") ||
+                            jQuery("#express-form #Savings").is(":checked")) {
+                        Bloomerang.Eft
+                            .accountNumber(val(".registration-form #accountNumber"))
+                            .routingNumber(val(".registration-form #routingNumber"))
+                            .type(jQuery("#express-form .section.payment input[type='radio']:checked").attr("id"));
+                        }
+                    };
+                    Bloomerang.ValidateEventRegistrationFormCaptcha = function() {
+                        if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).length) {
+                            var captchaResponse = grecaptcha.getResponse(jQuery(".registration-form").data("captcha-id"));
+                            if (captchaResponse) {
+                                jQuery(".noCaptchaResponseError").hide();
+                                Bloomerang.captchaResponse(captchaResponse);
+                                return true;
+                            } else {
+                                jQuery(".noCaptchaResponseError").show();
+                                return false;
+                            }
+                        } else return true;
+                    };
+                    Bloomerang.scrollToElement = function(element) {
+                        var distance = 100;
+                        var offset = element.offset().top;
+                        var offsetTop = offset > distance ? offset - distance : offset;
+                        jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+                    };
+                    Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
+                        jQuery("#registration-processing-container").hide();
+                        var formContainer = jQuery("#registration-form-container");
+                        formContainer.show();
+                        formContainer.html(successHtml90114);
+                        Bloomerang.scrollToElement(formContainer);
+                    };
+                    Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
+                        jQuery(".btn-submit-registration").prop("disabled", false).removeClass("disabled").val("Register");
+                        jQuery("#registration-form-container .errors").removeClass("hidden").html(response.Message);
+                        jQuery("#registration-processing-container").hide();
+                        jQuery("#registration-form-container").show();
+                        Bloomerang.scrollToElement(jQuery("#registration-form-container .errors"));
+                        Bloomerang.cancelFinancialSubmission(jQuery("#express-form"));
+                    };
+                    
+                    Bloomerang.Util.applyEventRegistrationCustomFields = function (obj, type) {
+                        // Clear any fields from a previous failed submission
+                        obj.clearCustomFields();
+                    
+                        // Apply all <input> (not multiselect), <select> and <textarea> fields
+                        jQuery(".registration-form .section.custom-fields :input:not(a > input, select)[id*=" + type + "]").each(function() {
+                            if (jQuery(this).val().hasValue()) {
+                                obj.customFreeformField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
+                            }
+                        });
+                        
+                        // Apply all <select> fields
+                        jQuery(".registration-form .section.custom-fields select[id*=" + type + "]").each(function() {
+                            if (jQuery(this).val().hasValue()) {
+                                obj.customPickField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
+                            }
+                        });
+                            
+                        // Apply all multiselect fields
+                        jQuery(".registration-form .section.custom-fields .checkboxes[id*=" + type + "]").each(function() {
+                            obj.customPickField(jQuery(this).attr("id").toUntypedValue(),
+                            jQuery.map(jQuery(this).children(".checkbox.selected"), function(v) { return jQuery(v).attr("data-id"); }));
+                        });
+                    };
+                    
+                    String.prototype.hasValue = function() {
+                        return (this && jQuery.trim(this)); //IE8 doesn't have a native trim function
+                    };
+                    
+                    Bloomerang.Account.applyEventRegistrationCustomFields = function () {
+                        Bloomerang.Util.applyEventRegistrationCustomFields(this, "Account");
+                        return this;
+                    };
+                    
+                    Bloomerang.Donation.applyEventRegistrationCustomFields = function () {
+                        Bloomerang.Util.applyEventRegistrationCustomFields(this, "Transaction");
+                        return this;
+                    };
+                    
+                    String.prototype.toUntypedValue = function() {
+                        return this.substring(this.indexOf('_') + 1);
+                    };
+                    
+                    Date.prototype.toDateInputValue = function() {
+                        var local = new Date(this);
+                        local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+                        return (local.getMonth() + 1) + // Add one to the month because it starts at 0
+                                "/" + local.getDate() + "/" + local.getFullYear();
+                    };
+                    
+                    jQuery(".registration-form .section.registrationType input[name='registration-type']").change(function () { 
                     var element = jQuery(this);
                     jQuery(".registration-form #shortDescription").text(element.data("short-name"));
                     jQuery(".registration-form #ticketQty").text(element.data("ticket-quantity") || 0);
@@ -906,23 +1188,23 @@
                 
                     jQuery(".registration-form .registration-summary").show();
                     jQuery(".registration-form #numberOfRegistrations").focus();
-
+                
                     // if the user selected the "cannot attend" option, then the additional amount field is required.
                     if (jQuery(this).attr('id') == "cannot-attend") { 
-                    jQuery(".additional-donation").hide();
-                    jQuery(".summary-row").hide();
-                    jQuery(".cannot-attend-donation").show();
-                    jQuery(".donation-form #additional-amount").addClass("required");
+                        jQuery(".additional-donation").hide();
+                        jQuery(".summary-row").hide();
+                        jQuery(".cannot-attend-donation").show();
+                        jQuery(".registration-form #additional-amount").addClass("required");
                     } else { 
-                    jQuery(".cannot-attend-donation").hide();
-                    jQuery(".additional-donation").show();
-                    jQuery(".summary-row").show();
-                    jQuery(".donation-form #additional-amount").removeClass("required"); 
+                        jQuery(".cannot-attend-donation").hide();
+                        jQuery(".additional-donation").show();
+                        jQuery(".summary-row").show();
+                        jQuery(".registration-form #additional-amount").removeClass("required"); 
                     }
                     updateRegistrationAmounts();
-                });
-
-                updateRegistrationAmounts = function() {
+                    });
+                
+                    updateRegistrationAmounts = function() {
                     var totalCents = 0;
                     var centsForSelectedRegistration = (Number(jQuery(".registrationType input[name='registration-type']:checked").val()) || 0) * 100; // stupid JS floating-point arithmetic!
                     var nonDeductibleForSelectedRegistration = jQuery(".registrationType input[name='registration-type']:checked").data("non-deductible-amount") || 0;
@@ -933,55 +1215,60 @@
                     jQuery("#totalPrice").data("non-deductible", nonDeductibleForSelectedRegistration * jQuery("#numberOfRegistrations").val());
                 
                     jQuery("#totalTicketQty").text(jQuery("#numberOfRegistrations").val() * (jQuery(".registrationType input[name='registration-type']:checked").data("ticket-quantity") || 0));
-                };
-
-                jQuery(".registration-form .registrationType input, .registration-form .registration-summary input")
+                    };
+                
+                    jQuery(".registration-form .registrationType input, .registration-form .registration-summary input")
                     .change(updateRegistrationAmounts)
                     .keyup(updateRegistrationAmounts);
-                    
-                jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
-                    var digits = phone_number.replace(/\D/g, "");
-                    return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
-                }, "Please specify a valid phone number");
-                
-                jQuery.validator.addMethod("zipcodeUS", function (value, element) {
-                    return this.optional(element) || /\d{5}-\d{4}$|^\d{5}$/.test(value)
-                }, "The specified US ZIP Code is invalid");
+                        
+                    jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+                        var digits = phone_number.replace(/\D/g, "");
+                        return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
+                    }, "Please specify a valid phone number or use '+' for international.");
 
-                jQuery.validator.addMethod("currency", function (value, element, options) {
-                    return !value ||
-                        value
+                    jQuery.validator.addMethod("phoneInternational", function (phone_number, element) {
+                        return this.optional(element) || /^\+[0-9\-\(\)\s.]+$/i.test(phone_number);
+                    }, "Please specify a valid phone number.");
+                    jQuery.validator.classRuleSettings.phoneInternational = { phoneInternational: true };
+                    
+                    jQuery.validator.addMethod("zipcodeUS", function (value, element) {
+                        return this.optional(element) || /\d{5}-\d{4}$|^\d{5}$/.test(value)
+                    }, "The specified US ZIP Code is invalid");
+
+                    jQuery.validator.addMethod("currency", function (value, element, options) {
+                        return !value ||
+                            value
                             .replace("$", "")
                             .replace(".", "")
                             .split(",").join("")
                             .match(/^\d+$/g);
-                }, "Not a valid currency");
+                    }, "Not a valid currency");
 
-                jQuery.validator.classRuleSettings.currency = { currency: true };
+                    jQuery.validator.classRuleSettings.currency = { currency: true };
 
-                jQuery.validator.addMethod("number", function (value, element, options) {
-                    return !value ||
-                        value
+                    jQuery.validator.addMethod("number", function (value, element, options) {
+                        return !value ||
+                            value
                             .replace(".", "")
                             .split(",").join("")
                             .match(/^\d+$/g);
-                }, "Not a valid number");
+                    }, "Not a valid number");
 
-                jQuery.validator.classRuleSettings.number = { number: true };
-                
-                jQuery.validator.addMethod("validYear", function (value, element, options) {
-                    try {
-                        return (!value || value.match(/^[1-9]\d\d\d$/)) ? true : false;
-                    }
-                    catch (e) {
-                        return false;
-                    }
-                }, function () { return "Must be a 4 digit year"; });
+                    jQuery.validator.classRuleSettings.number = { number: true };
+                    
+                    jQuery.validator.addMethod("validYear", function (value, element, options) {
+                        try {
+                            return (!value || value.match(/^[1-9]\d\d\d$/)) ? true : false;
+                        }
+                        catch (e) {
+                            return false;
+                        }
+                    }, function () { return "Must be a 4 digit year"; });
 
-                jQuery.validator.classRuleSettings.validYear = { validYear: true };
-                
-                // Validate that the donation amount is at least $1
-                jQuery.validator.methods.min = function( value, element, param ) {
+                    jQuery.validator.classRuleSettings.validYear = { validYear: true };
+                    
+                    // Validate that the donation amount is at least $1
+                    jQuery.validator.methods.min = function( value, element, param ) {
                     if (typeof (accounting) === "undefined") { // rip out $ and ,
                         value = ((value + "") || "").replace(/[\$,]/g, "");
                     }
@@ -989,110 +1276,134 @@
                         value = accounting.parse(value);
                     }
                     return this.optional( element ) || value >= param;
-                };
-                jQuery.validator.classRuleSettings.minimum1 = { min: 1 };
-                jQuery.validator.messages.min = 'Please enter a value of at least {0}.'
+                    };
+                    jQuery.validator.classRuleSettings.minimum1 = { min: 1 };
+                    jQuery.validator.messages.min = 'Please enter a value of at least {0}.'
 
-                bloomerangSubmit = function () {
+                    jQuery(".registration-form #country").change(function(event) {
+                    var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
+                    var isInternational = (element.val() != "US" && element.val() != "CA");
+                    jQuery(".registration-form .field.city, .registration-form .field.state, .registration-form .field.province, .registration-form .field.zip-code, .registration-form .field.postal-code").toggle(!isInternational);
+                    jQuery(".registration-form #street-address").toggleClass("international", isInternational);
+                    jQuery(".registration-form #state, .registration-form #province").val(""); // clear the state when the country changes
+                    if (element.val() == "US") {
+                        jQuery(".registration-form .field.state, .registration-form .field.zip-code").show();
+                        jQuery(".registration-form .field.province, .registration-form .field.postal-code").hide();
+                    } else if (element.val() == "CA") {
+                        jQuery(".registration-form .field.state, .registration-form .field.zip-code").hide();
+                        jQuery(".registration-form .field.province, .registration-form .field.postal-code").show();
+                    } else {
+                        jQuery(".registration-form #city, .registration-form #zip-code, .registration-form #postal-code").val("");
+                    }
+                    });
+                    
+                    jQuery(".registration-form #phone-number").change(function () {
+                    var phoneField = jQuery(".registration-form #phone-number");
+                    var internationalNumber = phoneField.val().substring(0,1) === '+';
+                    phoneField.toggleClass("phoneUS", !internationalNumber);
+                    phoneField.toggleClass("phoneInternational", internationalNumber);
+                    })
+
+                    bloomerangSubmit = function () {
                     var form = jQuery("#express-form");
 
                     if (!Bloomerang.ValidateEventRegistrationFormCaptcha()) {
-                    return false;
+                        return false;
                     }
                     
                     if (!form.valid()) {
-                    return false;
+                        return false;
                     }
                     
                     if (jQuery("#payment_method_token").length || (jQuery("#express-form #CreditCard").length > 0 && !jQuery("#express-form #CreditCard").prop("checked"))) {
-                    if (!Bloomerang.continueFinancialSubmission(form)) { return false; }
+                        if (!Bloomerang.continueFinancialSubmission(form)) { return false; }
                     
-                    Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-                    Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-                    Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
-                    
-                    Bloomerang.CreditCard.spreedlyToken(jQuery("#payment_method_token").val());
-                    
-                    var processingMessage = jQuery("#registration-processing-container");
-                    processingMessage.show();
-                    jQuery("#registration-form-container").hide();
-                    Bloomerang.scrollToElement(processingMessage);
-                    
-                    Bloomerang.Api.donate();
+                        Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+                        Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+                        Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+                        
+                        Bloomerang.CreditCard.spreedlyToken(jQuery("#payment_method_token").val());
+                        
+                        var processingMessage = jQuery("#registration-processing-container");
+                        processingMessage.show();
+                        jQuery("#registration-form-container").hide();
+                        Bloomerang.scrollToElement(processingMessage);
+                        
+                        Bloomerang.Api.donate();
                     }
                     else {
-                    var val = function (selector) { return jQuery(selector).val(); };
-                    
-                    var amount = accounting.unformat(jQuery("#totalPrice").text());
-                    
-                    var selectedRegistrationType = jQuery(".registration-form .section.registrationType input[name='registration-type']:checked").data("short-name");
-                    jQuery("#express-script").attr("data-amount", "$" + amount)
+                        var val = function (selector) { return jQuery(selector).val(); };
+                        
+                        var amount = accounting.unformat(jQuery("#totalPrice").text());
+                        
+                        var selectedRegistrationType = jQuery(".registration-form .section.registrationType input[name='registration-type']:checked").data("short-name");
+                        jQuery("#express-script").attr("data-amount", "$" + amount)
                         .attr("data-full-name", val(".registration-form #first-name") + " " + val(".registration-form #last-name"))
                         .attr("data-email", val(".registration-form #email-address"))
                         .attr("data-phone_number", val(".registration-form #phone-number"))
                         .attr("data-address1", val(".registration-form #street-address"))
                         .attr("data-city", val(".registration-form #city"))
-                        .attr("data-state", val(".registration-form #state"))
-                        .attr("data-zip", val(".registration-form #postal-code"))
+                        .attr("data-state", val(".registration-form #state") || val(".registrtation-form #province"))
+                        .attr("data-zip", val(".registration-form #zip-code") || val(".registration-form #postal-code"))
                         .attr('data-sidebar-bottom-description', selectedRegistrationType);
-                    continueToExpress = true;
+                        continueToExpress = true;
                     }
-                };
-                
-                jQuery("#express-form #CreditCard").prop("checked", true);
-                jQuery("#express-form .section.payment input[type='radio']").click(function() {
+                    };
+                    
+                    jQuery("#express-form #CreditCard").prop("checked", true);
+                    jQuery("#express-form .section.payment input[type='radio']").click(function() {
                     if (jQuery(this).attr("id") == "CreditCard") {
-                    jQuery("#express-form .accountNumber, \
-                            #express-form .routingNumber, \
-                            #express-form .sample-check").hide();
+                        jQuery("#express-form .accountNumber, \
+                                #express-form .routingNumber, \
+                                #express-form .sample-check").hide();
                     }
                     else {
-                    jQuery("#express-form .accountNumber, \
-                            #express-form .routingNumber, \
-                            #express-form .sample-check").show();
-                    if (jQuery("#express-form .sample-check").length == 0) {
+                        jQuery("#express-form .accountNumber, \
+                                #express-form .routingNumber, \
+                                #express-form .sample-check").show();
+                        if (jQuery("#express-form .sample-check").length == 0) {
                         var checkImage = new Image();
                         checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
                         jQuery(checkImage).addClass("sample-check");
                         jQuery("#express-form .accountNumber").after(checkImage);
-                    }
+                        }
                     }
                 });
-                
+                    
             })(jQuery);
-            };
-
-                        var startBloomerangLoad = function() {
-                            if (window.bloomerangLoadStarted == undefined) {
-                                window.bloomerangLoadStarted = true;
-                                var script = document.createElement('script');
-                                script.type = 'text/javascript';
-                                script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
-                                document.getElementsByTagName('head')[0].appendChild(script);
-                                waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm(); })});
-                            }
-                            else {
-                                waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm(); })});
-                            }
-                        };
-
-                        var waitForBloomerangLoad = function(callback) {
-                            if (typeof(Bloomerang) === 'undefined' || !Bloomerang._isReady) {
-                                setTimeout(function () { waitForBloomerangLoad(callback) }, 500);
-                            }
-                            else {
-                                if (true) {
-                                    callback();
-                                } else {
-                                    window.bloomerangLoadStarted = undefined;
-                                    Bloomerang = undefined; // The version of Blomerang.js is not what we want. So blow it away and reload.
-                                    startBloomerangLoad();
+                };
+                
+                            var startBloomerangLoad = function() {
+                                if (window.bloomerangLoadStarted == undefined) {
+                                    window.bloomerangLoadStarted = true;
+                                    var script = document.createElement('script');
+                                    script.type = 'text/javascript';
+                                    script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                                    document.getElementsByTagName('head')[0].appendChild(script);
+                                    waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm90114(); })});
                                 }
-                            }
-                        };
+                                else {
+                                    waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm90114(); })});
+                                }
+                            };
 
-                        startBloomerangLoad();
-            </script></pre>
+                            var waitForBloomerangLoad = function(callback) {
+                                if (typeof(Bloomerang) === 'undefined' || !Bloomerang._isReady) {
+                                    setTimeout(function () { waitForBloomerangLoad(callback) }, 500);
+                                }
+                                else {
+                                    if (true) {
+                                        callback();
+                                    } else {
+                                        window.bloomerangLoadStarted = undefined;
+                                        Bloomerang = undefined; // The version of Blomerang.js is not what we want. So blow it away and reload.
+                                        startBloomerangLoad();
+                                    }
+                                }
+                            };
+
+                            startBloomerangLoad();
+            </script></pre>    
     </div>
     <div class="roundedblock gradtobottomright left">
         <div class="block-header">
