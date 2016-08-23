@@ -4,7 +4,7 @@ body {
 	background: #FFFFFF;
     background: linear-gradient(135deg, #b6f17f 0%,#9ddd35 38%,#7abc10 65%,#81b81c 100%);
 }
-input {
+input:not(.spreedly-input-text) {
 	padding: 7px !important;
 }
 select {
@@ -15,7 +15,7 @@ select {
 a.checkbox {
 	padding: 2px 7px 2px 7px !important;
 }
-input:not([type=radio]):not([type=checkbox]), select, textarea, a.checkbox {
+input:not([type=radio]):not([type=checkbox]):not(.spreedly-input-text), select, textarea, a.checkbox {
 	-webkit-border-radius: 3px;
     	-moz-border-radius: 3px;
     	-ms-border-radius: 3px;
@@ -37,7 +37,7 @@ input:not([type=radio]):not([type=checkbox]), select, textarea, a.checkbox {
     	color: #000000;
     	font: 13px "Century Gothic", Arial, sans-serif;
 }
-input:focus:not([type=radio]):not([type=checkbox]), select:focus, textarea:focus {
+input:focus:not([type=radio]):not([type=checkbox]):not(.spreedly-input-text), select:focus, textarea:focus {
     	-webkit-box-shadow: 0 0 2px #ED1C24 inset;
     	-moz-box-shadow: 0 0 2px #ed1c24 inset;
     	-ms-box-shadow: 0 0 2px #ed1c24 inset;
