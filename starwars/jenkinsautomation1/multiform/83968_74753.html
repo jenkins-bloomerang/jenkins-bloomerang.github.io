@@ -184,7 +184,7 @@
             '</style>' + 
             '' + 
             '<div id="donation-form-container">' + 
-            '  <form id="express-form" class="donation-form" method="post" action="javascript:bloomerangSubmit()" onsubmit="bloomerangSubmit()">' + 
+            '  <form id="donation-form" class="donation-form" method="post" action="javascript:collectPayment()" onsubmit="collectPayment()">' + 
             '    <div class="errors hidden"></div>' + 
             '    <div class="section donation">' + 
             '      <h3>Donation</h3>' + 
@@ -585,7 +585,7 @@
             '<option value="NL">Newfoundland and Labrador</option>' + 
             '<option value="NT">Northwest Territories</option>' + 
             '<option value="NS">Nova Scotia</option>' + 
-            '<option value="NU">Nunavat Territory</option>' + 
+            '<option value="NU">Nunavut</option>' + 
             '<option value="ON">Ontario</option>' + 
             '<option value="PE">Prince Edward Island</option>' + 
             '<option value="QC">Quebec</option>' + 
@@ -1008,7 +1008,7 @@
             '' +  '';var successHtml83968 = '<div class=\'donation-success\'>' +
                                                                 '  <h2>Thank You for Your Donation!</h2>' +
                                                                 '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
-                                                                    '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"standard\" data-show-faces=\"true\" data-action=\"like\" data-share=\"true\" \u003e\u003c/div\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to @bloomerangTech. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e\u003cscript\u003e(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.5\";fjs.parentNode.insertBefore(js, fjs);}(document, \"script\", \"facebook-jssdk\"));\u003c/script\u003e ' + 
+                                                                    '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to @bloomerangTech. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
                                                                     '</div>';( function($) {if (!Bloomerang.useDonationId('83968')) { 
                                                 html83968 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
                                             }if (jQuery('#bloomerangForm83968').length) {
@@ -1019,12 +1019,15 @@
                                 }
                                     jQuery('#bloomerangForm83968').after(html83968);
                                     if (!Bloomerang.SpreedlyScriptLoaded) {
-                                                        var spreedlyScript = document.createElement('script');
-                                                        jQuery(spreedlyScript).attr('src','https://core.spreedly.com/iframe/express-1.min.js')
-                                                            .attr('id','express-script')
-                                                            .attr('data-environment-key','FFOcP2r6aOM47DVLVXu8SUSLd9U')
-                                                            .attr('data-company-name','Jenkins Automation 1');
-                                                        jQuery('#express-form')[0].appendChild(spreedlyScript);
+                                                        Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
+                                                            function() { return SpreedlyExpress != undefined; },
+                                                            function() {
+                                                                SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
+                                                                Bloomerang.initSpreedly = function() {
+                                                                    SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Jenkins Automation 1' });
+                                                                };
+                                                                Bloomerang.initSpreedly();
+                                                            });
                                                     }
                                                     Bloomerang.SpreedlyScriptLoaded = true;
                                 };
@@ -1071,14 +1074,13 @@
                                     .applyDonationCustomFields();
                         }
 
-                        if (jQuery("#express-form #Checking").is(":checked") ||
-                            jQuery("#express-form #Savings").is(":checked")) {
+                        if (jQuery("#donation-form #Checking").is(":checked") ||
+                            jQuery("#donation-form #Savings").is(":checked")) {
                         Bloomerang.Eft
                             .accountNumber(val(".donation-form #accountNumber"))
                             .routingNumber(val(".donation-form #routingNumber"))
-                            .type(jQuery("#express-form .section.payment input[type='radio']:checked").attr("id"));
+                            .type(jQuery("#donation-form .section.payment input[type='radio']:checked").attr("id"));
                         }
-                                
                     };
                     Bloomerang.ValidateDonationFormCaptcha = function() {
                         if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).length) {
@@ -1112,7 +1114,9 @@
                         jQuery("#donation-processing-container").hide();
                         jQuery("#donation-form-container").show();
                         Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
-                        Bloomerang.cancelFinancialSubmission(jQuery("#express-form"));
+                        Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
+                        SpreedlyExpress.unload();
+                        Bloomerang.initSpreedly();
                     };
                     
                     Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
@@ -1282,69 +1286,90 @@
                     phoneField.toggleClass("phoneInternational", internationalNumber);
                     })
 
-                    bloomerangSubmit = function () {
-                    var form = jQuery("#express-form");
+                    collectPayment = function () {
+                    var form = jQuery("#donation-form");
 
                     if (!Bloomerang.ValidateDonationFormCaptcha()) {
                         return false;
                     }
-                    
+            
                     if (!form.valid()) {
                         return false;
                     }
-                    
-                    if (jQuery("#payment_method_token").length || (jQuery("#express-form #CreditCard").length > 0 && !jQuery("#express-form #CreditCard").prop("checked"))) {
-                        if (!Bloomerang.continueFinancialSubmission(form)) { return false; }
-                    
-                        Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-                        Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-                        Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
-                        
-                        Bloomerang.CreditCard.spreedlyToken(jQuery("#payment_method_token").val());
-                        
-                        var processingMessage = jQuery("#donation-processing-container");
-                        processingMessage.show();
-                        jQuery("#donation-form-container").hide();
-                        Bloomerang.scrollToElement(processingMessage);
-                        
-                        var tmp = jQuery(".donation-form #recurring").prop("checked")
-                            ? Bloomerang.Api.recurringDonate()
-                            : Bloomerang.Api.donate();
+            
+                    if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
+                        submitDonation();
                     }
                     else {
                         var val = function (selector) { return jQuery(selector).val(); };
                         var amount = val(".donation-form .section.donation input[name='donation-level']:checked") || val(".donation-form #donation-amount");
                         var selectedDonationLevel = jQuery(".donation-form .section.donation input[name='donation-level']:checked").parent().text();
                         selectedDonationLevel = (selectedDonationLevel.indexOf("-") == -1 ? "" : selectedDonationLevel.substr(selectedDonationLevel.indexOf("-") + 2) );
-                        jQuery("#express-script").attr("data-amount", accounting.formatMoney(amount))
-                        .attr("data-full-name", val(".donation-form #first-name") + " " + val(".donation-form #last-name"))
-                        .attr("data-email", val(".donation-form #email-address"))
-                        .attr("data-phone_number", val(".donation-form #phone-number"))
-                        .attr("data-address1", val(".donation-form #street-address"))
-                        .attr("data-city", val(".donation-form #city"))
-                        .attr("data-state", val(".donation-form #state") || val(".donation-form #province"))
-                        .attr("data-zip", val(".donation-form #zip-code") || val(".donation-form #postal-code"))
-                        .attr('data-sidebar-bottom-description', selectedDonationLevel);
-                        continueToExpress = true;
+                
+                        SpreedlyExpress.setDisplayOptions({
+                        "amount": accounting.formatMoney(amount),
+                        "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
+                        "sidebar_bottom_description": selectedDonationLevel,
+                        "submit_label": "Donate"});
+                        SpreedlyExpress.setPaymentMethodParams({
+                        "email": val(".donation-form #email-address"),
+                        "phone_number": val(".donation-form #phone-number"),
+                        "address1": val(".donation-form #street-address"),
+                        "city": val(".donation-form #city"),
+                        "state": val(".donation-form #state") || val(".donation-form #province"),
+                        "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
+
+                        SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
+                        Bloomerang.CreditCard.spreedlyToken(token);
+                            submitDonation();
+                        });
+
+                        var oldMeta = '';
+                        if (jQuery('meta[name="viewport"]').length) {
+                        oldMeta = jQuery('meta[name="viewport"]').attr('content');
+                        } else {
+                        jQuery('head').append('<meta name="viewport" content="" />');
+                        }
+                        jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
+                        jQuery('meta[name="viewport"]').attr('content', oldMeta);
+
+                        SpreedlyExpress.openView();
                     }
                     };
+
+                    submitDonation = function() {
+                    if (!Bloomerang.continueFinancialSubmission(jQuery("#donation-form"))) { return false; }
+            
+                    Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+                    Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+                    Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+
+                    var processingMessage = jQuery("#donation-processing-container");
+                    processingMessage.show();
+                    jQuery("#donation-form-container").hide();
+                    Bloomerang.scrollToElement(processingMessage);
+            
+                    var tmp = jQuery(".donation-form #recurring").prop("checked")
+                        ? Bloomerang.Api.recurringDonate()
+                        : Bloomerang.Api.donate();
+                    };
                     
-                    jQuery("#express-form #CreditCard").prop("checked", true);
-                    jQuery("#express-form .section.payment input[type='radio']").click(function() {
+                    jQuery("#donation-form #CreditCard").prop("checked", true);
+                    jQuery("#donation-form .section.payment input[type='radio']").click(function() {
                     if (jQuery(this).attr("id") == "CreditCard") {
-                        jQuery("#express-form .accountNumber, \
-                                #express-form .routingNumber, \
-                                #express-form .sample-check").hide();
+                        jQuery("#donation-form .accountNumber, \
+                                #donation-form .routingNumber, \
+                                #donation-form .sample-check").hide();
                     }                        
                     else {                   
-                        jQuery("#express-form .accountNumber, \
-                                #express-form .routingNumber, \
-                                #express-form .sample-check").show();
-                        if (jQuery("#express-form .sample-check").length == 0) {                    
+                        jQuery("#donation-form .accountNumber, \
+                                #donation-form .routingNumber, \
+                                #donation-form .sample-check").show();
+                        if (jQuery("#donation-form .sample-check").length == 0) {                    
                         var checkImage = new Image();
                         checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
                         jQuery(checkImage).addClass("sample-check");
-                        jQuery("#express-form .accountNumber").after(checkImage);
+                        jQuery("#donation-form .accountNumber").after(checkImage);
                         }
                     }
                 });
