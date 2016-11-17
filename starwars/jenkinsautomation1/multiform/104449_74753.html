@@ -191,24 +191,24 @@
             '</style>' + 
             '' + 
             '<div id="registration-form-container">' + 
-            '  <form id="registration-form" class="registration-form" method="post" action="javascript:collectPayment()" onsubmit="collectPayment()">' + 
+            '  <form id="registration-form" class="registration-form" method="post" onsubmit="event.preventDefault(); collectPayment();">' + 
             '    <div class="errors hidden"></div>' + 
             '    <div class="section registrationType">' + 
             '      <h3>Event Registration Stripe Captcha Self Hosted Registration</h3>' + 
             '      <div class="field radio 108544 required" >' + 
-            '<label for="108544"><input id="108544" name="registration-type" class="required" type="radio" value="100.000000" maxlength="255" data-short-name="Single Ticket" data-ticket-quantity="1" data-registration-type-value="103425" data-non-deductible-amount="30.000000"></input>$100.00 - Single Ticket: Single ticket plus meal</label>' + 
+            '<label for="108544"><input id="108544" name="registration-type" class="required" type="radio" value="100.000000" maxlength="255" data-short-name="Single Ticket" data-ticket-quantity="1" data-registration-type-value="103425" data-non-deductible-amount="30.000000"></input><span class="label">$100.00 - Single Ticket: Single ticket plus meal</span></label>' + 
             '</div>' + 
             '<div class="field radio 108545 required" >' + 
-            '<label for="108545"><input id="108545" name="registration-type" class="required" type="radio" value="200.000000" maxlength="255" data-short-name="Tickets for Two" data-ticket-quantity="2" data-registration-type-value="103427" data-non-deductible-amount="60.000000"></input>$200.00 - Tickets for Two: Two tickets plus meals</label>' + 
+            '<label for="108545"><input id="108545" name="registration-type" class="required" type="radio" value="200.000000" maxlength="255" data-short-name="Tickets for Two" data-ticket-quantity="2" data-registration-type-value="103427" data-non-deductible-amount="60.000000"></input><span class="label">$200.00 - Tickets for Two: Two tickets plus meals</span></label>' + 
             '</div>' + 
             '<div class="field radio 108546 required" >' + 
-            '<label for="108546"><input id="108546" name="registration-type" class="required" type="radio" value="1000.000000" maxlength="255" data-short-name="Standard Table" data-ticket-quantity="6" data-registration-type-value="103426" data-non-deductible-amount="180.000000"></input>$1,000.00 - Standard Table: Six tickets with meals plus private table</label>' + 
+            '<label for="108546"><input id="108546" name="registration-type" class="required" type="radio" value="1000.000000" maxlength="255" data-short-name="Standard Table" data-ticket-quantity="6" data-registration-type-value="103426" data-non-deductible-amount="180.000000"></input><span class="label">$1,000.00 - Standard Table: Six tickets with meals plus private table</span></label>' + 
             '</div>' + 
             '<div class="field radio 108547 required" >' + 
-            '<label for="108547"><input id="108547" name="registration-type" class="required" type="radio" value="1500.000000" maxlength="255" data-short-name="VIP Table" data-ticket-quantity="6" data-registration-type-value="103428" data-non-deductible-amount="180.000000"></input>$1,500.00 - VIP Table: Six tickets with meals, private table and VIP treatment</label>' + 
+            '<label for="108547"><input id="108547" name="registration-type" class="required" type="radio" value="1500.000000" maxlength="255" data-short-name="VIP Table" data-ticket-quantity="6" data-registration-type-value="103428" data-non-deductible-amount="180.000000"></input><span class="label">$1,500.00 - VIP Table: Six tickets with meals, private table and VIP treatment</span></label>' + 
             '</div>' + 
             '<div class="field radio cannot-attend required" >' + 
-            '<label for="cannot-attend"><input id="cannot-attend" name="registration-type" class="required" type="radio" maxlength="255" data-short-name="Donation" data-registration-type-value="103424"></input>Sorry, I can\'t attend, but I would like to show my support by making a donation</label>' + 
+            '<label for="cannot-attend"><input id="cannot-attend" name="registration-type" class="required" type="radio" maxlength="255" data-short-name="Donation" data-registration-type-value="103424"></input><span class="label">Sorry, I can\'t attend, but I would like to show my support by making a donation</span></label>' + 
             '</div>' + 
             '' + 
             '</div>' + 
@@ -254,19 +254,19 @@
             '    <div class="section contact">' + 
             '      <h3>Contact Information</h3>' + 
             '      <div class="field text first-name required" >' + 
-            '<label for="first-name">First Name<span class="required-star">*</span></label>' + 
+            '<label for="first-name"><span class="label">First Name</span><span class="required-star">*</span></label>' + 
             '<input id="first-name" name="first-name" class="required" type="text"></input>' + 
             '</div>' + 
             '<div class="field text last-name required" >' + 
-            '<label for="last-name">Last Name<span class="required-star">*</span></label>' + 
+            '<label for="last-name"><span class="label">Last Name</span><span class="required-star">*</span></label>' + 
             '<input id="last-name" name="last-name" class="required" type="text"></input>' + 
             '</div>' + 
             '<div class="field email email-address required" >' + 
-            '<label for="email-address">Email<span class="required-star">*</span></label>' + 
+            '<label for="email-address"><span class="label">Email</span><span class="required-star">*</span></label>' + 
             '<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
             '</div>' + 
             '<div class="field tel phone-number" >' + 
-            '<label for="phone-number">Phone</label>' + 
+            '<label for="phone-number"><span class="label">Phone</span></label>' + 
             '<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
             '</div>' + 
             '' + 
@@ -527,12 +527,12 @@
             '</select>' + 
             '</div>' + 
             '<div class="field  street-address required" >' + 
-            '<label for="street-address">Address<span class="required-star">*</span></label>' + 
+            '<label for="street-address"><span class="label">Address</span><span class="required-star">*</span></label>' + 
             '<textarea id="street-address" name="street-address" class="required"></textarea>' + 
             '</div>' + 
             '<div class="field text city required" >' + 
-            '<label for="city">City<span class="required-star">*</span></label>' + 
-            '<input id="city" name="city" class="required" type="text"></input>' + 
+            '<label for="city"><span class="label">City</span><span class="required-star">*</span></label>' + 
+            '<input id="city" name="city" class="required" type="text" data-us-label="City" data-bm-label="Parish"></input>' + 
             '</div>' + 
             '<div class="field  state required" >' + 
             '<label for="state">State<span class="required-star">*</span></label>' + 
@@ -616,11 +616,11 @@
             '</select>' + 
             '</div>' + 
             '<div class="field number zip-code required" >' + 
-            '<label for="zip-code">ZIP Code<span class="required-star">*</span></label>' + 
+            '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
             '<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
             '</div>' + 
             '<div class="field text postal-code required" style="display: none">' + 
-            '<label for="postal-code">Postal Code<span class="required-star">*</span></label>' + 
+            '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
             '<input id="postal-code" name="postal-code" class="required" type="text"></input>' + 
             '</div>' + 
             '' + 
@@ -629,7 +629,7 @@
             '    <div class="section custom-fields">' + 
             '      <h3>Additional Information</h3>' + 
             '      <div class="field text CustomAccountField_128000" >' + 
-            '<label for="CustomAccountField_128000">Auto Constituent Text Freeform</label>' + 
+            '<label for="CustomAccountField_128000"><span class="label">Auto Constituent Text Freeform</span></label>' + 
             '<input id="CustomAccountField_128000" name="CustomAccountField_128000" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128001" >' + 
@@ -667,7 +667,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field date CustomAccountField_128004" >' + 
-            '<label for="CustomAccountField_128004">Auto Constituent Date Freeform</label>' + 
+            '<label for="CustomAccountField_128004"><span class="label">Auto Constituent Date Freeform</span></label>' + 
             '<input id="CustomAccountField_128004" name="CustomAccountField_128004" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
             '<div class="field date CustomAccountField_128005" >' + 
@@ -705,7 +705,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128007" >' + 
-            '<label for="CustomAccountField_128007">Auto Constituent Year Freeform</label>' + 
+            '<label for="CustomAccountField_128007"><span class="label">Auto Constituent Year Freeform</span></label>' + 
             '<input id="CustomAccountField_128007" name="CustomAccountField_128007" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128008" >' + 
@@ -743,7 +743,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128010" >' + 
-            '<label for="CustomAccountField_128010">Auto Constituent Number Freeform</label>' + 
+            '<label for="CustomAccountField_128010"><span class="label">Auto Constituent Number Freeform</span></label>' + 
             '<input id="CustomAccountField_128010" name="CustomAccountField_128010" class="number" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128011" >' + 
@@ -781,7 +781,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128013" >' + 
-            '<label for="CustomAccountField_128013">Auto Constituent Currency Freeform</label>' + 
+            '<label for="CustomAccountField_128013"><span class="label">Auto Constituent Currency Freeform</span></label>' + 
             '<input id="CustomAccountField_128013" name="CustomAccountField_128013" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128014" >' + 
@@ -819,7 +819,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124930" >' + 
-            '<label for="CustomTransactionField_124930">Auto Transaction Text Freeform</label>' + 
+            '<label for="CustomTransactionField_124930"><span class="label">Auto Transaction Text Freeform</span></label>' + 
             '<input id="CustomTransactionField_124930" name="CustomTransactionField_124930" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124931" >' + 
@@ -857,7 +857,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field date CustomTransactionField_124934" >' + 
-            '<label for="CustomTransactionField_124934">Auto Transaction Date Freeform</label>' + 
+            '<label for="CustomTransactionField_124934"><span class="label">Auto Transaction Date Freeform</span></label>' + 
             '<input id="CustomTransactionField_124934" name="CustomTransactionField_124934" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
             '<div class="field date CustomTransactionField_124935" >' + 
@@ -895,7 +895,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124937" >' + 
-            '<label for="CustomTransactionField_124937">Auto Transaction Year Freeform</label>' + 
+            '<label for="CustomTransactionField_124937"><span class="label">Auto Transaction Year Freeform</span></label>' + 
             '<input id="CustomTransactionField_124937" name="CustomTransactionField_124937" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124938" >' + 
@@ -933,7 +933,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124940" >' + 
-            '<label for="CustomTransactionField_124940">Auto Transaction Number Freeform</label>' + 
+            '<label for="CustomTransactionField_124940"><span class="label">Auto Transaction Number Freeform</span></label>' + 
             '<input id="CustomTransactionField_124940" name="CustomTransactionField_124940" class="number" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124941" >' + 
@@ -971,7 +971,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124943" >' + 
-            '<label for="CustomTransactionField_124943">Auto Transaction Currency Freeform</label>' + 
+            '<label for="CustomTransactionField_124943"><span class="label">Auto Transaction Currency Freeform</span></label>' + 
             '<input id="CustomTransactionField_124943" name="CustomTransactionField_124943" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124944" >' + 
@@ -1012,7 +1012,7 @@
             '</div>' + 
             '    <div class="section comment">' + 
             '      <div class="field text comment" >' + 
-            '<label for="comment">Comments</label>' + 
+            '<label for="comment"><span class="label">Comments</span></label>' + 
             '<textarea id="comment" name="comment" type="text" value="Comments"></textarea>' + 
             '</div>' + 
             '' + 
@@ -1282,7 +1282,7 @@
                     }, function () { return "Must be a 4 digit year"; });
 
                     jQuery.validator.classRuleSettings.validYear = { validYear: true };
-                    
+
                     // Validate that the donation amount is at least $1
                     jQuery.validator.methods.min = function( value, element, param ) {
                     if (typeof (accounting) === "undefined") { // rip out $ and ,
@@ -1298,16 +1298,24 @@
 
                     jQuery(".registration-form #country").change(function(event) {
                     var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
-                    var isInternational = (element.val() != "US" && element.val() != "CA");
+                    var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
                     jQuery(".registration-form .field.city, .registration-form .field.state, .registration-form .field.province, .registration-form .field.zip-code, .registration-form .field.postal-code").toggle(!isInternational);
                     jQuery(".registration-form #street-address").toggleClass("international", isInternational);
                     jQuery(".registration-form #state, .registration-form #province").val(""); // clear the state when the country changes
+                    if (element.val() == "BM") {
+                        jQuery(".registration-form .field.city .label").text(jQuery(".registration-form .field.city input").data("bm-label"));
+                    } else if (element.val() == "US" || element.val() == "CA") {
+                        jQuery(".registration-form .field.city .label").text(jQuery(".registration-form .field.city input").data("us-label"));
+                    }
                     if (element.val() == "US") {
                         jQuery(".registration-form .field.state, .registration-form .field.zip-code").show();
                         jQuery(".registration-form .field.province, .registration-form .field.postal-code").hide();
                     } else if (element.val() == "CA") {
                         jQuery(".registration-form .field.state, .registration-form .field.zip-code").hide();
                         jQuery(".registration-form .field.province, .registration-form .field.postal-code").show();
+                    } else if (element.val() == "BM") {
+                        jQuery(".registration-form .field.state, .registration-form .field.province, .registration-form .field.zip-code").hide();
+                        jQuery(".registration-form .field.postal-code").show();
                     } else {
                         jQuery(".registration-form #city, .registration-form #zip-code, .registration-form #postal-code").val("");
                     }

@@ -184,24 +184,24 @@
             '</style>' + 
             '' + 
             '<div id="donation-form-container">' + 
-            '  <form id="donation-form" class="donation-form" method="post" action="javascript:collectPayment()" onsubmit="collectPayment()">' + 
+            '  <form id="donation-form" class="donation-form" method="post" onsubmit="event.preventDefault(); collectPayment();">' + 
             '    <div class="errors hidden"></div>' + 
             '    <div class="section donation">' + 
             '      <h3>Donation</h3>' + 
             '      <div class="field radio 107520 required" >' + 
-            '<label for="107520"><input id="107520" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input>$10.00 - Level One</label>' + 
+            '<label for="107520"><input id="107520" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
             '</div>' + 
             '<div class="field radio 107521 required" >' + 
-            '<label for="107521"><input id="107521" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input>$25.00 - Level Two</label>' + 
+            '<label for="107521"><input id="107521" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
             '</div>' + 
             '<div class="field radio 107522 required" >' + 
-            '<label for="107522"><input id="107522" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input>$50.00 - Level Three</label>' + 
+            '<label for="107522"><input id="107522" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
             '</div>' + 
             '<div class="field radio 107523 required" >' + 
-            '<label for="107523"><input id="107523" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input>$100.00 - Level Four</label>' + 
+            '<label for="107523"><input id="107523" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
             '</div>' + 
             '<div class="field radio other-option required" >' + 
-            '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input>Other</label>' + 
+            '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
             '</div>' + 
             '<div class="field number other-amount" >' + 
             '<input id="other-amount" name="other-amount" class="currency minimum1" type="number" step="any" placeholder="$0.00"></input>' + 
@@ -210,7 +210,7 @@
             '</div>' + 
             '    <div class="section recurring">' + 
             '      <div class="field checkbox recurring" >' + 
-            '<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input>Show my support by making this a recurring donation</label>' + 
+            '<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a recurring donation</span></label>' + 
             '</div>' + 
             '<div class="field  frequency required" style="display: none">' + 
             '<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
@@ -223,7 +223,7 @@
             '</select>' + 
             '</div>' + 
             '<div class="field date start-date required" style="display: none">' + 
-            '<label for="start-date">Start Date<span class="required-star">*</span></label>' + 
+            '<label for="start-date"><span class="label">Start Date</span><span class="required-star">*</span></label>' + 
             '<input id="start-date" name="start-date" class="validDate required" type="date" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
             '' + 
@@ -232,19 +232,19 @@
             '    <div class="section contact">' + 
             '      <h3>Contact Information</h3>' + 
             '      <div class="field text first-name required" >' + 
-            '<label for="first-name">First Name<span class="required-star">*</span></label>' + 
+            '<label for="first-name"><span class="label">First Name</span><span class="required-star">*</span></label>' + 
             '<input id="first-name" name="first-name" class="required" type="text"></input>' + 
             '</div>' + 
             '<div class="field text last-name required" >' + 
-            '<label for="last-name">Last Name<span class="required-star">*</span></label>' + 
+            '<label for="last-name"><span class="label">Last Name</span><span class="required-star">*</span></label>' + 
             '<input id="last-name" name="last-name" class="required" type="text"></input>' + 
             '</div>' + 
             '<div class="field email email-address required" >' + 
-            '<label for="email-address">Email<span class="required-star">*</span></label>' + 
+            '<label for="email-address"><span class="label">Email</span><span class="required-star">*</span></label>' + 
             '<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
             '</div>' + 
             '<div class="field tel phone-number" >' + 
-            '<label for="phone-number">Phone</label>' + 
+            '<label for="phone-number"><span class="label">Phone</span></label>' + 
             '<input id="phone-number" name="phone-number" class="phoneUS" type="tel"></input>' + 
             '</div>' + 
             '' + 
@@ -505,12 +505,12 @@
             '</select>' + 
             '</div>' + 
             '<div class="field  street-address required" >' + 
-            '<label for="street-address">Address<span class="required-star">*</span></label>' + 
+            '<label for="street-address"><span class="label">Address</span><span class="required-star">*</span></label>' + 
             '<textarea id="street-address" name="street-address" class="required"></textarea>' + 
             '</div>' + 
             '<div class="field text city required" >' + 
-            '<label for="city">City<span class="required-star">*</span></label>' + 
-            '<input id="city" name="city" class="required" type="text"></input>' + 
+            '<label for="city"><span class="label">City</span><span class="required-star">*</span></label>' + 
+            '<input id="city" name="city" class="required" type="text" data-us-label="City" data-bm-label="Parish"></input>' + 
             '</div>' + 
             '<div class="field  state required" >' + 
             '<label for="state">State<span class="required-star">*</span></label>' + 
@@ -594,11 +594,11 @@
             '</select>' + 
             '</div>' + 
             '<div class="field number zip-code required" >' + 
-            '<label for="zip-code">ZIP Code<span class="required-star">*</span></label>' + 
+            '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
             '<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
             '</div>' + 
             '<div class="field text postal-code required" style="display: none">' + 
-            '<label for="postal-code">Postal Code<span class="required-star">*</span></label>' + 
+            '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
             '<input id="postal-code" name="postal-code" class="required" type="text"></input>' + 
             '</div>' + 
             '' + 
@@ -607,7 +607,7 @@
             '    <div class="section custom-fields">' + 
             '      <h3>Additional Information</h3>' + 
             '      <div class="field text CustomAccountField_128000" >' + 
-            '<label for="CustomAccountField_128000">Auto Constituent Text Freeform</label>' + 
+            '<label for="CustomAccountField_128000"><span class="label">Auto Constituent Text Freeform</span></label>' + 
             '<input id="CustomAccountField_128000" name="CustomAccountField_128000" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128001" >' + 
@@ -645,7 +645,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field date CustomAccountField_128004" >' + 
-            '<label for="CustomAccountField_128004">Auto Constituent Date Freeform</label>' + 
+            '<label for="CustomAccountField_128004"><span class="label">Auto Constituent Date Freeform</span></label>' + 
             '<input id="CustomAccountField_128004" name="CustomAccountField_128004" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
             '<div class="field date CustomAccountField_128005" >' + 
@@ -683,7 +683,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128007" >' + 
-            '<label for="CustomAccountField_128007">Auto Constituent Year Freeform</label>' + 
+            '<label for="CustomAccountField_128007"><span class="label">Auto Constituent Year Freeform</span></label>' + 
             '<input id="CustomAccountField_128007" name="CustomAccountField_128007" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128008" >' + 
@@ -721,7 +721,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128010" >' + 
-            '<label for="CustomAccountField_128010">Auto Constituent Number Freeform</label>' + 
+            '<label for="CustomAccountField_128010"><span class="label">Auto Constituent Number Freeform</span></label>' + 
             '<input id="CustomAccountField_128010" name="CustomAccountField_128010" class="number" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128011" >' + 
@@ -759,7 +759,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128013" >' + 
-            '<label for="CustomAccountField_128013">Auto Constituent Currency Freeform</label>' + 
+            '<label for="CustomAccountField_128013"><span class="label">Auto Constituent Currency Freeform</span></label>' + 
             '<input id="CustomAccountField_128013" name="CustomAccountField_128013" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
             '</div>' + 
             '<div class="field text CustomAccountField_128014" >' + 
@@ -797,7 +797,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124930" >' + 
-            '<label for="CustomTransactionField_124930">Auto Transaction Text Freeform</label>' + 
+            '<label for="CustomTransactionField_124930"><span class="label">Auto Transaction Text Freeform</span></label>' + 
             '<input id="CustomTransactionField_124930" name="CustomTransactionField_124930" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124931" >' + 
@@ -835,7 +835,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field date CustomTransactionField_124934" >' + 
-            '<label for="CustomTransactionField_124934">Auto Transaction Date Freeform</label>' + 
+            '<label for="CustomTransactionField_124934"><span class="label">Auto Transaction Date Freeform</span></label>' + 
             '<input id="CustomTransactionField_124934" name="CustomTransactionField_124934" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
             '</div>' + 
             '<div class="field date CustomTransactionField_124935" >' + 
@@ -873,7 +873,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124937" >' + 
-            '<label for="CustomTransactionField_124937">Auto Transaction Year Freeform</label>' + 
+            '<label for="CustomTransactionField_124937"><span class="label">Auto Transaction Year Freeform</span></label>' + 
             '<input id="CustomTransactionField_124937" name="CustomTransactionField_124937" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124938" >' + 
@@ -911,7 +911,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124940" >' + 
-            '<label for="CustomTransactionField_124940">Auto Transaction Number Freeform</label>' + 
+            '<label for="CustomTransactionField_124940"><span class="label">Auto Transaction Number Freeform</span></label>' + 
             '<input id="CustomTransactionField_124940" name="CustomTransactionField_124940" class="number" type="text" maxlength="255"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124941" >' + 
@@ -949,7 +949,7 @@
             '</div>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124943" >' + 
-            '<label for="CustomTransactionField_124943">Auto Transaction Currency Freeform</label>' + 
+            '<label for="CustomTransactionField_124943"><span class="label">Auto Transaction Currency Freeform</span></label>' + 
             '<input id="CustomTransactionField_124943" name="CustomTransactionField_124943" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
             '</div>' + 
             '<div class="field text CustomTransactionField_124944" >' + 
@@ -990,7 +990,7 @@
             '</div>' + 
             '    <div class="section comment">' + 
             '      <div class="field text comment" >' + 
-            '<label for="comment">Comments</label>' + 
+            '<label for="comment"><span class="label">Comments</span></label>' + 
             '<textarea id="comment" name="comment" type="text" value="Comments"></textarea>' + 
             '</div>' + 
             '' + 
@@ -1274,21 +1274,29 @@
 
                     jQuery(".donation-form #country").change(function(event) {
                     var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
-                    var isInternational = (element.val() != "US" && element.val() != "CA");
+                    var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
                     jQuery(".donation-form #state, .donation-form #province").val(""); // clear the state when the country changes
                     jQuery(".donation-form .field.city, .donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code, .donation-form .field.postal-code").toggle(!isInternational);
                     jQuery(".donation-form #street-address").toggleClass("international", isInternational);
+                    if (element.val() == "BM") {
+                        jQuery(".donation-form .field.city .label").text(jQuery(".donation-form .field.city input").data("bm-label"));
+                    } else if (element.val() == "US" || element.val() == "CA") {
+                        jQuery(".donation-form .field.city .label").text(jQuery(".donation-form .field.city input").data("us-label"));
+                    }
                     if (element.val() == "US") {
                         jQuery(".donation-form .field.state, .donation-form .field.zip-code").show();
                         jQuery(".donation-form .field.province, .donation-form .field.postal-code").hide();
                     } else if (element.val() == "CA") {
                         jQuery(".donation-form .field.state, .donation-form .field.zip-code").hide();
                         jQuery(".donation-form .field.province, .donation-form .field.postal-code").show();
+                    } else if (element.val() == "BM") {
+                        jQuery(".donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code").hide();
+                        jQuery(".donation-form .field.postal-code").show();
                     } else {
                         jQuery(".donation-form #city, .donation-form #postal-code, .donation-form #zip-code").val("");
                     }
                     });
-                    
+
                     jQuery(".donation-form #phone-number").change(function () {
                     var phoneField = jQuery(".donation-form #phone-number");
                     var internationalNumber = phoneField.val().substring(0,1) === '+';
