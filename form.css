@@ -162,7 +162,6 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
 	clear: both;
 	height: 0;
 }
-div#spreedly-modal-overlay[visibility:hidden] {
+div#spreedly-modal-overlay[style="visibility:hidden"] {
 	display: none;
-	
 }
