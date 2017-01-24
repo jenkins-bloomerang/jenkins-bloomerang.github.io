@@ -996,7 +996,10 @@
             '' + 
             '</div>' + 
             '    ' + 
-            '    ' + 
+            '    <div class="section captcha">' + 
+            '      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31749"></div>' + 
+            '' + 
+            '</div>' + 
             '    <div class="btn-group">' + 
             '      <input class="btn btn-submit btn-submit-donation" type="submit" value="Donate" id="express-submit" disabled="true" />' + 
             '    </div>' + 
@@ -1036,7 +1039,14 @@
                                                         return false;
                                                     }
                                                     Bloomerang.paymentFormLoaded = true;
-                                
+                                window.captchaLoadCallback = function() {
+                                        Bloomerang.gRecaptchaLoaded = true;
+                                    };
+                                    Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
+                                        function() { return Bloomerang.gRecaptchaLoaded; },
+                                        function() {
+                                            jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha31749', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
+                                        });
                                 Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
                                 Bloomerang.useKey('pub_dd0f84e6-e18a-11e6-afaf-069deaff391b');
 
