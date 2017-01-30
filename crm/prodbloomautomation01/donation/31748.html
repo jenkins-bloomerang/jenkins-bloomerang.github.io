@@ -196,7 +196,6 @@
 			'<div class="field  frequency required" style="display: none">' + 
 			'<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
 			'<select id="frequency" name="frequency" class="required"><option value=""></option>' + 
-			'<option value="Daily">Daily</option>' + 
 			'<option value="Weekly">Weekly</option>' + 
 			'<option value="Monthly" selected>Monthly</option>' + 
 			'<option value="Quarterly">Quarterly</option>' + 
@@ -1034,7 +1033,7 @@
 															function() {
 																SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
 																Bloomerang.initSpreedly = function() {
-																	SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Bloom Automation 01' });
+																	SpreedlyExpress.init('OqOMv1ksjPtXEYHtCYsVXzEpCbR', { 'company_name': 'Prod Bloom Automation 01' });
 																};
 																Bloomerang.initSpreedly();
 															});
@@ -1047,7 +1046,7 @@
 													Bloomerang.paymentFormLoaded = true;
 								
 								Bloomerang.transactionFee = 0.2; Bloomerang.transactionFeeRate = 0.025;
-								Bloomerang.useKey('pub_a276a17c-e413-4541-926b-f10a073579fc ');
+								Bloomerang.useKey('pub_a276a17c-e413-4541-926b-f10a073579fc');
 
 					Bloomerang.Util.getDonationAmount = function() {
 					return Number(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val());
