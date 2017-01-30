@@ -15,7 +15,7 @@
         <div class="table-info">
             <div class="row">
                 <div class="cell">Environment:</div>
-                <div class="cell bold" id="environmentName" data-shortName="starwars">QA (Starwars)</div>
+                <div class="cell bold" id="environmentName" data-shortName="crm">Production</div>
             </div>
             <div class="row">
                 <div class="cell">Database:</div>
@@ -1050,7 +1050,7 @@
                                                             function() {
                                                                 SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
                                                                 Bloomerang.initSpreedly = function() {
-                                                                    SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Bloom Automation 01' });
+                                                                    SpreedlyExpress.init('OqOMv1ksjPtXEYHtCYsVXzEpCbR', { 'company_name': 'Prod Bloom Automation 01' });
                                                                 };
                                                                 Bloomerang.initSpreedly();
                                                             });
@@ -1070,7 +1070,7 @@
                                             jQuery('form.registration-form').data('captcha-id', grecaptcha.render('captcha31754', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
                                         });
                                 Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
-                                Bloomerang.useKey('pub_a276a17c-e413-4541-926b-f10a073579fc ');
+                                Bloomerang.useKey('pub_a276a17c-e413-4541-926b-f10a073579fc');
 
                     Bloomerang.Util.getRegistrationAmount = function() {
                     return accounting.unformat(jQuery("#totalPrice").text());
@@ -1458,7 +1458,7 @@
                                     window.bloomerangLoadStarted = true;
                                     var script = document.createElement('script');
                                     script.type = 'text/javascript';
-                                    script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                                    script.src = 'https://crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
                                     document.getElementsByTagName('head')[0].appendChild(script);
                                     waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31754(); })});
                                 }
