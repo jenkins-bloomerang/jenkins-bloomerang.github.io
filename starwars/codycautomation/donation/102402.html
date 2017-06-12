@@ -169,9 +169,14 @@
             '    <div class="errors hidden"></div>' + 
             '    <div class="section donation">' + 
             '      <h3>Donation</h3>' + 
-            '      <div class="field tel donation-amount required" >' + 
-            '<label for="donation-amount"><span class="label">Amount</span><span class="required-star">*</span></label>' + 
-            '<input id="donation-amount" name="donation-amount" class="currency minimum1 required" type="tel" placeholder="$0.00"></input>' + 
+            '      <div class="field radio 105478 required" >' + 
+            '<label for="105478"><input id="105478" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Test 10</span></label>' + 
+            '</div>' + 
+            '<div class="field radio other-option required" >' + 
+            '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
+            '</div>' + 
+            '<div class="field number other-amount" >' + 
+            '<input id="other-amount" name="other-amount" class="currency minimum1" type="number" step="any" placeholder="$0.00"></input>' + 
             '</div>' + 
             '' + 
             '</div>' + 
@@ -1040,7 +1045,7 @@
                             };
 
                             startBloomerangLoad();
-        </script></pre>
+            </script></pre>
     </div>
 </body>
 </html>
