@@ -51,7 +51,7 @@
         </div>
         <div class="roundedblock gradtobottomright left">
             <img style="margin: 5px; float: right;" height="100" width="200" src="/images/multiForms.png">
-            <div class="textblock">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at elit elit. Aliquam pretium dignissim leo quis venenatis. Fusce in massa metus. Donec euismod iaculis ultricies. Mauris malesuada sed nisl eget vestibulum. Phasellus egestas lectus vitae aliquet semper. Aliquam ipsum elit, lobortis nec facilisis non, posuere eu nulla. Vivamus auctor posuere hendrerit. In placerat tortor mauris, sit amet tincidunt velit facilisis eu. Suspendisse rutrum erat ac ligula scelerisque pretium. Etiam pellentesque ex ex, sed auctor diam placerat nec. Morbi mi quam, dictum a dui a, interdum aliquam tellus.<br><br>Donec tincidunt ligula vitae tortor iaculis pretium. Nullam pharetra convallis arcu sed blandit. Nullam dolor metus, pretium vitae turpis ac, suscipit ullamcorper odio. Fusce quis nulla turpis. In vel sapien diam. Integer sit amet dolor ac metus eleifend aliquam. Pellentesque vulputate lacus sem, vitae sagittis odio vestibulum vel. Cras bibendum nulla elit, at ultricies urna tempor et. In elit lectus, scelerisque euismod purus pretium, blandit cursus lectus. Curabitur eu erat non dolor ultricies placerat.<br><br>Nulla porta arcu lacus, sit amet cursus enim auctor eu. Vivamus at odio id dolor volutpat porta. Suspendisse rutrum pretium fringilla. Nunc ut arcu magna. Aenean quam massa, placerat vitae posuere vel, sagittis ut eros. Etiam lorem mauris, facilisis at lacus eget, tempor mattis sem. Ut sagittis nec leo eu pulvinar. Donec sollicitudin ligula vel ante mollis, sit amet fringilla mi malesuada. Sed congue bibendum tellus, a aliquet enim interdum eget. Nullam hendrerit odio posuere enim rhoncus, in pellentesque mi mollis.</div>
+            <div class="textblock">xLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at elit elit. Aliquam pretium dignissim leo quis venenatis. Fusce in massa metus. Donec euismod iaculis ultricies. Mauris malesuada sed nisl eget vestibulum. Phasellus egestas lectus vitae aliquet semper. Aliquam ipsum elit, lobortis nec facilisis non, posuere eu nulla. Vivamus auctor posuere hendrerit. In placerat tortor mauris, sit amet tincidunt velit facilisis eu. Suspendisse rutrum erat ac ligula scelerisque pretium. Etiam pellentesque ex ex, sed auctor diam placerat nec. Morbi mi quam, dictum a dui a, interdum aliquam tellus.<br><br>Donec tincidunt ligula vitae tortor iaculis pretium. Nullam pharetra convallis arcu sed blandit. Nullam dolor metus, pretium vitae turpis ac, suscipit ullamcorper odio. Fusce quis nulla turpis. In vel sapien diam. Integer sit amet dolor ac metus eleifend aliquam. Pellentesque vulputate lacus sem, vitae sagittis odio vestibulum vel. Cras bibendum nulla elit, at ultricies urna tempor et. In elit lectus, scelerisque euismod purus pretium, blandit cursus lectus. Curabitur eu erat non dolor ultricies placerat.<br><br>Nulla porta arcu lacus, sit amet cursus enim auctor eu. Vivamus at odio id dolor volutpat porta. Suspendisse rutrum pretium fringilla. Nunc ut arcu magna. Aenean quam massa, placerat vitae posuere vel, sagittis ut eros. Etiam lorem mauris, facilisis at lacus eget, tempor mattis sem. Ut sagittis nec leo eu pulvinar. Donec sollicitudin ligula vel ante mollis, sit amet fringilla mi malesuada. Sed congue bibendum tellus, a aliquet enim interdum eget. Nullam hendrerit odio posuere enim rhoncus, in pellentesque mi mollis.</div>
         </div>
     </div>    
     <div class="roundedblock gradtobottomright left">
@@ -181,6 +181,8 @@
             '' + 
             'iframe#spreedly-iframe[style=\'visibility: hidden;\']{display: none;}' + 
             '' + 
+            '#spreedly-modal-overlay[style="visibility:hidden"]{display: none;}' + 
+            '' + 
             '</style>' + 
             '' + 
             '<div id="donation-form-container">' + 
@@ -203,8 +205,8 @@
             '<div class="field radio other-option required" >' + 
             '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
             '</div>' + 
-            '<div class="field number other-amount" >' + 
-            '<input id="other-amount" name="other-amount" class="currency minimum1" type="number" step="any" placeholder="$0.00"></input>' + 
+            '<div class="field tel other-amount" >' + 
+            '<input id="other-amount" name="other-amount" class="currency minimum1" type="tel" placeholder="$0.00"></input>' + 
             '</div>' + 
             '' + 
             '</div>' + 
@@ -469,7 +471,7 @@
             '<option value="SE">Sweden</option>' + 
             '<option value="CH">Switzerland</option>' + 
             '<option value="SY">Syrian Arab Republic</option>' + 
-            '<option value="TW">Province of China Taiwan</option>' + 
+            '<option value="TW">Taiwan</option>' + 
             '<option value="TJ">Tajikistan</option>' + 
             '<option value="TZ">United Republic of Tanzania</option>' + 
             '<option value="TH">Thailand</option>' + 
@@ -1001,7 +1003,7 @@
             '' + 
             '</div>' + 
             '    <div class="btn-group">' + 
-            '      <input class="btn btn-submit btn-submit-donation" type="submit" value="Donate" id="express-submit" disabled="true" />' + 
+            '      <input class="btn btn-submit btn-submit-donation" type="submit" value="Enter Payment" id="express-submit" disabled="true" />' + 
             '    </div>' + 
             '  </form>' + 
             '</div>' + 
@@ -1010,9 +1012,9 @@
             '</div>' + 
             '' + 
             '' +  '';var successHtml31749 = '<div class=\'donation-success\'>' +
-                                                                '  <h2>Thank You for Your Donation!</h2>' +
-                                                                '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
-                                                                    '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to Bloom Automation 01. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
+                                                                   '  <h2>Thank You for Your Donation!</h2>' +
+                                                                   '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
+                                                                    '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to Bloom Automation 02. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
                                                                     '</div>';( function($) {if (!Bloomerang.useDonationId('31749')) { 
                                                 html31749 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
                                             }if (jQuery('#bloomerangForm31749').length) {
@@ -1022,13 +1024,13 @@
                                     ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
                                 }
                                     jQuery('#bloomerangForm31749').after(html31749);
-                                    if (!Bloomerang.SpreedlyScriptLoaded) {
+                                     if (!Bloomerang.SpreedlyScriptLoaded) {
                                                         Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
                                                             function() { return SpreedlyExpress != undefined; },
                                                             function() {
                                                                 SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
                                                                 Bloomerang.initSpreedly = function() {
-                                                                    SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Bloom Automation 01' });
+                                                                    SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Bloom Automation 02' });
                                                                 };
                                                                 Bloomerang.initSpreedly();
                                                             });
@@ -1039,19 +1041,20 @@
                                                         return false;
                                                     }
                                                     Bloomerang.paymentFormLoaded = true;
-                                window.captchaLoadCallback = function() {
+                                   window.captchaLoadCallback = function() {
                                         Bloomerang.gRecaptchaLoaded = true;
                                     };
                                     Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
                                         function() { return Bloomerang.gRecaptchaLoaded; },
                                         function() {
+                                            jQuery('.section.captcha').removeAttr('style');
                                             jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha31749', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
                                         });
                                 Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
                                 Bloomerang.useKey('pub_2078e1a3-4e2c-46fa-bf89-e21d551e7c6c');
 
                     Bloomerang.Util.getDonationAmount = function() {
-                    return Number(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val());
+                      return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
                     };
 
                     // Register proper callbacks for various stages/outcomes of submission
@@ -1064,10 +1067,10 @@
                                 .middleName(val(".donation-form #middle-name"))
                                 .lastName(val(".donation-form #last-name"))
                                 .homeAddress(val(".donation-form #street-address"),
-                                            val(".donation-form #city"),
-                                            val(".donation-form #state") || val(".donation-form #province"),
-                                            val(".donation-form #zip-code") || val(".donation-form #postal-code"),
-                                            val(".donation-form #country"))
+                                             val(".donation-form #city"),
+                                             val(".donation-form #state") || val(".donation-form #province"),
+                                             val(".donation-form #zip-code") || val(".donation-form #postal-code"),
+                                             val(".donation-form #country"))
                                 .homeEmail(val(".donation-form #email-address"))
                                 .homePhone(val(".donation-form #phone-number"))
                                 .applyDonationCustomFields();
@@ -1084,7 +1087,7 @@
 
                             // Need to do a null-check here because they might have a cached version of Bloomerang-v2.js
                             if (Bloomerang.RecurringDonation.trueImpactEnabled && Bloomerang.RecurringDonation.trueImpactUsed) {
-                            Bloomerang.RecurringDonation
+                              Bloomerang.RecurringDonation
                                     .trueImpactEnabled(jQuery(".donation-form .true-impact .fee-amount").length > 0)
                                     .trueImpactUsed(jQuery(".donation-form .true-impact input:checked").length > 0);
                             }
@@ -1097,7 +1100,7 @@
 
                             // Need to do a null-check here because they might have a cached version of Bloomerang-v2.js
                             if (Bloomerang.Donation.trueImpactEnabled && Bloomerang.Donation.trueImpactUsed) {
-                            Bloomerang.Donation
+                              Bloomerang.Donation
                                     .trueImpactEnabled(jQuery(".donation-form .true-impact .fee-amount").length > 0)
                                     .trueImpactUsed(jQuery(".donation-form .true-impact input:checked").length > 0);
                             }
@@ -1105,21 +1108,21 @@
 
                         if (jQuery("#donation-form #Checking").is(":checked") ||
                             jQuery("#donation-form #Savings").is(":checked")) {
-                        Bloomerang.Eft
+                          Bloomerang.Eft
                             .accountNumber(val(".donation-form #accountNumber"))
                             .routingNumber(val(".donation-form #routingNumber"))
                             .type(jQuery("#donation-form .section.payment input[type='radio']:checked").attr("id"));
                         }
                     };
                     Bloomerang.ValidateDonationFormCaptcha = function() {
-                        if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).length) {
+                        if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
                             var captchaResponse = grecaptcha.getResponse(jQuery(".donation-form").data("captcha-id"));
                             if (captchaResponse) {
-                                jQuery(".noCaptchaResponseError").hide();
+                                jQuery(".donation-form .noCaptchaResponseError").hide();
                                 Bloomerang.captchaResponse(captchaResponse);
                                 return true;
                             } else {
-                                jQuery(".noCaptchaResponseError").show();
+                                jQuery(".donation-form .noCaptchaResponseError").show();
                                 return false;
                             }
                         } else return true;
@@ -1138,7 +1141,12 @@
                         Bloomerang.scrollToElement(formContainer);
                     };
                     Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
-                        jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled").val("Donate");
+                        jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
+                        if (jQuery("#donation-form #Checking").is(":checked") ||
+                            jQuery("#donation-form #Savings").is(":checked"))
+                          jQuery(".btn-submit-donation").val("Donate");
+                        else
+                          jQuery(".btn-submit-donation").val("Enter Payment");
                         jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
                         jQuery("#donation-processing-container").hide();
                         jQuery("#donation-form-container").show();
@@ -1226,39 +1234,39 @@
                     });
 
                     if (jQuery(".donation-form .true-impact label").length) {
-                    jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
+                      jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
                     }
                     Bloomerang.Util.calculateDonationTrueImpact = function() {
-                    if (!jQuery(".donation-form .true-impact .fee-amount").length) { return; }
-                    // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
-                    var amount = Bloomerang.Util.getDonationAmount();
-                    var feeRate = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
-                    var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
-                    var impactAmount = Number((newTotal - amount).toFixed(2));
-                    jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
-                    return impactAmount;
+                      if (!jQuery(".donation-form .true-impact .fee-amount").length) { return; }
+                      // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
+                      var amount = Bloomerang.Util.getDonationAmount();
+                      var feeRate = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
+                      var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
+                      var impactAmount = Number((newTotal - amount).toFixed(2));
+                      jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
+                      return impactAmount;
                     };
                     Bloomerang.Util.getDonationTrueImpactAmount = function() {
-                    if (jQuery(".donation-form .true-impact input:checked").length) {
+                      if (jQuery(".donation-form .true-impact input:checked").length) {
                         return Bloomerang.Util.calculateDonationTrueImpact();
-                    }
-                    return 0;
+                      }
+                      return 0;
                     };
 
                     // Changing the value of other-amount should change the value of other-option
                     jQuery(".donation-form #other-amount").change(function () { 
-                    jQuery(".donation-form #other-option").val(jQuery(this).val());
-                    Bloomerang.Util.calculateDonationTrueImpact();
+                      jQuery(".donation-form #other-option").val(jQuery(this).val());
+                      Bloomerang.Util.calculateDonationTrueImpact();
                     });
                     
                     jQuery(".donation-form #donation-amount").change(function() {
-                    Bloomerang.Util.calculateDonationTrueImpact();
+                      Bloomerang.Util.calculateDonationTrueImpact();
                     });
                     
                     // Clicking into the other-amount field should select the other-option
                     jQuery(".donation-form #other-amount").click(function() { 
-                    jQuery(".donation-form #other-option").prop('checked',true);
-                    Bloomerang.Util.calculateDonationTrueImpact();
+                      jQuery(".donation-form #other-option").prop('checked',true);
+                      Bloomerang.Util.calculateDonationTrueImpact();
                     });
 
                     jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
@@ -1278,10 +1286,10 @@
                     jQuery.validator.addMethod("currency", function (value, element, options) {
                         return !value ||
                             value
-                            .replace("$", "")
-                            .replace(".", "")
-                            .split(",").join("")
-                            .match(/^\d+$/g);
+                              .replace("$", "")
+                              .replace(".", "")
+                              .split(",").join("")
+                              .match(/^\d+$/g);
                     }, "Not a valid currency");
 
                     jQuery.validator.classRuleSettings.currency = { currency: true };
@@ -1289,9 +1297,9 @@
                     jQuery.validator.addMethod("number", function (value, element, options) {
                         return !value ||
                             value
-                            .replace(".", "")
-                            .split(",").join("")
-                            .match(/^\d+$/g);
+                              .replace(".", "")
+                              .split(",").join("")
+                              .match(/^\d+$/g);
                     }, "Not a valid number");
 
                     jQuery.validator.classRuleSettings.number = { number: true };
@@ -1309,137 +1317,139 @@
                     
                     // Validate that the donation amount is at least $1
                     jQuery.validator.methods.min = function( value, element, param ) {
-                    if (typeof (accounting) === "undefined") { // rip out $ and ,
-                        value = ((value + "") || "").replace(/[\$,]/g, "");
-                    }
-                    else { // Use accounting.parse, to handle $ and ,
-                        value = accounting.parse(value);
-                    }
-                    return this.optional( element ) || value >= param;
+                      if (typeof (accounting) === "undefined") { // rip out $ and ,
+                          value = ((value + "") || "").replace(/[\$,]/g, "");
+                      }
+                      else { // Use accounting.parse, to handle $ and ,
+                          value = accounting.parse(value);
+                      }
+                      return this.optional( element ) || value >= param;
                     };
                     jQuery.validator.classRuleSettings.minimum1 = { min: 1 };
                     jQuery.validator.messages.min = 'Please enter a value of at least {0}.'
 
                     jQuery(".donation-form #country").change(function(event) {
-                    var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
-                    var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
-                    jQuery(".donation-form #state, .donation-form #province").val(""); // clear the state when the country changes
-                    jQuery(".donation-form .field.city, .donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code, .donation-form .field.postal-code").toggle(!isInternational);
-                    jQuery(".donation-form #street-address").toggleClass("international", isInternational);
-                    if (element.val() == "BM") {
+                      var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
+                      var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
+                      jQuery(".donation-form #state, .donation-form #province").val(""); // clear the state when the country changes
+                      jQuery(".donation-form .field.city, .donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code, .donation-form .field.postal-code").toggle(!isInternational);
+                      jQuery(".donation-form #street-address").toggleClass("international", isInternational);
+                      if (element.val() == "BM") {
                         jQuery(".donation-form .field.city .label").text(jQuery(".donation-form .field.city input").data("bm-label"));
-                    } else if (element.val() == "US" || element.val() == "CA") {
+                      } else if (element.val() == "US" || element.val() == "CA") {
                         jQuery(".donation-form .field.city .label").text(jQuery(".donation-form .field.city input").data("us-label"));
-                    }
-                    if (element.val() == "US") {
+                      }
+                      if (element.val() == "US") {
                         jQuery(".donation-form .field.state, .donation-form .field.zip-code").show();
                         jQuery(".donation-form .field.province, .donation-form .field.postal-code").hide();
-                    } else if (element.val() == "CA") {
+                      } else if (element.val() == "CA") {
                         jQuery(".donation-form .field.state, .donation-form .field.zip-code").hide();
                         jQuery(".donation-form .field.province, .donation-form .field.postal-code").show();
-                    } else if (element.val() == "BM") {
+                      } else if (element.val() == "BM") {
                         jQuery(".donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code").hide();
                         jQuery(".donation-form .field.postal-code").show();
-                    } else {
+                      } else {
                         jQuery(".donation-form #city, .donation-form #postal-code, .donation-form #zip-code").val("");
-                    }
+                      }
                     });
 
                     jQuery(".donation-form #phone-number").change(function () {
-                    var phoneField = jQuery(".donation-form #phone-number");
-                    var internationalNumber = phoneField.val().substring(0,1) === '+';
-                    phoneField.toggleClass("phoneUS", !internationalNumber);
-                    phoneField.toggleClass("phoneInternational", internationalNumber);
+                      var phoneField = jQuery(".donation-form #phone-number");
+                      var internationalNumber = phoneField.val().substring(0,1) === '+';
+                      phoneField.toggleClass("phoneUS", !internationalNumber);
+                      phoneField.toggleClass("phoneInternational", internationalNumber);
                     })
 
                     collectPayment = function () {
-                    var form = jQuery("#donation-form");
+                      var form = jQuery("#donation-form");
 
-                    if (!Bloomerang.ValidateDonationFormCaptcha()) {
+                      if (!Bloomerang.ValidateDonationFormCaptcha()) {
                         return false;
-                    }
-            
-                    if (!form.valid()) {
+                      }
+              
+                      if (!form.valid()) {
                         return false;
-                    }
-            
-                    if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
+                      }
+              
+                      if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
                         submitDonation();
-                    }
-                    else {
+                      }
+                      else {
                         var val = function (selector) { return jQuery(selector).val(); };
                         var amount = Bloomerang.Util.getDonationAmount() + Bloomerang.Util.getDonationTrueImpactAmount();
                         var selectedDonationLevel = jQuery(".donation-form .section.donation input[name='donation-level']:checked").parent().text();
                         selectedDonationLevel = (selectedDonationLevel.indexOf("-") == -1 ? "" : selectedDonationLevel.substr(selectedDonationLevel.indexOf("-") + 2) );
                 
                         SpreedlyExpress.setDisplayOptions({
-                        "amount": accounting.formatMoney(amount),
-                        "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
-                        "sidebar_bottom_description": selectedDonationLevel,
-                        "submit_label": "Donate"});
+                          "amount": accounting.formatMoney(amount),
+                          "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
+                          "sidebar_bottom_description": selectedDonationLevel,
+                          "submit_label": "Donate"});
                         SpreedlyExpress.setPaymentMethodParams({
-                        "email": val(".donation-form #email-address"),
-                        "phone_number": val(".donation-form #phone-number"),
-                        "address1": val(".donation-form #street-address"),
-                        "city": val(".donation-form #city"),
-                        "state": val(".donation-form #state") || val(".donation-form #province"),
-                        "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
+                          "email": val(".donation-form #email-address"),
+                          "phone_number": val(".donation-form #phone-number"),
+                          "address1": val(".donation-form #street-address"),
+                          "city": val(".donation-form #city"),
+                          "state": val(".donation-form #state") || val(".donation-form #province"),
+                          "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
 
                         SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
-                        Bloomerang.CreditCard.spreedlyToken(token);
+                          Bloomerang.CreditCard.spreedlyToken(token);
                             submitDonation();
-                        });
+                          });
 
                         var oldMeta = '';
                         if (jQuery('meta[name="viewport"]').length) {
-                        oldMeta = jQuery('meta[name="viewport"]').attr('content');
+                          oldMeta = jQuery('meta[name="viewport"]').attr('content');
                         } else {
-                        jQuery('head').append('<meta name="viewport" content="" />');
+                          jQuery('head').append('<meta name="viewport" content="" />');
                         }
                         jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
                         jQuery('meta[name="viewport"]').attr('content', oldMeta);
 
                         SpreedlyExpress.openView();
-                    }
+                      }
                     };
 
                     submitDonation = function() {
-                    if (!Bloomerang.continueFinancialSubmission(jQuery("#donation-form"))) { return false; }
-            
-                    Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-                    Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-                    Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+                      if (!Bloomerang.continueFinancialSubmission(jQuery("#donation-form"))) { return false; }
+              
+                      Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+                      Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+                      Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
 
-                    var processingMessage = jQuery("#donation-processing-container");
-                    processingMessage.show();
-                    jQuery("#donation-form-container").hide();
-                    Bloomerang.scrollToElement(processingMessage);
-            
-                    var tmp = jQuery(".donation-form #recurring").prop("checked")
+                      var processingMessage = jQuery("#donation-processing-container");
+                      processingMessage.show();
+                      jQuery("#donation-form-container").hide();
+                      Bloomerang.scrollToElement(processingMessage);
+              
+                      var tmp = jQuery(".donation-form #recurring").prop("checked")
                         ? Bloomerang.Api.recurringDonate()
                         : Bloomerang.Api.donate();
                     };
                     
                     jQuery("#donation-form #CreditCard").prop("checked", true);
                     jQuery("#donation-form .section.payment input[type='radio']").click(function() {
-                    Bloomerang.Util.calculateDonationTrueImpact();
-                    if (jQuery(this).attr("id") == "CreditCard") {
+                      Bloomerang.Util.calculateDonationTrueImpact();
+                      if (jQuery(this).attr("id") == "CreditCard") {
                         jQuery("#donation-form .accountNumber, \
                                 #donation-form .routingNumber, \
                                 #donation-form .sample-check").hide();
-                    }                        
-                    else {                   
+                        jQuery(".btn-submit-donation").val("Enter Payment");
+                      }                        
+                      else {                   
                         jQuery("#donation-form .accountNumber, \
                                 #donation-form .routingNumber, \
                                 #donation-form .sample-check").show();
                         if (jQuery("#donation-form .sample-check").length == 0) {                    
-                        var checkImage = new Image();
-                        checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
-                        jQuery(checkImage).addClass("sample-check");
-                        jQuery("#donation-form .accountNumber").after(checkImage);
+                          var checkImage = new Image();
+                          checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
+                          jQuery(checkImage).addClass("sample-check");
+                          jQuery("#donation-form .accountNumber").after(checkImage);
                         }
-                    }
-                });
+                        jQuery(".btn-submit-donation").val("Donate");
+                      }
+                  });
                     
             })(jQuery);
                 };
