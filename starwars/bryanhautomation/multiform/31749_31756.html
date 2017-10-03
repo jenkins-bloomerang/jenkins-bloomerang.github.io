@@ -54,7 +54,7 @@
             </div>
             <div class="row">
                 <div class="cell">Email Self Hosted CAPTCHA:</div>
-                <div class="cell bold">@EmailHasCaptchaSelfHosted</div>
+                <div class="cell bold">N/A</div>
             </div>
         </div>
         <div class="roundedblock gradtobottomright left">
@@ -182,9 +182,9 @@
 '' + 
 'iframe#spreedly-iframe[style=\'visibility: hidden;\']{display: none;}' + 
 '' + 
-'#spreedly-modal-overlay[style="visibility:hidden"]{display: none;}' + 
-'' + 
 'input, select, textarea, button{font-family: inherit;}' + 
+'' + 
+'#spreedly-modal-overlay[style="visibility:hidden"]{display: none;}' + 
 '' + 
 '</style>' + 
 '' + 
@@ -1052,7 +1052,9 @@
                             function() {
                                 jQuery('.section.captcha').removeAttr('style');
                                 jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha31749', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
-                            });
+                            },
+                            true,
+                            true);
                     Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
                     Bloomerang.useKey('pub_ccd5f4cb-ebb1-47f8-b8ca-fa41b37f1d64');
         Bloomerang.Util.getDonationAmount = function() {
