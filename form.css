@@ -80,6 +80,10 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
     background: linear-gradient(to bottom right, #000000, #07FAEC) !important;
     color: white !important;
 }
+.disabled {
+	pointer-events: none;
+	background: linear-gradient(to bottom right, #EEEEEE, #AAAAAA);
+}
 .roundedblock {
 	max-width: 1500px;
 	text-align: left;
