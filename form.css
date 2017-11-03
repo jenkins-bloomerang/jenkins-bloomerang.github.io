@@ -58,7 +58,7 @@ input:focus:not([type=radio]):not([type=checkbox]):not(.spreedly-input-text), se
 }
 .textblock {
     text-align: justify;
-    max-width: 750px;
+    max-width: 1300px;
 }
 .gradientblue {
     background: #FFFFFF;
@@ -81,7 +81,7 @@ a.customlink:hover, a.customlink:active, input.btn-submit:hover {
     color: white !important;
 }
 .roundedblock {
-	max-width: 1000px;
+	max-width: 1500px;
 	text-align: left;
 	margin: auto 3 5 auto;
 	padding: 8px;
