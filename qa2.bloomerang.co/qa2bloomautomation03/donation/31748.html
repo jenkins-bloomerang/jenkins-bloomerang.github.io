@@ -1018,7 +1018,7 @@
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
                                                         '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to Bloom Automation 03. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
                                                         '</div>';( function($) {if (Bloomerang.useDonationId('31748')) { 
-                                    Bloomerang.useProcessor('30721', 'BluePay', '100145748093', true, '246507934E038F2B2B7539D144AA526B', true);
+                                    Bloomerang.useProcessor('30721', 'Spreedly', 'FFOcP2r6aOM47DVLVXu8SUSLd9U');
                                 } else {
                                     html31748 = '<p style="color: red">???Widget.Error.Multiple???</p>';
                                 }if (jQuery('#bloomerangForm31748').length) {
@@ -1046,7 +1046,7 @@
                                         }
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.2; Bloomerang.transactionFeeRate = 0.025;
+                    Bloomerang.transactionFee = 0.2; Bloomerang.transactionFeeRate = 0.025; Bloomerang.transactionFeeEft = 0.2
                     Bloomerang.useKey('pub_98074096-578b-4b15-ac55-da69c45935ce');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -1229,8 +1229,9 @@
           if (!jQuery(".donation-form .true-impact .fee-amount").length) { return; }
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getDonationAmount();
-          var feeRate = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
-          var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
+          var isEft = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked"));
+          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
           var impactAmount = Number((newTotal - amount).toFixed(2));
           jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
@@ -1431,7 +1432,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa2.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                        script.src = 'https://qa2.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31748(); })});
                     }
