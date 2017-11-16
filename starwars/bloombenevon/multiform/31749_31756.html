@@ -1055,7 +1055,7 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029; Bloomerang.transactionFeeEft = 
                     Bloomerang.useKey('pub_5010d0b9-a445-4755-8c86-65f1018f3ad8');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -1153,6 +1153,9 @@
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
             SpreedlyExpress.unload();
             Bloomerang.initSpreedly();
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+              grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
@@ -1238,8 +1241,9 @@
           if (!jQuery(".donation-form .true-impact .fee-amount").length) { return; }
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getDonationAmount();
-          var feeRate = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
-          var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
+          var isEft = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked"));
+          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
           var impactAmount = Number((newTotal - amount).toFixed(2));
           jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
@@ -1440,7 +1444,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                        script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31749(); })});
                     }

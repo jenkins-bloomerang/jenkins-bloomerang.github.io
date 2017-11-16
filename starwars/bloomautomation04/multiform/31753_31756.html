@@ -1066,7 +1066,7 @@
                                         }
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.registration-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029; Bloomerang.transactionFeeEft = 
                     Bloomerang.useKey('pub_e60a7d5d-a050-41f1-af8c-e3e91ebce5da');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
@@ -1155,6 +1155,9 @@
             Bloomerang.cancelFinancialSubmission(jQuery("#registration-form"));
             SpreedlyExpress.unload();
             Bloomerang.initSpreedly();
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+              grecaptcha.reset(jQuery(".registration-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyEventRegistrationCustomFields = function (obj, type) {
@@ -1251,8 +1254,9 @@
           if (!jQuery(".registration-form .true-impact .fee-amount").length) { return; }
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getRegistrationAmount();
-          var feeRate = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
-          var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
+          var isEft = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked"));
+          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
           var impactAmount = Number((newTotal - amount).toFixed(2));
           jQuery(".registration-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
@@ -1441,7 +1445,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                        script.src = 'https://starwars.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31753(); })});
                     }

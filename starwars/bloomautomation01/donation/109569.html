@@ -1144,6 +1144,9 @@
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
             SpreedlyExpress.unload();
             Bloomerang.initSpreedly();
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+              grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
