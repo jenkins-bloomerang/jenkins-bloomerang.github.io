@@ -20,11 +20,11 @@
 		</div>	
 		<div class="row">
 			<div class="cell">Widget ID:</div>
-			<div class="cell bold" id="widgetId">93186</div>
+			<div class="cell bold" id="widgetId">113665</div>
 		</div>	
 		<div class="row">
 			<div class="cell">Processor:</div>
-			<div class="cell bold">Stripe</div>
+			<div class="cell bold">AuthorizeDotNet</div>
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
@@ -46,10 +46,10 @@
 			</div>
 		</div>
 		
-<script type="text/javascript" id="bloomerangForm93186"></script>
+<script type="text/javascript" id="bloomerangForm113665"></script>
 <pre><script type="text/javascript">
-    var insertForm93186 = function() {
-        var html93186 = '<style text=\'text/css\'>' + 
+    var insertForm113665 = function() {
+        var html113665 = '<style text=\'text/css\'>' + 
 '.donation-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
@@ -166,8 +166,17 @@
 '    <div class="errors hidden"></div>' + 
 '    <div class="section donation">' + 
 '      <h3>Donation</h3>' + 
-'      <div class="field radio 96258 required" >' + 
-'<label for="96258"><input id="96258" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Test 10</span></label>' + 
+'      <div class="field radio 115716 required" >' + 
+'<label for="115716"><input id="115716" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
+'</div>' + 
+'<div class="field radio 115717 required" >' + 
+'<label for="115717"><input id="115717" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
+'</div>' + 
+'<div class="field radio 115718 required" >' + 
+'<label for="115718"><input id="115718" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
+'</div>' + 
+'<div class="field radio 115719 required" >' + 
+'<label for="115719"><input id="115719" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
 '</div>' + 
 '<div class="field radio other-option required" >' + 
 '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
@@ -179,7 +188,21 @@
 '</div>' + 
 '    <div class="section recurring">' + 
 '      <div class="field checkbox recurring" >' + 
-'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a monthly donation</span></label>' + 
+'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a recurring donation</span></label>' + 
+'</div>' + 
+'<div class="field  frequency required" style="display: none">' + 
+'<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
+'<select id="frequency" name="frequency" class="required"><option value=""></option>' + 
+'<option value="Daily">Daily</option>' + 
+'<option value="Weekly">Weekly</option>' + 
+'<option value="Monthly" selected>Monthly</option>' + 
+'<option value="Quarterly">Quarterly</option>' + 
+'<option value="Yearly">Yearly</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field date start-date required" style="display: none">' + 
+'<label for="start-date"><span class="label">Start Date</span><span class="required-star">*</span></label>' + 
+'<input id="start-date" name="start-date" class="validDate required" type="date" placeholder="mm/dd/yyyy"></input>' + 
 '</div>' + 
 '' + 
 '</div>' + 
@@ -558,8 +581,411 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    ' + 
-'    ' + 
+'    <div class="section payment">' + 
+'      <h3>Payment Information</h3>' + 
+'      <div class="field radio Savings required" >' + 
+'<label for="Savings"><input id="Savings" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Savings</span></label>' + 
+'</div>' + 
+'<div class="field radio Checking required" >' + 
+'<label for="Checking"><input id="Checking" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Checking</span></label>' + 
+'</div>' + 
+'<div class="field radio CreditCard required" >' + 
+'<label for="CreditCard"><input id="CreditCard" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Credit Card</span></label>' + 
+'</div>' + 
+'<div class="field tel routingNumber required" style="display: none">' + 
+'<label for="routingNumber"><span class="label">Routing Number</span><span class="required-star">*</span></label>' + 
+'<input id="routingNumber" name="routing-number" class="required" type="tel" maxlength="255"></input>' + 
+'</div>' + 
+'<div class="field tel accountNumber required" style="display: none">' + 
+'<label for="accountNumber"><span class="label">Account Number</span><span class="required-star">*</span></label>' + 
+'<input id="accountNumber" name="account-number" class="required" type="tel" maxlength="255"></input>' + 
+'</div>' + 
+'' + 
+'</div>' + 
+'    <div class="section custom-fields">' + 
+'      <h3>Additional Information</h3>' + 
+'      <div class="field text CustomAccountField_17408" >' + 
+'<label for="CustomAccountField_17408"><span class="label">Auto Constituent Text Freeform</span></label>' + 
+'<input id="CustomAccountField_17408" name="CustomAccountField_17408" type="text" maxlength="255"></input>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17409" >' + 
+'<label for="CustomAccountField_17409">Auto Constituent Text Pick One</label>' + 
+'<select id="CustomAccountField_17409" name="CustomAccountField_17409"><option value=""></option>' + 
+'<option value="18436">Five</option>' + 
+'<option value="18435">Four</option>' + 
+'<option value="18432">One</option>' + 
+'<option value="18434">Three</option>' + 
+'<option value="18433">Two</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17410" >' + 
+'<label for="CustomAccountField_17410">Auto Constituent Text Pick Multiple</label>' + 
+'<div id="CustomAccountField_17410" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="18442" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18442" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Fifth</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18438" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18438" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">First</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18441" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18441" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Fourth</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18439" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18439" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Second</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18440" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18440" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Third</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field date CustomAccountField_17412" >' + 
+'<label for="CustomAccountField_17412"><span class="label">Auto Constituent Date Freeform</span></label>' + 
+'<input id="CustomAccountField_17412" name="CustomAccountField_17412" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
+'</div>' + 
+'<div class="field date CustomAccountField_17413" >' + 
+'<label for="CustomAccountField_17413">Auto Constituent Date Pick One</label>' + 
+'<select id="CustomAccountField_17413" name="CustomAccountField_17413"><option value=""></option>' + 
+'<option value="18444">1/1/2011</option>' + 
+'<option value="18445">2/1/2012</option>' + 
+'<option value="18446">3/1/2013</option>' + 
+'<option value="18447">4/1/2014</option>' + 
+'<option value="18448">5/1/2015</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field date CustomAccountField_17414" >' + 
+'<label for="CustomAccountField_17414">Auto Constituent Date Pick Multiple</label>' + 
+'<div id="CustomAccountField_17414" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="18450" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18450" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">7/25/2011</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18451" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18451" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">8/25/2012</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18452" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18452" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">9/25/2013</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18453" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18453" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">10/25/2014</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18454" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18454" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">11/25/2015</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17415" >' + 
+'<label for="CustomAccountField_17415"><span class="label">Auto Constituent Year Freeform</span></label>' + 
+'<input id="CustomAccountField_17415" name="CustomAccountField_17415" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17416" >' + 
+'<label for="CustomAccountField_17416">Auto Constituent Year Pick One</label>' + 
+'<select id="CustomAccountField_17416" name="CustomAccountField_17416"><option value=""></option>' + 
+'<option value="18456">2005</option>' + 
+'<option value="18457">2006</option>' + 
+'<option value="18458">2007</option>' + 
+'<option value="18459">2008</option>' + 
+'<option value="18460">2009</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17417" >' + 
+'<label for="CustomAccountField_17417">Auto Constituent Year Pick Multiple</label>' + 
+'<div id="CustomAccountField_17417" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="18462" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18462" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2011</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18463" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18463" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2012</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18464" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18464" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2013</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18465" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18465" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2014</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18466" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18466" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2015</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17418" >' + 
+'<label for="CustomAccountField_17418"><span class="label">Auto Constituent Number Freeform</span></label>' + 
+'<input id="CustomAccountField_17418" name="CustomAccountField_17418" class="number" type="text" maxlength="255"></input>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17419" >' + 
+'<label for="CustomAccountField_17419">Auto Constituent Number Pick One</label>' + 
+'<select id="CustomAccountField_17419" name="CustomAccountField_17419"><option value=""></option>' + 
+'<option value="18468">3.14</option>' + 
+'<option value="18469">75.45</option>' + 
+'<option value="18470">150</option>' + 
+'<option value="18471">3789</option>' + 
+'<option value="18472">138999</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17420" >' + 
+'<label for="CustomAccountField_17420">Auto Constituent Number Pick Multiple</label>' + 
+'<div id="CustomAccountField_17420" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="18474" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18474" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">55.768</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18475" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18475" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">678</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18476" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18476" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">8233.5</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18477" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18477" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">14500</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18478" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18478" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">8723300</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17421" >' + 
+'<label for="CustomAccountField_17421"><span class="label">Auto Constituent Currency Freeform</span></label>' + 
+'<input id="CustomAccountField_17421" name="CustomAccountField_17421" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17422" >' + 
+'<label for="CustomAccountField_17422">Auto Constituent Currency Pick One</label>' + 
+'<select id="CustomAccountField_17422" name="CustomAccountField_17422"><option value=""></option>' + 
+'<option value="18480">$10.50</option>' + 
+'<option value="18481">$25.00</option>' + 
+'<option value="18482">$50.00</option>' + 
+'<option value="18483">$100.00</option>' + 
+'<option value="18484">$10,000.00</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17423" >' + 
+'<label for="CustomAccountField_17423">Auto Constituent Currency Pick Multiple</label>' + 
+'<div id="CustomAccountField_17423" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="18486" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18486" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$25.33</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18487" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18487" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$550.00</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18488" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18488" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$1,250.00</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18489" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18489" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$5,000.35</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="18490" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="18490" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$250,000.00</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20480" >' + 
+'<label for="CustomTransactionField_20480"><span class="label">Auto Transaction Text Freeform</span></label>' + 
+'<input id="CustomTransactionField_20480" name="CustomTransactionField_20480" type="text" maxlength="255"></input>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20481" >' + 
+'<label for="CustomTransactionField_20481">Auto Transaction Text Pick One</label>' + 
+'<select id="CustomTransactionField_20481" name="CustomTransactionField_20481"><option value=""></option>' + 
+'<option value="21508">Five</option>' + 
+'<option value="21507">Four</option>' + 
+'<option value="21504">One</option>' + 
+'<option value="21506">Three</option>' + 
+'<option value="21505">Two</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20482" >' + 
+'<label for="CustomTransactionField_20482">Auto Transaction Text Pick Multiple</label>' + 
+'<div id="CustomTransactionField_20482" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21514" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21514" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Fifth</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21510" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21510" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">First</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21513" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21513" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Fourth</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21511" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21511" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Second</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21512" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21512" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">Third</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field date CustomTransactionField_20484" >' + 
+'<label for="CustomTransactionField_20484"><span class="label">Auto Transaction Date Freeform</span></label>' + 
+'<input id="CustomTransactionField_20484" name="CustomTransactionField_20484" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
+'</div>' + 
+'<div class="field date CustomTransactionField_20485" >' + 
+'<label for="CustomTransactionField_20485">Auto Transaction Date Pick One</label>' + 
+'<select id="CustomTransactionField_20485" name="CustomTransactionField_20485"><option value=""></option>' + 
+'<option value="21516">1/1/2011</option>' + 
+'<option value="21517">2/1/2012</option>' + 
+'<option value="21518">3/1/2013</option>' + 
+'<option value="21519">4/1/2014</option>' + 
+'<option value="21520">5/1/2015</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field date CustomTransactionField_20486" >' + 
+'<label for="CustomTransactionField_20486">Auto Transaction Date Pick Multiple</label>' + 
+'<div id="CustomTransactionField_20486" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21522" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21522" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">7/25/2011</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21523" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21523" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">8/25/2012</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21524" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21524" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">9/25/2013</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21525" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21525" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">10/25/2014</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21526" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21526" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">11/25/2015</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20487" >' + 
+'<label for="CustomTransactionField_20487"><span class="label">Auto Transaction Year Freeform</span></label>' + 
+'<input id="CustomTransactionField_20487" name="CustomTransactionField_20487" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20488" >' + 
+'<label for="CustomTransactionField_20488">Auto Transaction Year Pick One</label>' + 
+'<select id="CustomTransactionField_20488" name="CustomTransactionField_20488"><option value=""></option>' + 
+'<option value="21528">2005</option>' + 
+'<option value="21529">2006</option>' + 
+'<option value="21530">2007</option>' + 
+'<option value="21531">2008</option>' + 
+'<option value="21532">2009</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20489" >' + 
+'<label for="CustomTransactionField_20489">Auto Transaction Year Pick Multiple</label>' + 
+'<div id="CustomTransactionField_20489" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21534" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21534" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2011</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21535" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21535" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2012</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21536" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21536" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2013</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21537" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21537" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2014</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21538" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21538" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">2015</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20490" >' + 
+'<label for="CustomTransactionField_20490"><span class="label">Auto Transaction Number Freeform</span></label>' + 
+'<input id="CustomTransactionField_20490" name="CustomTransactionField_20490" class="number" type="text" maxlength="255"></input>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20491" >' + 
+'<label for="CustomTransactionField_20491">Auto Transaction Number Pick One</label>' + 
+'<select id="CustomTransactionField_20491" name="CustomTransactionField_20491"><option value=""></option>' + 
+'<option value="21540">3.14</option>' + 
+'<option value="21541">75.45</option>' + 
+'<option value="21542">150</option>' + 
+'<option value="21543">3789</option>' + 
+'<option value="21544">138999</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20492" >' + 
+'<label for="CustomTransactionField_20492">Auto Transaction Number Pick Multiple</label>' + 
+'<div id="CustomTransactionField_20492" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21546" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21546" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">55.768</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21547" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21547" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">678</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21548" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21548" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">8233.5</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21549" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21549" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">14500</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21550" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21550" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">8723300</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20493" >' + 
+'<label for="CustomTransactionField_20493"><span class="label">Auto Transaction Currency Freeform</span></label>' + 
+'<input id="CustomTransactionField_20493" name="CustomTransactionField_20493" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20494" >' + 
+'<label for="CustomTransactionField_20494">Auto Transaction Currency Pick One</label>' + 
+'<select id="CustomTransactionField_20494" name="CustomTransactionField_20494"><option value=""></option>' + 
+'<option value="21552">$10.50</option>' + 
+'<option value="21553">$25.00</option>' + 
+'<option value="21554">$50.00</option>' + 
+'<option value="21555">$100.00</option>' + 
+'<option value="21556">$10,000.00</option>' + 
+'</select>' + 
+'</div>' + 
+'<div class="field text CustomTransactionField_20495" >' + 
+'<label for="CustomTransactionField_20495">Auto Transaction Currency Pick Multiple</label>' + 
+'<div id="CustomTransactionField_20495" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21558" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21558" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$25.33</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21559" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21559" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$550.00</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21560" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21560" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$1,250.00</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21561" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21561" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$5,000.35</span>' + 
+'                              </a>' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="21562" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="21562" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'                                <span class="text">$250,000.00</span>' + 
+'                              </a>' + 
+'</div>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    <div class="section comment">' + 
 '      <div class="field text comment" >' + 
 '<label for="comment"><span class="label">Comments</span></label>' + 
@@ -575,7 +1001,7 @@
 '' + 
 '</div>' + 
 '    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha93186"></div>' + 
+'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha113665"></div>' + 
 '' + 
 '</div>' + 
 '    <div class="btn-group">' + 
@@ -587,19 +1013,21 @@
 '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
 '</div>' + 
 '' + 
-'' +  '';var successHtml93186 = '<div class=\'donation-success\'>' +
+'' +  '';var successHtml113665 = '<div class=\'donation-success\'>' +
                                                        '  <h2>Thank You for Your Donation!</h2>' +
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
                                                         '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to @bloomerangTech. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
-                                                        '</div>';( function($) {if (!Bloomerang.useDonationId('93186')) { 
-                                    html93186 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
-                                }if (jQuery('#bloomerangForm93186').length) {
+                                                        '</div>';( function($) {if (Bloomerang.useDonationId('113665')) { 
+                                    Bloomerang.useProcessor('112640', 'Spreedly', 'FFOcP2r6aOM47DVLVXu8SUSLd9U');
+                                } else {
+                                    html113665 = '<p style="color: red">???Widget.Error.Multiple???</p>';
+                                }if (jQuery('#bloomerangForm113665').length) {
                         
                     if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html93186 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
+                        html113665 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
                         ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
                     }
-                        jQuery('#bloomerangForm93186').after(html93186);
+                        jQuery('#bloomerangForm113665').after(html113665);
                          if (!Bloomerang.SpreedlyScriptLoaded) {
                                             Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
                                                 function() { return SpreedlyExpress != undefined; },
@@ -618,7 +1046,7 @@
                                         }
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.29; Bloomerang.transactionFeeRate = 0.0249; Bloomerang.transactionFeeEft = 0.80
                     Bloomerang.useKey('pub_ac153603-7665-43c7-87e3-d7ae25c5fec3');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -699,7 +1127,7 @@
             jQuery("#donation-processing-container").hide();
             var formContainer = jQuery("#donation-form-container");
             formContainer.show();
-            formContainer.html(successHtml93186);
+            formContainer.html(successHtml113665);
             Bloomerang.scrollToElement(formContainer);
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
@@ -716,6 +1144,9 @@
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
             SpreedlyExpress.unload();
             Bloomerang.initSpreedly();
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+              grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
@@ -1006,10 +1437,10 @@
                         script.type = 'text/javascript';
                         script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm93186(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm113665(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm93186(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm113665(); })});
                     }
                 };
                 var waitForBloomerangLoad = function(callback) {
