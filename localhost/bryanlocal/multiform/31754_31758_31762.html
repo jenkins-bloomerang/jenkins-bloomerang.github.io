@@ -1092,8 +1092,8 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029;
-                    Bloomerang.useKey('pub_6e0989e1-cd47-4c05-bb83-bce3b269e5cf');
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.useKey('pub_1c4dbc61-9c2c-4e1c-8999-96f7678f4990');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
         };
@@ -1181,6 +1181,9 @@
             Bloomerang.cancelFinancialSubmission(jQuery("#registration-form"));
             SpreedlyExpress.unload();
             Bloomerang.initSpreedly();
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+              grecaptcha.reset(jQuery(".registration-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyEventRegistrationCustomFields = function (obj, type) {
@@ -1277,8 +1280,9 @@
           if (!jQuery(".registration-form .true-impact .fee-amount").length) { return; }
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getRegistrationAmount();
-          var feeRate = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
-          var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
+          var isEft = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked"));
+          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
           var impactAmount = Number((newTotal - amount).toFixed(2));
           jQuery(".registration-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
@@ -2010,7 +2014,7 @@
                             true,
                             true);
                     
-                    Bloomerang.useKey('pub_6e0989e1-cd47-4c05-bb83-bce3b269e5cf');
+                    Bloomerang.useKey('pub_1c4dbc61-9c2c-4e1c-8999-96f7678f4990');
         // Register proper callbacks for various stages/outcomes of submission
         Bloomerang.Widget.Email.OnSubmit = function (args) {
             jQuery(".btn-submit-email").val("Registering...").prop("disabled", true).addClass("disabled");
@@ -2051,6 +2055,9 @@
             var offset = jQuery("#email-registration-form-container .errors").offset().top;
             var offsetTop = offset > distance ? offset - distance : offset;
           jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.EmailSignup).children().length) {
+              grecaptcha.reset(jQuery(".email-registration-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyEmailSignupCustomFields = function (obj, type) {
@@ -3063,7 +3070,7 @@
                             true,
                             true);
                     
-                    Bloomerang.useKey('pub_6e0989e1-cd47-4c05-bb83-bce3b269e5cf');
+                    Bloomerang.useKey('pub_1c4dbc61-9c2c-4e1c-8999-96f7678f4990');
         // Register proper callbacks for various stages/outcomes of submission
         Bloomerang.Widget.Interaction.OnSubmit = function (args) {
             jQuery(".btn-submit-interaction").val("Submitting...").prop("disabled", true).addClass("disabled");
@@ -3124,6 +3131,9 @@
             var offset = jQuery("#interaction-form-container .errors").offset().top;
             var offsetTop = offset > distance ? offset - distance : offset;
           jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Interaction).children().length) {
+              grecaptcha.reset(jQuery(".interaction-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyInteractionCustomFields = function (obj, type) {
