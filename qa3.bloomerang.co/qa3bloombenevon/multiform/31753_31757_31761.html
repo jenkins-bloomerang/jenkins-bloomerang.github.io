@@ -1383,7 +1383,7 @@
           } else {
             jQuery(".registration-form #city, .registration-form #zip-code, .registration-form #postal-code").val("");
           }
-          jQuery(".registration-form .section.consent").toggle(Bloomerang.Util.isCountryInEurope(element.val()));
+          jQuery(".registration-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
         
         jQuery(".registration-form #phone-number").change(function () {
@@ -1478,8 +1478,7 @@
       // Show opt-in options based on the setting of the global opt-in
       jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
-              jQuery(e).toggle(); 
-              jQuery(e).toggleClass("hidden");
+              jQuery(e).toggle();
           });
       });
         
@@ -1491,7 +1490,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-08';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31753(); })});
                     }
@@ -2163,7 +2162,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-08';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31757(); })});
                     }
@@ -3259,7 +3258,7 @@
           } else {
             jQuery(".interaction-form #city, .interaction-form #zip-code, .interaction-form #postal-code").val("");
           }
-          jQuery(".interaction-form .section.consent").toggle(Bloomerang.Util.isCountryInEurope(element.val()));
+          jQuery(".interaction-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
         jQuery(".interaction-form #phone-number").change(function () {
           var phoneField = jQuery(".interaction-form #phone-number");
@@ -3285,7 +3284,6 @@
         jQuery(".interaction-form .field.consent-all").change(function() { 
             jQuery(".interaction-form .field.consent-all").siblings().each(function(i, e) { 
                 jQuery(e).toggle();
-                jQuery(e).toggleClass("hidden");
             }); 
         });
         
@@ -3297,7 +3295,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-08';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31761(); })});
                     }
