@@ -1489,7 +1489,8 @@
       jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle(); 
-          }); 
+              jQuery(e).toggleClass("hidden");
+          });
       });
         
 })(jQuery);
@@ -3319,7 +3320,8 @@
         // Show opt-in options based on the setting of the global opt-in
         jQuery(".interaction-form .field.consent-all").change(function() { 
             jQuery(".interaction-form .field.consent-all").siblings().each(function(i, e) { 
-                jQuery(e).toggle(); 
+                jQuery(e).toggle();
+                jQuery(e).toggleClass("hidden");
             }); 
         });
         

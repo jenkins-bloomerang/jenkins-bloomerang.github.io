@@ -1463,7 +1463,8 @@
       jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle(); 
-          }); 
+              jQuery(e).toggleClass("hidden");
+          });
       });
         
 })(jQuery);

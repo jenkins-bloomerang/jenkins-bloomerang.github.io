@@ -1234,7 +1234,8 @@
         // Hide recurring donation options if recurring donation box is unchecked
         jQuery(".donation-form .field.recurring").change(function() { 
             jQuery(".donation-form .field.recurring").siblings().each(function(i, e) { 
-                jQuery(e).toggle(); 
+                jQuery(e).toggle();
+                jQuery(e).toggleClass("hidden");
             }); 
         })
         
@@ -1453,6 +1454,7 @@
       jQuery(".donation-form .field.consent-all").change(function() { 
           jQuery(".donation-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle(); 
+              jQuery(e).toggleClass("hidden");
           }); 
       });
         

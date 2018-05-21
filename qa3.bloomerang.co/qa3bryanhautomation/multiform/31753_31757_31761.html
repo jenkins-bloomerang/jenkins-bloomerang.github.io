@@ -1479,7 +1479,8 @@
       jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle(); 
-          }); 
+              jQuery(e).toggleClass("hidden");
+          });
       });
         
 })(jQuery);
@@ -2654,7 +2655,7 @@
 '' + 
 '</div>' + 
 '    <div class="section custom-fields">' + 
-'      <h3>Volunteering Information</h3>' + 
+'      <h3>Additional Information</h3>' + 
 '      <div class="field date volunteer-date required" >' + 
 '<label for="volunteer-date"><span class="label">Date Volunteered</span><span class="required-star">*</span></label>' + 
 '<input id="volunteer-date" name="volunteer-date" class="required" type="date" placeholder="mm/dd/yyyy"></input>' + 
@@ -3283,7 +3284,8 @@
         // Show opt-in options based on the setting of the global opt-in
         jQuery(".interaction-form .field.consent-all").change(function() { 
             jQuery(".interaction-form .field.consent-all").siblings().each(function(i, e) { 
-                jQuery(e).toggle(); 
+                jQuery(e).toggle();
+                jQuery(e).toggleClass("hidden");
             }); 
         });
         
