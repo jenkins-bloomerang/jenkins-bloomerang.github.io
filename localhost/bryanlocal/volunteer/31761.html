@@ -1,14 +1,14 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="/form.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
-	<h1 id="heading1">Online Donation Test</h1>
+	<h1 id="heading1">Volunteer Activity Test</h1>
 	<div class="table-info">
 		<div class="row">
 			<div class="cell">Environment:</div>
@@ -20,15 +20,11 @@
 		</div>	
 		<div class="row">
 			<div class="cell">Widget ID:</div>
-			<div class="cell bold" id="widgetId">31747</div>
+			<div class="cell bold" id="widgetId">31761</div>
 		</div>	
 		<div class="row">
-			<div class="cell">Processor:</div>
-			<div class="cell bold">Stripe</div>
-		</div>
-		<div class="row">
 			<div class="cell">Email Response:</div>
-			<div class="cell bold">Generic</div>
+			<div class="cell bold">None</div>
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
@@ -40,38 +36,36 @@
 			<div class="row">
 				<span class="cell fa-stack fa-2x">
 					<i class="fa fa-circle fa-stack-2x"></i>
-					<i class="fa fa-money fa-stack-1x fa-inverse"></i>
+					<i class="fa fa-pencil-square-o fa-stack-1x fa-inverse"></i>
 				</span>
-				<h2 class="cell">Donate Now!</h2>
+				<h2 class="cell">Log Activity Now!</h2>
 			</div>
-		</div>
+		</div>	
 		
-<script type="text/javascript" id="bloomerangForm31747"></script>
+<script type="text/javascript" id="bloomerangForm31761"></script>
 <pre><script type="text/javascript">
-    var insertForm31747 = function() {
-        var html31747 = '<style text=\'text/css\'>' + 
-'.donation-form label{color: #404040;' + 
+    var insertForm31761 = function() {
+        var html31761 = '<style text=\'text/css\'>' + 
+'.interaction-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
-'.donation-form label.error{color:#900;' + 
+'.interaction-form label.error{color:#900;' + 
 '                display: inline-block; ' + 
 '                padding: 0 10px;}' + 
 '' + 
-'.donation-form section{padding: 5px;}' + 
+'.interaction-form .field{padding: 4px 0;}' + 
 '' + 
-'.donation-form .field{padding: 4px 0;}' + 
-'' + 
-'.donation-form .field .required-star{color: #aa0000; ' + 
+'.interaction-form .field .required-star{color: #aa0000; ' + 
 '                display: inline-block; ' + 
 '                margin-left: 5px;}' + 
 '' + 
-'.donation-form .field .checkboxes{max-width:275px;' + 
+'.interaction-form .field .checkboxes{max-width:275px;' + 
 '                border: 1px solid #A9A9A9;' + 
 '                -webkit-transition: all .3s ease-out;' + 
 '                -moz-transition: all .3s ease-out;' + 
 '                transition: all .3s ease-out;}' + 
 '' + 
-'.donation-form .field .checkbox{display:block;' + 
+'.interaction-form .field .checkbox{display:block;' + 
 '                position:relative;' + 
 '                -moz-box-sizing:border-box;' + 
 '                box-sizing:border-box;' + 
@@ -83,132 +77,51 @@
 '                overflow:hidden;' + 
 '                text-decoration:none; }' + 
 '' + 
-'.donation-form .field .checkbox input{opacity:0.01;' + 
+'.interaction-form .field .checkbox input{opacity:0.01;' + 
 '                position:absolute;' + 
 '                left:-50px;  ' + 
 '                z-index:-5;}' + 
 '' + 
-'.donation-form .field .checkbox:last-child{border-bottom:none;}' + 
+'.interaction-form .field .checkbox:last-child{border-bottom:none;}' + 
 '' + 
-'.donation-form .field .checkbox.selected{background: rgb(50, 142, 253);' + 
+'.interaction-form .field .checkbox.selected{background: rgb(50, 142, 253);' + 
 '                color:#fff; }' + 
 '' + 
-'.donation-form .field .checkbox.selected:before{color:#fff;' + 
+'.interaction-form .field .checkbox.selected:before{color:#fff;' + 
 '                text-shadow:1px 2px 1px rgba(0,0,0,0.25);' + 
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
 '' + 
-'.donation-form .field input,' + 
-'                     .donation-form .field select,' + 
-'                     .donation-form .field textarea{padding: 4px; ' + 
+'.interaction-form .field.radio input,' + 
+'                     .interaction-form .field.checkbox input{width: auto;' + 
+'                margin-left:0;}' + 
+'' + 
+'.interaction-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
+'' + 
+'.interaction-form .field input,' + 
+'                     .interaction-form .field select,' + 
+'                     .interaction-form .field textarea{padding: 4px; ' + 
 '                max-width: 275px;' + 
 '                width: 96%}' + 
 '' + 
-'.donation-form .field textarea.international{height: 120px;}' + 
+'.interaction-form .field textarea.international{height: 120px;}' + 
 '' + 
-'.donation-form .field select{box-sizing: content-box;}' + 
-'' + 
-'.donation-form .section.recurring{padding-left: 30px}' + 
-'' + 
-'.donation-form .field.radio label,' + 
-'                     .donation-form .field.checkbox label{display: inline-block;}' + 
-'' + 
-'.donation-form .field.radio input,' + 
-'                     .donation-form .field.checkbox input{width: auto;' + 
-'                margin-left:0;}' + 
-'' + 
-'.donation-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
-'' + 
-'.donation-form #cardExpirationMonth,' + 
-'                     .donation-form #cardExpirationYear{width: 85px;}' + 
-'' + 
-'.donation-form #security-code{width: 55px;}' + 
-'' + 
-'.donation-form .field .sidenote{color: #999;' + 
-'                font-size: 10px; }' + 
-'' + 
-'.donation-form .field.other-option,' + 
-'                     .donation-form .field.other-amount,' + 
-'                     .donation-form .field.cardExpirationMonth,' + 
-'                     .donation-form .field.cardExpirationYear{display: inline-block;}' + 
-'' + 
-'.donation-form .field.other-amount{padding-left: 6px;}' + 
-'' + 
-'.donation-form .field.cardExpirationMonth{padding-right: 20px;}' + 
-'' + 
-'.donation-form #other-amount{width: 65px;}' + 
-'' + 
-'.donation-form #frequency{width: 85px;}' + 
-'' + 
-'.donation-form #start-date{width: 150px;}' + 
-'' + 
-'.donation-form .errors{border: 1px solid #900;' + 
+'.interaction-form .errors{border: 1px solid #900;' + 
 '                color: #900;  ' + 
 '                padding: 10px;}' + 
 '' + 
-'.donation-form .radio label.error{display: inline-block;' + 
-'                padding-right: 86%;  ' + 
-'                float: right;}' + 
+'.interaction-form .hidden{display: none;}' + 
 '' + 
-'.donation-form .hidden{display: none;}' + 
-'' + 
-'.btn-group .btn-submit-donation{padding: 4px 10px;}' + 
-'' + 
-'iframe#spreedly-iframe[style=\'visibility: hidden;\']{display: none;}' + 
+'.btn-group .btn-submit-email{padding: 4px 10px;}' + 
 '' + 
 'input, select, textarea, button{font-family: inherit;}' + 
 '' + 
-'#spreedly-modal-overlay[style="visibility:hidden"]{display: none;}' + 
-'' + 
 '</style>' + 
 '' + 
-'<div id="donation-form-container">' + 
-'  <form id="donation-form" class="donation-form" method="post" onsubmit="event.preventDefault(); collectPayment();">' + 
+'<div id="interaction-form-container">' + 
+'  <form id="interaction-form" class="interaction-form" method="post" action="javascript:void(0)">' + 
 '    <div class="errors hidden"></div>' + 
-'    <div class="section donation">' + 
-'      <h3>Donation</h3>' + 
-'      <div class="field radio 33804 required" >' + 
-'<label for="33804"><input id="33804" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
-'</div>' + 
-'<div class="field radio 33805 required" >' + 
-'<label for="33805"><input id="33805" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
-'</div>' + 
-'<div class="field radio 33806 required" >' + 
-'<label for="33806"><input id="33806" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
-'</div>' + 
-'<div class="field radio 33807 required" >' + 
-'<label for="33807"><input id="33807" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
-'</div>' + 
-'<div class="field radio other-option required" >' + 
-'<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
-'</div>' + 
-'<div class="field tel other-amount" >' + 
-'<input id="other-amount" name="other-amount" class="currency minimum1" type="tel" placeholder="$0.00"></input>' + 
-'</div>' + 
-'' + 
-'</div>' + 
-'    <div class="section recurring">' + 
-'      <div class="field checkbox recurring" >' + 
-'<label for="recurring"><input id="recurring" name="recurring" type="checkbox" maxlength="255"></input><span class="label">Show my support by making this a recurring donation</span></label>' + 
-'</div>' + 
-'<div class="field  frequency required" style="display: none">' + 
-'<label for="frequency">Frequency<span class="required-star">*</span></label>' + 
-'<select id="frequency" name="frequency" class="required"><option value=""></option>' + 
-'<option value="Daily">Daily</option>' + 
-'<option value="Weekly">Weekly</option>' + 
-'<option value="Monthly" selected>Monthly</option>' + 
-'<option value="Quarterly">Quarterly</option>' + 
-'<option value="Yearly">Yearly</option>' + 
-'</select>' + 
-'</div>' + 
-'<div class="field date start-date required" style="display: none">' + 
-'<label for="start-date"><span class="label">Start Date</span><span class="required-star">*</span></label>' + 
-'<input id="start-date" name="start-date" class="validDate required" type="date" placeholder="mm/dd/yyyy"></input>' + 
-'</div>' + 
-'' + 
-'</div>' + 
-'    ' + 
 '    <div class="section contact">' + 
 '      <h3>Contact Information</h3>' + 
 '      <div class="field text first-name required" >' + 
@@ -229,11 +142,11 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    <div class="section billing-address">' + 
-'      <h3>Billing Address</h3>' + 
-'      <div class="field  country required" >' + 
-'<label for="country">Country<span class="required-star">*</span></label>' + 
-'<select id="country" name="country" class="required"><option value=""></option>' + 
+'    <div class="section address">' + 
+'      <h3>Address</h3>' + 
+'      <div class="field  country" >' + 
+'<label for="country">Country</label>' + 
+'<select id="country" name="country"><option value=""></option>' + 
 '<option value="AF">Afghanistan</option>' + 
 '<option value="AX">Aland Islands</option>' + 
 '<option value="AL">Albania</option>' + 
@@ -484,17 +397,17 @@
 '<option value="ZW">Zimbabwe</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field  street-address required" >' + 
-'<label for="street-address"><span class="label">Address</span><span class="required-star">*</span></label>' + 
-'<textarea id="street-address" name="street-address" class="required"></textarea>' + 
+'<div class="field  street-address" >' + 
+'<label for="street-address"><span class="label">Address</span></label>' + 
+'<textarea id="street-address" name="street-address"></textarea>' + 
 '</div>' + 
-'<div class="field text city required" >' + 
-'<label for="city"><span class="label">City</span><span class="required-star">*</span></label>' + 
-'<input id="city" name="city" class="required" type="text" data-us-label="City" data-bm-label="Parish"></input>' + 
+'<div class="field text city" >' + 
+'<label for="city"><span class="label">City</span></label>' + 
+'<input id="city" name="city" type="text" data-us-label="City" data-bm-label="Parish"></input>' + 
 '</div>' + 
-'<div class="field  state required" >' + 
-'<label for="state">State<span class="required-star">*</span></label>' + 
-'<select id="state" name="state" class="required"><option value=""></option>' + 
+'<div class="field  state" >' + 
+'<label for="state">State</label>' + 
+'<select id="state" name="state"><option value=""></option>' + 
 '<option value="AL">Alabama</option>' + 
 '<option value="AK">Alaska</option>' + 
 '<option value="AS">American Samoa</option>' + 
@@ -555,9 +468,9 @@
 '<option value="WY">Wyoming</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field  province required" style="display: none">' + 
-'<label for="province">Province<span class="required-star">*</span></label>' + 
-'<select id="province" name="province" class="required"><option value=""></option>' + 
+'<div class="field  province" style="display: none">' + 
+'<label for="province">Province</label>' + 
+'<select id="province" name="province"><option value=""></option>' + 
 '<option value="AB">Alberta</option>' + 
 '<option value="BC">British Columbia</option>' + 
 '<option value="MB">Manitoba</option>' + 
@@ -573,20 +486,23 @@
 '<option value="YT">Yukon Territory</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field number zip-code required" >' + 
-'<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" minlength="5" maxlength="10"></input>' + 
+'<div class="field number zip-code" >' + 
+'<label for="zip-code"><span class="label">ZIP Code</span></label>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" step="any" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
-'<div class="field text postal-code required" style="display: none">' + 
-'<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
-'<input id="postal-code" name="postal-code" class="required" type="text"></input>' + 
+'<div class="field text postal-code" style="display: none">' + 
+'<label for="postal-code"><span class="label">Postal Code</span></label>' + 
+'<input id="postal-code" name="postal-code" type="text"></input>' + 
 '</div>' + 
 '' + 
 '</div>' + 
-'    ' + 
 '    <div class="section custom-fields">' + 
-'      <h3>Additional Information</h3>' + 
-'      <div class="field text CustomAccountField_17408" >' + 
+'      <h3>Volunteering Information</h3>' + 
+'      <div class="field date volunteer-date required" >' + 
+'<label for="volunteer-date"><span class="label">Date Volunteered</span><span class="required-star">*</span></label>' + 
+'<input id="volunteer-date" name="volunteer-date" class="required" type="date" placeholder="mm/dd/yyyy"></input>' + 
+'</div>' + 
+'<div class="field text CustomAccountField_17408" >' + 
 '<label for="CustomAccountField_17408"><span class="label">Auto Constituent Text Freeform</span></label>' + 
 '<input id="CustomAccountField_17408" name="CustomAccountField_17408" type="text" maxlength="255"></input>' + 
 '</div>' + 
@@ -776,192 +692,192 @@
 '                              </a>' + 
 '</div>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20480" >' + 
-'<label for="CustomTransactionField_20480"><span class="label">Auto Transaction Text Freeform</span></label>' + 
-'<input id="CustomTransactionField_20480" name="CustomTransactionField_20480" type="text" maxlength="255"></input>' + 
+'<div class="field text CustomInteractionField_26624" >' + 
+'<label for="CustomInteractionField_26624"><span class="label">Auto Interaction Text Freeform</span></label>' + 
+'<input id="CustomInteractionField_26624" name="CustomInteractionField_26624" type="text" maxlength="255"></input>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20481" >' + 
-'<label for="CustomTransactionField_20481">Auto Transaction Text Pick One</label>' + 
-'<select id="CustomTransactionField_20481" name="CustomTransactionField_20481"><option value=""></option>' + 
-'<option value="21508">Five</option>' + 
-'<option value="21507">Four</option>' + 
-'<option value="21504">One</option>' + 
-'<option value="21506">Three</option>' + 
-'<option value="21505">Two</option>' + 
+'<div class="field text CustomInteractionField_26625" >' + 
+'<label for="CustomInteractionField_26625">Auto Interaction Text Pick One</label>' + 
+'<select id="CustomInteractionField_26625" name="CustomInteractionField_26625"><option value=""></option>' + 
+'<option value="27652">Five</option>' + 
+'<option value="27651">Four</option>' + 
+'<option value="27648">One</option>' + 
+'<option value="27650">Three</option>' + 
+'<option value="27649">Two</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20482" >' + 
-'<label for="CustomTransactionField_20482">Auto Transaction Text Pick Multiple</label>' + 
-'<div id="CustomTransactionField_20482" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21514" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21514" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<div class="field text CustomInteractionField_26626" >' + 
+'<label for="CustomInteractionField_26626">Auto Interaction Text Pick Multiple</label>' + 
+'<div id="CustomInteractionField_26626" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="27658" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27658" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">Fifth</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21510" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21510" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27654" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27654" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">First</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21513" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21513" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27657" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27657" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">Fourth</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21511" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21511" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27655" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27655" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">Second</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21512" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21512" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27656" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27656" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">Third</span>' + 
 '                              </a>' + 
 '</div>' + 
 '</div>' + 
-'<div class="field date CustomTransactionField_20484" >' + 
-'<label for="CustomTransactionField_20484"><span class="label">Auto Transaction Date Freeform</span></label>' + 
-'<input id="CustomTransactionField_20484" name="CustomTransactionField_20484" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
+'<div class="field date CustomInteractionField_26628" >' + 
+'<label for="CustomInteractionField_26628"><span class="label">Auto Interaction Date Freeform</span></label>' + 
+'<input id="CustomInteractionField_26628" name="CustomInteractionField_26628" class="validDate" type="date" maxlength="255" placeholder="mm/dd/yyyy"></input>' + 
 '</div>' + 
-'<div class="field date CustomTransactionField_20485" >' + 
-'<label for="CustomTransactionField_20485">Auto Transaction Date Pick One</label>' + 
-'<select id="CustomTransactionField_20485" name="CustomTransactionField_20485"><option value=""></option>' + 
-'<option value="21516">1/1/2011</option>' + 
-'<option value="21517">2/1/2012</option>' + 
-'<option value="21518">3/1/2013</option>' + 
-'<option value="21519">4/1/2014</option>' + 
-'<option value="21520">5/1/2015</option>' + 
+'<div class="field date CustomInteractionField_26629" >' + 
+'<label for="CustomInteractionField_26629">Auto Interaction Date Pick One</label>' + 
+'<select id="CustomInteractionField_26629" name="CustomInteractionField_26629"><option value=""></option>' + 
+'<option value="27660">1/1/2011</option>' + 
+'<option value="27661">2/1/2012</option>' + 
+'<option value="27662">3/1/2013</option>' + 
+'<option value="27663">4/1/2014</option>' + 
+'<option value="27664">5/1/2015</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field date CustomTransactionField_20486" >' + 
-'<label for="CustomTransactionField_20486">Auto Transaction Date Pick Multiple</label>' + 
-'<div id="CustomTransactionField_20486" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21522" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21522" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<div class="field date CustomInteractionField_26630" >' + 
+'<label for="CustomInteractionField_26630">Auto Interaction Date Pick Multiple</label>' + 
+'<div id="CustomInteractionField_26630" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="27666" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27666" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">7/25/2011</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21523" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21523" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27667" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27667" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">8/25/2012</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21524" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21524" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27668" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27668" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">9/25/2013</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21525" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21525" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27669" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27669" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">10/25/2014</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21526" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21526" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27670" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27670" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">11/25/2015</span>' + 
 '                              </a>' + 
 '</div>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20487" >' + 
-'<label for="CustomTransactionField_20487"><span class="label">Auto Transaction Year Freeform</span></label>' + 
-'<input id="CustomTransactionField_20487" name="CustomTransactionField_20487" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
+'<div class="field text CustomInteractionField_26631" >' + 
+'<label for="CustomInteractionField_26631"><span class="label">Auto Interaction Year Freeform</span></label>' + 
+'<input id="CustomInteractionField_26631" name="CustomInteractionField_26631" class="validYear" type="text" maxlength="255" placeholder="yyyy"></input>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20488" >' + 
-'<label for="CustomTransactionField_20488">Auto Transaction Year Pick One</label>' + 
-'<select id="CustomTransactionField_20488" name="CustomTransactionField_20488"><option value=""></option>' + 
-'<option value="21528">2005</option>' + 
-'<option value="21529">2006</option>' + 
-'<option value="21530">2007</option>' + 
-'<option value="21531">2008</option>' + 
-'<option value="21532">2009</option>' + 
+'<div class="field text CustomInteractionField_26632" >' + 
+'<label for="CustomInteractionField_26632">Auto Interaction Year Pick One</label>' + 
+'<select id="CustomInteractionField_26632" name="CustomInteractionField_26632"><option value=""></option>' + 
+'<option value="27672">2005</option>' + 
+'<option value="27673">2006</option>' + 
+'<option value="27674">2007</option>' + 
+'<option value="27675">2008</option>' + 
+'<option value="27676">2009</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20489" >' + 
-'<label for="CustomTransactionField_20489">Auto Transaction Year Pick Multiple</label>' + 
-'<div id="CustomTransactionField_20489" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21534" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21534" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<div class="field text CustomInteractionField_26633" >' + 
+'<label for="CustomInteractionField_26633">Auto Interaction Year Pick Multiple</label>' + 
+'<div id="CustomInteractionField_26633" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="27678" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27678" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">2011</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21535" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21535" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27679" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27679" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">2012</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21536" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21536" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27680" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27680" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">2013</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21537" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21537" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27681" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27681" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">2014</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21538" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21538" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27682" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27682" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">2015</span>' + 
 '                              </a>' + 
 '</div>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20490" >' + 
-'<label for="CustomTransactionField_20490"><span class="label">Auto Transaction Number Freeform</span></label>' + 
-'<input id="CustomTransactionField_20490" name="CustomTransactionField_20490" class="number" type="text" maxlength="255"></input>' + 
+'<div class="field text CustomInteractionField_26634" >' + 
+'<label for="CustomInteractionField_26634"><span class="label">Auto Interaction Number Freeform</span></label>' + 
+'<input id="CustomInteractionField_26634" name="CustomInteractionField_26634" class="number" type="text" maxlength="255"></input>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20491" >' + 
-'<label for="CustomTransactionField_20491">Auto Transaction Number Pick One</label>' + 
-'<select id="CustomTransactionField_20491" name="CustomTransactionField_20491"><option value=""></option>' + 
-'<option value="21540">3.14</option>' + 
-'<option value="21541">75.45</option>' + 
-'<option value="21542">150</option>' + 
-'<option value="21543">3789</option>' + 
-'<option value="21544">138999</option>' + 
+'<div class="field text CustomInteractionField_26635" >' + 
+'<label for="CustomInteractionField_26635">Auto Interaction Number Pick One</label>' + 
+'<select id="CustomInteractionField_26635" name="CustomInteractionField_26635"><option value=""></option>' + 
+'<option value="27684">3.14</option>' + 
+'<option value="27685">75.45</option>' + 
+'<option value="27686">150</option>' + 
+'<option value="27687">3789</option>' + 
+'<option value="27688">138999</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20492" >' + 
-'<label for="CustomTransactionField_20492">Auto Transaction Number Pick Multiple</label>' + 
-'<div id="CustomTransactionField_20492" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21546" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21546" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<div class="field text CustomInteractionField_26636" >' + 
+'<label for="CustomInteractionField_26636">Auto Interaction Number Pick Multiple</label>' + 
+'<div id="CustomInteractionField_26636" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="27690" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27690" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">55.768</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21547" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21547" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27691" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27691" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">678</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21548" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21548" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27692" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27692" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">8233.5</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21549" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21549" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27693" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27693" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">14500</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21550" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21550" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27694" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27694" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">8723300</span>' + 
 '                              </a>' + 
 '</div>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20493" >' + 
-'<label for="CustomTransactionField_20493"><span class="label">Auto Transaction Currency Freeform</span></label>' + 
-'<input id="CustomTransactionField_20493" name="CustomTransactionField_20493" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
+'<div class="field text CustomInteractionField_26637" >' + 
+'<label for="CustomInteractionField_26637"><span class="label">Auto Interaction Currency Freeform</span></label>' + 
+'<input id="CustomInteractionField_26637" name="CustomInteractionField_26637" class="currency" type="text" maxlength="255" placeholder="$0.00"></input>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20494" >' + 
-'<label for="CustomTransactionField_20494">Auto Transaction Currency Pick One</label>' + 
-'<select id="CustomTransactionField_20494" name="CustomTransactionField_20494"><option value=""></option>' + 
-'<option value="21552">$10.50</option>' + 
-'<option value="21553">$25.00</option>' + 
-'<option value="21554">$50.00</option>' + 
-'<option value="21555">$100.00</option>' + 
-'<option value="21556">$10,000.00</option>' + 
+'<div class="field text CustomInteractionField_26638" >' + 
+'<label for="CustomInteractionField_26638">Auto Interaction Currency Pick One</label>' + 
+'<select id="CustomInteractionField_26638" name="CustomInteractionField_26638"><option value=""></option>' + 
+'<option value="27696">$10.50</option>' + 
+'<option value="27697">$25.00</option>' + 
+'<option value="27698">$50.00</option>' + 
+'<option value="27699">$100.00</option>' + 
+'<option value="27700">$10,000.00</option>' + 
 '</select>' + 
 '</div>' + 
-'<div class="field text CustomTransactionField_20495" >' + 
-'<label for="CustomTransactionField_20495">Auto Transaction Currency Pick Multiple</label>' + 
-'<div id="CustomTransactionField_20495" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="21558" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21558" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<div class="field text CustomInteractionField_26639" >' + 
+'<label for="CustomInteractionField_26639">Auto Interaction Currency Pick Multiple</label>' + 
+'<div id="CustomInteractionField_26639" class="checkboxes"><a href="javascript:void(0)" class="checkbox" data-id="27702" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27702" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">$25.33</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21559" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21559" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27703" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27703" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">$550.00</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21560" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21560" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27704" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27704" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">$1,250.00</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21561" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21561" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27705" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27705" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">$5,000.35</span>' + 
 '                              </a>' + 
-'<a href="javascript:void(0)" class="checkbox" data-id="21562" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
-'                                <input type="checkbox" value="21562" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
+'<a href="javascript:void(0)" class="checkbox" data-id="27706" onclick="var box = jQuery(this).children(\'input\'); box.prop(\'checked\', !box.prop(\'checked\'));jQuery(box).trigger(\'change\'); return false;">' + 
+'                                <input type="checkbox" value="27706" onchange="jQuery(this).closest(\'.checkbox\').toggleClass(\'selected\')">' + 
 '                                <span class="text">$250,000.00</span>' + 
 '                              </a>' + 
 '</div>' + 
@@ -990,186 +906,116 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    <div class="section true-impact">' + 
-'      <h3>Increase My Impact</h3>' + 
-'      <div class="field checkbox true-impact" >' + 
-'<label for="true-impact"><input id="true-impact" name="true-impact" type="checkbox" maxlength="255"></input><span class="label">Yes! Add [amount] to help offset bank fees</span></label>' + 
-'</div>' + 
-'' + 
-'</div>' + 
-'    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31747"></div>' + 
-'' + 
-'</div>' + 
+'    ' + 
 '    <div class="btn-group">' + 
-'      <input class="btn btn-submit btn-submit-donation" type="submit" value="Enter Payment" id="express-submit" disabled="true" />' + 
+'      <input class="btn btn-submit btn-submit-interaction" type="submit" value="Submit"/>' + 
 '    </div>' + 
 '  </form>' + 
 '</div>' + 
-'<div id="donation-processing-container" style="display: none">' + 
-'  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
-'</div>' + 
 '' + 
-'' +  '';var successHtml31747 = '<div class=\'donation-success\'>' +
-                                                       '  <h2>Thank You for Your Donation!</h2>' +
-                                                       '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
-                                                        '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to Bloom Automation 01. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
-                                                        '</div>';( function($) {if (!Bloomerang.useDonationId('31747')) { 
-                                    html31747 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
-                                }if (jQuery('#bloomerangForm31747').length) {
+'' +  '';var successHtml31761 = '<div class=\'donation-success\'>' +
+                                                       '  <h2>Thank you for volunteering!</h2>' +
+                                                       '  <p>Your volunteer activity has been submitted. We couldn\u0026#39;t do this without you!</p>' + 
+                                                        '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just volunteered for Bloom Automation 01 and you should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e \u003cdiv class=\"additional-volunteering\" style=\"margin-top: 10px;\"\u003e\u003cbutton type=\"button\" onclick=\"javascript:location.reload()\"\u003eLog Additional Activity\u003c/button\u003e\u003c/div\u003e' + 
+                                                        '</div>';( function($) {if (!Bloomerang.useInteractionId('31761')) {
+                                    html31761 = '<p style="color: red">Only one Volunteer Activity or Constituent Information form can be used on each page.</p>';
+                                }if (jQuery('#bloomerangForm31761').length) {
                         
-                    if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html31747 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
-                        ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
-                    }
-                        jQuery('#bloomerangForm31747').after(html31747);
-                         if (!Bloomerang.SpreedlyScriptLoaded) {
-                                            Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
-                                                function() { return SpreedlyExpress != undefined; },
-                                                function() {
-                                                    SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
-                                                    Bloomerang.initSpreedly = function() {
-                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Bryan Local' });
-                                                    };
-                                                    Bloomerang.initSpreedly();
-                                                });
-                                        }
-                                        Bloomerang.SpreedlyScriptLoaded = true;
+                        jQuery('#bloomerangForm31761').after(html31761);
+                        
                     };
-                    if (Bloomerang.paymentFormLoaded) {
+                    if (Bloomerang.interactionFormLoaded) {
                                             return false;
                                         }
-                                        Bloomerang.paymentFormLoaded = true;
-                     jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                                        Bloomerang.interactionFormLoaded = true;
+                     jQuery('.interaction-form .section.captcha').attr('style', 'display: none'); 
+                    
                     Bloomerang.useKey('pub_1c4dbc61-9c2c-4e1c-8999-96f7678f4990');
-        Bloomerang.Util.getDonationAmount = function() {
-          return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
-        };
         // Register proper callbacks for various stages/outcomes of submission
-        Bloomerang.Widget.Donation.OnSubmit = function (args) {
-            jQuery(".btn-submit-donation").val("Donating...").prop("disabled", true).addClass("disabled");
+        Bloomerang.Widget.Interaction.OnSubmit = function (args) {
+            jQuery(".btn-submit-interaction").val("Submitting...").prop("disabled", true).addClass("disabled");
             var val = function (selector) { return jQuery(selector).val(); };
             Bloomerang.Account
                     .individual()
-                    .firstName(val(".donation-form #first-name"))
-                    .middleName(val(".donation-form #middle-name"))
-                    .lastName(val(".donation-form #last-name"))
-                    .homeAddress(val(".donation-form #street-address"),
-                                 val(".donation-form #city"),
-                                 val(".donation-form #state") || val(".donation-form #province"),
-                                 val(".donation-form #zip-code") || val(".donation-form #postal-code"),
-                                 val(".donation-form #country"))
-                    .homeEmail(val(".donation-form #email-address"))
-                    .homePhone(val(".donation-form #phone-number"))
-                    .applyDonationCustomFields();
-            if (jQuery(".donation-form #consent-all").prop("checked")) {
-              Bloomerang.Account.optedInStatus(jQuery(".donation-form #consent-email").prop("checked"),
-                                               jQuery(".donation-form #consent-mail").prop("checked"),
-                                               jQuery(".donation-form #consent-phone").prop("checked"));
+                    .firstName(val(".interaction-form #first-name"))
+                    .lastName(val(".interaction-form #last-name"))
+                    .homeEmail(val(".interaction-form #email-address"))
+                    .homePhone(val(".interaction-form #phone-number"))
+                    .applyInteractionCustomFields();
+                    
+            if (jQuery(".interaction-form #consent-all").prop("checked")) {
+              Bloomerang.Account.optedInStatus(jQuery(".interaction-form #consent-email").prop("checked"),
+                                               jQuery(".interaction-form #consent-mail").prop("checked"),
+                                               jQuery(".interaction-form #consent-phone").prop("checked"));
             }
-            var amount = Bloomerang.Util.getDonationAmount() + Bloomerang.Util.getDonationTrueImpactAmount();
-            if (jQuery(".donation-form #recurring").prop("checked")) {
-                Bloomerang.RecurringDonation
-                        .amount(amount)
-                        .fundId(val(".donation-form #fund"))
-                        .note(val(".donation-form #comment"))
-                        .frequency(val(".donation-form #frequency") || "Monthly")
-                        .startDate(val(".donation-form #start-date"))
-                        .applyDonationCustomFields();
-                // Need to do a null-check here because they might have a cached version of Bloomerang-v2.js
-                if (Bloomerang.RecurringDonation.trueImpactEnabled && Bloomerang.RecurringDonation.trueImpactUsed) {
-                  Bloomerang.RecurringDonation
-                        .trueImpactEnabled(jQuery(".donation-form .true-impact .fee-amount").length > 0)
-                        .trueImpactUsed(jQuery(".donation-form .true-impact input:checked").length > 0);
-                }
-            } else {
-                Bloomerang.Donation
-                        .amount(amount)
-                        .fundId(val(".donation-form #fund"))
-                        .note(val(".donation-form #comment"))
-                        .applyDonationCustomFields();
-                // Need to do a null-check here because they might have a cached version of Bloomerang-v2.js
-                if (Bloomerang.Donation.trueImpactEnabled && Bloomerang.Donation.trueImpactUsed) {
-                  Bloomerang.Donation
-                        .trueImpactEnabled(jQuery(".donation-form .true-impact .fee-amount").length > 0)
-                        .trueImpactUsed(jQuery(".donation-form .true-impact input:checked").length > 0);
-                }
-            }
-            if (jQuery("#donation-form #Checking").is(":checked") ||
-                jQuery("#donation-form #Savings").is(":checked")) {
-              Bloomerang.Eft
-                .accountNumber(val(".donation-form #accountNumber"))
-                .routingNumber(val(".donation-form #routingNumber"))
-                .type(jQuery("#donation-form .section.payment input[type='radio']:checked").attr("id"));
-            }
+                    
+            // Always sending the address, even if it's blank, because we need to know the Country for GDPR purposes
+            Bloomerang.Account.homeAddress(val(".interaction-form #street-address"), 
+                                           val(".interaction-form #city"),
+                                           val(".interaction-form #state") || val(".interaction-form #province"),
+                                           val(".interaction-form #zip-code") || val(".interaction-form #postal-code"),
+                                           val(".interaction-form #country"));
+           Bloomerang.Interaction.note(val(".interaction-form #comment"));
+           
+           if (jQuery("#volunteer-date").length) {
+               Bloomerang.Interaction.date(jQuery("#volunteer-date").val());
+           }
+           
+           Bloomerang.Interaction.applyInteractionCustomFields();
         };
-        Bloomerang.ValidateDonationFormCaptcha = function() {
-            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
-                var captchaResponse = grecaptcha.getResponse(jQuery(".donation-form").data("captcha-id"));
+        Bloomerang.ValidateInteractionFormCaptcha = function() {
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Interaction).children().length) {
+                var captchaResponse = grecaptcha.getResponse(jQuery(".interaction-form").data("captcha-id"));
                 if (captchaResponse) {
-                    jQuery(".donation-form .noCaptchaResponseError").hide();
+                    jQuery(".interaction-form .noCaptchaResponseError").hide();
                     Bloomerang.captchaResponse(captchaResponse);
                     return true;
                 } else {
-                    jQuery(".donation-form .noCaptchaResponseError").show();
+                    jQuery(".interaction-form .noCaptchaResponseError").show();
                     return false;
                 }
             } else return true;
         };
-        Bloomerang.scrollToElement = function(element) {
+        Bloomerang.Api.OnSuccess = Bloomerang.Widget.Interaction.OnSuccess = function (response) {
+            jQuery("#interaction-form-container").html(successHtml31761);
             var distance = 100;
-            var offset = element.offset().top;
+            var offset = jQuery("#interaction-form-container").offset().top;
             var offsetTop = offset > distance ? offset - distance : offset;
           jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
         };
-        Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess = function (response) {
-            jQuery("#donation-processing-container").hide();
-            var formContainer = jQuery("#donation-form-container");
-            formContainer.show();
-            formContainer.html(successHtml31747);
-            Bloomerang.scrollToElement(formContainer);
-        };
-        Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
-            jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
-            if (jQuery("#donation-form #Checking").is(":checked") ||
-                jQuery("#donation-form #Savings").is(":checked"))
-              jQuery(".btn-submit-donation").val("Donate");
-            else
-              jQuery(".btn-submit-donation").val("Enter Payment");
-            jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
-            jQuery("#donation-processing-container").hide();
-            jQuery("#donation-form-container").show();
-            Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
-            Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
-            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
-              grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
+        Bloomerang.Api.OnError = Bloomerang.Widget.Interaction.OnError = function (response) {
+            jQuery(".btn-submit-interaction").val("Submit").prop("disabled", false).removeClass("disabled");
+            jQuery("#interaction-form-container .errors").removeClass("hidden").html(response.Message);
+            var distance = 100;
+            var offset = jQuery("#interaction-form-container .errors").offset().top;
+            var offsetTop = offset > distance ? offset - distance : offset;
+          jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Interaction).children().length) {
+              grecaptcha.reset(jQuery(".interaction-form").data("captcha-id"));
             }
         };
         
-        Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
+        Bloomerang.Util.applyInteractionCustomFields = function (obj, type) {
         
             // Clear any fields from a previous failed submission
             obj.clearCustomFields();
         
             // Apply all <input> (not multiselect), <select> and <textarea> fields
-            jQuery(".donation-form .section.custom-fields :input:not(a > input, select)[id*=" + type + "]").each(function() {
+            jQuery(".interaction-form .section.custom-fields :input:not(a > input, select)[id*=" + type + "]").each(function() {
                 if (jQuery(this).val().hasValue()) {
                     obj.customFreeformField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
                 }
             });
             
             // Apply all <select> fields
-            jQuery(".donation-form .section.custom-fields select[id*=" + type + "]").each(function() {
+            jQuery(".interaction-form .section.custom-fields select[id*=" + type + "]").each(function() {
                 if (jQuery(this).val().hasValue()) {
                     obj.customPickField(jQuery(this).attr("id").toUntypedValue(), jQuery(this).val());
                 }
             });
                 
             // Apply all multiselect fields
-            jQuery(".donation-form .section.custom-fields .checkboxes[id*=" + type + "]").each(function() {
+            jQuery(".interaction-form .section.custom-fields .checkboxes[id*=" + type + "]").each(function() {
                 obj.customPickField(jQuery(this).attr("id").toUntypedValue(),
                 jQuery.map(jQuery(this).children(".checkbox.selected"), function(v) { return jQuery(v).attr("data-id"); }));
             });
@@ -1179,18 +1025,13 @@
             return (this && jQuery.trim(this)); //IE8 doesn't have a native trim function
         };
         
-        Bloomerang.Account.applyDonationCustomFields = function () {
-            Bloomerang.Util.applyDonationCustomFields(this, "Account");
+        Bloomerang.Account.applyInteractionCustomFields = function () {
+            Bloomerang.Util.applyInteractionCustomFields(this, "Account");
             return this;
         };
         
-        Bloomerang.Donation.applyDonationCustomFields = function () {
-            Bloomerang.Util.applyDonationCustomFields(this, "Transaction");
-            return this;
-        };
-        
-        Bloomerang.RecurringDonation.applyDonationCustomFields = function () {
-            Bloomerang.Util.applyDonationCustomFields(this, "Transaction");
+        Bloomerang.Interaction.applyInteractionCustomFields = function () {
+            Bloomerang.Util.applyInteractionCustomFields(this, "Interaction");
             return this;
         };
         
@@ -1198,71 +1039,9 @@
             return this.substring(this.indexOf('_') + 1);
         };
         
-        Date.prototype.toDateInputValue = function() {
-            var local = new Date(this);
-            local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-            return (local.getMonth() + 1) + // Add one to the month because it starts at 0
-                    "/" + local.getDate() + "/" + local.getFullYear();
-        };
-        
-        jQuery(document).ready(function() {
-            jQuery(".donation-form .field.start-date input").val(new Date().toDateInputValue());
-        });
-        
-        // Hide recurring donation options if recurring donation box is unchecked
-        jQuery(".donation-form .field.recurring").change(function() { 
-            jQuery(".donation-form .field.recurring").siblings().each(function(i, e) { 
-                jQuery(e).toggle();
-            }); 
-        })
-        
-        // The other-amount field is only equired when the "Other" donation-level is selected
-        jQuery(".donation-form .section.donation input[name='donation-level']").change(function () { 
-            if (jQuery(this).attr('id') == "other-option") { 
-                jQuery(".donation-form #other-amount").addClass("required"); 
-            } else { 
-                jQuery(".donation-form #other-amount").removeClass("required"); 
-            }
-            Bloomerang.Util.calculateDonationTrueImpact();
-        });
-        if (jQuery(".donation-form .true-impact label").length) {
-          jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
-        }
-        Bloomerang.Util.calculateDonationTrueImpact = function() {
-          if (!jQuery(".donation-form .true-impact .fee-amount").length) { return; }
-          // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
-          var amount = Bloomerang.Util.getDonationAmount();
-          var isEft = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked"));
-          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
-          var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
-          var impactAmount = Number((newTotal - amount).toFixed(2));
-          jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
-          return impactAmount;
-        };
-        Bloomerang.Util.getDonationTrueImpactAmount = function() {
-          if (jQuery(".donation-form .true-impact input:checked").length) {
-            return Bloomerang.Util.calculateDonationTrueImpact();
-          }
-          return 0;
-        };
-        // Changing the value of other-amount should change the value of other-option
-        jQuery(".donation-form #other-amount").change(function () { 
-          jQuery(".donation-form #other-option").val(jQuery(this).val());
-          Bloomerang.Util.calculateDonationTrueImpact();
-        });
-        
-        jQuery(".donation-form #donation-amount").change(function() {
-          Bloomerang.Util.calculateDonationTrueImpact();
-        });
-        
-        // Clicking into the other-amount field should select the other-option
-        jQuery(".donation-form #other-amount").click(function() { 
-          jQuery(".donation-form #other-option").prop('checked',true);
-          Bloomerang.Util.calculateDonationTrueImpact();
-        });
         jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
             var digits = phone_number.replace(/\D/g, "");
-            return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
+           return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
         }, "Please specify a valid phone number or use '+' for international.");
         jQuery.validator.addMethod("phoneInternational", function (phone_number, element) {
             return this.optional(element) || /^\+[0-9\-\(\)\s.]+$/i.test(phone_number);
@@ -1299,140 +1078,57 @@
             }
         }, function () { return "Must be a 4 digit year"; });
         jQuery.validator.classRuleSettings.validYear = { validYear: true };
-        
-        // Validate that the donation amount is at least $1
-        jQuery.validator.methods.min = function( value, element, param ) {
-          if (typeof (accounting) === "undefined") { // rip out $ and ,
-              value = ((value + "") || "").replace(/[\$,]/g, "");
-          }
-          else { // Use accounting.parse, to handle $ and ,
-              value = accounting.parse(value);
-          }
-          return this.optional( element ) || value >= param;
-        };
-        jQuery.validator.classRuleSettings.minimum1 = { min: 1 };
-        jQuery.validator.messages.min = 'Please enter a value of at least {0}.'
-        jQuery(".donation-form #country").change(function(event) {
+        jQuery(".interaction-form #country").change(function(event) {
           var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
           var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
-          jQuery(".donation-form #state, .donation-form #province").val(""); // clear the state when the country changes
-          jQuery(".donation-form .field.city, .donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code, .donation-form .field.postal-code").toggle(!isInternational);
-          jQuery(".donation-form #street-address").toggleClass("international", isInternational);
+          jQuery(".interaction-form #state, .interaction-form #province").val(""); // clear the state when the country changes
+          jQuery(".interaction-form .field.city, .interaction-form .field.state, .interaction-form .field.province, .interaction-form .field.zip-code, .interaction-form .field.postal-code").toggle(!isInternational);
           if (element.val() == "BM") {
-            jQuery(".donation-form .field.city .label").text(jQuery(".donation-form .field.city input").data("bm-label"));
+            jQuery(".interaction-form .field.city .label").text(jQuery(".interaction-form .field.city input").data("bm-label"));
           } else if (element.val() == "US" || element.val() == "CA") {
-            jQuery(".donation-form .field.city .label").text(jQuery(".donation-form .field.city input").data("us-label"));
+            jQuery(".interaction-form .field.city .label").text(jQuery(".interaction-form .field.city input").data("us-label"));
           }
+          jQuery(".interaction-form #street-address").toggleClass("international", isInternational);
           if (element.val() == "US") {
-            jQuery(".donation-form .field.state, .donation-form .field.zip-code").show();
-            jQuery(".donation-form .field.province, .donation-form .field.postal-code").hide();
+            jQuery(".interaction-form .field.state, .interaction-form .field.zip-code").show();
+            jQuery(".interaction-form .field.province, .interaction-form .field.postal-code").hide();
           } else if (element.val() == "CA") {
-            jQuery(".donation-form .field.state, .donation-form .field.zip-code").hide();
-            jQuery(".donation-form .field.province, .donation-form .field.postal-code").show();
+            jQuery(".interaction-form .field.state, .interaction-form .field.zip-code").hide();
+            jQuery(".interaction-form .field.province, .interaction-form .field.postal-code").show();
           } else if (element.val() == "BM") {
-            jQuery(".donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code").hide();
-            jQuery(".donation-form .field.postal-code").show();
+            jQuery(".interaction-form .field.state, .interaction-form .field.province, .interaction-form .field.zip-code").hide();
+            jQuery(".interaction-form .field.postal-code").show();
           } else {
-            jQuery(".donation-form #city, .donation-form #postal-code, .donation-form #zip-code").val("");
+            jQuery(".interaction-form #city, .interaction-form #zip-code, .interaction-form #postal-code").val("");
           }
-          jQuery(".donation-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
+          jQuery(".interaction-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
-        jQuery(".donation-form #phone-number").change(function () {
-          var phoneField = jQuery(".donation-form #phone-number");
+        jQuery(".interaction-form #phone-number").change(function () {
+          var phoneField = jQuery(".interaction-form #phone-number");
           var internationalNumber = phoneField.val().substring(0,1) === '+';
           phoneField.toggleClass("phoneUS", !internationalNumber);
           phoneField.toggleClass("phoneInternational", internationalNumber);
         })
-        collectPayment = function () {
-          var form = jQuery("#donation-form");
-          if (!Bloomerang.ValidateDonationFormCaptcha()) {
-            return false;
-          }
-  
-          if (!form.valid()) {
-            return false;
-          }
-  
-          if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
-            submitDonation();
-          }
-          else {
-            var val = function (selector) { return jQuery(selector).val(); };
-            var amount = Bloomerang.Util.getDonationAmount() + Bloomerang.Util.getDonationTrueImpactAmount();
-            var selectedDonationLevel = jQuery(".donation-form .section.donation input[name='donation-level']:checked").parent().text();
-            selectedDonationLevel = (selectedDonationLevel.indexOf("-") == -1 ? "" : selectedDonationLevel.substr(selectedDonationLevel.indexOf("-") + 2) );
-    
-            SpreedlyExpress.setDisplayOptions({
-              "amount": accounting.formatMoney(amount),
-              "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
-              "sidebar_bottom_description": selectedDonationLevel,
-              "submit_label": "Donate"});
-            SpreedlyExpress.setPaymentMethodParams({
-              "email": val(".donation-form #email-address"),
-              "phone_number": val(".donation-form #phone-number"),
-              "address1": val(".donation-form #street-address"),
-              "city": val(".donation-form #city"),
-              "state": val(".donation-form #state") || val(".donation-form #province"),
-              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
-            SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
-              Bloomerang.CreditCard.spreedlyToken(token);
-             submitDonation();
-           });
-            var oldMeta = '';
-            if (jQuery('meta[name="viewport"]').length) {
-              oldMeta = jQuery('meta[name="viewport"]').attr('content');
-            } else {
-              jQuery('head').append('<meta name="viewport" content="" />');
+        // Intercept form submission to validate then submit via API
+        jQuery("#interaction-form-container form").validate({
+            submitHandler: function () {
+                if (!Bloomerang.ValidateInteractionFormCaptcha()) {
+                  return false;
+                }
+            
+                // Restore proper callbacks in case there are multiple widgets on the page
+                Bloomerang.Api.OnSubmit = Bloomerang.Widget.Interaction.OnSubmit;
+                Bloomerang.Api.OnSuccess = Bloomerang.Widget.Interaction.OnSuccess;
+                Bloomerang.Api.OnError = Bloomerang.Widget.Interaction.OnError;
+                Bloomerang.Api.submitInteraction();
             }
-            jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
-            jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            SpreedlyExpress.openView();
-          }
-        };
-        submitDonation = function() {
-          if (!Bloomerang.continueFinancialSubmission(jQuery("#donation-form"))) { return false; }
-  
-          Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-          Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-          Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
-          var processingMessage = jQuery("#donation-processing-container");
-          processingMessage.show();
-          jQuery("#donation-form-container").hide();
-          Bloomerang.scrollToElement(processingMessage);
-  
-          var tmp = jQuery(".donation-form #recurring").prop("checked")
-            ? Bloomerang.Api.recurringDonate()
-            : Bloomerang.Api.donate();
-        };
-        
-        jQuery("#donation-form #CreditCard").prop("checked", true);
-        jQuery("#donation-form .section.payment input[type='radio']").click(function() {
-          Bloomerang.Util.calculateDonationTrueImpact();
-          if (jQuery(this).attr("id") == "CreditCard") {
-            jQuery("#donation-form .accountNumber, \
-                    #donation-form .routingNumber, \
-                    #donation-form .sample-check").hide();
-            jQuery(".btn-submit-donation").val("Enter Payment");
-          }                        
-          else {                   
-            jQuery("#donation-form .accountNumber, \
-                    #donation-form .routingNumber, \
-                    #donation-form .sample-check").show();
-            if (jQuery("#donation-form .sample-check").length == 0) {                    
-              var checkImage = new Image();
-              checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
-              jQuery(checkImage).addClass("sample-check");
-              jQuery("#donation-form .accountNumber").after(checkImage);
-            }
-            jQuery(".btn-submit-donation").val("Donate");
-          }
-      });
-      // Show opt-in options based on the setting of the global opt-in
-      jQuery(".donation-form .field.consent-all").change(function() { 
-          jQuery(".donation-form .field.consent-all").siblings().each(function(i, e) { 
-              jQuery(e).toggle();
-          }); 
-      });
+        });
+        // Show opt-in options based on the setting of the global opt-in
+        jQuery(".interaction-form .field.consent-all").change(function() { 
+            jQuery(".interaction-form .field.consent-all").siblings().each(function(i, e) { 
+                jQuery(e).toggle();
+            }); 
+        });
         
 })(jQuery);
     };
@@ -1444,10 +1140,10 @@
                         script.type = 'text/javascript';
                         script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31761(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31761(); })});
                     }
                 };
                 var waitForBloomerangLoad = function(callback) {
@@ -1467,6 +1163,6 @@
                 startBloomerangLoad();
 </script></pre>
 
-	</div>
+	</div>    
 </body>
 </html>
