@@ -41,7 +41,8 @@
 				<h2 class="cell">Enter In Your Information</h2>
 			</div>
 		</div>	
-		<script type="text/javascript" id="bloomerangForm31765"></script>
+		
+<script type="text/javascript" id="bloomerangForm31765"></script>
 <pre><script type="text/javascript">
     var insertForm31765 = function() {
         var html31765 = '<style text=\'text/css\'>' + 
@@ -91,6 +92,12 @@
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
+'' + 
+'.interaction-form .field.radio input,' + 
+'                     .interaction-form .field.checkbox input{width: auto;' + 
+'                margin-left:0;}' + 
+'' + 
+'.interaction-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
 '' + 
 '.interaction-form .field input,' + 
 '                     .interaction-form .field select,' + 
@@ -481,7 +488,7 @@
 '</div>' + 
 '<div class="field number zip-code" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" step="any" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" step="any" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span></label>' + 
@@ -880,6 +887,21 @@
 '</div>' + 
 '' + 
 '</div>' + 
+'    <div class="section consent hidden">' + 
+'      <div class="field checkbox consent-all" >' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Bryan H Automation</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-email" style="display: none">' + 
+'<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-mail" style="display: none">' + 
+'<label for="consent-mail"><input id="consent-mail" name="consent-mail" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by postal mail</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-phone" style="display: none">' + 
+'<label for="consent-phone"><input id="consent-phone" name="consent-phone" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by phone</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    ' + 
 '    <div class="btn-group">' + 
 '      <input class="btn btn-submit btn-submit-interaction" type="submit" value="Submit"/>' + 
@@ -905,12 +927,10 @@
                      jQuery('.interaction-form .section.captcha').attr('style', 'display: none'); 
                     
                     Bloomerang.useKey('pub_ccd5f4cb-ebb1-47f8-b8ca-fa41b37f1d64');
-
         // Register proper callbacks for various stages/outcomes of submission
         Bloomerang.Widget.Interaction.OnSubmit = function (args) {
             jQuery(".btn-submit-interaction").val("Submitting...").prop("disabled", true).addClass("disabled");
             var val = function (selector) { return jQuery(selector).val(); };
-
             Bloomerang.Account
                     .individual()
                     .firstName(val(".interaction-form #first-name"))
@@ -919,20 +939,18 @@
                     .homePhone(val(".interaction-form #phone-number"))
                     .applyInteractionCustomFields();
                     
-            // only include address if there's anything other than the country filled in (since Country is pre-populated)
-            if (val(".interaction-form #street-address") || 
-                val(".interaction-form #city") ||
-                val(".interaction-form #state") ||
-                val(".interaction-form #province") ||
-                val(".interaction-form #zip-code") ||
-                val(".interaction-form #postal-code")) {
-              Bloomerang.Account.homeAddress(val(".interaction-form #street-address"), 
-                                             val(".interaction-form #city"),
-                                             val(".interaction-form #state") || val(".interaction-form #province"),
-                                             val(".interaction-form #zip-code") || val(".interaction-form #postal-code"),
-                                             val(".interaction-form #country"));
-           }
-
+            if (jQuery(".interaction-form #consent-all").prop("checked")) {
+              Bloomerang.Account.optedInStatus(jQuery(".interaction-form #consent-email").prop("checked"),
+                                               jQuery(".interaction-form #consent-mail").prop("checked"),
+                                               jQuery(".interaction-form #consent-phone").prop("checked"));
+            }
+                    
+            // Always sending the address, even if it's blank, because we need to know the Country for GDPR purposes
+            Bloomerang.Account.homeAddress(val(".interaction-form #street-address"), 
+                                           val(".interaction-form #city"),
+                                           val(".interaction-form #state") || val(".interaction-form #province"),
+                                           val(".interaction-form #zip-code") || val(".interaction-form #postal-code"),
+                                           val(".interaction-form #country"));
            Bloomerang.Interaction.note(val(".interaction-form #comment"));
            
            if (jQuery("#volunteer-date").length) {
@@ -959,7 +977,7 @@
             var distance = 100;
             var offset = jQuery("#interaction-form-container").offset().top;
             var offsetTop = offset > distance ? offset - distance : offset;
-		        jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+          jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Interaction.OnError = function (response) {
             jQuery(".btn-submit-interaction").val("Submit").prop("disabled", false).removeClass("disabled");
@@ -967,7 +985,7 @@
             var distance = 100;
             var offset = jQuery("#interaction-form-container .errors").offset().top;
             var offsetTop = offset > distance ? offset - distance : offset;
-		        jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
+          jQuery('html, body').animate({ scrollTop : offsetTop}, 500);
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Interaction).children().length) {
               grecaptcha.reset(jQuery(".interaction-form").data("captcha-id"));
             }
@@ -1019,9 +1037,8 @@
         
         jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
             var digits = phone_number.replace(/\D/g, "");
-	          return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
+           return this.optional(element) || digits.length == 7 || digits.length == 10 || digits.length == 11;
         }, "Please specify a valid phone number or use '+' for international.");
-
         jQuery.validator.addMethod("phoneInternational", function (phone_number, element) {
             return this.optional(element) || /^\+[0-9\-\(\)\s.]+$/i.test(phone_number);
         }, "Please specify a valid phone number.");
@@ -1030,7 +1047,6 @@
         jQuery.validator.addMethod("zipcodeUS", function (value, element) {
             return this.optional(element) || /\d{5}-\d{4}$|^\d{5}$/.test(value)
         }, "The specified US ZIP Code is invalid");
-
         jQuery.validator.addMethod("currency", function (value, element, options) {
             return !value ||
                 value
@@ -1039,9 +1055,7 @@
                   .split(",").join("")
                   .match(/^\d+$/g);
         }, "Not a valid currency");
-
         jQuery.validator.classRuleSettings.currency = { currency: true };
-
         jQuery.validator.addMethod("number", function (value, element, options) {
             return !value ||
                 value
@@ -1049,7 +1063,6 @@
                   .split(",").join("")
                   .match(/^\d+$/g);
         }, "Not a valid number");
-
         jQuery.validator.classRuleSettings.number = { number: true };
         
         jQuery.validator.addMethod("validYear", function (value, element, options) {
@@ -1060,9 +1073,7 @@
                 return false;
             }
         }, function () { return "Must be a 4 digit year"; });
-
         jQuery.validator.classRuleSettings.validYear = { validYear: true };
-
         jQuery(".interaction-form #country").change(function(event) {
           var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
           var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
@@ -1086,15 +1097,14 @@
           } else {
             jQuery(".interaction-form #city, .interaction-form #zip-code, .interaction-form #postal-code").val("");
           }
+          jQuery(".interaction-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
-
         jQuery(".interaction-form #phone-number").change(function () {
           var phoneField = jQuery(".interaction-form #phone-number");
           var internationalNumber = phoneField.val().substring(0,1) === '+';
           phoneField.toggleClass("phoneUS", !internationalNumber);
           phoneField.toggleClass("phoneInternational", internationalNumber);
         })
-
         // Intercept form submission to validate then submit via API
         jQuery("#interaction-form-container form").validate({
             submitHandler: function () {
@@ -1109,6 +1119,12 @@
                 Bloomerang.Api.submitInteraction();
             }
         });
+        // Show opt-in options based on the setting of the global opt-in
+        jQuery(".interaction-form .field.consent-all").change(function() { 
+            jQuery(".interaction-form .field.consent-all").siblings().each(function(i, e) { 
+                jQuery(e).toggle();
+            }); 
+        });
         
 })(jQuery);
     };
@@ -1118,7 +1134,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31765(); })});
                     }
@@ -1126,7 +1142,6 @@
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31765(); })});
                     }
                 };
-
                 var waitForBloomerangLoad = function(callback) {
                     if (typeof(Bloomerang) === 'undefined' || !Bloomerang._isReady) {
                         setTimeout(function () { waitForBloomerangLoad(callback) }, 500);
@@ -1141,9 +1156,9 @@
                         }
                     }
                 };
-
                 startBloomerangLoad();
 </script></pre>
+
 	</div>    
 </body>
 </html>

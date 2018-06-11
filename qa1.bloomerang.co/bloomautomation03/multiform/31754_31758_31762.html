@@ -142,6 +142,8 @@
 '                position:absolute;' + 
 '                right:10px; }' + 
 '' + 
+'.registration-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
+'' + 
 '.registration-form .field input,' + 
 '                     .registration-form .field select,' + 
 '                     .registration-form .field textarea{padding: 4px; ' + 
@@ -637,7 +639,7 @@
 '</div>' + 
 '<div class="field number zip-code required" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code required" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
@@ -1037,6 +1039,21 @@
 '</div>' + 
 '' + 
 '</div>' + 
+'    <div class="section consent hidden">' + 
+'      <div class="field checkbox consent-all" >' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Bloom Automation 03</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-email" style="display: none">' + 
+'<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-mail" style="display: none">' + 
+'<label for="consent-mail"><input id="consent-mail" name="consent-mail" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by postal mail</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-phone" style="display: none">' + 
+'<label for="consent-phone"><input id="consent-phone" name="consent-phone" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by phone</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    ' + 
 '    <div class="section captcha">' + 
 '      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31754"></div>' + 
@@ -1092,7 +1109,7 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.029; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
                     Bloomerang.useKey('pub_73cd73bb-e88e-430e-b59b-f472397b7552');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
@@ -1114,6 +1131,11 @@
                       .homeEmail(val(".registration-form #email-address"))
                       .homePhone(val(".registration-form #phone-number"))
                       .applyEventRegistrationCustomFields();
+            if (jQuery(".registration-form #consent-all").prop("checked")) {
+              Bloomerang.Account.optedInStatus(jQuery(".registration-form #consent-email").prop("checked"),
+                                               jQuery(".registration-form #consent-mail").prop("checked"),
+                                               jQuery(".registration-form #consent-phone").prop("checked"));
+            }
             var amount = Bloomerang.Util.getRegistrationAmount() + Bloomerang.Util.getRegistrationTrueImpactAmount();
             var nonDeductibleAmount = jQuery("#totalPrice").data("non-deductible") || 0;
             var ticketQuantity = jQuery("#totalTicketQty").text();
@@ -1371,6 +1393,7 @@
           } else {
             jQuery(".registration-form #city, .registration-form #zip-code, .registration-form #postal-code").val("");
           }
+          jQuery(".registration-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
         
         jQuery(".registration-form #phone-number").change(function () {
@@ -1462,6 +1485,12 @@
             jQuery(".btn-submit-registration").val("Register");
           }
       });
+      // Show opt-in options based on the setting of the global opt-in
+      jQuery(".registration-form .field.consent-all").change(function() { 
+          jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
+              jQuery(e).toggle();
+          });
+      });
         
 })(jQuery);
     };
@@ -1471,7 +1500,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31754(); })});
                     }
@@ -1520,6 +1549,8 @@
 '                padding: 0 10px;}' + 
 '' + 
 '.email-registration-form .field{padding: 4px 0;}' + 
+'' + 
+'.email-registration-form .consent{padding-bottom: 4px;}' + 
 '' + 
 '.email-registration-form .field .required-star{color: #aa0000; ' + 
 '                display: inline-block; ' + 
@@ -1591,6 +1622,7 @@
 '<label for="email-address"><span class="label">Email</span><span class="required-star">*</span></label>' + 
 '<input id="email-address" name="email-address" class="email required" type="email" placeholder="someone@website.com"></input>' + 
 '</div>' + 
+'<div class="consent">I want to receive emails at this address</div>' + 
 '' + 
 '</div>' + 
 '    <div class="section custom-fields">' + 
@@ -2153,7 +2185,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31758(); })});
                     }
@@ -2240,6 +2272,12 @@
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
+'' + 
+'.interaction-form .field.radio input,' + 
+'                     .interaction-form .field.checkbox input{width: auto;' + 
+'                margin-left:0;}' + 
+'' + 
+'.interaction-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
 '' + 
 '.interaction-form .field input,' + 
 '                     .interaction-form .field select,' + 
@@ -2630,7 +2668,7 @@
 '</div>' + 
 '<div class="field number zip-code" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" step="any" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" step="any" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span></label>' + 
@@ -3033,6 +3071,21 @@
 '</div>' + 
 '' + 
 '</div>' + 
+'    <div class="section consent hidden">' + 
+'      <div class="field checkbox consent-all" >' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Bloom Automation 03</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-email" style="display: none">' + 
+'<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-mail" style="display: none">' + 
+'<label for="consent-mail"><input id="consent-mail" name="consent-mail" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by postal mail</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-phone" style="display: none">' + 
+'<label for="consent-phone"><input id="consent-phone" name="consent-phone" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by phone</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    <div class="section captcha">' + 
 '      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31762"></div>' + 
 '' + 
@@ -3083,19 +3136,18 @@
                     .homePhone(val(".interaction-form #phone-number"))
                     .applyInteractionCustomFields();
                     
-            // only include address if there's anything other than the country filled in (since Country is pre-populated)
-            if (val(".interaction-form #street-address") || 
-                val(".interaction-form #city") ||
-                val(".interaction-form #state") ||
-                val(".interaction-form #province") ||
-                val(".interaction-form #zip-code") ||
-                val(".interaction-form #postal-code")) {
-              Bloomerang.Account.homeAddress(val(".interaction-form #street-address"), 
-                                             val(".interaction-form #city"),
-                                             val(".interaction-form #state") || val(".interaction-form #province"),
-                                             val(".interaction-form #zip-code") || val(".interaction-form #postal-code"),
-                                             val(".interaction-form #country"));
-           }
+            if (jQuery(".interaction-form #consent-all").prop("checked")) {
+              Bloomerang.Account.optedInStatus(jQuery(".interaction-form #consent-email").prop("checked"),
+                                               jQuery(".interaction-form #consent-mail").prop("checked"),
+                                               jQuery(".interaction-form #consent-phone").prop("checked"));
+            }
+                    
+            // Always sending the address, even if it's blank, because we need to know the Country for GDPR purposes
+            Bloomerang.Account.homeAddress(val(".interaction-form #street-address"), 
+                                           val(".interaction-form #city"),
+                                           val(".interaction-form #state") || val(".interaction-form #province"),
+                                           val(".interaction-form #zip-code") || val(".interaction-form #postal-code"),
+                                           val(".interaction-form #country"));
            Bloomerang.Interaction.note(val(".interaction-form #comment"));
            
            if (jQuery("#volunteer-date").length) {
@@ -3242,6 +3294,7 @@
           } else {
             jQuery(".interaction-form #city, .interaction-form #zip-code, .interaction-form #postal-code").val("");
           }
+          jQuery(".interaction-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
         jQuery(".interaction-form #phone-number").change(function () {
           var phoneField = jQuery(".interaction-form #phone-number");
@@ -3263,6 +3316,12 @@
                 Bloomerang.Api.submitInteraction();
             }
         });
+        // Show opt-in options based on the setting of the global opt-in
+        jQuery(".interaction-form .field.consent-all").change(function() { 
+            jQuery(".interaction-form .field.consent-all").siblings().each(function(i, e) { 
+                jQuery(e).toggle();
+            }); 
+        });
         
 })(jQuery);
     };
@@ -3272,7 +3331,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31762(); })});
                     }

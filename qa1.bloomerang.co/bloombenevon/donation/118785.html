@@ -118,6 +118,8 @@
 '                     .donation-form .field.checkbox input{width: auto;' + 
 '                margin-left:0;}' + 
 '' + 
+'.donation-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
+'' + 
 '.donation-form #cardExpirationMonth,' + 
 '                     .donation-form #cardExpirationYear{width: 85px;}' + 
 '' + 
@@ -573,7 +575,7 @@
 '</div>' + 
 '<div class="field number zip-code required" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code required" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
@@ -993,6 +995,21 @@
 '</div>' + 
 '' + 
 '</div>' + 
+'    <div class="section consent hidden">' + 
+'      <div class="field checkbox consent-all" >' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Bloom Benevon Automation</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-email" style="display: none">' + 
+'<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-mail" style="display: none">' + 
+'<label for="consent-mail"><input id="consent-mail" name="consent-mail" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by postal mail</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-phone" style="display: none">' + 
+'<label for="consent-phone"><input id="consent-phone" name="consent-phone" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by phone</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    <div class="section true-impact">' + 
 '      <h3>Increase My Impact</h3>' + 
 '      <div class="field checkbox true-impact" >' + 
@@ -1068,6 +1085,11 @@
                     .homeEmail(val(".donation-form #email-address"))
                     .homePhone(val(".donation-form #phone-number"))
                     .applyDonationCustomFields();
+            if (jQuery(".donation-form #consent-all").prop("checked")) {
+              Bloomerang.Account.optedInStatus(jQuery(".donation-form #consent-email").prop("checked"),
+                                               jQuery(".donation-form #consent-mail").prop("checked"),
+                                               jQuery(".donation-form #consent-phone").prop("checked"));
+            }
             var amount = Bloomerang.Util.getDonationAmount() + Bloomerang.Util.getDonationTrueImpactAmount();
             if (jQuery(".donation-form #recurring").prop("checked")) {
                 Bloomerang.RecurringDonation
@@ -1211,8 +1233,8 @@
         
         // Hide recurring donation options if recurring donation box is unchecked
         jQuery(".donation-form .field.recurring").change(function() { 
-            jQuery(".donation-form .field.recurring").siblings().each(function() { 
-                jQuery(this).toggle(); 
+            jQuery(".donation-form .field.recurring").siblings().each(function(i, e) { 
+                jQuery(e).toggle();
             }); 
         })
         
@@ -1335,6 +1357,7 @@
           } else {
             jQuery(".donation-form #city, .donation-form #postal-code, .donation-form #zip-code").val("");
           }
+          jQuery(".donation-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
         jQuery(".donation-form #phone-number").change(function () {
           var phoneField = jQuery(".donation-form #phone-number");
@@ -1426,6 +1449,12 @@
             jQuery(".btn-submit-donation").val("Donate");
           }
       });
+      // Show opt-in options based on the setting of the global opt-in
+      jQuery(".donation-form .field.consent-all").change(function() { 
+          jQuery(".donation-form .field.consent-all").siblings().each(function(i, e) { 
+              jQuery(e).toggle();
+          }); 
+      });
         
 })(jQuery);
     };
@@ -1435,7 +1464,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2017-10-17';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm118785(); })});
                     }
