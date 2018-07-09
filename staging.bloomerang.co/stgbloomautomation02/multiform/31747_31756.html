@@ -210,8 +210,8 @@
 '<div class="field radio other-option required" >' + 
 '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
 '</div>' + 
-'<div class="field tel other-amount" >' + 
-'<input id="other-amount" name="other-amount" class="currency minimum1" type="tel" placeholder="$0.00"></input>' + 
+'<div class="field text other-amount" >' + 
+'<input id="other-amount" name="other-amount" class="otherAmount" type="text" placeholder="$0.00"></input>' + 
 '</div>' + 
 '' + 
 '</div>' + 
@@ -602,7 +602,7 @@
 '</div>' + 
 '<div class="field number zip-code required" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" minlength="5" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code required" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
@@ -1244,14 +1244,12 @@
         })
         
         // The other-amount field is only equired when the "Other" donation-level is selected
-        jQuery(".donation-form .section.donation input[name='donation-level']").change(function () { 
-            if (jQuery(this).attr('id') == "other-option") { 
-                jQuery(".donation-form #other-amount").addClass("required"); 
-            } else { 
-                jQuery(".donation-form #other-amount").removeClass("required"); 
-            }
-            Bloomerang.Util.calculateDonationTrueImpact();
-        });
+        toggleOtherAmountRequired = function () { 
+          jQuery(".donation-form #other-amount").toggleClass("required",
+            jQuery(".donation-form #other-option").prop("checked"));
+          Bloomerang.Util.calculateDonationTrueImpact();
+        };
+        jQuery(".donation-form .section.donation input[name='donation-level']").change(toggleOtherAmountRequired);
         if (jQuery(".donation-form .true-impact label").length) {
           jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
         }
@@ -1285,6 +1283,7 @@
         // Clicking into the other-amount field should select the other-option
         jQuery(".donation-form #other-amount").click(function() { 
           jQuery(".donation-form #other-option").prop('checked',true);
+          toggleOtherAmountRequired();
           Bloomerang.Util.calculateDonationTrueImpact();
         });
         jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
@@ -1308,12 +1307,23 @@
                   .match(/^\d+$/g);
         }, "Not a valid currency");
         jQuery.validator.classRuleSettings.currency = { currency: true };
+        
+        // Validate the other amount, but only if they selected it
+        jQuery.validator.addMethod("otherAmount", function(value, element, param) {
+          if (jQuery(".donation-form #other-option").prop("checked")) {
+            return jQuery.validator.methods.min.bind(this)(value, element, 1) &&
+              jQuery.validator.methods.currency(value, element);
+          }
+          return true;
+        }, "Invalid amount");
+        
+        jQuery.validator.classRuleSettings.otherAmount = { otherAmount: true };
         jQuery.validator.addMethod("number", function (value, element, options) {
-            return !value ||
-                value
-                  .replace(".", "")
-                  .split(",").join("")
-                  .match(/^\d+$/g);
+          return !value ||
+              value
+                .replace(".", "")
+                .split(",").join("")
+                .match(/^\d+$/g);
         }, "Not a valid number");
         jQuery.validator.classRuleSettings.number = { number: true };
         
@@ -1469,7 +1479,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://staging.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
+                        script.src = 'https://staging.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
                     }
