@@ -488,7 +488,7 @@
 '</div>' + 
 '<div class="field number zip-code" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" step="any" minlength="5" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS" type="number" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span></label>' + 
@@ -1134,7 +1134,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31765(); })});
                     }
