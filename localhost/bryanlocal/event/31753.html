@@ -211,14 +211,14 @@
 '                            <td></td>' + 
 '                            <td>Additional Donation</td>' + 
 '                            <td></td>' + 
-'                            <td><input id="additional-donation-amount" name="additionalDonationAmount" type="tel" step="any" min="1" class="currency amount-field minimum1" placeholder="$0.00">' + 
+'                            <td><input id="additional-donation-amount" name="additionalDonationAmount" type="text" class="currency amount-field minimum1" placeholder="$0.00">' + 
 '                                <label for="additional-donation-amount" class="error" style="display: none" generated="true"></label></input></td>' + 
 '                        </tr>' + 
 '                        <tr class="cannot-attend-donation" style="display: none">      ' + 
 '                            <td></td>' + 
 '                            <td>Donation</td>' + 
 '                            <td></td>' + 
-'                            <td><input id="cannot-attend-amount" name="cannotAttendAmount" type="tel" step="any" min="1" class="currency amount-field required minimum1" placeholder="$0.00"></input>' + 
+'                            <td><input id="cannot-attend-amount" name="cannotAttendAmount" type="text" class="currency amount-field required minimum1" placeholder="$0.00"></input>' + 
 '                                <label for="cannot-attend-amount" class="error" style="display: none" generated="true"></label></td>' + 
 '                        </tr>' + 
 '                        <tr class="summary-total">' + 
@@ -596,7 +596,7 @@
 '</div>' + 
 '<div class="field number zip-code required" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" minlength="5" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code required" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
@@ -1219,9 +1219,11 @@
             jQuery(".additional-donation").hide();
             jQuery(".summary-row").hide();
             jQuery(".cannot-attend-donation").show();
+            jQuery("#cannot-attend-amount").prop("disabled", false);
             jQuery(".registration-form #additional-amount").addClass("required");
           } else { 
             jQuery(".cannot-attend-donation").hide();
+            jQuery("#cannot-attend-amount").prop("disabled", true);
             jQuery(".additional-donation").show();
             jQuery(".summary-row").show();
             jQuery(".registration-form #additional-amount").removeClass("required"); 
@@ -1447,7 +1449,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-21';
+                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31753(); })});
                     }
