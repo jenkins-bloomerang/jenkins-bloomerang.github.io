@@ -16,15 +16,15 @@
 		</div>
 		<div class="row">
 			<div class="cell">Database:</div>
-			<div class="cell bold" id="databaseName">qa1bloomautomation02</div>
+			<div class="cell bold" id="databaseName">qa1bryanhautomation</div>
 		</div>	
 		<div class="row">
 			<div class="cell">Widget ID:</div>
-			<div class="cell bold" id="widgetId">31748</div>
+			<div class="cell bold" id="widgetId">31747</div>
 		</div>	
 		<div class="row">
 			<div class="cell">Processor:</div>
-			<div class="cell bold">BluePay</div>
+			<div class="cell bold">Stripe</div>
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
@@ -32,7 +32,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
-			<div class="cell bold">Yes (Pre Authorize.Net)</div>
+			<div class="cell bold">Yes</div>
 		</div>
 	</div>
 	<div class="roundedblock gradtobottomright left">
@@ -46,10 +46,10 @@
 			</div>
 		</div>
 		
-<script type="text/javascript" id="bloomerangForm31748"></script>
+<script type="text/javascript" id="bloomerangForm31747"></script>
 <pre><script type="text/javascript">
-    var insertForm31748 = function() {
-        var html31748 = '<style text=\'text/css\'>' + 
+    var insertForm31747 = function() {
+        var html31747 = '<style text=\'text/css\'>' + 
 '.donation-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
@@ -118,6 +118,8 @@
 '                     .donation-form .field.checkbox input{width: auto;' + 
 '                margin-left:0;}' + 
 '' + 
+'.donation-form .section.consent .field.checkbox:not(.consent-all){margin-left: 20px;}' + 
+'' + 
 '.donation-form #cardExpirationMonth,' + 
 '                     .donation-form #cardExpirationYear{width: 85px;}' + 
 '' + 
@@ -166,23 +168,23 @@
 '    <div class="errors hidden"></div>' + 
 '    <div class="section donation">' + 
 '      <h3>Donation</h3>' + 
-'      <div class="field radio 33808 required" >' + 
-'<label for="33808"><input id="33808" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
+'      <div class="field radio 33804 required" >' + 
+'<label for="33804"><input id="33804" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
 '</div>' + 
-'<div class="field radio 33809 required" >' + 
-'<label for="33809"><input id="33809" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
+'<div class="field radio 33805 required" >' + 
+'<label for="33805"><input id="33805" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
 '</div>' + 
-'<div class="field radio 33810 required" >' + 
-'<label for="33810"><input id="33810" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
+'<div class="field radio 33806 required" >' + 
+'<label for="33806"><input id="33806" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
 '</div>' + 
-'<div class="field radio 33811 required" >' + 
-'<label for="33811"><input id="33811" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
+'<div class="field radio 33807 required" >' + 
+'<label for="33807"><input id="33807" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
 '</div>' + 
 '<div class="field radio other-option required" >' + 
 '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
 '</div>' + 
-'<div class="field tel other-amount" >' + 
-'<input id="other-amount" name="other-amount" class="currency minimum1" type="tel" placeholder="$0.00"></input>' + 
+'<div class="field text other-amount" >' + 
+'<input id="other-amount" name="other-amount" class="otherAmount" type="text" placeholder="$0.00"></input>' + 
 '</div>' + 
 '' + 
 '</div>' + 
@@ -573,7 +575,7 @@
 '</div>' + 
 '<div class="field number zip-code required" >' + 
 '<label for="zip-code"><span class="label">ZIP Code</span><span class="required-star">*</span></label>' + 
-'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" step="any" maxlength="10"></input>' + 
+'<input id="zip-code" name="zip-code" class="zipcodeUS required" type="number" minlength="5" maxlength="10"></input>' + 
 '</div>' + 
 '<div class="field text postal-code required" style="display: none">' + 
 '<label for="postal-code"><span class="label">Postal Code</span><span class="required-star">*</span></label>' + 
@@ -581,27 +583,7 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    <div class="section payment">' + 
-'      <h3>Payment Information</h3>' + 
-'      <div class="field radio Savings required" >' + 
-'<label for="Savings"><input id="Savings" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Savings</span></label>' + 
-'</div>' + 
-'<div class="field radio Checking required" >' + 
-'<label for="Checking"><input id="Checking" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Checking</span></label>' + 
-'</div>' + 
-'<div class="field radio CreditCard required" >' + 
-'<label for="CreditCard"><input id="CreditCard" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Credit Card</span></label>' + 
-'</div>' + 
-'<div class="field tel routingNumber required" style="display: none">' + 
-'<label for="routingNumber"><span class="label">Routing Number</span><span class="required-star">*</span></label>' + 
-'<input id="routingNumber" name="routing-number" class="required" type="tel" maxlength="255"></input>' + 
-'</div>' + 
-'<div class="field tel accountNumber required" style="display: none">' + 
-'<label for="accountNumber"><span class="label">Account Number</span><span class="required-star">*</span></label>' + 
-'<input id="accountNumber" name="account-number" class="required" type="tel" maxlength="255"></input>' + 
-'</div>' + 
-'' + 
-'</div>' + 
+'    ' + 
 '    <div class="section custom-fields">' + 
 '      <h3>Additional Information</h3>' + 
 '      <div class="field text CustomAccountField_17408" >' + 
@@ -993,6 +975,21 @@
 '</div>' + 
 '' + 
 '</div>' + 
+'    <div class="section consent hidden">' + 
+'      <div class="field checkbox consent-all" >' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from QA1 Bryan H Automation</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-email" style="display: none">' + 
+'<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-mail" style="display: none">' + 
+'<label for="consent-mail"><input id="consent-mail" name="consent-mail" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by postal mail</span></label>' + 
+'</div>' + 
+'<div class="field checkbox consent-phone" style="display: none">' + 
+'<label for="consent-phone"><input id="consent-phone" name="consent-phone" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by phone</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    <div class="section true-impact">' + 
 '      <h3>Increase My Impact</h3>' + 
 '      <div class="field checkbox true-impact" >' + 
@@ -1001,7 +998,7 @@
 '' + 
 '</div>' + 
 '    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31748"></div>' + 
+'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31747"></div>' + 
 '' + 
 '</div>' + 
 '    <div class="btn-group">' + 
@@ -1013,28 +1010,26 @@
 '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
 '</div>' + 
 '' + 
-'' +  '';var successHtml31748 = '<div class=\'donation-success\'>' +
+'' +  '';var successHtml31747 = '<div class=\'donation-success\'>' +
                                                        '  <h2>Thank You for Your Donation!</h2>' +
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
                                                         '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to Bloom Automation 01. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
-                                                        '</div>';( function($) {if (Bloomerang.useDonationId('31748')) { 
-                                    Bloomerang.useProcessor('30721', 'BluePay', '100145748093', true, '246507934E038F2B2B7539D144AA526B', true);
-                                } else {
-                                    html31748 = '<p style="color: red">???Widget.Error.Multiple???</p>';
-                                }if (jQuery('#bloomerangForm31748').length) {
+                                                        '</div>';( function($) {if (!Bloomerang.useDonationId('31747')) { 
+                                    html31747 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
+                                }if (jQuery('#bloomerangForm31747').length) {
                         
                     if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html31748 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
+                        html31747 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
                         ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
                     }
-                        jQuery('#bloomerangForm31748').after(html31748);
+                        jQuery('#bloomerangForm31747').after(html31747);
                          if (!Bloomerang.SpreedlyScriptLoaded) {
                                             Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
                                                 function() { return SpreedlyExpress != undefined; },
                                                 function() {
                                                     SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
                                                     Bloomerang.initSpreedly = function() {
-                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'QA1 Bloom Automation 02' });
+                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'QA1 Bryan H Automation' });
                                                     };
                                                     Bloomerang.initSpreedly();
                                                 });
@@ -1046,8 +1041,8 @@
                                         }
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.2; Bloomerang.transactionFeeRate = 0.025;
-                    Bloomerang.useKey('pub_d0afb0f4-2e58-4353-9fe5-af3efe902835');
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.useKey('pub_72d3ee97-3fb3-4db6-84db-e97bbe22bc4c');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
         };
@@ -1068,6 +1063,11 @@
                     .homeEmail(val(".donation-form #email-address"))
                     .homePhone(val(".donation-form #phone-number"))
                     .applyDonationCustomFields();
+            if (jQuery(".donation-form #consent-all").prop("checked")) {
+              Bloomerang.Account.optedInStatus(jQuery(".donation-form #consent-email").prop("checked"),
+                                               jQuery(".donation-form #consent-mail").prop("checked"),
+                                               jQuery(".donation-form #consent-phone").prop("checked"));
+            }
             var amount = Bloomerang.Util.getDonationAmount() + Bloomerang.Util.getDonationTrueImpactAmount();
             if (jQuery(".donation-form #recurring").prop("checked")) {
                 Bloomerang.RecurringDonation
@@ -1127,7 +1127,7 @@
             jQuery("#donation-processing-container").hide();
             var formContainer = jQuery("#donation-form-container");
             formContainer.show();
-            formContainer.html(successHtml31748);
+            formContainer.html(successHtml31747);
             Bloomerang.scrollToElement(formContainer);
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
@@ -1144,6 +1144,9 @@
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
             SpreedlyExpress.unload();
             Bloomerang.initSpreedly();
+            if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
+              grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
+            }
         };
         
         Bloomerang.Util.applyDonationCustomFields = function (obj, type) {
@@ -1208,20 +1211,18 @@
         
         // Hide recurring donation options if recurring donation box is unchecked
         jQuery(".donation-form .field.recurring").change(function() { 
-            jQuery(".donation-form .field.recurring").siblings().each(function() { 
-                jQuery(this).toggle(); 
+            jQuery(".donation-form .field.recurring").siblings().each(function(i, e) { 
+                jQuery(e).toggle();
             }); 
         })
         
         // The other-amount field is only equired when the "Other" donation-level is selected
-        jQuery(".donation-form .section.donation input[name='donation-level']").change(function () { 
-            if (jQuery(this).attr('id') == "other-option") { 
-                jQuery(".donation-form #other-amount").addClass("required"); 
-            } else { 
-                jQuery(".donation-form #other-amount").removeClass("required"); 
-            }
-            Bloomerang.Util.calculateDonationTrueImpact();
-        });
+        toggleOtherAmountRequired = function () { 
+          jQuery(".donation-form #other-amount").toggleClass("required",
+            jQuery(".donation-form #other-option").prop("checked"));
+          Bloomerang.Util.calculateDonationTrueImpact();
+        };
+        jQuery(".donation-form .section.donation input[name='donation-level']").change(toggleOtherAmountRequired);
         if (jQuery(".donation-form .true-impact label").length) {
           jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
         }
@@ -1229,8 +1230,9 @@
           if (!jQuery(".donation-form .true-impact .fee-amount").length) { return; }
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getDonationAmount();
-          var feeRate = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked")) ? 0 : Bloomerang.transactionFeeRate;
-          var newTotal = (amount + Bloomerang.transactionFee) / (1 - feeRate);
+          var isEft = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked"));
+          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
           var impactAmount = Number((newTotal - amount).toFixed(2));
           jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
@@ -1254,6 +1256,7 @@
         // Clicking into the other-amount field should select the other-option
         jQuery(".donation-form #other-amount").click(function() { 
           jQuery(".donation-form #other-option").prop('checked',true);
+          toggleOtherAmountRequired();
           Bloomerang.Util.calculateDonationTrueImpact();
         });
         jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
@@ -1277,12 +1280,23 @@
                   .match(/^\d+$/g);
         }, "Not a valid currency");
         jQuery.validator.classRuleSettings.currency = { currency: true };
+        
+        // Validate the other amount, but only if they selected it
+        jQuery.validator.addMethod("otherAmount", function(value, element, param) {
+          if (jQuery(".donation-form #other-option").prop("checked")) {
+            return jQuery.validator.methods.min.bind(this)(value, element, 1) &&
+              jQuery.validator.methods.currency(value, element);
+          }
+          return true;
+        }, "Invalid amount");
+        
+        jQuery.validator.classRuleSettings.otherAmount = { otherAmount: true };
         jQuery.validator.addMethod("number", function (value, element, options) {
-            return !value ||
-                value
-                  .replace(".", "")
-                  .split(",").join("")
-                  .match(/^\d+$/g);
+          return !value ||
+              value
+                .replace(".", "")
+                .split(",").join("")
+                .match(/^\d+$/g);
         }, "Not a valid number");
         jQuery.validator.classRuleSettings.number = { number: true };
         
@@ -1331,6 +1345,7 @@
           } else {
             jQuery(".donation-form #city, .donation-form #postal-code, .donation-form #zip-code").val("");
           }
+          jQuery(".donation-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
         });
         jQuery(".donation-form #phone-number").change(function () {
           var phoneField = jQuery(".donation-form #phone-number");
@@ -1422,6 +1437,12 @@
             jQuery(".btn-submit-donation").val("Donate");
           }
       });
+      // Show opt-in options based on the setting of the global opt-in
+      jQuery(".donation-form .field.consent-all").change(function() { 
+          jQuery(".donation-form .field.consent-all").siblings().each(function(i, e) { 
+              jQuery(e).toggle();
+          }); 
+      });
         
 })(jQuery);
     };
@@ -1431,12 +1452,12 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31748(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31748(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
                     }
                 };
                 var waitForBloomerangLoad = function(callback) {
