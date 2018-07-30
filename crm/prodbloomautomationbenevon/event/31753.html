@@ -12,11 +12,11 @@
 	<div class="table-info">
 		<div class="row">
 			<div class="cell">Environment:</div>
-			<div class="cell bold" id="environmentName" data-shortName="localhost">Local</div>
+			<div class="cell bold" id="environmentName" data-shortName="crm">Prod</div>
 		</div>
 		<div class="row">
 			<div class="cell">Database:</div>
-			<div class="cell bold" id="databaseName">bryanlocal</div>
+			<div class="cell bold" id="databaseName">prodbloomautomationbenevon</div>
 		</div>	
 		<div class="row">
 			<div class="cell">Widget ID:</div>
@@ -998,7 +998,7 @@
 '</div>' + 
 '    <div class="section consent hidden">' + 
 '      <div class="field checkbox consent-all" >' + 
-'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Bryan Local</span></label>' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Prod Bloom Automation Benevon</span></label>' + 
 '</div>' + 
 '<div class="field checkbox consent-email" style="display: none">' + 
 '<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
@@ -1044,7 +1044,7 @@
                                                 function() {
                                                     SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
                                                     Bloomerang.initSpreedly = function() {
-                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Bryan Local' });
+                                                        SpreedlyExpress.init('OqOMv1ksjPtXEYHtCYsVXzEpCbR', { 'company_name': 'Prod Bloom Automation Benevon' });
                                                     };
                                                     Bloomerang.initSpreedly();
                                                 });
@@ -1057,7 +1057,7 @@
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.registration-form .section.captcha').attr('style', 'display: none'); 
                     Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
-                    Bloomerang.useKey('pub_1c4dbc61-9c2c-4e1c-8999-96f7678f4990');
+                    Bloomerang.useKey('pub_dde5df61-f884-4417-9025-a194193432e2');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
         };
@@ -1449,7 +1449,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
+                        script.src = 'https://crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31753(); })});
                     }
