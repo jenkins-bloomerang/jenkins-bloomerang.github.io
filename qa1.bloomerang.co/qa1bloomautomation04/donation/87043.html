@@ -28,7 +28,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
-			<div class="cell bold">Generic</div>
+			<div class="cell bold">Custom</div>
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
@@ -977,7 +977,8 @@
               "address1": val(".donation-form #street-address"),
               "city": val(".donation-form #city"),
               "state": val(".donation-form #state") || val(".donation-form #province"),
-              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
+              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code"),
+              "country": val(".donation-form #country")});
             SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
               Bloomerang.CreditCard.spreedlyToken(token);
              submitDonation();
