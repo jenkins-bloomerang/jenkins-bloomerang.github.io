@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="cell">Event Reg Email Response:</div>
-                <div class="cell bold">Generic</div>
+                <div class="cell bold">Custom</div>
             </div>
             <div class="row">
                 <div class="cell">Event Reg Self Hosted:</div>
@@ -46,7 +46,7 @@
             </div>	
             <div class="row">
                 <div class="cell">Email Email Response:</div>
-                <div class="cell bold">Generic</div>
+                <div class="cell bold">Custom</div>
             </div>
             <div class="row">
                 <div class="cell">Email Self Hosted:</div>
@@ -1423,7 +1423,8 @@
               "address1": val(".registration-form #street-address"),
               "city": val(".registration-form #city"),
               "state": val(".registration-form #state") || val(".registrtation-form #province"),
-              "zip": val(".registration-form #zip-code") || val(".registration-form #postal-code")});
+              "zip": val(".registration-form #zip-code") || val(".registration-form #postal-code"),
+              "country": val(".registration-form #country")});
               
             SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
               Bloomerang.CreditCard.spreedlyToken(token);
