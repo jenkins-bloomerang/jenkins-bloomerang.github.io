@@ -28,7 +28,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
-			<div class="cell bold">Generic</div>
+			<div class="cell bold">Custom</div>
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
@@ -977,7 +977,7 @@
 '</div>' + 
 '    <div class="section consent hidden">' + 
 '      <div class="field checkbox consent-all" >' + 
-'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Staging Bloom Benevon Automation</span></label>' + 
+'<label for="consent-all"><input id="consent-all" name="consent-all" type="checkbox" maxlength="255"></input><span class="label">I would like to receive or continue receiving updates from Staging Bloom Automation Benevon</span></label>' + 
 '</div>' + 
 '<div class="field checkbox consent-email" style="display: none">' + 
 '<label for="consent-email"><input id="consent-email" name="consent-email" type="checkbox" checked="checked" maxlength="255"></input><span class="label">by email</span></label>' + 
@@ -1029,7 +1029,7 @@
                                                 function() {
                                                     SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
                                                     Bloomerang.initSpreedly = function() {
-                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Staging Bloom Benevon Automation' });
+                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'Staging Bloom Automation Benevon' });
                                                     };
                                                     Bloomerang.initSpreedly();
                                                 });
@@ -1383,7 +1383,8 @@
               "address1": val(".donation-form #street-address"),
               "city": val(".donation-form #city"),
               "state": val(".donation-form #state") || val(".donation-form #province"),
-              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
+              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code"),
+              "country": val(".donation-form #country")});
             SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
               Bloomerang.CreditCard.spreedlyToken(token);
              submitDonation();
