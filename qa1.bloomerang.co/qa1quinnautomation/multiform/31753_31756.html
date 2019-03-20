@@ -46,7 +46,7 @@
             </div>	
             <div class="row">
                 <div class="cell">Email Email Response:</div>
-                <div class="cell bold">Custom</div>
+                <div class="cell bold">Generic</div>
             </div>
             <div class="row">
                 <div class="cell">Email Self Hosted:</div>
@@ -351,6 +351,7 @@
 '<option value="GQ">Equatorial Guinea</option>' + 
 '<option value="ER">Eritrea</option>' + 
 '<option value="EE">Estonia</option>' + 
+'<option value="SZ">Eswatini</option>' + 
 '<option value="ET">Ethiopia</option>' + 
 '<option value="FK">Falkland Islands (Malvinas)</option>' + 
 '<option value="FO">Faroe Islands</option>' + 
@@ -493,7 +494,6 @@
 '<option value="SD">Sudan</option>' + 
 '<option value="SR">Suriname</option>' + 
 '<option value="SJ">Svalbard and Jan Mayen</option>' + 
-'<option value="SZ">Swaziland</option>' + 
 '<option value="SE">Sweden</option>' + 
 '<option value="CH">Switzerland</option>' + 
 '<option value="SY">Syrian Arab Republic</option>' + 
@@ -1407,7 +1407,8 @@
               "address1": val(".registration-form #street-address"),
               "city": val(".registration-form #city"),
               "state": val(".registration-form #state") || val(".registrtation-form #province"),
-              "zip": val(".registration-form #zip-code") || val(".registration-form #postal-code")});
+              "zip": val(".registration-form #zip-code") || val(".registration-form #postal-code"),
+              "country": val(".registration-form #country")});
               
             SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
               Bloomerang.CreditCard.spreedlyToken(token);
