@@ -28,7 +28,7 @@
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
-			<div class="cell bold">Generic</div>
+			<div class="cell bold">Custom</div>
 		</div>
 		<div class="row">
 			<div class="cell">Self Hosted:</div>
@@ -280,6 +280,7 @@
 '<option value="GQ">Equatorial Guinea</option>' + 
 '<option value="ER">Eritrea</option>' + 
 '<option value="EE">Estonia</option>' + 
+'<option value="SZ">Eswatini</option>' + 
 '<option value="ET">Ethiopia</option>' + 
 '<option value="FK">Falkland Islands (Malvinas)</option>' + 
 '<option value="FO">Faroe Islands</option>' + 
@@ -422,7 +423,6 @@
 '<option value="SD">Sudan</option>' + 
 '<option value="SR">Suriname</option>' + 
 '<option value="SJ">Svalbard and Jan Mayen</option>' + 
-'<option value="SZ">Swaziland</option>' + 
 '<option value="SE">Sweden</option>' + 
 '<option value="CH">Switzerland</option>' + 
 '<option value="SY">Syrian Arab Republic</option>' + 
@@ -636,7 +636,7 @@
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
                     Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
-                    Bloomerang.useKey('pub_1c4dbc61-9c2c-4e1c-8999-96f7678f4990');
+                    Bloomerang.useKey('pub_b24d782c-4915-4927-b504-91218e477b85');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
         };
@@ -977,7 +977,8 @@
               "address1": val(".donation-form #street-address"),
               "city": val(".donation-form #city"),
               "state": val(".donation-form #state") || val(".donation-form #province"),
-              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code")});
+              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code"),
+              "country": val(".donation-form #country")});
             SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
               Bloomerang.CreditCard.spreedlyToken(token);
              submitDonation();
