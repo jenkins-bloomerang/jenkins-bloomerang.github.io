@@ -1062,17 +1062,7 @@
                                             return false;
                                         }
                                         Bloomerang.paymentFormLoaded = true;
-                       window.captchaLoadCallback = function() {
-                            Bloomerang.gRecaptchaLoaded = true;
-                        };
-                        Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
-                            function() { return Bloomerang.gRecaptchaLoaded; },
-                            function() {
-                                jQuery('.section.captcha').removeAttr('style');
-                                jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha31748', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
-                            },
-                            true,
-                            true);
+                     jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
                     Bloomerang.transactionFee = 0.2; Bloomerang.transactionFeeRate = 0.025; Bloomerang.transactionFeeEft = 0.2
                     Bloomerang.useKey('pub_703d6934-ed18-4f18-a960-c90191b67adc');
         Bloomerang.Util.getDonationAmount = function() {
