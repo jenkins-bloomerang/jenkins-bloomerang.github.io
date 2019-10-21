@@ -367,6 +367,7 @@
 '<option value="GQ">Equatorial Guinea</option>' + 
 '<option value="ER">Eritrea</option>' + 
 '<option value="EE">Estonia</option>' + 
+'<option value="SZ">Eswatini</option>' + 
 '<option value="ET">Ethiopia</option>' + 
 '<option value="FK">Falkland Islands (Malvinas)</option>' + 
 '<option value="FO">Faroe Islands</option>' + 
@@ -509,7 +510,6 @@
 '<option value="SD">Sudan</option>' + 
 '<option value="SR">Suriname</option>' + 
 '<option value="SJ">Svalbard and Jan Mayen</option>' + 
-'<option value="SZ">Swaziland</option>' + 
 '<option value="SE">Sweden</option>' + 
 '<option value="CH">Switzerland</option>' + 
 '<option value="SY">Syrian Arab Republic</option>' + 
@@ -2012,10 +2012,7 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31758"></div>' + 
-'' + 
-'</div>' + 
+'    ' + 
 '    <div class="btn-group">' + 
 '      <input class="btn btn-submit btn-submit-email" type="submit" value="Sign up"/>' + 
 '    </div>' + 
@@ -2037,17 +2034,7 @@
                                             return false;
                                         }
                                         Bloomerang.emailSignupFormLoaded = true;
-                       window.captchaLoadCallback = function() {
-                            Bloomerang.gRecaptchaLoaded = true;
-                        };
-                        Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
-                            function() { return Bloomerang.gRecaptchaLoaded; },
-                            function() {
-                                jQuery('.section.captcha').removeAttr('style');
-                                jQuery('form.email-registration-form').data('captcha-id', grecaptcha.render('captcha31758', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
-                            },
-                            true,
-                            true);
+                     jQuery('.email-registration-form .section.captcha').attr('style', 'display: none'); 
                     
                     Bloomerang.useKey('pub_58dfdee3-854e-47d2-bbef-61cad05e00a2');
         // Register proper callbacks for various stages/outcomes of submission
@@ -2399,6 +2386,7 @@
 '<option value="GQ">Equatorial Guinea</option>' + 
 '<option value="ER">Eritrea</option>' + 
 '<option value="EE">Estonia</option>' + 
+'<option value="SZ">Eswatini</option>' + 
 '<option value="ET">Ethiopia</option>' + 
 '<option value="FK">Falkland Islands (Malvinas)</option>' + 
 '<option value="FO">Faroe Islands</option>' + 
@@ -2541,7 +2529,6 @@
 '<option value="SD">Sudan</option>' + 
 '<option value="SR">Suriname</option>' + 
 '<option value="SJ">Svalbard and Jan Mayen</option>' + 
-'<option value="SZ">Swaziland</option>' + 
 '<option value="SE">Sweden</option>' + 
 '<option value="CH">Switzerland</option>' + 
 '<option value="SY">Syrian Arab Republic</option>' + 
@@ -3089,10 +3076,7 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31762"></div>' + 
-'' + 
-'</div>' + 
+'    ' + 
 '    <div class="btn-group">' + 
 '      <input class="btn btn-submit btn-submit-interaction" type="submit" value="Submit"/>' + 
 '    </div>' + 
@@ -3114,17 +3098,7 @@
                                             return false;
                                         }
                                         Bloomerang.interactionFormLoaded = true;
-                       window.captchaLoadCallback = function() {
-                            Bloomerang.gRecaptchaLoaded = true;
-                        };
-                        Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
-                            function() { return Bloomerang.gRecaptchaLoaded; },
-                            function() {
-                                jQuery('.section.captcha').removeAttr('style');
-                                jQuery('form.interaction-form').data('captcha-id', grecaptcha.render('captcha31762', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
-                            },
-                            true,
-                            true);
+                     jQuery('.interaction-form .section.captcha').attr('style', 'display: none'); 
                     
                     Bloomerang.useKey('pub_58dfdee3-854e-47d2-bbef-61cad05e00a2');
         // Register proper callbacks for various stages/outcomes of submission
