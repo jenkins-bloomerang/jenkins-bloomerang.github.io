@@ -1107,7 +1107,17 @@
                                             return false;
                                         }
                                         Bloomerang.paymentFormLoaded = true;
-                     jQuery('.registration-form .section.captcha').attr('style', 'display: none'); 
+                       window.captchaLoadCallback = function() {
+                            Bloomerang.gRecaptchaLoaded = true;
+                        };
+                        Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
+                            function() { return Bloomerang.gRecaptchaLoaded; },
+                            function() {
+                                jQuery('.section.captcha').removeAttr('style');
+                                jQuery('form.registration-form').data('captcha-id', grecaptcha.render('captcha31754', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
+                            },
+                            true,
+                            true);
                     Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
                     Bloomerang.useKey('pub_72d3ee97-3fb3-4db6-84db-e97bbe22bc4c');
         Bloomerang.Util.getRegistrationAmount = function() {
