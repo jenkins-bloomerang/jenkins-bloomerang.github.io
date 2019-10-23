@@ -2048,7 +2048,7 @@
                                                         '</div>';( function($) {if (!Bloomerang.useEmailId('31758')) { 
                                     html31758 = '<p style="color: red">Only one email sign-up form can be used on each page.</p>';
                                 }
-                                if (jQuery('#bloomerangForm31758').length) {
+                                Bloomerang.Util.requireStripe();if (jQuery('#bloomerangForm31758').length) {
                         
                         jQuery('#bloomerangForm31758').after(html31758);
                         
@@ -3114,7 +3114,7 @@
                                                         '</div>';( function($) {if (!Bloomerang.useInteractionId('31762')) {
                                     html31762 = '<p style="color: red">Only one Volunteer Activity or Constituent Information form can be used on each page.</p>';
                                 }
-                                if (jQuery('#bloomerangForm31762').length) {
+                                Bloomerang.Util.requireStripe();if (jQuery('#bloomerangForm31762').length) {
                         
                         jQuery('#bloomerangForm31762').after(html31762);
                         
