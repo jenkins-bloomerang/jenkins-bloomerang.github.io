@@ -906,10 +906,7 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31761"></div>' + 
-'' + 
-'</div>' + 
+'    ' + 
 '    <div class="btn-group">' + 
 '      <input class="btn btn-submit btn-submit-interaction" type="submit" value="Submit"/>' + 
 '    </div>' + 
@@ -931,17 +928,7 @@
                                             return false;
                                         }
                                         Bloomerang.interactionFormLoaded = true;
-                       window.captchaLoadCallback = function() {
-                            Bloomerang.gRecaptchaLoaded = true;
-                        };
-                        Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
-                            function() { return Bloomerang.gRecaptchaLoaded; },
-                            function() {
-                                jQuery('.section.captcha').removeAttr('style');
-                                jQuery('form.interaction-form').data('captcha-id', grecaptcha.render('captcha31761', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
-                            },
-                            true,
-                            true);
+                     jQuery('.interaction-form .section.captcha').attr('style', 'display: none'); 
                     
                     Bloomerang.useKey('pub_2141277b-0c71-4b0d-bd5b-c6b85e048709');
         // Register proper callbacks for various stages/outcomes of submission
