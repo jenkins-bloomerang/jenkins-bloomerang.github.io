@@ -528,7 +528,7 @@
                                                         '</div>';( function($) {if (!Bloomerang.useEmailId('31757')) { 
                                     html31757 = '<p style="color: red">Only one email sign-up form can be used on each page.</p>';
                                 }
-                                if (jQuery('#bloomerangForm31757').length) {
+                                Bloomerang.Util.requireStripe();if (jQuery('#bloomerangForm31757').length) {
                         
                         jQuery('#bloomerangForm31757').after(html31757);
                         

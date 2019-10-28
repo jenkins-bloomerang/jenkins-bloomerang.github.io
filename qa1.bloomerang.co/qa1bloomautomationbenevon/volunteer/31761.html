@@ -920,7 +920,7 @@
                                                         '</div>';( function($) {if (!Bloomerang.useInteractionId('31761')) {
                                     html31761 = '<p style="color: red">Only one Volunteer Activity or Constituent Information form can be used on each page.</p>';
                                 }
-                                if (jQuery('#bloomerangForm31761').length) {
+                                Bloomerang.Util.requireStripe();if (jQuery('#bloomerangForm31761').length) {
                         
                         jQuery('#bloomerangForm31761').after(html31761);
                         
