@@ -20,11 +20,11 @@
 		</div>	
 		<div class="row">
 			<div class="cell">Widget ID:</div>
-			<div class="cell bold" id="widgetId">31748</div>
+			<div class="cell bold" id="widgetId">252930</div>
 		</div>	
 		<div class="row">
 			<div class="cell">Processor:</div>
-			<div class="cell bold">BluePay</div>
+			<div class="cell bold">StripeConnect</div>
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
@@ -46,10 +46,10 @@
 			</div>
 		</div>
 		
-<script type="text/javascript" id="bloomerangForm31748"></script>
+<script type="text/javascript" id="bloomerangForm252930"></script>
 <pre><script type="text/javascript">
-    var insertForm31748 = function() {
-        var html31748 = '<style text=\'text/css\'>' + 
+    var insertForm252930 = function() {
+        var html252930 = '<style text=\'text/css\'>' + 
 '.donation-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
@@ -176,17 +176,17 @@
 '    <div class="errors hidden"></div>' + 
 '    <div class="section donation">' + 
 '      <h3>Donation</h3>' + 
-'      <div class="field radio 33808 required" >' + 
-'<label for="33808"><input id="33808" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
+'      <div class="field radio 254980 required" >' + 
+'<label for="254980"><input id="254980" name="donation-level" class="required" type="radio" value="10.000000" maxlength="255"></input><span class="label">$10.00 - Level One</span></label>' + 
 '</div>' + 
-'<div class="field radio 33809 required" >' + 
-'<label for="33809"><input id="33809" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
+'<div class="field radio 254981 required" >' + 
+'<label for="254981"><input id="254981" name="donation-level" class="required" type="radio" value="25.000000" maxlength="255"></input><span class="label">$25.00 - Level Two</span></label>' + 
 '</div>' + 
-'<div class="field radio 33810 required" >' + 
-'<label for="33810"><input id="33810" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
+'<div class="field radio 254982 required" >' + 
+'<label for="254982"><input id="254982" name="donation-level" class="required" type="radio" value="50.000000" maxlength="255"></input><span class="label">$50.00 - Level Three</span></label>' + 
 '</div>' + 
-'<div class="field radio 33811 required" >' + 
-'<label for="33811"><input id="33811" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
+'<div class="field radio 254983 required" >' + 
+'<label for="254983"><input id="254983" name="donation-level" class="required" type="radio" value="100.000000" maxlength="255"></input><span class="label">$100.00 - Level Four</span></label>' + 
 '</div>' + 
 '<div class="field radio other-option required" >' + 
 '<label for="other-option"><input id="other-option" name="donation-level" class="required" type="radio" maxlength="255"></input><span class="label">Other</span></label>' + 
@@ -592,23 +592,9 @@
 '</div>' + 
 '    <div class="section payment">' + 
 '      <h3>Payment Information</h3>' + 
-'      <div class="field radio Savings required" >' + 
-'<label for="Savings"><input id="Savings" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Savings</span></label>' + 
-'</div>' + 
-'<div class="field radio Checking required" >' + 
-'<label for="Checking"><input id="Checking" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Checking</span></label>' + 
-'</div>' + 
-'<div class="field radio CreditCard required" >' + 
-'<label for="CreditCard"><input id="CreditCard" name="payment-type" class="required" type="radio" maxlength="255"></input><span class="label">Credit Card</span></label>' + 
-'</div>' + 
-'<div class="field number routingNumber required" style="display: none">' + 
-'<label for="routingNumber"><span class="label">Routing Number</span><span class="required-star">*</span></label>' + 
-'<input id="routingNumber" name="routing-number" class="required" type="number" maxlength="255"></input>' + 
-'</div>' + 
-'<div class="field number accountNumber required" style="display: none">' + 
-'<label for="accountNumber"><span class="label">Account Number</span><span class="required-star">*</span></label>' + 
-'<input id="accountNumber" name="account-number" class="required" type="number" maxlength="255"></input>' + 
-'</div>' + 
+'      <div class="field text payment required">' + 
+'<label for="card-element"><span class="label">Credit or debit card</span><span class="required-star">*</span></label>' + 
+'<div id="card-element"></div><div id="card-errors" role="alert"></div></div>' + 
 '' + 
 '</div>' + 
 '    <div class="section custom-fields">' + 
@@ -1025,7 +1011,7 @@
 '' + 
 '</div>' + 
 '    <div class="section captcha">' + 
-'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31748"></div>' + 
+'      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha252930"></div>' + 
 '' + 
 '</div>' + 
 '    <div class="btn-group">' + 
@@ -1037,21 +1023,21 @@
 '  <h2>Processing...</h2><p>Your transaction is being processed. Please do not close your browser or leave this page.</p>' + 
 '</div>' + 
 '' + 
-'' +  '';var successHtml31748 = '<div class=\'donation-success\'>' +
+'' +  '';var successHtml252930 = '<div class=\'donation-success\'>' +
                                                        '  <h2>Thank You for Your Donation!</h2>' +
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
-                                                        '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to Bloom Automation 01. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
-                                                        '</div>';( function($) {if (Bloomerang.useDonationId('31748')) { 
-                                    Bloomerang.useProcessor('30721', 'Spreedly', 'OqOMv1ksjPtXEYHtCYsVXzEpCbR');
-                                } else {
-                                    html31748 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
-                                }if (jQuery('#bloomerangForm31748').length) {
+                                                        '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to @bloomerangTech. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
+                                                        '</div>';( function($) {if (Bloomerang.useDonationId('252930')) { 
+                                      Bloomerang.useProcessor('251905', 'StripeConnect');
+                                    } else {
+                                      html252930 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
+                                    };if (jQuery('#bloomerangForm252930').length) {
                         
                     if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
-                        html31748 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
+                        html252930 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
                         ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
                     }
-                        jQuery('#bloomerangForm31748').after(html31748);
+                        jQuery('#bloomerangForm252930').after(html252930);
                          if (!Bloomerang.SpreedlyScriptLoaded) {
                                             Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
                                                 function() { return SpreedlyExpress != undefined; },
@@ -1064,14 +1050,63 @@
                                                 });
                                         }
                                         Bloomerang.SpreedlyScriptLoaded = true;
-                        
+                         Bloomerang.Util.requireStripe(function() {
+                                        Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn'); 
+                                        var elements = Bloomerang.Util.Stripe.elements(); 
+                                     
+                                        // Create an instance of the card Element.
+                                        Bloomerang.Util.StripeCard = elements.create('card', {
+                                          hidePostalCode: true,
+                                          style: {
+                                            base: {
+                                              color: "#333",
+                                              fontSize: "14px",
+                                              fontFamily: "'Century Gothic', verdana, sans-serif"
+                                            },
+                                            invalid: {
+                                              color: "#333"
+                                            }
+                                          }
+                                        });
+                                     
+                                        // Add an instance of the card Element into the `card-element` <div>.
+                                        Bloomerang.Util.StripeCard.mount('#card-element');
+                                     
+                                        // Handle real-time validation errors from the card Element.
+                                        Bloomerang.Util.StripeCardIsValid = false;
+                                        Bloomerang.Util.StripeCard.addEventListener('change', function(event) {
+                                          var displayError = document.getElementById('card-errors');
+                                          if (event.error) {
+                                            displayError.textContent = event.error.message;
+                                          } else {
+                                            displayError.textContent = '';
+                                          }
+                                          if (event.complete) {
+                                            Bloomerang.Util.StripeCardIsValid = true;
+                                          } else {
+                                            Bloomerang.Util.StripeCardIsValid = false;
+                                          }
+                                        });
+                                      });
+                                      jQuery(".donation-form #express-submit").val("Donate");
+                                      jQuery(".registration-form #express-submit").val("Register");
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
                                         }
                                         Bloomerang.paymentFormLoaded = true;
-                     jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.2; Bloomerang.transactionFeeRate = 0.025; Bloomerang.transactionFeeEft = 0.2
+                       window.captchaLoadCallback = function() {
+                            Bloomerang.gRecaptchaLoaded = true;
+                        };
+                        Bloomerang.Util.load('https://www.google.com/recaptcha/api.js?onload=captchaLoadCallback&render=explicit',
+                            function() { return Bloomerang.gRecaptchaLoaded; },
+                            function() {
+                                jQuery('.section.captcha').removeAttr('style');
+                                jQuery('form.donation-form').data('captcha-id', grecaptcha.render('captcha252930', { 'sitekey' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI' }));
+                            },
+                            true,
+                            true);
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
                     Bloomerang.useKey('pub_a276a17c-e413-4541-926b-f10a073579fc');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -1157,7 +1192,7 @@
             jQuery("#donation-processing-container").hide();
             var formContainer = jQuery("#donation-form-container");
             formContainer.show();
-            formContainer.html(successHtml31748);
+            formContainer.html(successHtml252930);
             Bloomerang.scrollToElement(formContainer);
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
@@ -1495,10 +1530,10 @@
                         script.type = 'text/javascript';
                         script.src = 'https://crm.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
                         document.getElementsByTagName('head')[0].appendChild(script);
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31748(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm252930(); })});
                     }
                     else {
-                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31748(); })});
+                        waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm252930(); })});
                     }
                 };
                 var waitForBloomerangLoad = function(callback) {
