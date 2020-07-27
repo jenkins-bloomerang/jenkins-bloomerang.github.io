@@ -1108,7 +1108,7 @@
                             true,
                             true);
                     Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
-                    Bloomerang.useKey('pub_5d2f9350-35c5-4679-a5a3-d8f63191a59f');
+                    Bloomerang.useKey('pub_31e7d842-f019-4627-88eb-40342f142ade');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
         };
@@ -1198,13 +1198,7 @@
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
             jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
-            if (jQuery("#donation-form #Checking").is(":checked") ||
-                jQuery("#donation-form #Savings").is(":checked") ||
-                Bloomerang.Api.ProcessorType === "StripeConnect") {
-              jQuery(".btn-submit-donation").val("Donate");
-            } else {
-              jQuery(".btn-submit-donation").val("Enter Payment");
-            }
+            Bloomerang.Util.updateDonateButtonText();
             jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
             jQuery("#donation-processing-container").hide();
             jQuery("#donation-form-container").show();
@@ -1290,7 +1284,10 @@
             jQuery(".donation-form #other-option").prop("checked"));
           Bloomerang.Util.calculateDonationTrueImpact();
         };
-        jQuery(".donation-form .section.donation input[name='donation-level']").change(toggleOtherAmountRequired);
+        jQuery(".donation-form .section.donation input[name='donation-level']").change(function() {
+           toggleOtherAmountRequired();
+           Bloomerang.Util.updateDonateButtonText();
+         });
         if (jQuery(".donation-form .true-impact label").length) {
           jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
         }
@@ -1311,14 +1308,28 @@
           }
           return 0;
         };
+        
+        Bloomerang.Util.updateDonateButtonText = function() {
+          if (jQuery("#donation-form #Checking").is(":checked") ||
+              jQuery("#donation-form #Savings").is(":checked") ||
+              Bloomerang.Api.ProcessorType === "StripeConnect") {
+            var amount = Bloomerang.Util.getDonationAmount();
+            var impactAmount = Bloomerang.Util.getDonationTrueImpactAmount();
+            jQuery(".btn-submit-donation").val("Donate " + accounting.formatMoney(amount + impactAmount));
+          } else {
+            jQuery(".btn-submit-donation").val("Enter Payment");
+          }
+        };
         // Changing the value of other-amount should change the value of other-option
         jQuery(".donation-form #other-amount").change(function () { 
           jQuery(".donation-form #other-option").val(jQuery(this).val());
           Bloomerang.Util.calculateDonationTrueImpact();
+          Bloomerang.Util.updateDonateButtonText();
         });
         
         jQuery(".donation-form #donation-amount").change(function() {
           Bloomerang.Util.calculateDonationTrueImpact();
+          Bloomerang.Util.updateDonateButtonText();
         });
         
         // Clicking into the other-amount field should select the other-option
@@ -1495,11 +1506,11 @@
         jQuery("#donation-form #CreditCard").prop("checked", true);
         jQuery("#donation-form .section.payment input[type='radio']").click(function() {
           Bloomerang.Util.calculateDonationTrueImpact();
+          Bloomerang.Util.updateDonateButtonText();
           if (jQuery(this).attr("id") == "CreditCard") {
             jQuery("#donation-form .accountNumber, \
                     #donation-form .routingNumber, \
                     #donation-form .sample-check").hide();
-            jQuery(".btn-submit-donation").val("Enter Payment");
           }                        
           else {                   
             jQuery("#donation-form .accountNumber, \
@@ -1511,8 +1522,12 @@
               jQuery(checkImage).addClass("sample-check");
               jQuery("#donation-form .accountNumber").after(checkImage);
             }
-            jQuery(".btn-submit-donation").val("Donate");
           }
+          
+      });
+      
+      jQuery("#donation-form #true-impact").change(function() {
+        Bloomerang.Util.updateDonateButtonText();
       });
       // Show opt-in options based on the setting of the global opt-in
       jQuery(".donation-form .field.consent-all").change(function() { 
@@ -1529,7 +1544,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'http://localhost:9090/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm252930(); })});
                     }

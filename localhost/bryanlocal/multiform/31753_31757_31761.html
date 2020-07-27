@@ -1109,7 +1109,7 @@
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.registration-form .section.captcha').attr('style', 'display: none'); 
                     Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
-                    Bloomerang.useKey('pub_5d2f9350-35c5-4679-a5a3-d8f63191a59f');
+                    Bloomerang.useKey('pub_31e7d842-f019-4627-88eb-40342f142ade');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
         };
@@ -1190,13 +1190,7 @@
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
             jQuery(".btn-submit-registration").prop("disabled", false).removeClass("disabled");
-            if (jQuery("#registration-form #Checking").is(":checked") ||
-                jQuery("#registration-form #Savings").is(":checked") ||
-                Bloomerang.Api.ProcessorType === "StripeConnect") {
-              jQuery(".btn-submit-registration").val("Register");
-            } else {
-              jQuery(".btn-submit-registration").val("Enter Payment");
-            }
+            Bloomerang.Util.updateRegisterButtonText();
             jQuery("#registration-form-container .errors").removeClass("hidden").html(response.Message);
             jQuery("#registration-processing-container").hide();
             jQuery("#registration-form-container").show();
@@ -1297,6 +1291,7 @@
       
           jQuery("#totalTicketQty").text(jQuery("#numberOfRegistrations").val() * (jQuery(".registrationType input[name='registration-type']:checked").data("ticket-quantity") || 0));
           Bloomerang.Util.calculateRegistrationTrueImpact();
+          Bloomerang.Util.updateRegisterButtonText();
         };
         if (jQuery(".registration-form .true-impact label").length) {
           jQuery(".registration-form .true-impact label")[0].innerHTML = jQuery(".registration-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
@@ -1317,6 +1312,18 @@
             return Bloomerang.Util.calculateRegistrationTrueImpact();
           }
           return 0;
+        };
+        
+        Bloomerang.Util.updateRegisterButtonText = function() {
+          if (jQuery("#registration-form #Checking").is(":checked") ||
+              jQuery("#registration-form #Savings").is(":checked") ||
+              Bloomerang.Api.ProcessorType === "StripeConnect") {
+            var amount = Bloomerang.Util.getRegistrationAmount();
+            var impactAmount = Bloomerang.Util.getRegistrationTrueImpactAmount();
+            jQuery(".btn-submit-registration").val("Register " + accounting.formatMoney(amount + impactAmount));
+          } else {
+            jQuery(".btn-submit-registration").val("Enter Payment");
+          }
         };
         jQuery(".registration-form .registrationType input, .registration-form .registration-summary input")
           .change(updateRegistrationAmounts)
@@ -1465,48 +1472,51 @@
         };
         
         submitDonation = function() {
-        if (!Bloomerang.continueFinancialSubmission(jQuery("registration-form"))) { return false; }
+          if (!Bloomerang.continueFinancialSubmission(jQuery("registration-form"))) { return false; }
           
-            Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-            Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-            Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
-            var processingMessage = jQuery("#registration-processing-container");
-            processingMessage.show();
-            jQuery("#registration-form-container").hide();
-            Bloomerang.scrollToElement(processingMessage);
+              Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+              Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+              Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+              var processingMessage = jQuery("#registration-processing-container");
+              processingMessage.show();
+              jQuery("#registration-form-container").hide();
+              Bloomerang.scrollToElement(processingMessage);
             
-            Bloomerang.Api.donate();
-        };
+              Bloomerang.Api.donate();
+          };
         
-        jQuery("#registration-form #CreditCard").prop("checked", true);
-        jQuery("#registration-form .section.payment input[type='radio']").click(function() {
-          Bloomerang.Util.calculateRegistrationTrueImpact();
-          if (jQuery(this).attr("id") == "CreditCard") {
-            jQuery("#registration-form .accountNumber, \
-                    #registration-form .routingNumber, \
-                    #registration-form .sample-check").hide();
-            jQuery(".btn-submit-registration").val("Enter Payment");
-          }
-          else {
-            jQuery("#registration-form .accountNumber, \
-                    #registration-form .routingNumber, \
-                    #registration-form .sample-check").show();
-            if (jQuery("#registration-form .sample-check").length == 0) {
-              var checkImage = new Image();
-              checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
-              jQuery(checkImage).addClass("sample-check");
-              jQuery("#registration-form .accountNumber").after(checkImage);
+          jQuery("#registration-form #CreditCard").prop("checked", true);
+          jQuery("#registration-form .section.payment input[type='radio']").click(function() {
+            Bloomerang.Util.calculateRegistrationTrueImpact();
+            Bloomerang.Util.updateRegisterButtonText();
+            if (jQuery(this).attr("id") == "CreditCard") {
+              jQuery("#registration-form .accountNumber, \
+                      #registration-form .routingNumber, \
+                      #registration-form .sample-check").hide();
             }
-            jQuery(".btn-submit-registration").val("Register");
-          }
-      });
-      // Show opt-in options based on the setting of the global opt-in
-      jQuery(".registration-form .field.consent-all").change(function() { 
+            else {
+              jQuery("#registration-form .accountNumber, \
+                      #registration-form .routingNumber, \
+                      #registration-form .sample-check").show();
+              if (jQuery("#registration-form .sample-check").length == 0) {
+                var checkImage = new Image();
+                checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
+                jQuery(checkImage).addClass("sample-check");
+                jQuery("#registration-form .accountNumber").after(checkImage);
+              }
+            }
+        });
+          
+        jQuery("#registration-form #true-impact").change(function() {
+          Bloomerang.Util.updateRegisterButtonText();
+        });
+        // Show opt-in options based on the setting of the global opt-in
+        jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle();
           });
-      });
-        
+        });
+      
 })(jQuery);
     };
     
@@ -1515,7 +1525,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'http://localhost:9090/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31753(); })});
                     }
@@ -2050,7 +2060,7 @@
                                         Bloomerang.emailSignupFormLoaded = true;
                      jQuery('.email-registration-form .section.captcha').attr('style', 'display: none'); 
                     
-                    Bloomerang.useKey('pub_5d2f9350-35c5-4679-a5a3-d8f63191a59f');
+                    Bloomerang.useKey('pub_31e7d842-f019-4627-88eb-40342f142ade');
         // Register proper callbacks for various stages/outcomes of submission
         Bloomerang.Widget.Email.OnSubmit = function (args) {
             jQuery(".btn-submit-email").val("Registering...").prop("disabled", true).addClass("disabled");
@@ -2189,7 +2199,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'http://localhost:9090/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31757(); })});
                     }
@@ -3116,7 +3126,7 @@
                                         Bloomerang.interactionFormLoaded = true;
                      jQuery('.interaction-form .section.captcha').attr('style', 'display: none'); 
                     
-                    Bloomerang.useKey('pub_5d2f9350-35c5-4679-a5a3-d8f63191a59f');
+                    Bloomerang.useKey('pub_31e7d842-f019-4627-88eb-40342f142ade');
         // Register proper callbacks for various stages/outcomes of submission
         Bloomerang.Widget.Interaction.OnSubmit = function (args) {
             jQuery(".btn-submit-interaction").val("Submitting...").prop("disabled", true).addClass("disabled");
@@ -3324,7 +3334,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'http://localhost:9090/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31761(); })});
                     }

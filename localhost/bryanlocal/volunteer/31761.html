@@ -932,7 +932,7 @@
                                         Bloomerang.interactionFormLoaded = true;
                      jQuery('.interaction-form .section.captcha').attr('style', 'display: none'); 
                     
-                    Bloomerang.useKey('pub_5d2f9350-35c5-4679-a5a3-d8f63191a59f');
+                    Bloomerang.useKey('pub_31e7d842-f019-4627-88eb-40342f142ade');
         // Register proper callbacks for various stages/outcomes of submission
         Bloomerang.Widget.Interaction.OnSubmit = function (args) {
             jQuery(".btn-submit-interaction").val("Submitting...").prop("disabled", true).addClass("disabled");
@@ -1140,7 +1140,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'http://localhost:9090/Web/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'http://localhost:9090/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31761(); })});
                     }
