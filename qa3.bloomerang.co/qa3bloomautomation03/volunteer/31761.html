@@ -88,7 +88,6 @@
 '                color:#fff; }' + 
 '' + 
 '.interaction-form .field .checkbox.selected:before{color:#fff;' + 
-'                text-shadow:1px 2px 1px rgba(0,0,0,0.25);' + 
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
@@ -950,13 +949,16 @@
                                                jQuery(".interaction-form #consent-mail").prop("checked"),
                                                jQuery(".interaction-form #consent-phone").prop("checked"));
             }
-                    
+            
             // Always sending the address, even if it's blank, because we need to know the Country for GDPR purposes
+            var country = val(".interaction-form #country");
+            var state = Bloomerang.Util.getCorrectState(country, val(".interaction-form #state"), val(".interaction-form #province"));
+            var zipCode = Bloomerang.Util.getCorrectZipCode(country, val(".interaction-form #zip-code"), val(".interaction-form #postal-code"));
             Bloomerang.Account.homeAddress(val(".interaction-form #street-address"), 
                                            val(".interaction-form #city"),
-                                           val(".interaction-form #state") || val(".interaction-form #province"),
-                                           val(".interaction-form #zip-code") || val(".interaction-form #postal-code"),
-                                           val(".interaction-form #country"));
+                                           state,
+                                           zipCode,
+                                           country);
            Bloomerang.Interaction.note(val(".interaction-form #comment"));
            
            if (jQuery("#volunteer-date").length) {
@@ -1083,6 +1085,8 @@
         jQuery(".interaction-form #country").change(function(event) {
           var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
           var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
+          // TODO: Remove this when we have figured out the canada state/province issue
+          Bloomerang.Util.addLog("Pre country change: Country=" + element.val() + ", State=" + jQuery(".interaction-form #state").val() + ", Province=" + jQuery(".interaction-form #province").val() + ", City=" + jQuery(".interaction-form #city").val());
           jQuery(".interaction-form #state, .interaction-form #province").val(""); // clear the state when the country changes
           jQuery(".interaction-form .field.city, .interaction-form .field.state, .interaction-form .field.province, .interaction-form .field.zip-code, .interaction-form .field.postal-code").toggle(!isInternational);
           if (element.val() == "BM") {
@@ -1104,6 +1108,56 @@
             jQuery(".interaction-form #city, .interaction-form #zip-code, .interaction-form #postal-code").val("");
           }
           jQuery(".interaction-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
+          // TODO: Remove this when we have figured out the canada state/province issue
+          Bloomerang.Util.addLog("Post country change: Country=" + element.val() + ", State=" + jQuery(".interaction-form #state").val() + ", Province=" + jQuery(".interaction-form #province").val()+ ", City=" + jQuery(".interaction-form #city").val());
+        });
+        // TODO: Remove this when we have figured out the canada state/province issue
+        // We use the focusin function to save the previous value so we can log out the previous and new values on change
+        // https://stackoverflow.com/questions/29118178/input-jquery-get-old-value-before-onchange-and-get-value-after-on-change/29118530
+        jQuery(".interaction-form #state").focusin(function(e) {
+          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
+          element.data('val', element.val());
+        });
+        // TODO: Remove this when we have figured out the canada state/province issue
+        jQuery(".interaction-form #state").change(function(e) {
+          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
+          var prev = element.data('val');
+          var current = element.val();
+          var provinceElement = jQuery(".interaction-form #province");
+          var prevProvince = provinceElement.data('val');
+          var currentProvince = provinceElement.val();
+          Bloomerang.Util.addLog("State Changed: Target=" + e.target.name + ", PreValue=" + prev + ", Value=" + current + ", Province PreValue =" + prevProvince + ", Province CurrentValue =" + currentProvince);
+        });
+        // TODO: Remove this when we have figured out the canada state/province issue
+        // We use the focusin function to save the previous value so we can log out the previous and new values on change
+        // https://stackoverflow.com/questions/29118178/input-jquery-get-old-value-before-onchange-and-get-value-after-on-change/29118530
+        jQuery(".interaction-form #province").focusin(function(e) {
+          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
+          element.data('val', element.val());
+        });
+        // TODO: Remove this when we have figured out the canada state/province issue
+        jQuery(".interaction-form #province").change(function(e) {
+          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
+          var prev = element.data('val');
+          var current = element.val();
+          var stateElement = jQuery(".interaction-form #state");
+          var prevState = stateElement.data('val');
+          var currentState = stateElement.val();
+          Bloomerang.Util.addLog("Province Changed: Target=" + e.target.name + ", PreValue=" + prev + ", Value=" + current + ", State PrevValue=" + prevState + ", State Current=" + currentState);
+        });
+        // TODO: Remove this when we have figured out the canada state/province issue
+        // We use the focusin function to save the previous value so we can log out the previous and new values on change
+        // https://stackoverflow.com/questions/29118178/input-jquery-get-old-value-before-onchange-and-get-value-after-on-change/29118530
+        jQuery(".interaction-form #city").focusin(function(e) {
+          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
+          element.data('val', element.val());
+        });
+        // TODO: Remove this when we have figured out the canada state/province issue
+        jQuery(".interaction-form #city").change(function(e) {
+          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
+          var prev = element.data('val');
+          var current = element.val();
+          Bloomerang.Util.addLog("City Changed: Target=" + e.target.name + ", PreValue=" + prev + ", Value=" + current);
         });
         jQuery(".interaction-form #phone-number").change(function () {
           var phoneField = jQuery(".interaction-form #phone-number");
@@ -1140,7 +1194,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2020-10-01';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31761(); })});
                     }
