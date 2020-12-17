@@ -53,10 +53,8 @@
 '.donation-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
-'.donation-form label.error,' + 
-'                     .donation-form #card-errors{color: #900;}' + 
-'' + 
-'.donation-form label.error{display: inline-block;' + 
+'.donation-form label.error{color:#900;' + 
+'                display: inline-block; ' + 
 '                padding: 0 10px;}' + 
 '' + 
 '.donation-form section{padding: 5px;}' + 
@@ -96,21 +94,16 @@
 '                color:#fff; }' + 
 '' + 
 '.donation-form .field .checkbox.selected:before{color:#fff;' + 
+'                text-shadow:1px 2px 1px rgba(0,0,0,0.25);' + 
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
 '' + 
 '.donation-form .field input,' + 
 '                     .donation-form .field select,' + 
-'                     .donation-form .field textarea,' + 
-'                     .donation-form #card-element{padding: 4px; ' + 
+'                     .donation-form .field textarea{padding: 4px; ' + 
 '                max-width: 275px;' + 
 '                width: 96%}' + 
-'' + 
-'.donation-form .field .StripeElement{background-color: white;' + 
-'                background-color: -moz-field;' + 
-'                border: 1px solid darkgray;' + 
-'                display: inline-block;}' + 
 '' + 
 '.donation-form .field textarea.international{height: 120px;}' + 
 '' + 
@@ -1044,7 +1037,7 @@
                                                         '</div>';( function($) {if (Bloomerang.useDonationId('31748')) { 
                                     Bloomerang.useProcessor('30721', 'Spreedly', 'FFOcP2r6aOM47DVLVXu8SUSLd9U');
                                 } else {
-                                    html31748 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
+                                    html31748 = '<p style="color: red">???Widget.Error.Multiple???</p>';
                                 }if (jQuery('#bloomerangForm31748').length) {
                         
                     if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
@@ -1064,7 +1057,6 @@
                                                 });
                                         }
                                         Bloomerang.SpreedlyScriptLoaded = true;
-                        
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -1080,9 +1072,6 @@
         Bloomerang.Widget.Donation.OnSubmit = function (args) {
             jQuery(".btn-submit-donation").val("Donating...").prop("disabled", true).addClass("disabled");
             var val = function (selector) { return jQuery(selector).val(); };
-            var country = val(".donation-form #country");
-            var state = Bloomerang.Util.getCorrectState(country, val(".donation-form #state"), val(".donation-form #province"));
-            var zipCode = Bloomerang.Util.getCorrectZipCode(country, val(".donation-form #zip-code"), val(".donation-form #postal-code"));
             Bloomerang.Account
                     .individual()
                     .firstName(val(".donation-form #first-name"))
@@ -1090,9 +1079,9 @@
                     .lastName(val(".donation-form #last-name"))
                     .homeAddress(val(".donation-form #street-address"),
                                  val(".donation-form #city"),
-                                 state,
-                                 zipCode,
-                                 country)
+                                 val(".donation-form #state") || val(".donation-form #province"),
+                                 val(".donation-form #zip-code") || val(".donation-form #postal-code"),
+                                 val(".donation-form #country"))
                     .homeEmail(val(".donation-form #email-address"))
                     .homePhone(val(".donation-form #phone-number"))
                     .applyDonationCustomFields();
@@ -1165,7 +1154,11 @@
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
             jQuery(".btn-submit-donation").prop("disabled", false).removeClass("disabled");
-            Bloomerang.Util.updateDonateButtonText();
+            if (jQuery("#donation-form #Checking").is(":checked") ||
+                jQuery("#donation-form #Savings").is(":checked"))
+              jQuery(".btn-submit-donation").val("Donate");
+            else
+              jQuery(".btn-submit-donation").val("Enter Payment");
             jQuery("#donation-form-container .errors").removeClass("hidden").html(response.Message);
             jQuery("#donation-processing-container").hide();
             jQuery("#donation-form-container").show();
@@ -1251,10 +1244,7 @@
             jQuery(".donation-form #other-option").prop("checked"));
           Bloomerang.Util.calculateDonationTrueImpact();
         };
-        jQuery(".donation-form .section.donation input[name='donation-level']").change(function() {
-           toggleOtherAmountRequired();
-           Bloomerang.Util.updateDonateButtonText();
-         });
+        jQuery(".donation-form .section.donation input[name='donation-level']").change(toggleOtherAmountRequired);
         if (jQuery(".donation-form .true-impact label").length) {
           jQuery(".donation-form .true-impact label")[0].innerHTML = jQuery(".donation-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
         }
@@ -1275,28 +1265,14 @@
           }
           return 0;
         };
-        
-        Bloomerang.Util.updateDonateButtonText = function() {
-          if (jQuery("#donation-form #Checking").is(":checked") ||
-              jQuery("#donation-form #Savings").is(":checked") ||
-              Bloomerang.Api.ProcessorType === "StripeConnect") {
-            var amount = Bloomerang.Util.getDonationAmount();
-            var impactAmount = Bloomerang.Util.getDonationTrueImpactAmount();
-            jQuery(".btn-submit-donation").val("Donate " + accounting.formatMoney(amount + impactAmount));
-          } else {
-            jQuery(".btn-submit-donation").val("Enter Payment");
-          }
-        };
         // Changing the value of other-amount should change the value of other-option
         jQuery(".donation-form #other-amount").change(function () { 
           jQuery(".donation-form #other-option").val(jQuery(this).val());
           Bloomerang.Util.calculateDonationTrueImpact();
-          Bloomerang.Util.updateDonateButtonText();
         });
         
         jQuery(".donation-form #donation-amount").change(function() {
           Bloomerang.Util.calculateDonationTrueImpact();
-          Bloomerang.Util.updateDonateButtonText();
         });
         
         // Clicking into the other-amount field should select the other-option
@@ -1371,8 +1347,6 @@
         jQuery(".donation-form #country").change(function(event) {
           var element = jQuery(event.target || event.srcElement); // cross-browser event target selection
           var isInternational = (element.val() != "US" && element.val() != "CA" && element.val() != "BM");
-          // TODO: Remove this when we have figured out the canada state/province issue
-          Bloomerang.Util.addLog("Pre country change: Country=" + element.val() + ", State=" + jQuery(".donation-form #state").val() + ", Province=" + jQuery(".donation-form #province").val() + ", City=" + jQuery(".donation-form #city").val());
           jQuery(".donation-form #state, .donation-form #province").val(""); // clear the state when the country changes
           jQuery(".donation-form .field.city, .donation-form .field.state, .donation-form .field.province, .donation-form .field.zip-code, .donation-form .field.postal-code").toggle(!isInternational);
           jQuery(".donation-form #street-address").toggleClass("international", isInternational);
@@ -1394,56 +1368,6 @@
             jQuery(".donation-form #city, .donation-form #postal-code, .donation-form #zip-code").val("");
           }
           jQuery(".donation-form .section.consent").toggleClass("hidden", !Bloomerang.Util.isCountryInEurope(element.val()));
-          // TODO: Remove this when we have figured out the canada state/province issue
-          Bloomerang.Util.addLog("Post country change: Country=" + element.val() + ", State=" + jQuery(".donation-form #state").val() + ", Province=" + jQuery(".donation-form #province").val()+ ", City=" + jQuery(".donation-form #city").val());
-        });
-        // TODO: Remove this when we have figured out the canada state/province issue
-        // We use the focusin function to save the previous value so we can log out the previous and new values on change
-        // https://stackoverflow.com/questions/29118178/input-jquery-get-old-value-before-onchange-and-get-value-after-on-change/29118530
-        jQuery(".donation-form #state").focusin(function(e) {
-          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
-          element.data('val', element.val());
-        });
-        // TODO: Remove this when we have figured out the canada state/province issue
-        jQuery(".donation-form #state").change(function(e) {
-          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
-          var prev = element.data('val');
-          var current = element.val();
-          var provinceElement = jQuery(".donation-form #province");
-          var prevProvince = provinceElement.data('val');
-          var currentProvince = provinceElement.val();
-          Bloomerang.Util.addLog("State Changed: Target=" + e.target.name + ", PreValue=" + prev + ", Value=" + current + ", Province PreValue =" + prevProvince + ", Province CurrentValue =" + currentProvince);
-        });
-        // TODO: Remove this when we have figured out the canada state/province issue
-        // We use the focusin function to save the previous value so we can log out the previous and new values on change
-        // https://stackoverflow.com/questions/29118178/input-jquery-get-old-value-before-onchange-and-get-value-after-on-change/29118530
-        jQuery(".donation-form #province").focusin(function(e) {
-          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
-          element.data('val', element.val());
-        });
-        // TODO: Remove this when we have figured out the canada state/province issue
-        jQuery(".donation-form #province").change(function(e) {
-          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
-          var prev = element.data('val');
-          var current = element.val();
-          var stateElement = jQuery(".donation-form #state");
-          var prevState = stateElement.data('val');
-          var currentState = stateElement.val();
-          Bloomerang.Util.addLog("Province Changed: Target=" + e.target.name + ", PreValue=" + prev + ", Value=" + current + ", State PrevValue=" + prevState + ", State Current=" + currentState);
-        });
-        // TODO: Remove this when we have figured out the canada state/province issue
-        // We use the focusin function to save the previous value so we can log out the previous and new values on change
-        // https://stackoverflow.com/questions/29118178/input-jquery-get-old-value-before-onchange-and-get-value-after-on-change/29118530
-        jQuery(".donation-form #city").focusin(function(e) {
-          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
-          element.data('val', element.val());
-        });
-        // TODO: Remove this when we have figured out the canada state/province issue
-        jQuery(".donation-form #city").change(function(e) {
-          var element = jQuery(e.target || e.srcElement); // cross-browser event target selection
-          var prev = element.data('val');
-          var current = element.val();
-          Bloomerang.Util.addLog("City Changed: Target=" + e.target.name + ", PreValue=" + prev + ", Value=" + current);
         });
         jQuery(".donation-form #phone-number").change(function () {
           var phoneField = jQuery(".donation-form #phone-number");
@@ -1460,11 +1384,6 @@
           if (!form.valid()) {
             return false;
           }
-          
-          if (Bloomerang.Api.ProcessorType === "StripeConnect" && !Bloomerang.Util.StripeCardIsValid) {
-            document.getElementById('card-errors').textContent = "Valid card info is required";
-            return false;
-          }
   
           if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
             submitDonation();
@@ -1474,6 +1393,24 @@
             var amount = Bloomerang.Util.getDonationAmount() + Bloomerang.Util.getDonationTrueImpactAmount();
             var selectedDonationLevel = jQuery(".donation-form .section.donation input[name='donation-level']:checked").parent().text();
             selectedDonationLevel = (selectedDonationLevel.indexOf("-") == -1 ? "" : selectedDonationLevel.substr(selectedDonationLevel.indexOf("-") + 2) );
+    
+            SpreedlyExpress.setDisplayOptions({
+              "amount": accounting.formatMoney(amount),
+              "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
+              "sidebar_bottom_description": selectedDonationLevel,
+              "submit_label": "Donate"});
+            SpreedlyExpress.setPaymentMethodParams({
+              "email": val(".donation-form #email-address"),
+              "phone_number": val(".donation-form #phone-number"),
+              "address1": val(".donation-form #street-address"),
+              "city": val(".donation-form #city"),
+              "state": val(".donation-form #state") || val(".donation-form #province"),
+              "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code"),
+              "country": val(".donation-form #country")});
+            SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
+              Bloomerang.CreditCard.spreedlyToken(token);
+             submitDonation();
+           });
             var oldMeta = '';
             if (jQuery('meta[name="viewport"]').length) {
               oldMeta = jQuery('meta[name="viewport"]').attr('content');
@@ -1482,28 +1419,7 @@
             }
             jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
             jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            if (Bloomerang.Api.ProcessorType !== "StripeConnect") {
-              SpreedlyExpress.setDisplayOptions({
-                "amount": accounting.formatMoney(amount),
-                "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
-                "sidebar_bottom_description": selectedDonationLevel,
-                "submit_label": "Donate"});
-              SpreedlyExpress.setPaymentMethodParams({
-                "email": val(".donation-form #email-address"),
-                "phone_number": val(".donation-form #phone-number"),
-                "address1": val(".donation-form #street-address"),
-                "city": val(".donation-form #city"),
-                "state": val(".donation-form #state") || val(".donation-form #province"),
-                "zip": val(".donation-form #zip-code") || val(".donation-form #postal-code"),
-                "country": val(".donation-form #country")});
-              SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
-                Bloomerang.CreditCard.spreedlyToken(token);
-               submitDonation();
-             });
-              SpreedlyExpress.openView();
-            } else {
-              submitDonation();
-            }
+            SpreedlyExpress.openView();
           }
         };
         submitDonation = function() {
@@ -1525,11 +1441,11 @@
         jQuery("#donation-form #CreditCard").prop("checked", true);
         jQuery("#donation-form .section.payment input[type='radio']").click(function() {
           Bloomerang.Util.calculateDonationTrueImpact();
-          Bloomerang.Util.updateDonateButtonText();
           if (jQuery(this).attr("id") == "CreditCard") {
             jQuery("#donation-form .accountNumber, \
                     #donation-form .routingNumber, \
                     #donation-form .sample-check").hide();
+            jQuery(".btn-submit-donation").val("Enter Payment");
           }                        
           else {                   
             jQuery("#donation-form .accountNumber, \
@@ -1541,12 +1457,8 @@
               jQuery(checkImage).addClass("sample-check");
               jQuery("#donation-form .accountNumber").after(checkImage);
             }
+            jQuery(".btn-submit-donation").val("Donate");
           }
-          
-      });
-      
-      jQuery("#donation-form #true-impact").change(function() {
-        Bloomerang.Util.updateDonateButtonText();
       });
       // Show opt-in options based on the setting of the global opt-in
       jQuery(".donation-form .field.consent-all").change(function() { 
@@ -1563,7 +1475,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2020-10-01';
+                        script.src = 'https://qa1.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31748(); })});
                     }
