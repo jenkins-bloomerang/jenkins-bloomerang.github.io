@@ -96,7 +96,6 @@
 '                color:#fff; }' + 
 '' + 
 '.registration-form .field .checkbox.selected:before{color:#fff;' + 
-'                text-shadow:1px 2px 1px rgba(0,0,0,0.25);' + 
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
@@ -1075,7 +1074,8 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; 
+                                    Bloomerang.transactionFeeEft = 0; Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.useKey('pub_16fd081a-19ed-44fb-a235-bb5a34b92834');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
@@ -1084,6 +1084,9 @@
         Bloomerang.Widget.Donation.OnSubmit = function (args) {
             jQuery(".btn-submit-registration").val("Processing Registration...").prop("disabled", true).addClass("disabled");
             var val = function (selector) { return jQuery(selector).val(); };
+            var country = val(".registration-form #country");
+            var state = Bloomerang.Util.getCorrectState(country, val(".registration-form #state"), val(".registration-form #province"));
+            var zipCode = Bloomerang.Util.getCorrectZipCode(country, val(".registration-form #zip-code"), val(".registration-form #postal-code"));
             Bloomerang.Account
                       .individual()
                       .firstName(val(".registration-form #first-name"))
@@ -1091,9 +1094,9 @@
                       .lastName(val(".registration-form #last-name"))
                       .homeAddress(val(".registration-form #street-address"),
                                    val(".registration-form #city"),
-                                   val(".registration-form #state") || val(".registration-form #province"),
-                                   val(".registration-form #zip-code") || val(".registration-form #postal-code"),
-                                   val(".registration-form #country"))
+                                   state,
+                                   zipCode,
+                                   country)
                       .homeEmail(val(".registration-form #email-address"))
                       .homePhone(val(".registration-form #phone-number"))
                       .applyEventRegistrationCustomFields();
@@ -1157,13 +1160,7 @@
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
             jQuery(".btn-submit-registration").prop("disabled", false).removeClass("disabled");
-            if (jQuery("#registration-form #Checking").is(":checked") ||
-                jQuery("#registration-form #Savings").is(":checked") ||
-                Bloomerang.Api.ProcessorType === "StripeConnect") {
-              jQuery(".btn-submit-registration").val("Register");
-            } else {
-              jQuery(".btn-submit-registration").val("Enter Payment");
-            }
+            Bloomerang.Util.updateRegisterButtonText();
             jQuery("#registration-form-container .errors").removeClass("hidden").html(response.Message);
             jQuery("#registration-processing-container").hide();
             jQuery("#registration-form-container").show();
@@ -1264,6 +1261,7 @@
       
           jQuery("#totalTicketQty").text(jQuery("#numberOfRegistrations").val() * (jQuery(".registrationType input[name='registration-type']:checked").data("ticket-quantity") || 0));
           Bloomerang.Util.calculateRegistrationTrueImpact();
+          Bloomerang.Util.updateRegisterButtonText();
         };
         if (jQuery(".registration-form .true-impact label").length) {
           jQuery(".registration-form .true-impact label")[0].innerHTML = jQuery(".registration-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
@@ -1273,9 +1271,12 @@
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getRegistrationAmount();
           var isEft = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked"));
-          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var isStripeExpress = Bloomerang.Api.ProcessorType === "StripeExpress";
+          var feeRate = isEft ? Bloomerang.transactionFeeRateEft : Bloomerang.transactionFeeRate;
           var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
-          var impactAmount = Number((newTotal - amount).toFixed(2));
+          var impactAmount = isStripeExpress
+            ? Number((Math.floor((newTotal - amount)*100)/100).toFixed(2))
+            : Number((newTotal - amount).toFixed(2));
           jQuery(".registration-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
         };
@@ -1284,6 +1285,18 @@
             return Bloomerang.Util.calculateRegistrationTrueImpact();
           }
           return 0;
+        };
+        
+        Bloomerang.Util.updateRegisterButtonText = function() {
+          if (jQuery("#registration-form #Checking").is(":checked") ||
+              jQuery("#registration-form #Savings").is(":checked") ||
+              Bloomerang.Util.isProcessorStripe()) {
+            var amount = Bloomerang.Util.getRegistrationAmount();
+            var impactAmount = Bloomerang.Util.getRegistrationTrueImpactAmount();
+            jQuery(".btn-submit-registration").val("Register " + accounting.formatMoney(amount + impactAmount));
+          } else {
+            jQuery(".btn-submit-registration").val("Enter Payment");
+          }
         };
         jQuery(".registration-form .registrationType input, .registration-form .registration-summary input")
           .change(updateRegistrationAmounts)
@@ -1380,12 +1393,12 @@
           if (!form.valid()) {
             return false;
           }
-          
-          if (Bloomerang.Api.ProcessorType === "StripeConnect" && !Bloomerang.Util.StripeCardIsValid) {
+          var isEft = jQuery("#registration-form #CreditCard").length > 0 && !jQuery("#registration-form #CreditCard").prop("checked");
+          if (Bloomerang.Util.isProcessorStripe() && !isEft && !Bloomerang.Util.StripeCardIsValid) {
             document.getElementById('card-errors').textContent = "Valid card info is required";
             return false;
           }
-          if (jQuery("#registration-form #CreditCard").length > 0 && !jQuery("#registration-form #CreditCard").prop("checked")) {
+          if (isEft) {
             submitDonation();
           }
           else {
@@ -1403,8 +1416,9 @@
             }
             jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
             jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            
-            if (Bloomerang.Api.ProcessorType !== "StripeConnect") {
+            if (Bloomerang.Util.isProcessorStripe()) {
+              submitDonation();
+            } else {
               SpreedlyExpress.setDisplayOptions({
                 "amount": accounting.formatMoney(amount),
                 "full_name": val(".registration-form #first-name") + " " + val(".registration-form #last-name"),
@@ -1425,55 +1439,58 @@
               });
               
               SpreedlyExpress.openView();
-            } else {
-              submitDonation();
             }
           }
         };
         
         submitDonation = function() {
-        if (!Bloomerang.continueFinancialSubmission(jQuery("registration-form"))) { return false; }
+          if (!Bloomerang.continueFinancialSubmission(jQuery("registration-form"))) { return false; }
           
-            Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-            Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-            Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
-            var processingMessage = jQuery("#registration-processing-container");
-            processingMessage.show();
-            jQuery("#registration-form-container").hide();
-            Bloomerang.scrollToElement(processingMessage);
+              Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+              Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+              Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+              var processingMessage = jQuery("#registration-processing-container");
+              processingMessage.show();
+              jQuery("#registration-form-container").hide();
+              Bloomerang.scrollToElement(processingMessage);
             
-            Bloomerang.Api.donate();
-        };
+              Bloomerang.Api.donate();
+          };
         
-        jQuery("#registration-form #CreditCard").prop("checked", true);
-        jQuery("#registration-form .section.payment input[type='radio']").click(function() {
-          Bloomerang.Util.calculateRegistrationTrueImpact();
-          if (jQuery(this).attr("id") == "CreditCard") {
-            jQuery("#registration-form .accountNumber, \
-                    #registration-form .routingNumber, \
-                    #registration-form .sample-check").hide();
-            jQuery(".btn-submit-registration").val("Enter Payment");
-          }
-          else {
-            jQuery("#registration-form .accountNumber, \
-                    #registration-form .routingNumber, \
-                    #registration-form .sample-check").show();
-            if (jQuery("#registration-form .sample-check").length == 0) {
-              var checkImage = new Image();
-              checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
-              jQuery(checkImage).addClass("sample-check");
-              jQuery("#registration-form .accountNumber").after(checkImage);
+          jQuery("#registration-form #CreditCard").prop("checked", true);
+          jQuery("#registration-form .section.payment input[type='radio']").click(function() {
+            Bloomerang.Util.calculateRegistrationTrueImpact();
+            Bloomerang.Util.updateRegisterButtonText();
+            if (jQuery(this).attr("id") == "CreditCard") {
+              jQuery("#registration-form .accountNumber, \
+                      #registration-form .routingNumber, \
+                      #registration-form .sample-check").hide();
+              jQuery("#stripe-cc-fields").show();
             }
-            jQuery(".btn-submit-registration").val("Register");
-          }
-      });
-      // Show opt-in options based on the setting of the global opt-in
-      jQuery(".registration-form .field.consent-all").change(function() { 
+            else {
+              jQuery("#registration-form .accountNumber, \
+                      #registration-form .routingNumber, \
+                      #registration-form .sample-check").show();
+              jQuery("#stripe-cc-fields").hide();
+              if (jQuery("#registration-form .sample-check").length == 0) {
+                var checkImage = new Image();
+                checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
+                jQuery(checkImage).addClass("sample-check");
+                jQuery("#registration-form .accountNumber").after(checkImage);
+              }
+            }
+        });
+          
+        jQuery("#registration-form #true-impact").change(function() {
+          Bloomerang.Util.updateRegisterButtonText();
+        });
+        // Show opt-in options based on the setting of the global opt-in
+        jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle();
           });
-      });
-        
+        });
+      
 })(jQuery);
     };
     
@@ -1482,7 +1499,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2021-05-04';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31754(); })});
                     }
