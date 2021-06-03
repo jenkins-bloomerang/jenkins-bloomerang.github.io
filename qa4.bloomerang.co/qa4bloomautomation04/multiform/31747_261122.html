@@ -1076,7 +1076,8 @@
                                         }
                                         Bloomerang.paymentFormLoaded = true;
                      jQuery('.donation-form .section.captcha').attr('style', 'display: none'); 
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; 
+                                    Bloomerang.transactionFeeEft = 0; Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.useKey('pub_1e58f16d-041a-40ba-9506-ac6c84e78f24');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -1268,9 +1269,12 @@
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getDonationAmount();
           var isEft = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked"));
-          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var isStripeExpress = Bloomerang.Api.ProcessorType === "StripeExpress";
+          var feeRate = isEft ? Bloomerang.transactionFeeRateEft : Bloomerang.transactionFeeRate;
           var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
-          var impactAmount = Number((newTotal - amount).toFixed(2));
+          var impactAmount = isStripeExpress
+            ? Number((Math.floor((newTotal - amount)*100)/100).toFixed(2))
+            : Number((newTotal - amount).toFixed(2));
           jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
         };
@@ -1284,7 +1288,7 @@
         Bloomerang.Util.updateDonateButtonText = function() {
           if (jQuery("#donation-form #Checking").is(":checked") ||
               jQuery("#donation-form #Savings").is(":checked") ||
-              Bloomerang.Api.ProcessorType === "StripeConnect") {
+              Bloomerang.Util.isProcessorStripe()) {
             var amount = Bloomerang.Util.getDonationAmount();
             var impactAmount = Bloomerang.Util.getDonationTrueImpactAmount();
             jQuery(".btn-submit-donation").val("Donate " + accounting.formatMoney(amount + impactAmount));
@@ -1466,12 +1470,14 @@
             return false;
           }
           
-          if (Bloomerang.Api.ProcessorType === "StripeConnect" && !Bloomerang.Util.StripeCardIsValid) {
+          var isEft = jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked");
+          
+          if (Bloomerang.Util.isProcessorStripe() && !isEft && !Bloomerang.Util.StripeCardIsValid) {
             document.getElementById('card-errors').textContent = "Valid card info is required";
             return false;
           }
   
-          if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
+          if (isEft) {
             submitDonation();
           }
           else {
@@ -1487,7 +1493,9 @@
             }
             jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
             jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            if (Bloomerang.Api.ProcessorType !== "StripeConnect") {
+            if (Bloomerang.Util.isProcessorStripe()) {
+              submitDonation();
+            } else {
               SpreedlyExpress.setDisplayOptions({
                 "amount": accounting.formatMoney(amount),
                 "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
@@ -1506,8 +1514,6 @@
                submitDonation();
              });
               SpreedlyExpress.openView();
-            } else {
-              submitDonation();
             }
           }
         };
@@ -1535,11 +1541,14 @@
             jQuery("#donation-form .accountNumber, \
                     #donation-form .routingNumber, \
                     #donation-form .sample-check").hide();
+            jQuery("#stripe-cc-fields").show();
+            
           }                        
           else {                   
             jQuery("#donation-form .accountNumber, \
                     #donation-form .routingNumber, \
                     #donation-form .sample-check").show();
+            jQuery("#stripe-cc-fields").hide();
             if (jQuery("#donation-form .sample-check").length == 0) {                    
               var checkImage = new Image();
               checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
@@ -1568,7 +1577,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2020-10-01';
+                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2021-05-04';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
                     }

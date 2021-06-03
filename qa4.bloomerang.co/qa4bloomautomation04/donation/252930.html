@@ -592,7 +592,7 @@
 '</div>' + 
 '    <div class="section payment">' + 
 '      <h3>Payment Information</h3>' + 
-'      <div class="field text payment required">' + 
+'      <div class="field text payment required" id="stripe-cc-fields">' + 
 '<label for="card-element"><span class="label">Credit or debit card</span><span class="required-star">*</span></label>' + 
 '<div id="card-element"></div><div id="card-errors" role="alert"></div></div>' + 
 '' + 
@@ -1028,28 +1028,17 @@
                                                        '  <p>Your generous gift has been processed. We truly appreciate your continued support.</p>' + 
                                                         '\u003cdiv class=\"social-media-buttons\" style=\"margin-top:10px;\"\u003e\u003cdiv id=\"twitter-buttons\"\u003e\u003c/div\u003e\u003cdiv class=\"fb-like\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\" data-show-faces=\"true\" style=\"padding-right: 10px;\" data-action=\"like\" \u003e\u003c/div\u003e\u003cdiv id=\"facebookShareOnly\" class=\"fb-share-button\" data-href=\"https://facebook.com/bloomerangtech\" data-layout=\"button_count\"\u003e\u003c/div\u003e\u003cscript type=\u0027text/javascript\u0027\u003edocument.getElementById(\u0027facebookShareOnly\u0027).setAttribute(\u0027data-href\u0027, window.location.href);\u003c/script\u003e\u003c/div\u003e \u003cscript\u003e\r\n                    if (navigator.userAgent.indexOf(\u0027Edge/\u0027) === -1) {\r\n                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\"http\":\"https\";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document, \"script\", \"twitter-wjs\");\r\n                        var twitterButtons = document.getElementById(\u0027twitter-buttons\u0027);\r\n                        twitterButtons.innerHTML = \u0027\u003cdiv id=\"tweetButton\" style=\"float:left; margin-right:10px\"\u003e \u003ca href=\"https://twitter.com/share\" data-text=\"I just made a donation to @bloomerangTech. You should too!\" class=\"twitter-share-button\"\u003eTweet\u003c/a\u003e \u003c/div\u003e\u003cdiv id=\"followButton\"\u003e \u003ca href=\"https://twitter.com/bloomerangTech\" class=\"twitter-follow-button\"\u003eFollow\u003c/a\u003e \u003c/div\u003e\u0027;\r\n                        twitterButtons.style.height = \u002735px\u0027;\r\n                    }\r\n                \u003c/script\u003e \u003cdiv id=\"fb-root\"\u003e\u003c/div\u003e \u003cscript\u003e(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1\u0026version=v2.8\"; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003c/script\u003e ' + 
                                                         '</div>';( function($) {if (Bloomerang.useDonationId('252930')) { 
-                                      Bloomerang.useProcessor('251905', 'StripeConnect');
-                                    } else {
-                                      html252930 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
-                                    };if (jQuery('#bloomerangForm252930').length) {
+                                Bloomerang.useProcessor('251905', 'Stripe', 'pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn');
+                            } else {
+                                html252930 = '<p style="color: red">Only one donation or event registration form can be used on each page.</p>';
+                            }if (jQuery('#bloomerangForm252930').length) {
                         
                     if (window.ActiveXObject) { // they are using IE < 11, which doesn't support TLS 1.1
                         html252930 = '<p style="color: red">Your browser does not support the minimum security requirements for keeping your Credit Card information safe when processing payments. Please upgrade your browser or download the latest version of' + 
                         ' <a target=\'_blank\' href=\'https://www.google.com/chrome/browser/desktop/\'>Chrome</a> or <a target=\'_blank\' href=\'https://www.mozilla.org/en-US/firefox/new/\'>Firefox</a>.</p>';
                     }
                         jQuery('#bloomerangForm252930').after(html252930);
-                         if (!Bloomerang.SpreedlyScriptLoaded) {
-                                            Bloomerang.Util.load('https://core.spreedly.com/iframe/express-2.min.js', 
-                                                function() { return SpreedlyExpress != undefined; },
-                                                function() {
-                                                    SpreedlyExpress.onInit(function() { jQuery('#express-submit').attr('disabled', false); });
-                                                    Bloomerang.initSpreedly = function() {
-                                                        SpreedlyExpress.init('FFOcP2r6aOM47DVLVXu8SUSLd9U', { 'company_name': 'QA4 Bloom Automation 04' });
-                                                    };
-                                                    Bloomerang.initSpreedly();
-                                                });
-                                        }
-                                        Bloomerang.SpreedlyScriptLoaded = true;
+                        
                          Bloomerang.Util.requireStripe(function() {
                                         Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn'); 
                                         var elements = Bloomerang.Util.Stripe.elements(); 
@@ -1090,6 +1079,7 @@
                                       });
                                       jQuery(".donation-form #express-submit").val("Donate");
                                       jQuery(".registration-form #express-submit").val("Register");
+                                      jQuery("#express-submit").attr("disabled", false);
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -1106,7 +1096,8 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; 
+                                    Bloomerang.transactionFeeEft = 0; Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.useKey('pub_1e58f16d-041a-40ba-9506-ac6c84e78f24');
         Bloomerang.Util.getDonationAmount = function() {
           return Number(accounting.unformat(jQuery(".donation-form .section.donation input[name='donation-level']:checked").val() || jQuery(".donation-form #donation-amount").val()));
@@ -1298,9 +1289,12 @@
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getDonationAmount();
           var isEft = (jQuery("#donation-form #Checking").is(":checked") || jQuery("#donation-form #Savings").is(":checked"));
-          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var isStripeExpress = Bloomerang.Api.ProcessorType === "StripeExpress";
+          var feeRate = isEft ? Bloomerang.transactionFeeRateEft : Bloomerang.transactionFeeRate;
           var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
-          var impactAmount = Number((newTotal - amount).toFixed(2));
+          var impactAmount = isStripeExpress
+            ? Number((Math.floor((newTotal - amount)*100)/100).toFixed(2))
+            : Number((newTotal - amount).toFixed(2));
           jQuery(".donation-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
         };
@@ -1314,7 +1308,7 @@
         Bloomerang.Util.updateDonateButtonText = function() {
           if (jQuery("#donation-form #Checking").is(":checked") ||
               jQuery("#donation-form #Savings").is(":checked") ||
-              Bloomerang.Api.ProcessorType === "StripeConnect") {
+              Bloomerang.Util.isProcessorStripe()) {
             var amount = Bloomerang.Util.getDonationAmount();
             var impactAmount = Bloomerang.Util.getDonationTrueImpactAmount();
             jQuery(".btn-submit-donation").val("Donate " + accounting.formatMoney(amount + impactAmount));
@@ -1496,12 +1490,14 @@
             return false;
           }
           
-          if (Bloomerang.Api.ProcessorType === "StripeConnect" && !Bloomerang.Util.StripeCardIsValid) {
+          var isEft = jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked");
+          
+          if (Bloomerang.Util.isProcessorStripe() && !isEft && !Bloomerang.Util.StripeCardIsValid) {
             document.getElementById('card-errors').textContent = "Valid card info is required";
             return false;
           }
   
-          if (jQuery("#donation-form #CreditCard").length > 0 && !jQuery("#donation-form #CreditCard").prop("checked")) {
+          if (isEft) {
             submitDonation();
           }
           else {
@@ -1517,7 +1513,9 @@
             }
             jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
             jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            if (Bloomerang.Api.ProcessorType !== "StripeConnect") {
+            if (Bloomerang.Util.isProcessorStripe()) {
+              submitDonation();
+            } else {
               SpreedlyExpress.setDisplayOptions({
                 "amount": accounting.formatMoney(amount),
                 "full_name": val(".donation-form #first-name") + " " + val(".donation-form #last-name"),
@@ -1536,8 +1534,6 @@
                submitDonation();
              });
               SpreedlyExpress.openView();
-            } else {
-              submitDonation();
             }
           }
         };
@@ -1565,11 +1561,14 @@
             jQuery("#donation-form .accountNumber, \
                     #donation-form .routingNumber, \
                     #donation-form .sample-check").hide();
+            jQuery("#stripe-cc-fields").show();
+            
           }                        
           else {                   
             jQuery("#donation-form .accountNumber, \
                     #donation-form .routingNumber, \
                     #donation-form .sample-check").show();
+            jQuery("#stripe-cc-fields").hide();
             if (jQuery("#donation-form .sample-check").length == 0) {                    
               var checkImage = new Image();
               checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
@@ -1598,7 +1597,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2020-10-01';
+                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2021-05-04';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm252930(); })});
                     }

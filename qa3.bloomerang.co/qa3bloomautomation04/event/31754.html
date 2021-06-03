@@ -53,8 +53,10 @@
 '.registration-form label{color: #404040;' + 
 '                display: block;}' + 
 '' + 
-'.registration-form label.error{color:#900;' + 
-'                display: inline-block; ' + 
+'.registration-form label.error,' + 
+'                     .registration-form #card-errors{color: #900;}' + 
+'' + 
+'.registration-form label.error{display: inline-block;' + 
 '                padding: 0 10px;}' + 
 '' + 
 '.registration-form section{padding: 5px;}' + 
@@ -94,7 +96,6 @@
 '                color:#fff; }' + 
 '' + 
 '.registration-form .field .checkbox.selected:before{color:#fff;' + 
-'                text-shadow:1px 2px 1px rgba(0,0,0,0.25);' + 
 '                line-height:30px;' + 
 '                position:absolute;' + 
 '                right:10px; }' + 
@@ -103,9 +104,15 @@
 '' + 
 '.registration-form .field input,' + 
 '                     .registration-form .field select,' + 
-'                     .registration-form .field textarea{padding: 4px; ' + 
+'                     .registration-form .field textarea,' + 
+'                     .registration-form #card-element{padding: 4px; ' + 
 '                max-width: 275px;' + 
 '                width: 96%}' + 
+'' + 
+'.registration-form .field .StripeElement{background-color: white;' + 
+'                background-color: -moz-field;' + 
+'                border: 1px solid darkgray;' + 
+'                display: inline-block;}' + 
 '' + 
 '.registration-form .field textarea.international{height: 120px;}' + 
 '' + 
@@ -324,6 +331,7 @@
 '<option value="GQ">Equatorial Guinea</option>' + 
 '<option value="ER">Eritrea</option>' + 
 '<option value="EE">Estonia</option>' + 
+'<option value="SZ">Eswatini</option>' + 
 '<option value="ET">Ethiopia</option>' + 
 '<option value="FK">Falkland Islands (Malvinas)</option>' + 
 '<option value="FO">Faroe Islands</option>' + 
@@ -466,7 +474,6 @@
 '<option value="SD">Sudan</option>' + 
 '<option value="SR">Suriname</option>' + 
 '<option value="SJ">Svalbard and Jan Mayen</option>' + 
-'<option value="SZ">Swaziland</option>' + 
 '<option value="SE">Sweden</option>' + 
 '<option value="CH">Switzerland</option>' + 
 '<option value="SY">Syrian Arab Republic</option>' + 
@@ -1011,7 +1018,13 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    ' + 
+'    <div class="section true-impact">' + 
+'      <h3>Increase My Impact</h3>' + 
+'      <div class="field checkbox true-impact" >' + 
+'<label for="true-impact"><input id="true-impact" name="true-impact" type="checkbox" maxlength="255"></input><span class="label">Yes! Add [amount] to help offset bank fees</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    <div class="section captcha">' + 
 '      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31754"></div>' + 
 '' + 
@@ -1050,6 +1063,7 @@
                                                 });
                                         }
                                         Bloomerang.SpreedlyScriptLoaded = true;
+                        
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -1066,7 +1080,8 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; 
+                                    Bloomerang.transactionFeeEft = 0; Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.useKey('pub_ac153603-7665-43c7-87e3-d7ae25c5fec3');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
@@ -1075,6 +1090,9 @@
         Bloomerang.Widget.Donation.OnSubmit = function (args) {
             jQuery(".btn-submit-registration").val("Processing Registration...").prop("disabled", true).addClass("disabled");
             var val = function (selector) { return jQuery(selector).val(); };
+            var country = val(".registration-form #country");
+            var state = Bloomerang.Util.getCorrectState(country, val(".registration-form #state"), val(".registration-form #province"));
+            var zipCode = Bloomerang.Util.getCorrectZipCode(country, val(".registration-form #zip-code"), val(".registration-form #postal-code"));
             Bloomerang.Account
                       .individual()
                       .firstName(val(".registration-form #first-name"))
@@ -1082,9 +1100,9 @@
                       .lastName(val(".registration-form #last-name"))
                       .homeAddress(val(".registration-form #street-address"),
                                    val(".registration-form #city"),
-                                   val(".registration-form #state") || val(".registration-form #province"),
-                                   val(".registration-form #zip-code") || val(".registration-form #postal-code"),
-                                   val(".registration-form #country"))
+                                   state,
+                                   zipCode,
+                                   country)
                       .homeEmail(val(".registration-form #email-address"))
                       .homePhone(val(".registration-form #phone-number"))
                       .applyEventRegistrationCustomFields();
@@ -1148,11 +1166,7 @@
         };
         Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError = function (response) {
             jQuery(".btn-submit-registration").prop("disabled", false).removeClass("disabled");
-            if (jQuery("#registration-form #Checking").is(":checked") ||
-                jQuery("#registration-form #Savings").is(":checked"))
-              jQuery(".btn-submit-registration").val("Register");
-            else
-              jQuery(".btn-submit-registration").val("Enter Payment");
+            Bloomerang.Util.updateRegisterButtonText();
             jQuery("#registration-form-container .errors").removeClass("hidden").html(response.Message);
             jQuery("#registration-processing-container").hide();
             jQuery("#registration-form-container").show();
@@ -1253,6 +1267,7 @@
       
           jQuery("#totalTicketQty").text(jQuery("#numberOfRegistrations").val() * (jQuery(".registrationType input[name='registration-type']:checked").data("ticket-quantity") || 0));
           Bloomerang.Util.calculateRegistrationTrueImpact();
+          Bloomerang.Util.updateRegisterButtonText();
         };
         if (jQuery(".registration-form .true-impact label").length) {
           jQuery(".registration-form .true-impact label")[0].innerHTML = jQuery(".registration-form .true-impact label")[0].innerHTML.replace("[amount]", "<span class='fee-amount'>$0</span>");
@@ -1262,9 +1277,12 @@
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getRegistrationAmount();
           var isEft = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked"));
-          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var isStripeExpress = Bloomerang.Api.ProcessorType === "StripeExpress";
+          var feeRate = isEft ? Bloomerang.transactionFeeRateEft : Bloomerang.transactionFeeRate;
           var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
-          var impactAmount = Number((newTotal - amount).toFixed(2));
+          var impactAmount = isStripeExpress
+            ? Number((Math.floor((newTotal - amount)*100)/100).toFixed(2))
+            : Number((newTotal - amount).toFixed(2));
           jQuery(".registration-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
         };
@@ -1273,6 +1291,18 @@
             return Bloomerang.Util.calculateRegistrationTrueImpact();
           }
           return 0;
+        };
+        
+        Bloomerang.Util.updateRegisterButtonText = function() {
+          if (jQuery("#registration-form #Checking").is(":checked") ||
+              jQuery("#registration-form #Savings").is(":checked") ||
+              Bloomerang.Util.isProcessorStripe()) {
+            var amount = Bloomerang.Util.getRegistrationAmount();
+            var impactAmount = Bloomerang.Util.getRegistrationTrueImpactAmount();
+            jQuery(".btn-submit-registration").val("Register " + accounting.formatMoney(amount + impactAmount));
+          } else {
+            jQuery(".btn-submit-registration").val("Enter Payment");
+          }
         };
         jQuery(".registration-form .registrationType input, .registration-form .registration-summary input")
           .change(updateRegistrationAmounts)
@@ -1369,7 +1399,12 @@
           if (!form.valid()) {
             return false;
           }
-          if (jQuery("#registration-form #CreditCard").length > 0 && !jQuery("#registration-form #CreditCard").prop("checked")) {
+          var isEft = jQuery("#registration-form #CreditCard").length > 0 && !jQuery("#registration-form #CreditCard").prop("checked");
+          if (Bloomerang.Util.isProcessorStripe() && !isEft && !Bloomerang.Util.StripeCardIsValid) {
+            document.getElementById('card-errors').textContent = "Valid card info is required";
+            return false;
+          }
+          if (isEft) {
             submitDonation();
           }
           else {
@@ -1378,25 +1413,7 @@
             var amount = Bloomerang.Util.getRegistrationAmount() + Bloomerang.Util.getRegistrationTrueImpactAmount();
             
             var selectedRegistrationType = jQuery(".registration-form .section.registrationType input[name='registration-type']:checked").data("short-name");
-            
-            SpreedlyExpress.setDisplayOptions({
-              "amount": accounting.formatMoney(amount),
-              "full_name": val(".registration-form #first-name") + " " + val(".registration-form #last-name"),
-              "sidebar_bottom_description": selectedRegistrationType,
-              "submit_label": "Register"});
-            SpreedlyExpress.setPaymentMethodParams({
-              "email": val(".registration-form #email-address"),
-              "phone_number": val(".registration-form #phone-number"),
-              "address1": val(".registration-form #street-address"),
-              "city": val(".registration-form #city"),
-              "state": val(".registration-form #state") || val(".registrtation-form #province"),
-              "zip": val(".registration-form #zip-code") || val(".registration-form #postal-code"),
-              "country": val(".registration-form #country")});
-              
-            SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
-              Bloomerang.CreditCard.spreedlyToken(token);
-              submitDonation();
-            });
+                        
             var oldMeta = '';
             if (jQuery('meta[name="viewport"]').length) {
               oldMeta = jQuery('meta[name="viewport"]').attr('content');
@@ -1405,53 +1422,81 @@
             }
             jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
             jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            SpreedlyExpress.openView();
+            if (Bloomerang.Util.isProcessorStripe()) {
+              submitDonation();
+            } else {
+              SpreedlyExpress.setDisplayOptions({
+                "amount": accounting.formatMoney(amount),
+                "full_name": val(".registration-form #first-name") + " " + val(".registration-form #last-name"),
+                "sidebar_bottom_description": selectedRegistrationType,
+                "submit_label": "Register"});
+              SpreedlyExpress.setPaymentMethodParams({
+                "email": val(".registration-form #email-address"),
+                "phone_number": val(".registration-form #phone-number"),
+                "address1": val(".registration-form #street-address"),
+                "city": val(".registration-form #city"),
+                "state": val(".registration-form #state") || val(".registrtation-form #province"),
+                "zip": val(".registration-form #zip-code") || val(".registration-form #postal-code"),
+                "country": val(".registration-form #country")});
+              
+              SpreedlyExpress.onPaymentMethod(function(token, paymentMethod) {
+                Bloomerang.CreditCard.spreedlyToken(token);
+                submitDonation();
+              });
+              
+              SpreedlyExpress.openView();
+            }
           }
         };
         
         submitDonation = function() {
-        if (!Bloomerang.continueFinancialSubmission(jQuery("registration-form"))) { return false; }
+          if (!Bloomerang.continueFinancialSubmission(jQuery("registration-form"))) { return false; }
           
-            Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
-            Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
-            Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
-            var processingMessage = jQuery("#registration-processing-container");
-            processingMessage.show();
-            jQuery("#registration-form-container").hide();
-            Bloomerang.scrollToElement(processingMessage);
+              Bloomerang.Api.OnSubmit = Bloomerang.Widget.Donation.OnSubmit;
+              Bloomerang.Api.OnSuccess = Bloomerang.Widget.Donation.OnSuccess;
+              Bloomerang.Api.OnError = Bloomerang.Widget.Donation.OnError;
+              var processingMessage = jQuery("#registration-processing-container");
+              processingMessage.show();
+              jQuery("#registration-form-container").hide();
+              Bloomerang.scrollToElement(processingMessage);
             
-            Bloomerang.Api.donate();
-        };
+              Bloomerang.Api.donate();
+          };
         
-        jQuery("#registration-form #CreditCard").prop("checked", true);
-        jQuery("#registration-form .section.payment input[type='radio']").click(function() {
-          Bloomerang.Util.calculateRegistrationTrueImpact();
-          if (jQuery(this).attr("id") == "CreditCard") {
-            jQuery("#registration-form .accountNumber, \
-                    #registration-form .routingNumber, \
-                    #registration-form .sample-check").hide();
-            jQuery(".btn-submit-registration").val("Enter Payment");
-          }
-          else {
-            jQuery("#registration-form .accountNumber, \
-                    #registration-form .routingNumber, \
-                    #registration-form .sample-check").show();
-            if (jQuery("#registration-form .sample-check").length == 0) {
-              var checkImage = new Image();
-              checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
-              jQuery(checkImage).addClass("sample-check");
-              jQuery("#registration-form .accountNumber").after(checkImage);
+          jQuery("#registration-form #CreditCard").prop("checked", true);
+          jQuery("#registration-form .section.payment input[type='radio']").click(function() {
+            Bloomerang.Util.calculateRegistrationTrueImpact();
+            Bloomerang.Util.updateRegisterButtonText();
+            if (jQuery(this).attr("id") == "CreditCard") {
+              jQuery("#registration-form .accountNumber, \
+                      #registration-form .routingNumber, \
+                      #registration-form .sample-check").hide();
+              jQuery("#stripe-cc-fields").show();
             }
-            jQuery(".btn-submit-registration").val("Register");
-          }
-      });
-      // Show opt-in options based on the setting of the global opt-in
-      jQuery(".registration-form .field.consent-all").change(function() { 
+            else {
+              jQuery("#registration-form .accountNumber, \
+                      #registration-form .routingNumber, \
+                      #registration-form .sample-check").show();
+              jQuery("#stripe-cc-fields").hide();
+              if (jQuery("#registration-form .sample-check").length == 0) {
+                var checkImage = new Image();
+                checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
+                jQuery(checkImage).addClass("sample-check");
+                jQuery("#registration-form .accountNumber").after(checkImage);
+              }
+            }
+        });
+          
+        jQuery("#registration-form #true-impact").change(function() {
+          Bloomerang.Util.updateRegisterButtonText();
+        });
+        // Show opt-in options based on the setting of the global opt-in
+        jQuery(".registration-form .field.consent-all").change(function() { 
           jQuery(".registration-form .field.consent-all").siblings().each(function(i, e) { 
               jQuery(e).toggle();
           });
-      });
-        
+        });
+      
 })(jQuery);
     };
     
@@ -1460,7 +1505,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2018-05-30';
+                        script.src = 'https://qa3.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2021-05-04';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31754(); })});
                     }

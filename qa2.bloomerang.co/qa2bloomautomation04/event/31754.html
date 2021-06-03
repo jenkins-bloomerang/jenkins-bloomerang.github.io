@@ -1018,7 +1018,13 @@
 '</div>' + 
 '' + 
 '</div>' + 
-'    ' + 
+'    <div class="section true-impact">' + 
+'      <h3>Increase My Impact</h3>' + 
+'      <div class="field checkbox true-impact" >' + 
+'<label for="true-impact"><input id="true-impact" name="true-impact" type="checkbox" maxlength="255"></input><span class="label">Yes! Add [amount] to help offset bank fees</span></label>' + 
+'</div>' + 
+'' + 
+'</div>' + 
 '    <div class="section captcha">' + 
 '      <label id=\'noCaptchaResponseError\' class=\'error noCaptchaResponseError\' style=\'display: none\'>You must fill out the CAPTCHA</label><div id="captcha31754"></div>' + 
 '' + 
@@ -1074,7 +1080,8 @@
                             },
                             true,
                             true);
-                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; Bloomerang.transactionFeeEft = 
+                    Bloomerang.transactionFee = 0.3; Bloomerang.transactionFeeRate = 0.022; 
+                                    Bloomerang.transactionFeeEft = 0; Bloomerang.transactionFeeRateEft = 0;
                     Bloomerang.useKey('pub_d05c67f8-6ad0-42b7-8acd-515d62193dda');
         Bloomerang.Util.getRegistrationAmount = function() {
           return accounting.unformat(jQuery("#totalPrice").text());
@@ -1270,9 +1277,12 @@
           // Note that we don't really care about JS floating point math. It's OK if the numbers are a couple cents off.
           var amount = Bloomerang.Util.getRegistrationAmount();
           var isEft = (jQuery("#registration-form #Checking").is(":checked") || jQuery("#registration-form #Savings").is(":checked"));
-          var feeRate = isEft ? 0 : Bloomerang.transactionFeeRate;
+          var isStripeExpress = Bloomerang.Api.ProcessorType === "StripeExpress";
+          var feeRate = isEft ? Bloomerang.transactionFeeRateEft : Bloomerang.transactionFeeRate;
           var newTotal = (amount + (isEft ? Bloomerang.transactionFeeEft : Bloomerang.transactionFee)) / (1 - feeRate);
-          var impactAmount = Number((newTotal - amount).toFixed(2));
+          var impactAmount = isStripeExpress
+            ? Number((Math.floor((newTotal - amount)*100)/100).toFixed(2))
+            : Number((newTotal - amount).toFixed(2));
           jQuery(".registration-form .true-impact .fee-amount").text(accounting.formatMoney(impactAmount));
           return impactAmount;
         };
@@ -1286,7 +1296,7 @@
         Bloomerang.Util.updateRegisterButtonText = function() {
           if (jQuery("#registration-form #Checking").is(":checked") ||
               jQuery("#registration-form #Savings").is(":checked") ||
-              Bloomerang.Api.ProcessorType === "StripeConnect") {
+              Bloomerang.Util.isProcessorStripe()) {
             var amount = Bloomerang.Util.getRegistrationAmount();
             var impactAmount = Bloomerang.Util.getRegistrationTrueImpactAmount();
             jQuery(".btn-submit-registration").val("Register " + accounting.formatMoney(amount + impactAmount));
@@ -1389,12 +1399,12 @@
           if (!form.valid()) {
             return false;
           }
-          
-          if (Bloomerang.Api.ProcessorType === "StripeConnect" && !Bloomerang.Util.StripeCardIsValid) {
+          var isEft = jQuery("#registration-form #CreditCard").length > 0 && !jQuery("#registration-form #CreditCard").prop("checked");
+          if (Bloomerang.Util.isProcessorStripe() && !isEft && !Bloomerang.Util.StripeCardIsValid) {
             document.getElementById('card-errors').textContent = "Valid card info is required";
             return false;
           }
-          if (jQuery("#registration-form #CreditCard").length > 0 && !jQuery("#registration-form #CreditCard").prop("checked")) {
+          if (isEft) {
             submitDonation();
           }
           else {
@@ -1412,8 +1422,9 @@
             }
             jQuery('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1');
             jQuery('meta[name="viewport"]').attr('content', oldMeta);
-            
-            if (Bloomerang.Api.ProcessorType !== "StripeConnect") {
+            if (Bloomerang.Util.isProcessorStripe()) {
+              submitDonation();
+            } else {
               SpreedlyExpress.setDisplayOptions({
                 "amount": accounting.formatMoney(amount),
                 "full_name": val(".registration-form #first-name") + " " + val(".registration-form #last-name"),
@@ -1434,8 +1445,6 @@
               });
               
               SpreedlyExpress.openView();
-            } else {
-              submitDonation();
             }
           }
         };
@@ -1462,11 +1471,13 @@
               jQuery("#registration-form .accountNumber, \
                       #registration-form .routingNumber, \
                       #registration-form .sample-check").hide();
+              jQuery("#stripe-cc-fields").show();
             }
             else {
               jQuery("#registration-form .accountNumber, \
                       #registration-form .routingNumber, \
                       #registration-form .sample-check").show();
+              jQuery("#stripe-cc-fields").hide();
               if (jQuery("#registration-form .sample-check").length == 0) {
                 var checkImage = new Image();
                 checkImage.src = 'https://s3-us-west-2.amazonaws.com/bloomerang-public-cdn/public-gallery/SampleCheck.png';
@@ -1494,7 +1505,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa2.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2019-10-02';
+                        script.src = 'https://qa2.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2021-05-04';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31754(); })});
                     }
