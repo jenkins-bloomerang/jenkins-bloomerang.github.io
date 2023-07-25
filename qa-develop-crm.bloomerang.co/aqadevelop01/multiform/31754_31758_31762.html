@@ -1215,8 +1215,10 @@
             jQuery("#registration-form-container").show();
             Bloomerang.scrollToElement(jQuery("#registration-form-container .errors"));
             Bloomerang.cancelFinancialSubmission(jQuery("#registration-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
+            if (typeof(SpreedlyExpress) !== 'undefined') { 
+              SpreedlyExpress.unload();
+              Bloomerang.initSpreedly();
+            }
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
               grecaptcha.reset(jQuery(".registration-form").data("captcha-id"));
             }
@@ -2712,7 +2714,7 @@
 '' + 
 '</div>' + 
 '    <div class="section custom-fields">' + 
-'      <h3>Additional Information</h3>' + 
+'      <h3>Volunteering Information</h3>' + 
 '      <div class="field date volunteer-date required" >' + 
 '<label for="volunteer-date"><span class="label">Date Volunteered</span><span class="required-star">*</span></label>' + 
 '<input id="volunteer-date" name="volunteer-date" class="required" type="date" placeholder="mm/dd/yyyy"></input>' + 

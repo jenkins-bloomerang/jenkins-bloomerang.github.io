@@ -1040,46 +1040,12 @@
                         jQuery('#bloomerangForm252930').after(html252930);
                         
                          Bloomerang.Util.requireStripe(function() {
-                                        Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn'); 
-                                        var elements = Bloomerang.Util.Stripe.elements(); 
-                                     
-                                        // Create an instance of the card Element.
-                                        Bloomerang.Util.StripeCard = elements.create('card', {
-                                          hidePostalCode: true,
-                                          style: {
-                                            base: {
-                                              color: "#272D30",
-                                              fontSize: "14px",
-                                              fontFamily: "'Century Gothic', verdana, sans-serif"
-                                            },
-                                            invalid: {
-                                              color: "#272D30"
-                                            }
-                                          }
-                                        });
-                                     
-                                        // Add an instance of the card Element into the `card-element` <div>.
-                                        Bloomerang.Util.StripeCard.mount('#card-element');
-                                     
-                                        // Handle real-time validation errors from the card Element.
-                                        Bloomerang.Util.StripeCardIsValid = false;
-                                        Bloomerang.Util.StripeCard.addEventListener('change', function(event) {
-                                          var displayError = document.getElementById('card-errors');
-                                          if (event.error) {
-                                            displayError.textContent = event.error.message;
-                                          } else {
-                                            displayError.textContent = '';
-                                          }
-                                          if (event.complete) {
-                                            Bloomerang.Util.StripeCardIsValid = true;
-                                          } else {
-                                            Bloomerang.Util.StripeCardIsValid = false;
-                                          }
-                                        });
-                                      });
-                                      jQuery(".donation-form #express-submit").val("Donate");
-                                      jQuery(".registration-form #express-submit").val("Register");
-                                      jQuery("#express-submit").attr("disabled", false);
+                              Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn');
+                              Bloomerang.Util.createInitialIntent();
+                              jQuery(".donation-form #express-submit").val("Donate");
+                              jQuery(".registration-form #express-submit").val("Register");
+                              jQuery("#express-submit").attr("disabled", false);
+                            });
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -1197,8 +1163,10 @@
             jQuery("#donation-form-container").show();
             Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
+            if (typeof(SpreedlyExpress) !== 'undefined') { 
+              SpreedlyExpress.unload();
+              Bloomerang.initSpreedly();
+            }
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
               grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
             }
