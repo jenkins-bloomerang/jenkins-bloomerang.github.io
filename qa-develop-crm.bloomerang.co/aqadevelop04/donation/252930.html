@@ -1041,24 +1041,24 @@
                         
                          Bloomerang.Util.requireStripe(function() {
                                         Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn'); 
-                                        var elements = Bloomerang.Util.Stripe.elements(); 
+                                        let elements = null;
+                                            // Create an instance of the stripe card element.
+                                            elements = Bloomerang.Util.Stripe.elements();
+                                            Bloomerang.Util.StripeCard = elements.create('card', {
+                                              hidePostalCode: true,
+                                              style: {
+                                                base: {
+                                                  color: "#272D30",
+                                                  fontSize: "14px",
+                                                  fontFamily: "'Century Gothic', verdana, sans-serif"
+                                                },
+                                                invalid: {
+                                                  color: "#272D30"
+                                                }
+                                              }
+                                            });
                                      
-                                        // Create an instance of the card Element.
-                                        Bloomerang.Util.StripeCard = elements.create('card', {
-                                          hidePostalCode: true,
-                                          style: {
-                                            base: {
-                                              color: "#272D30",
-                                              fontSize: "14px",
-                                              fontFamily: "'Century Gothic', verdana, sans-serif"
-                                            },
-                                            invalid: {
-                                              color: "#272D30"
-                                            }
-                                          }
-                                        });
-                                     
-                                        // Add an instance of the card Element into the `card-element` <div>.
+                                        // Add an instance of the stripe card/payment element into the `card-element` <div>.
                                         Bloomerang.Util.StripeCard.mount('#card-element');
                                      
                                         // Handle real-time validation errors from the card Element.
@@ -1197,8 +1197,10 @@
             jQuery("#donation-form-container").show();
             Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
+            if (typeof(SpreedlyExpress) !== 'undefined') { 
+              SpreedlyExpress.unload();
+              Bloomerang.initSpreedly();
+            }
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
               grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
             }

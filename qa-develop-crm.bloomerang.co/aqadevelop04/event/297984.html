@@ -24,7 +24,7 @@
 		</div>	
 		<div class="row">
 			<div class="cell">Processor:</div>
-			<div class="cell bold">StripeExpress</div>
+			<div class="cell bold">BloomerangPayments</div>
 		</div>
 		<div class="row">
 			<div class="cell">Email Response:</div>
@@ -180,7 +180,7 @@
 '  <form id="registration-form" class="registration-form" method="post" onsubmit="event.preventDefault(); collectPayment();">' + 
 '    <div class="errors hidden"></div>' + 
 '    <div class="section registrationType">' + 
-'      <h3>Event Registration Stripe Self Hosted Captcha Registration</h3>' + 
+'      <h3>Deactivated Registration</h3>' + 
 '      <div class="field radio 301056 required" >' + 
 '<label for="301056"><input id="301056" name="registration-type" class="required" type="radio" value="100.000000" maxlength="255" data-short-name="Single Ticket" data-ticket-quantity="1" data-registration-type-value="21580" data-non-deductible-amount="30.000000"></input><span class="label">$100.00 - Single Ticket: Single ticket plus meal</span></label>' + 
 '</div>' + 
@@ -1078,46 +1078,13 @@
                         jQuery('#bloomerangForm297984').after(html297984);
                         
                          Bloomerang.Util.requireStripe(function() {
-                                        Bloomerang.Util.Stripe = Stripe('pk_test_ql0ubtsHyv0J0GZJ5po6MZYw'); 
-                                        var elements = Bloomerang.Util.Stripe.elements(); 
-                                     
-                                        // Create an instance of the card Element.
-                                        Bloomerang.Util.StripeCard = elements.create('card', {
-                                          hidePostalCode: true,
-                                          style: {
-                                            base: {
-                                              color: "#272D30",
-                                              fontSize: "14px",
-                                              fontFamily: "'Century Gothic', verdana, sans-serif"
-                                            },
-                                            invalid: {
-                                              color: "#272D30"
-                                            }
-                                          }
-                                        });
-                                     
-                                        // Add an instance of the card Element into the `card-element` <div>.
-                                        Bloomerang.Util.StripeCard.mount('#card-element');
-                                     
-                                        // Handle real-time validation errors from the card Element.
-                                        Bloomerang.Util.StripeCardIsValid = false;
-                                        Bloomerang.Util.StripeCard.addEventListener('change', function(event) {
-                                          var displayError = document.getElementById('card-errors');
-                                          if (event.error) {
-                                            displayError.textContent = event.error.message;
-                                          } else {
-                                            displayError.textContent = '';
-                                          }
-                                          if (event.complete) {
-                                            Bloomerang.Util.StripeCardIsValid = true;
-                                          } else {
-                                            Bloomerang.Util.StripeCardIsValid = false;
-                                          }
-                                        });
-                                      });
-                                      jQuery(".donation-form #express-submit").val("Donate");
-                                      jQuery(".registration-form #express-submit").val("Register");
-                                      jQuery("#express-submit").attr("disabled", false);
+                              Bloomerang.Util.Stripe = Stripe('pk_test_ql0ubtsHyv0J0GZJ5po6MZYw');
+                              Bloomerang.useKey('pub_d05c67f8-6ad0-42b7-8acd-515d62193dda');
+                              Bloomerang.Util.createInitialIntent();
+                              jQuery(".donation-form #express-submit").val("Donate");
+                              jQuery(".registration-form #express-submit").val("Register");
+                              jQuery("#express-submit").attr("disabled", false);
+                            });
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
@@ -1226,8 +1193,10 @@
             jQuery("#registration-form-container").show();
             Bloomerang.scrollToElement(jQuery("#registration-form-container .errors"));
             Bloomerang.cancelFinancialSubmission(jQuery("#registration-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
+            if (typeof(SpreedlyExpress) !== 'undefined') { 
+              SpreedlyExpress.unload();
+              Bloomerang.initSpreedly();
+            }
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
               grecaptcha.reset(jQuery(".registration-form").data("captcha-id"));
             }
