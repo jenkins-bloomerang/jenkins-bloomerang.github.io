@@ -1040,13 +1040,46 @@
                         jQuery('#bloomerangForm252930').after(html252930);
                         
                          Bloomerang.Util.requireStripe(function() {
-                              Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn');
-                              Bloomerang.useKey('pub_31a79f56-7816-481d-a1a3-e6d04402a329');
-                              Bloomerang.Util.createInitialIntent();
-                              jQuery(".donation-form #express-submit").val("Donate");
-                              jQuery(".registration-form #express-submit").val("Register");
-                              jQuery("#express-submit").attr("disabled", false);
-                            });
+                                        Bloomerang.Util.Stripe = Stripe('pk_test_gPJ4zqyQCXXc7dx2C2nJUCYU00zS6IcRrn'); 
+                                        let elements = null;
+                                            // Create an instance of the stripe card element.
+                                            elements = Bloomerang.Util.Stripe.elements();
+                                            Bloomerang.Util.StripeCard = elements.create('card', {
+                                              hidePostalCode: true,
+                                              style: {
+                                                base: {
+                                                  color: "#272D30",
+                                                  fontSize: "14px",
+                                                  fontFamily: "'Century Gothic', verdana, sans-serif"
+                                                },
+                                                invalid: {
+                                                  color: "#272D30"
+                                                }
+                                              }
+                                            });
+                                     
+                                        // Add an instance of the stripe card/payment element into the `card-element` <div>.
+                                        Bloomerang.Util.StripeCard.mount('#card-element');
+                                     
+                                        // Handle real-time validation errors from the card Element.
+                                        Bloomerang.Util.StripeCardIsValid = false;
+                                        Bloomerang.Util.StripeCard.addEventListener('change', function(event) {
+                                          var displayError = document.getElementById('card-errors');
+                                          if (event.error) {
+                                            displayError.textContent = event.error.message;
+                                          } else {
+                                            displayError.textContent = '';
+                                          }
+                                          if (event.complete) {
+                                            Bloomerang.Util.StripeCardIsValid = true;
+                                          } else {
+                                            Bloomerang.Util.StripeCardIsValid = false;
+                                          }
+                                        });
+                                      });
+                                      jQuery(".donation-form #express-submit").val("Donate");
+                                      jQuery(".registration-form #express-submit").val("Register");
+                                      jQuery("#express-submit").attr("disabled", false);
                     };
                     if (Bloomerang.paymentFormLoaded) {
                                             return false;
