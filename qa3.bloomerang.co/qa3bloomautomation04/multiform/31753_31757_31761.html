@@ -1205,8 +1205,10 @@
             jQuery("#registration-form-container").show();
             Bloomerang.scrollToElement(jQuery("#registration-form-container .errors"));
             Bloomerang.cancelFinancialSubmission(jQuery("#registration-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
+            if (typeof(SpreedlyExpress) !== 'undefined') { 
+              SpreedlyExpress.unload();
+              Bloomerang.initSpreedly();
+            }
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
               grecaptcha.reset(jQuery(".registration-form").data("captcha-id"));
             }
