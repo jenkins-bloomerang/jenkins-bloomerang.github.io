@@ -1150,8 +1150,10 @@
             jQuery("#donation-form-container").show();
             Bloomerang.scrollToElement(jQuery("#donation-form-container .errors"));
             Bloomerang.cancelFinancialSubmission(jQuery("#donation-form"));
-            SpreedlyExpress.unload();
-            Bloomerang.initSpreedly();
+            if (typeof(SpreedlyExpress) !== 'undefined') { 
+              SpreedlyExpress.unload();
+              Bloomerang.initSpreedly();
+            }
             if (typeof(grecaptcha) !== "undefined" && jQuery("#captcha" + Bloomerang.Data.WidgetIds.Donation).children().length) {
               grecaptcha.reset(jQuery(".donation-form").data("captcha-id"));
             }
@@ -1449,6 +1451,11 @@
             document.getElementById('card-errors').textContent = "Valid card info is required";
             return false;
           }
+          
+          if(Bloomerang.UsePaymentElement && !isEft && !Bloomerang.Util.RecurringStripeCardIsValid) {
+            document.getElementById('card-errors').textContent = "Valid card info is required";
+            return false;
+          }
   
           if (isEft) {
             submitDonation();
@@ -1550,7 +1557,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2022-02-09';
+                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2023-08-16';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidation(function() { insertForm31747(); })});
                     }
