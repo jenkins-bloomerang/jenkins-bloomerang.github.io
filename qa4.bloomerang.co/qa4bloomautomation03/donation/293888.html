@@ -1058,7 +1058,14 @@
                         
                          Bloomerang.Util.requireStripe(function() {
                               Bloomerang.Util.Stripe = Stripe('pk_test_ql0ubtsHyv0J0GZJ5po6MZYw');
-                              Bloomerang.Util.mountStripePaymentElements(false);
+                              Bloomerang.useKey('pub_13d80804-fb21-40b2-b07e-bf18831b9245');
+                              // Means we didn't set the client secret for self-hosted forms so we create one!
+                              if(!Bloomerang.StripePaymentElement) {
+                                Bloomerang.Util.createInitialIntentForSelfHosted(false);
+                              }
+                              else {
+                                Bloomerang.Util.mountStripePaymentElements(false);
+                              }
                               jQuery(".donation-form #express-submit").val("Donate");
                               jQuery(".registration-form #express-submit").val("Register");
                               jQuery("#express-submit").attr("disabled", false);
@@ -1587,7 +1594,7 @@
                         window.bloomerangLoadStarted = true;
                         var script = document.createElement('script');
                         script.type = 'text/javascript';
-                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2023-08-16';
+                        script.src = 'https://qa4.bloomerang.co/Content/Scripts/Api/Bloomerang-v2.js?nocache=2023-08-24';
                         document.getElementsByTagName('head')[0].appendChild(script);
                         waitForBloomerangLoad(function() { Bloomerang.Util.requireJQueryValidationAndStripe(function() { insertForm293888(); })});
                     }
